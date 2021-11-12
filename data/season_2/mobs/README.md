@@ -11,4 +11,4 @@ The items with nondeterministic tier (and therefore may be incorrect) are:
 - Survival Kit
 - Whirlwind Axe
 
-For these items, accompanying data is provided. The more data points there are, the more confident the corresponding tier is.
+For these items, accompanying data is provided under the `_stats` parameter. The data here is only for reference and is not used in the code. The more data points there are, the more confident the corresponding tier is.
