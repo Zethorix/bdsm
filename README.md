@@ -1,3 +1,6 @@
+# WIP
+This project is still a work-in-progress. Data can be freely used, but may be incorrect.
+
 # Boxbox Dungeon Simulator
 Simulating winrates for the Boxbox discord server "dungeons" game
 
