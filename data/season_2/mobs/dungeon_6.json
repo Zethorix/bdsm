@@ -27,9 +27,9 @@
         "Fire Sword": 5
       },
       "_stats": {
-        "_maxFireSwordTriggers": 3,
-        "_triggeredFireSword": 12,
-        "_attacks": 8
+        "_maxFireSwordTriggers": 4,
+        "_triggeredFireSword": 30,
+        "_attacks": 20
       }
     },
     {
