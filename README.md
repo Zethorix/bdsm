@@ -23,6 +23,12 @@ These are the dungeons we need more data for, in order of necessity:
 4. Dungeon 6 (Wave 1)
 5. Dungeon 0, 1, 2, 4, 7
 
+We also need data for player compositions:
+- A team of 2 more with at least one player equipping more than one blocking item (Healing Pendant, Magic Parasol, Survival Kit).
+- A team with more than one player equipping blocking items.
+- A team with at least one player equipping Rough Skin.
+- A team of 2 more with at least one player equipping blocking items and another teammate with the same max HP as that player.
+
 ### Contributors
 Thanks to everyone who contributed to this project!
 - `Oof#4389` (Qaisklyi)
