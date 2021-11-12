@@ -1,0 +1,108 @@
+[
+  [
+    {
+      "Character": "G Fuel",
+      "HP": 80,
+      "HP Max": 80,
+      "Speed": 20,
+      "Attack Low": 0,
+      "Attack High": 30,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Imp Whistle": 2
+      }
+    },
+    {
+      "Character": "Boba",
+      "HP": 125,
+      "HP Max": 125,
+      "Speed": 14,
+      "Attack Low": 15,
+      "Attack High": 25,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Avalanche": 1
+      }
+    },
+    {
+      "Character": "A Hearty Glass of Water",
+      "HP": 100,
+      "HP Max": 100,
+      "Speed": 12,
+      "Attack Low": 10,
+      "Attack High": 20,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Love Letter": 4
+      }
+    }
+  ],
+  [
+    {
+      "Character": "Mozzarella Sticks",
+      "HP": 100,
+      "HP Max": 100,
+      "Speed": 14,
+      "Attack Low": 6,
+      "Attack High": 12,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Poison Dagger": 3
+      }
+    },
+    {
+      "Character": "Miso Soup",
+      "HP": 50,
+      "HP Max": 50,
+      "Speed": 13,
+      "Attack Low": 5,
+      "Attack High": 15,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    },
+    {
+      "Character": "Salad",
+      "HP": 125,
+      "HP Max": 125,
+      "Speed": 12,
+      "Attack Low": 5,
+      "Attack High": 14,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    },
+    {
+      "Character": "Takoyaki",
+      "HP": 75,
+      "HP Max": 75,
+      "Speed": 12,
+      "Attack Low": 5,
+      "Attack High": 10,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Poison Dagger": 3
+      }
+    }
+  ],
+  [
+    {
+      "Character": "Sushi Boat",
+      "HP": 350,
+      "HP Max": 350,
+      "Speed": 30,
+      "Attack Low": 10,
+      "Attack High": 30,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Machete": 2
+      }
+    }
+  ]
+]

@@ -1,0 +1,150 @@
+[
+  [
+    {
+      "Character": "Blob",
+      "HP": 10,
+      "HP Max": 10,
+      "Speed": 10,
+      "Attack Low": 2,
+      "Attack High": 2,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    },
+    {
+      "Character": "Blobther",
+      "HP": 15,
+      "HP Max": 15,
+      "Speed": 10,
+      "Attack Low": 2,
+      "Attack High": 4,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    },
+    {
+      "Character": "Blob's Mom",
+      "HP": 20,
+      "HP Max": 20,
+      "Speed": 10,
+      "Attack Low": 3,
+      "Attack High": 3,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    },
+    {
+      "Character": "Blob's Dad",
+      "HP": 20,
+      "HP Max": 20,
+      "Speed": 10,
+      "Attack Low": 3,
+      "Attack High": 4,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    },
+    {
+      "Character": "Blob's Grandpa",
+      "HP": 30,
+      "HP Max": 30,
+      "Speed": 10,
+      "Attack Low": 8,
+      "Attack High": 16,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    }
+  ],
+  [
+    {
+      "Character": "Bandit",
+      "HP": 15,
+      "HP Max": 15,
+      "Speed": 12,
+      "Attack Low": 6,
+      "Attack High": 10,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    },
+    {
+      "Character": "Bandit's Hot GF",
+      "HP": 20,
+      "HP Max": 20,
+      "Speed": 12,
+      "Attack Low": 8,
+      "Attack High": 10,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    },
+    {
+      "Character": "Bandad",
+      "HP": 25,
+      "HP Max": 25,
+      "Speed": 12,
+      "Attack Low": 8,
+      "Attack High": 12,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    },
+    {
+      "Character": "Bandit's Twin",
+      "HP": 15,
+      "HP Max": 15,
+      "Speed": 12,
+      "Attack Low": 6,
+      "Attack High": 10,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    }
+  ],
+  [
+    {
+      "Character": "Albert",
+      "HP": 53,
+      "HP Max": 100,
+      "Speed": 10,
+      "Attack Low": 6,
+      "Attack High": 15,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Fire Sword": 1
+      },
+      "_stats": {
+        "_triggeredFireSword": 8,
+        "_attacks": 30
+      }
+    },
+    {
+      "Character": "Annie",
+      "HP": 47,
+      "HP Max": 100,
+      "Speed": 10,
+      "Attack Low": 3,
+      "Attack High": 12,
+      "Energy": 56,
+      "Summoned": false,
+      "Items": {
+        "Love Letter": 1
+      }
+    },
+    {
+      "Character": "Kelvinzorz",
+      "HP": 43,
+      "HP Max": 100,
+      "Speed": 10,
+      "Attack Low": 3,
+      "Attack High": 12,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Poison Dagger": 1
+      }
+    }
+  ]
+]

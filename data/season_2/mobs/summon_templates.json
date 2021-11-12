@@ -1,0 +1,50 @@
+{
+  "Celine's Chumby Chicken": {
+    "Character": "Celine's Chumby Chicken",
+    "HP": {"Base": 0, "Scaling": 1},
+    "HP Max": {"Base": 0, "Scaling": 1},
+    "Speed": 1,
+    "Attack Low": 0,
+    "Attack High": 1,
+    "Energy": 0,
+    "Summoned": true,
+    "Items": {
+      "Chicken Dinner": {"Base": 0, "Scaling": 1}
+    }
+  },
+  "Imp Whistle": {
+    "Character": "Small Imp Companion",
+    "HP": {"Base": 0, "Scaling": 1},
+    "HP Max": {"Base": 0, "Scaling": 1},
+    "Speed": {"Base": 11, "Scaling": 1},
+    "Attack Low": {"Base": 0, "Scaling": 3},
+    "Attack High": {"Base": 0, "Scaling": 4},
+    "Energy": 0,
+    "Summoned": true,
+    "Items": {}
+  },
+  "Pet Imp": {
+    "Character": "Big Imp Companion",
+    "HP": {"Base": 0, "Scaling": 10},
+    "HP Max": {"Base": 0, "Scaling": 10},
+    "Speed": {"Base": 11, "Scaling": 1},
+    "Attack Low": {"Base": 0, "Scaling": 3},
+    "Attack High": {"Base": 0, "Scaling": 4},
+    "Energy": 0,
+    "Summoned": true,
+    "Items": {}
+  },
+  "Rock Companion": {
+    "Character": "Rock Companion",
+    "HP": {"Base": 0, "Scaling": 15},
+    "HP Max": {"Base": 0, "Scaling": 15},
+    "Speed": 2,
+    "Attack Low": {"Base": 0, "Scaling": 5},
+    "Attack High": {"Base": 0, "Scaling": 5},
+    "Energy": 0,
+    "Summoned": true,
+    "Items": {
+      "Healing Pendant": {"Base": 0, "Scaling": 1}
+    }
+  }
+}

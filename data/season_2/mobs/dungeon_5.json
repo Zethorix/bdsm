@@ -1,0 +1,164 @@
+[
+  [
+    {
+      "Character": "Cidd The Helpful",
+      "HP": 2,
+      "HP Max": 2,
+      "Speed": 100,
+      "Attack Low": 4,
+      "Attack High": 4,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Seeking Missiles": 1,
+        "Fire Sword": 3
+      },
+      "_stats": {
+        "_maxFireSwordTriggers": 3,
+        "_triggeredFireSword": 52,
+        "_attacks": 54
+      }
+    },
+    {
+      "Character": "Treebeast",
+      "HP": 120,
+      "HP Max": 120,
+      "Speed": 15,
+      "Attack Low": 10,
+      "Attack High": 15,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    },
+    {
+      "Character": "Ivan, The Drunken Brawler",
+      "HP": 140,
+      "HP Max": 140,
+      "Speed": 16,
+      "Attack Low": 15,
+      "Attack High": 20,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Whirlwind Axe": 3
+      },
+      "_stats": {
+        "_triggeredWhirlwindAxe": 7,
+        "_attacks": 19
+      }
+    },
+    {
+      "Character": "Brittney, Beach Princess",
+      "HP": 160,
+      "HP Max": 160,
+      "Speed": 17,
+      "Attack Low": 20,
+      "Attack High": 25,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    }
+  ],
+  [
+    {
+      "Character": "The Wandering Fisherman",
+      "HP": 125,
+      "HP Max": 125,
+      "Speed": 8,
+      "Attack Low": 25,
+      "Attack High": 25,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    },
+    {
+      "Character": "The Great Forest Seer",
+      "HP": 150,
+      "HP Max": 150,
+      "Speed": 17,
+      "Attack Low": 12,
+      "Attack High": 22,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Avalanche": 3
+      }
+    },
+    {
+      "Character": "The Masked Samurai",
+      "HP": 175,
+      "HP Max": 175,
+      "Speed": 21,
+      "Attack Low": 12,
+      "Attack High": 16,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Machete": 4
+      }
+    }
+  ],
+  [
+    {
+      "Character": "Dread Knight",
+      "HP": 175,
+      "HP Max": 175,
+      "Speed": 9,
+      "Attack Low": 30,
+      "Attack High": 50,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    },
+    {
+      "Character": "Betty Clicker",
+      "HP": 75,
+      "HP Max": 75,
+      "Speed": 15,
+      "Attack Low": 5,
+      "Attack High": 5,
+      "Energy": 200,
+      "Summoned": false,
+      "Items": {
+        "Boosting Bugle": 3
+      }
+    },
+    {
+      "Character": "King Midas",
+      "HP": 150,
+      "HP Max": 150,
+      "Speed": 11,
+      "Attack Low": 10,
+      "Attack High": 15,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Healing Pendant": 1
+      }
+    },
+    {
+      "Character": "Leon",
+      "HP": 100,
+      "HP Max": 100,
+      "Speed": 25,
+      "Attack Low": 5,
+      "Attack High": 15,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Seeking Missiles": 3
+      }
+    },
+    {
+      "Character": "Amenhotep",
+      "HP": 40,
+      "HP Max": 40,
+      "Speed": 13,
+      "Attack Low": 0,
+      "Attack High": 10,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    }
+  ]
+]

@@ -1,0 +1,85 @@
+[
+  [
+    {
+      "Character": "Stickbaby 1",
+      "HP": 10,
+      "HP Max": 10,
+      "Speed": 6,
+      "Attack Low": 5,
+      "Attack High": 5,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    },
+    {
+      "Character": "Stickbaby 2",
+      "HP": 10,
+      "HP Max": 10,
+      "Speed": 6,
+      "Attack Low": 5,
+      "Attack High": 5,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    },
+    {
+      "Character": "Stickbaby 3",
+      "HP": 10,
+      "HP Max": 10,
+      "Speed": 6,
+      "Attack Low": 5,
+      "Attack High": 5,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    },
+    {
+      "Character": "Stickbaby 4",
+      "HP": 10,
+      "HP Max": 10,
+      "Speed": 6,
+      "Attack Low": 5,
+      "Attack High": 5,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    }
+  ],
+  [
+    {
+      "Character": "Stickman",
+      "HP": 25,
+      "HP Max": 25,
+      "Speed": 8,
+      "Attack Low": 6,
+      "Attack High": 10,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    },
+    {
+      "Character": "Stickwoman",
+      "HP": 20,
+      "HP Max": 20,
+      "Speed": 10,
+      "Attack Low": 10,
+      "Attack High": 12,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    }
+  ],
+  [
+    {
+      "Character": "Big Stick",
+      "HP": 50,
+      "HP Max": 50,
+      "Speed": 10,
+      "Attack Low": 12,
+      "Attack High": 12,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    }
+  ]
+]

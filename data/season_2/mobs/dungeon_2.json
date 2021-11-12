@@ -1,0 +1,116 @@
+[
+  [
+    {
+      "Character": "Pig",
+      "HP": 35,
+      "HP Max": 35,
+      "Speed": 12,
+      "Attack Low": 6,
+      "Attack High": 8,
+      "Energy": 0,
+      "Items": {}
+    },
+    {
+      "Character": "Ribbon Pig",
+      "HP": 35,
+      "HP Max": 35,
+      "Speed": 12,
+      "Attack Low": 6,
+      "Attack High": 8,
+      "Energy": 0,
+      "Items": {}
+    },
+    {
+      "Character": "Boar",
+      "HP": 35,
+      "HP Max": 35,
+      "Speed": 12,
+      "Attack Low": 6,
+      "Attack High": 8,
+      "Energy": 0,
+      "Items": {}
+    },
+    {
+      "Character": "Fire Boar",
+      "HP": 50,
+      "HP Max": 50,
+      "Speed": 15,
+      "Attack Low": 8,
+      "Attack High": 12,
+      "Energy": 0,
+      "Items": {}
+    }
+  ],
+  [
+    {
+      "Character": "Horny Mushroom",
+      "HP": 60,
+      "HP Max": 60,
+      "Speed": 10,
+      "Attack Low": 15,
+      "Attack High": 15,
+      "Energy": 0,
+      "Items": {}
+    },
+    {
+      "Character": "Orange Mushroom",
+      "HP": 45,
+      "HP Max": 45,
+      "Speed": 12,
+      "Attack Low": 8,
+      "Attack High": 16,
+      "Energy": 0,
+      "Items": {}
+    },
+    {
+      "Character": "Green Mushroom",
+      "HP": 45,
+      "HP Max": 45,
+      "Speed": 10,
+      "Attack Low": 10,
+      "Attack High": 15,
+      "Energy": 0,
+      "Items": {
+        "Poison Dagger": 1
+      }
+    }
+  ],
+  [
+    {
+      "Character": "Red Snail",
+      "HP": 20,
+      "HP Max": 20,
+      "Speed": 3,
+      "Attack Low": 1,
+      "Attack High": 2,
+      "Energy": 0,
+      "Items": {
+        "Rough Skin": 2
+      }
+    },
+    {
+      "Character": "A Very Large Snail",
+      "HP": 150,
+      "HP Max": 150,
+      "Speed": 7,
+      "Attack Low": 20,
+      "Attack High": 40,
+      "Energy": 0,
+      "Items": {
+        "Rough Skin": 6
+      }
+    },
+    {
+      "Character": "Blue Snail",
+      "HP": 20,
+      "HP Max": 20,
+      "Speed": 3,
+      "Attack Low": 1,
+      "Attack High": 2,
+      "Energy": 0,
+      "Items": {
+        "Rough Skin": 2
+      }
+    }
+  ]
+]

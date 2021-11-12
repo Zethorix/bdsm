@@ -1,0 +1,103 @@
+[
+  [
+    {
+      "Character": "Tenya Iida",
+      "HP": 175,
+      "HP Max": 175,
+      "Speed": 25,
+      "Attack Low": 5,
+      "Attack High": 15,
+      "Energy": 999,
+      "Summoned": false,
+      "Items": {
+        "Boosting Bugle": 1
+      }
+    },
+    {
+      "Character": "Shoto Todoroki",
+      "HP": 200,
+      "HP Max": 200,
+      "Speed": 12,
+      "Attack Low": 0,
+      "Attack High": 40,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Avalanche": 3,
+        "Fire Sword": 5
+      },
+      "_stats": {
+        "_maxFireSwordTriggers": 3,
+        "_triggeredFireSword": 12,
+        "_attacks": 8
+      }
+    },
+    {
+      "Character": "Tsuyu Asui",
+      "HP": 150,
+      "HP Max": 150,
+      "Speed": 18,
+      "Attack Low": 5,
+      "Attack High": 25,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Draining Dagger": 1,
+        "Rough Skin": 4
+      }
+    }
+  ],
+  [
+    {
+      "Character": "Fat Gum",
+      "HP": 300,
+      "HP Max": 300,
+      "Speed": 6,
+      "Attack Low": 50,
+      "Attack High": 100,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Martyr Armor": 3
+      }
+    },
+    {
+      "Character": "Hawks",
+      "HP": 200,
+      "HP Max": 200,
+      "Speed": 35,
+      "Attack Low": 1,
+      "Attack High": 10,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Challenger Arrow": 2,
+        "Thorns": 3
+      }
+    }
+  ],
+  [
+    {
+      "Character": "All-Might",
+      "HP": 200,
+      "HP Max": 200,
+      "Speed": 15,
+      "Attack Low": 35,
+      "Attack High": 55,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    },
+    {
+      "Character": "Izuku Midoriya",
+      "HP": 200,
+      "HP Max": 200,
+      "Speed": 25,
+      "Attack Low": 20,
+      "Attack High": 35,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    }
+  ]
+]

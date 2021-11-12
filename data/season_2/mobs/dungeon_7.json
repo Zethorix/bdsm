@@ -1,0 +1,117 @@
+[
+  [
+    {
+      "Character": "Boosette",
+      "HP": 200,
+      "HP Max": 200,
+      "Speed": 15,
+      "Attack Low": 33,
+      "Attack High": 66,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Seeking Missiles": 1
+      }
+    },
+    {
+      "Character": "Bowsette",
+      "HP": 140,
+      "HP Max": 140,
+      "Speed": 15,
+      "Attack Low": 33,
+      "Attack High": 66,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Rough Skin": 6
+      }
+    }
+  ],
+  [
+    {
+      "Character": "Emilia",
+      "HP": 175,
+      "HP Max": 175,
+      "Speed": 15,
+      "Attack Low": 15,
+      "Attack High": 25,
+      "Energy": 55,
+      "Summoned": false,
+      "Items": {
+        "Challenger Arrow": 5
+      }
+    },
+    {
+      "Character": "Rem",
+      "HP": 225,
+      "HP Max": 225,
+      "Speed": 17,
+      "Attack Low": 10,
+      "Attack High": 20,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Challenger Arrow": 5
+      }
+    },
+    {
+      "Character": "Ram",
+      "HP": 150,
+      "HP Max": 150,
+      "Speed": 17,
+      "Attack Low": 25,
+      "Attack High": 50,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    }
+  ],
+  [
+    {
+      "Character": "Megumin",
+      "HP": 150,
+      "HP Max": 150,
+      "Speed": 18,
+      "Attack Low": 1,
+      "Attack High": 2,
+      "Energy": 40,
+      "Summoned": false,
+      "Items": {
+        "Explosion Powder": 7
+      }
+    },
+    {
+      "Character": "Aqua",
+      "HP": 150,
+      "HP Max": 150,
+      "Speed": 25,
+      "Attack Low": 10,
+      "Attack High": 20,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Love Letter": 6
+      }
+    },
+    {
+      "Character": "Darkness",
+      "HP": 200,
+      "HP Max": 200,
+      "Speed": 15,
+      "Attack Low": 4,
+      "Attack High": 9,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Magic Parasol": 8,
+        "Poison Dagger": 1
+      },
+      "_stats": {
+        "_triggeredBlock": 28,
+        "_availableBlocks": 92,
+        "_triggeredMagicParasol": 62,
+        "_defended": 154
+      }
+    }
+  ]
+]

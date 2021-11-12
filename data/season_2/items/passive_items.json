@@ -1,0 +1,153 @@
+{
+  "Big Club": {
+    "Obtainable": true,
+    "Description": "Your attacks have a {11*t}% chance to deal 150% bonus damage.",
+    "Triggers": [
+      "PreDamage"
+    ]
+  },
+  "Celine's Chumby Chicken": {
+    "Obtainable": true,
+    "Description": "The first time you attack each wave, summon a chumby chicken. {t}HP, Heals all allies for {2*t}HP when it dies.",
+    "Triggers": [
+      "PostDamage"
+    ]
+  },
+  "Chicken Dinner": {
+    "Obtainable": false,
+    "Description": "When you die on an opponent's turn, your allies all eat you (FLUSH). They heal for {2*t} HP. This item cannot be obtained, so its exact description is unknown.",
+    "Triggers": [
+      "Death"
+    ]
+  },
+  "Cleansing Flames": {
+    "Obtainable": true,
+    "Description": "After you attack, you have a 50% chance to heal all allies for {t} HP.",
+    "Triggers": [
+      "PostDamage"
+    ]
+  },
+  "Draining Dagger": {
+    "Obtainable": true,
+    "Description": "Your attacks decrease the target's attack by {t}. {5*t}% chance to drain 1 energy from the target.",
+    "Triggers": [
+      "PostDamage"
+    ]
+  },
+  "Fire Sword": {
+    "Obtainable": true,
+    "Description": "When you attack, you have a 30% chance to increase your attack by 1. Repeat this {t-1} additional times.",
+    "Triggers": [
+      "PostDamage"
+    ]
+  },
+  "Freezeman": {
+    "Obtainable": true,
+    "Description": "Gain {t} speed.",
+    "Triggers": [
+      "BattleStart"
+    ]
+  },
+  "Halberd": {
+    "Obtainable": true,
+    "Description": "You have +{2*t} attack.",
+    "Triggers": [
+      "BattleStart"
+    ]
+  },
+  "Healing Pendant": {
+    "Obtainable": true,
+    "Description": "Your attacks have a 50% chance to heal yourself for {5*t} HP. {7+3*t}% Chance to take the hit when your teammate is attacked, if you're feeling brave.",
+    "Triggers": [
+      "Block",
+      "PostDamage"
+    ]
+  },
+  "Love Letter": {
+    "Obtainable": true,
+    "Description": "After you attack, you heal an ally for {2*t} and they gain {t} energy. This cannot target yourself or summons.",
+    "Triggers": [
+      "PostDamage"
+    ]
+  },
+  "Machete": {
+    "Obtainable": true,
+    "Description": "Your attacks deal {3*t}-{4*t} damage to an additional enemy.",
+    "Triggers": [
+      "PostDamage"
+    ]
+  },
+  "Magic Parasol": {
+    "Obtainable": true,
+    "Description": "When you are attacked, you have a {5+5*t}% chance to fully block the attack. {7+3*t}% Chance to take the hit when your teammate is attacked, if you're feeling brave.",
+    "Triggers": [
+      "Block",
+      "EnemyDamage"
+    ]
+  },
+  "Martyr Armor": {
+    "Obtainable": true,
+    "Description": "When you take damage on an opponent’s turn, you have a 66% chance to heal a random ally {2*t}HP and give them {t} Energy. This cannot target yourself or summons.",
+    "Triggers": [
+      "EnemyDamage"
+    ]
+  },
+  "Pet Imp": {
+    "Obtainable": true,
+    "Description": "At the start of the dungeon, summon a big imp companion. {10*t}hp {3*t}-{4*t}atk. Spd: {11+t}",
+    "Triggers": [
+      "BattleStart"
+    ]
+  },
+  "Poison Dagger": {
+    "Obtainable": true,
+    "Description": "Your attacks add {t} poison stack to the target. A poisoned enemy takes 1 damage after they attack for each poison stack they have.",
+    "Triggers": [
+      "PostDamage"
+    ]
+  },
+  "Rock Companion": {
+    "Obtainable": true,
+    "Description": "At the start of the dungeon, summon a brave Rock Companion. {15*t}hp {5*t}atk 2spd",
+    "Triggers": [
+      "BattleStart"
+    ]
+  },
+  "Rough Skin": {
+    "Obtainable": false,
+    "Description": "When you take damage on an opponent's turn, you have a 50% chance to reduce damage taken by {t} and deal {t} damage back to the attacker. This item cannot be obtained, so its exact description is unknown.",
+    "Triggers": [
+      "EnemyDamage"
+    ]
+  },
+  "Seeking Missiles": {
+    "Obtainable": true,
+    "Description": "Your attacks always target the lowest HP enemy. Deal {t} bonus damage per 20% HP they are missing",
+    "Triggers": [
+      "Target",
+      "PreDamage"
+    ]
+  },
+  "Survival Kit": {
+    "Obtainable": true,
+    "Description": "Increase Max HP by {20*t}. {7+3*t}% Chance to take a hit when your teammate is attacked if you're feeling brave.",
+    "Triggers": [
+      "BattleStart",
+      "Block"
+    ]
+  },
+  "Thorns": {
+    "Obtainable": true,
+    "Description": "When you attack, unleash a thorn at each enemy. Each thorn deals {t} damage and gives you a 25% chance to gain {t} energy. You can only gain energy from this effect once per turn.",
+    "Triggers": [
+      "TurnStart"
+    ]
+  },
+  "Whirlwind Axe": {
+    "Obtainable": true,
+    "Description": "When you attack, you have a {11*t}% chance of making your attack deal splash damage to all other enemies.",
+    "Triggers": [
+      "PostDamage"
+    ]
+  }
+}

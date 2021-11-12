@@ -1,0 +1,120 @@
+[
+  [
+    {
+      "Character": "Kappa",
+      "HP": 100,
+      "HP Max": 100,
+      "Speed": 16,
+      "Attack Low": 10,
+      "Attack High": 20,
+      "Energy": 20,
+      "Summoned": false,
+      "Items": {
+        "Knight's Lance": 2,
+        "Love Letter": 2
+      }
+    },
+    {
+      "Character": "KappaPride",
+      "HP": 80,
+      "HP Max": 80,
+      "Speed": 16,
+      "Attack Low": 8,
+      "Attack High": 14,
+      "Energy": 10,
+      "Summoned": false,
+      "Items": {
+        "Knight's Lance": 2,
+        "Love Letter": 2
+      }
+    }
+  ],
+  [
+    {
+      "Character": "PepeHands",
+      "HP": 50,
+      "HP Max": 50,
+      "Speed": 12,
+      "Attack Low": 8,
+      "Attack High": 12,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Cleansing Flames": 1
+      }
+    },
+    {
+      "Character": "Pepega",
+      "HP": 75,
+      "HP Max": 75,
+      "Speed": 10,
+      "Attack Low": 5,
+      "Attack High": 10,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Poison Dagger": 2
+      }
+    },
+    {
+      "Character": "MonkaS",
+      "HP": 75,
+      "HP Max": 75,
+      "Speed": 11,
+      "Attack Low": 1,
+      "Attack High": 30,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Big Club": 5
+      },
+      "_stats": {
+        "_triggeredBigClub": "10",
+        "_attacks": "16"
+      }
+    },
+    {
+      "Character": "Rock Companion",
+      "HP": 30,
+      "HP Max": 30,
+      "Speed": 2,
+      "Attack Low": 10,
+      "Attack High": 10,
+      "Energy": 0,
+      "Summoned": true,
+      "Items": {
+        "Healing Pendant": 2
+      }
+    }
+  ],
+  [
+    {
+      "Character": "PogChamp",
+      "HP": 150,
+      "HP Max": 150,
+      "Speed": 15,
+      "Attack Low": 10,
+      "Attack High": 30,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Whirlwind Axe": 3
+      },
+      "_stats": {
+        "_triggeredWhirlwindAxe": 7,
+        "_attacks": 21
+      }
+    },
+    {
+      "Character": "Pog",
+      "HP": 125,
+      "HP Max": 125,
+      "Speed": 15,
+      "Attack Low": 10,
+      "Attack High": 15,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    }
+  ]
+]
