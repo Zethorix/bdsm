@@ -74,7 +74,13 @@
       "Attack High": 14,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": {
+        "Healing Pendant": 3
+      },
+      "_stats": {
+        "_triggeredBlock": 6,
+        "_availableBlocks": 30
+      }
     },
     {
       "Character": "Takoyaki",
