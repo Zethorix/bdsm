@@ -2,3 +2,15 @@
 Simulating winrates for the Boxbox discord server "dungeons" game
 
 Uses [manually collected data](https://docs.google.com/spreadsheets/d/1NIThIrcgI00mKHmzBkO9HjSx3BKdprqhsu35EWmfxPY), as the actual source code of Boxbox Dungeons is unknown.
+
+## Contributing
+Contributions are always welcome.
+
+Ask `Zethorix#1064` on Discord if you have any feature requests or would like to contribute in some way that is not listed.
+
+### Data Collection
+The easiest way to help is to record a dungeon run and DM it to `Zethorix#1064` on Discord. If you do, confirm with your teammates, and also make sure that that dungeon run is only being submit once. If you would like, each team member's items entering the run would also be appreciated.
+
+### Contributors
+Thanks to everyone who contributed to this project!
+- `Oof#4389` (Qaisklyi)
