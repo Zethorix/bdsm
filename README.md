@@ -12,7 +12,7 @@ Contributions are always welcome.
 Ask `Zethorix#1064` on Discord if you have any feature requests or would like to contribute in some way that is not listed.
 
 ### Data Collection
-The easiest way to help is to record a dungeon run and DM it to `Zethorix#1064` on Discord. If you do end up recording for this purpose, make sure to always send it. Also, if a recording of a dungeon run was not recorded for this purpose, do NOT send the recording just because something unlikely happened. This will skew the data and lead to incorrect results.
+The easiest way to help is to record a dungeon run and DM it to `Zethorix#1064` on Discord. If you do end up recording for this purpose, make sure to always send it, even if you lose or if the dungeon run was uneventful. Also, if a recording of a dungeon run was not recorded for this purpose, do NOT send the recording just because something unlikely happened. This will skew the data and lead to incorrect results.
 
 If you decide to send a recording, confirm with your teammates, and also make sure that that dungeon run is only being submit once. If you would like, each team member's items entering the run would also be appreciated.
 
