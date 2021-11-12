@@ -27,7 +27,10 @@ function all(iterable, condition) {
 function sum(iterable, key=null) {
   return iterable.reduce((accumulator, currentValue) => {
     if (key == null) {
-      return accumulator + currentValue;
+      if (typeof currentValue == 'number') {
+        return accumulator + currentValue;
+      }
+      return accumulator + 1;
     }
     if (key in currentValue) {
       return accumulator + currentValue[key];
