@@ -73,7 +73,7 @@ function _mutateTemplate(template, scale) {
     return template;
   }
 
-  if ('Base' in obj && 'Scaling' in obj) {
+  if ('Base' in template && 'Scaling' in template) {
     return template['Base'] + template['Scaling'] * scale;
   }
 
@@ -81,7 +81,7 @@ function _mutateTemplate(template, scale) {
   for (key in template) {
     template[key] = _mutateTemplate(template[key], scale);
   }
-  return obj;
+  return template;
 }
 
 function getScaledTemplate(template, scale) {
