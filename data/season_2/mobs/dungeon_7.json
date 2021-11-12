@@ -103,6 +103,7 @@
       "Energy": 0,
       "Summoned": false,
       "Items": {
+        "Knight's Lance": 5,
         "Magic Parasol": 8,
         "Poison Dagger": 1
       },
