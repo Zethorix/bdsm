@@ -115,7 +115,7 @@
   },
   "Rough Skin": {
     "Obtainable": false,
-    "Description": "When you take damage on an opponent's turn, you have a 50% chance to reduce damage taken by {t} and deal {t} damage back to the attacker. This item cannot be obtained, so its exact description is unknown.",
+    "Description": "50% chance to reduce an attack by {2*t} and deal {2*t} damage to the attacker.",
     "Triggers": [
       "EnemyDamage"
     ]

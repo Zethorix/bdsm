@@ -85,7 +85,7 @@
       "Attack High": 2,
       "Energy": 0,
       "Items": {
-        "Rough Skin": 2
+        "Rough Skin": 1
       }
     },
     {
@@ -97,7 +97,7 @@
       "Attack High": 40,
       "Energy": 0,
       "Items": {
-        "Rough Skin": 6
+        "Rough Skin": 3
       }
     },
     {
@@ -109,7 +109,7 @@
       "Attack High": 2,
       "Energy": 0,
       "Items": {
-        "Rough Skin": 2
+        "Rough Skin": 1
       }
     }
   ]
