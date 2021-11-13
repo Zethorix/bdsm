@@ -1,3 +1,9 @@
+function buttontest() {
+  alert("alert");
+  console.log("log");
+}
+
+
 function formatDescriptionWithTier(description, tier) {
   const re = /\{([\dt\+\-\*]+)\}/;
   var current = description;
