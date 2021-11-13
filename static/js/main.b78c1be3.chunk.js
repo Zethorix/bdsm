@@ -1,0 +1,2 @@
+(this["webpackJsonpboxbox-dungeon-simulator"]=this["webpackJsonpboxbox-dungeon-simulator"]||[]).push([[0],{9:function(e,n,o){"use strict";o.r(n);var t=o(1),r=o.n(t),c=o(3),s=o.n(c),i=o(0);var d=function(){return Object(i.jsx)("div",{children:"Hello World!"})};s.a.render(Object(i.jsx)(r.a.StrictMode,{children:Object(i.jsx)(d,{})}),document.getElementById("root"))}},[[9,1,2]]]);
+//# sourceMappingURL=main.b78c1be3.chunk.js.map
