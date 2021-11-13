@@ -31,4 +31,4 @@ We also need data for player compositions:
 
 ### Contributors
 Thanks to everyone who contributed to this project!
-- `Oof#4389` (Qaisklyi)
+- `Oof#4389` (qaisklyi)
