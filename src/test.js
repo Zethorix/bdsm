@@ -11,7 +11,7 @@ function _loadDungeon(season, dungeon) {
 
   if (!(dungeon in dungeonsForSeason)) {
     dungeonsForSeason[dungeon] = require(
-        './data/season_' + season + '/mobs/dungeon_' + dungeon + '.json'
+        '../data/season_' + season + '/mobs/dungeon_' + dungeon + '.json'
     );
   }
 
