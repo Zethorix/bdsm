@@ -1,10 +1,10 @@
-function buttontest() {
-  alert("alert");
-  console.log("log");
+export function logIf(bool, toLog) {
+  if (bool) {
+    console.log(toLog);
+  }
 }
 
-
-function formatDescriptionWithTier(description, tier) {
+export function formatDescriptionWithTier(description, tier) {
   const re = /\{([\dt\+\-\*]+)\}/;
   var current = description;
   var m = current.match(re);
@@ -18,38 +18,44 @@ function formatDescriptionWithTier(description, tier) {
   return current;
 }
 
-function extend(iterable1, iterable2) {
-  for (index in iterable2) {
+export function extend(iterable1, iterable2) {
+  for (const index in iterable2) {
     iterable1.push(iterable2[index]);
   }
 }
 
-function all(iterable, condition) {
+export function all(iterable, condition) {
   return iterable.reduce((accumulator, currentValue) => {
     return accumulator && condition(currentValue);
   }, true);
 }
 
-function sum(iterable, key=null) {
-  return iterable.reduce((accumulator, currentValue) => {
+export function sum(iterable, key=null) {
+  var total = 0;
+  for (const i in iterable) {
+    const currentValue = iterable[i];
     if (key == null) {
       if (typeof currentValue == 'number') {
-        return accumulator + currentValue;
+        total += currentValue;
+        continue;
       }
-      return accumulator + 1;
+      total++;
+      continue;
     }
     if (key in currentValue) {
-      return accumulator + currentValue[key];
+      total += currentValue[key];
+      continue;
     }
-    return accumulator + 1;
-  }, 0);
+    total++;
+  }
+  return total;
 }
 
-function pickRandom(iterable, weightKey=null) {
+export function pickRandom(iterable, weightKey=null) {
   const total = sum(iterable, weightKey);
   var r = Math.floor(Math.random() * total);
 
-  for (key in iterable) {
+  for (const key in iterable) {
     var weight = 1;
     if (weightKey != null) {
       weight = iterable[key][weightKey];
@@ -60,17 +66,19 @@ function pickRandom(iterable, weightKey=null) {
     r -= weight;
   }
 
-  throw 'Something went wrong while selecting random element from '
+  throw Error(
+      'Internal Error: Something went wrong while selecting random element from '
       + iterable
       + ' with weightKey '
-      + weightKey;
+      + weightKey
+  );
 }
 
-function pickRandomWithinRange(lower, upper) {
+export function pickRandomWithinRange(lower, upper) {
   return lower + Math.floor(Math.random() * (upper - lower + 1));
 }
 
-function deepCopyJson(obj) {
+export function deepCopyJson(obj) {
   return JSON.parse(JSON.stringify(obj));
 }
 
@@ -84,13 +92,13 @@ function _mutateTemplate(template, scale) {
   }
 
   // recursive check
-  for (key in template) {
+  for (const key in template) {
     template[key] = _mutateTemplate(template[key], scale);
   }
   return template;
 }
 
-function getScaledTemplate(template, scale) {
+export function getScaledTemplate(template, scale) {
   const obj = deepCopyJson(template);
   return _mutateTemplate(obj, scale);
 }
