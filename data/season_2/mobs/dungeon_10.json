@@ -1,0 +1,89 @@
+[
+  [
+    {
+      "Character": "Sonic The Hedgehog",
+      "HP": 750,
+      "HP Max": 750,
+      "Speed": 150,
+      "Attack Low": 0,
+      "Attack High": 0,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Fire Sword": 
+      },
+      "_stats": {
+        "_maxFireSwordTriggers": 4,
+        "_triggeredFireSword": 17,
+        "_attacks": 9
+      }
+    }
+  ],
+  [
+    {
+      "Character": "Amy Rose",
+      "HP": 250,
+      "HP Max": 250,
+      "Speed": 22,
+      "Attack Low": 20,
+      "Attack High": 30,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Whirlwind Axe": 9
+      },
+      "_stats": {
+        "_triggeredWhirlwindAxe": 1,
+        "_attacks": 1
+      }
+    },
+    {
+      "Character": "Big The Cat",
+      "HP": 300,
+      "HP Max": 300,
+      "Speed": 12,
+      "Attack Low": 40,
+      "Attack High": 80,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+      },
+      "_stats": {
+        "_triggeredBlock": 1,
+        "_availableBlocks": 3
+      }
+    },
+    {
+      "Character": "Knuckles The Echidna",
+      "HP": 200,
+      "HP Max": 200,
+      "Speed": 25,
+      "Attack Low": 10,
+      "Attack High": 60,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Seeking Missiles": 5,
+        "Big Club": 8
+      },
+      "_stats": {
+        "_triggeredBigClub": 4,
+        "_attacks": 4
+      }
+    },
+    {
+      "Character": "Miles Tails Prowler",
+      "HP": 250,
+      "HP Max": 250,
+      "Speed": 30,
+      "Attack Low": 10,
+      "Attack High": 30,
+      "Energy": 90,
+      "Summoned": false,
+      "Items": {
+        "Boosting Bugle": 5,
+        "Thorns": 5
+      }
+    }
+  ]
+]
