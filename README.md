@@ -31,4 +31,5 @@ We also need data for player compositions:
 
 ### Contributors
 Thanks to everyone who contributed to this project!
-- `Oof#4389` (qaisklyi)
+- `Oof#4389` **(qaisklyi)**: Coding, Analysis, Data Collection
+- `BlazingDawn#1079`: Data Collection
