@@ -12,26 +12,78 @@ export function buttontest() {
       "HP": 100,
       "HP Max": 100,
       "Speed": 10,
-      "Attack Low": 1,
-      "Attack High": 10,
-      "Energy": 0,
+      "Attack Low": 0,
+      "Attack High": 0,
+      "Energy": 1000,
       "Summoned": false,
       "Items": {
-        'Draining Dagger': 5,
-        'Survival Kit': 3,
-        'Energetic Ally': 10
+        'Avalanche': 1
       }
     },
     {
-      "Character": "Oof",
+      "Character": "Zethorix",
       "HP": 100,
       "HP Max": 100,
       "Speed": 10,
-      "Attack Low": 1,
-      "Attack High": 10,
-      "Energy": 0,
+      "Attack Low": 0,
+      "Attack High": 0,
+      "Energy": 1000,
       "Summoned": false,
-      "Items": {}
+      "Items": {
+        'Boosting Bugle': 1
+      }
+    },
+    {
+      "Character": "Zethorix",
+      "HP": 100,
+      "HP Max": 100,
+      "Speed": 10,
+      "Attack Low": 0,
+      "Attack High": 0,
+      "Energy": 1000,
+      "Summoned": false,
+      "Items": {
+        'Challenger Arrow': 1
+      }
+    },
+    {
+      "Character": "Zethorix",
+      "HP": 100,
+      "HP Max": 100,
+      "Speed": 10,
+      "Attack Low": 0,
+      "Attack High": 0,
+      "Energy": 1000,
+      "Summoned": false,
+      "Items": {
+        'Explosion Powder': 1
+      }
+    },
+    {
+      "Character": "Zethorix",
+      "HP": 100,
+      "HP Max": 100,
+      "Speed": 10,
+      "Attack Low": 0,
+      "Attack High": 0,
+      "Energy": 1000,
+      "Summoned": false,
+      "Items": {
+        'Imp Whistle': 1
+      }
+    },
+    {
+      "Character": "Zethorix",
+      "HP": 100,
+      "HP Max": 100,
+      "Speed": 10,
+      "Attack Low": 0,
+      "Attack High": 0,
+      "Energy": 1000,
+      "Summoned": false,
+      "Items": {
+        'Knight\'s Lance': 1
+      }
     }
   ];
   console.log('winning team: ' + simulator.runDungeon(players, waves, season, true));

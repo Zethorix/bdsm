@@ -136,7 +136,15 @@ class Battle {
     this.teams[teamIndex].push(toAdd);
   }
 
-  kill(name) {
+  getCharacterAndName(id) {
+    if (typeof id === 'string') {
+      return [this.allCharacters[id], id];
+    }
+    return [id, id['Character']];
+  }
+
+  kill(id) {
+    const [character, name] = this.getCharacterAndName(id);
     utils.logIf(this.verbose, 'killing: ' + name);
     const team = this.teams[this.getTeamOf[name]];
     const pos = _findPositionWithinTeam(name, team);
@@ -148,18 +156,47 @@ class Battle {
     team.splice(pos, 1);
   }
 
-  loseHp(name, amount) {
-    const character = this.allCharacters[name];
-    const originalHp = character['HP'];
-    character['HP'] -= amount;
-    utils.logIf(this.verbose, name + ' lost hp: ' + originalHp + ' -> ' + character['HP']);
-  }
-
-  heal(name, amount) {
-    const character = this.allCharacters[name];
+  changeHp(id, amount) {
+    const [character, name] = this.getCharacterAndName(id);
     const originalHp = character['HP'];
     character['HP'] += amount;
-    utils.logIf(this.verbose, name + ' healed hp: ' + originalHp + ' -> ' + character['HP']);
+    utils.logIf(
+        this.verbose,
+        name + ' hp changed by ' + amount + ': ' + originalHp + ' -> ' + character['HP']
+    );
+  }
+
+  dealDamage(target, source, amount) {
+    this.changeHp(target, -amount);
+  }
+
+  changeSpeed(id, amount) {
+    const [character, name] = this.getCharacterAndName(id);
+    const originalSpeed = character['Speed'];
+    character['Speed'] = Math.max(character['Speed'] + amount, 1);
+    utils.logIf(
+        this.verbose,
+        name + ' speed changed by ' + amount + ': ' + originalSpeed + ' -> ' + character['Speed']
+    );
+  }
+
+  changeAttack(id, amount) {
+    const [character, name] = this.getCharacterAndName(id);
+    const originalAttackLow = character['Attack Low'];
+    const originalAttackHigh = character['Attack High'];
+    const amountToGain = Math.max(-originalAttackLow, amount);
+    character['Attack Low'] += amountToGain;
+    character['Attack High'] += amountToGain;
+    utils.logIf(
+        this.verbose,
+        name +
+        ' attack changed by ' +
+        amount +
+        ': ' +
+        [originalAttackLow, originalAttackHigh] +
+        ' -> ' +
+        [character['Attack Low'], character['Attack High']]
+    );
   }
 
   checkAllHp() {
@@ -174,7 +211,8 @@ class Battle {
     }
   }
 
-  triggerEnergy(character) {
+  triggerEnergy(id) {
+    const [character, characterName] = this.getCharacterAndName(id);
     if (!('Energy' in character['_triggers'])) {
       return;
     }
@@ -184,13 +222,47 @@ class Battle {
       return;
     }
     character['Energy'] -= cost;
+    const tier = character['Items'][item];
+    utils.logIf(this.verbose, 'Activating energy item ' + item);
+
+    const friendlyTeamIndex = this.getTeamOf[characterName];
+    const friendlyTeam = this.teams[friendlyTeamIndex];
+    const enemyTeam = this.teams[1 - friendlyTeamIndex];
 
     switch (item) {
       case 'Avalanche':
+        for (var i = 0; i < 2; i++) {
+          const target = enemyTeam[utils.pickRandom(enemyTeam)];
+          this.dealDamage(
+              target,
+              character,
+              utils.pickRandomWithinRange(3 * tier, 5 * tier)
+          );
+          this.changeSpeed(
+              target['Character'],
+              -utils.pickRandomWithinRange(0, tier)
+          );
+        }
         break;
       case 'Boosting Bugle':
+        for (var i = 0; i < 2; i++) {
+          const target = friendlyTeam[utils.pickRandom(
+              friendlyTeam,
+              (c) => {
+                if (c['Summoned'] || c['Character'] === characterName) {
+                  return 0;
+                }
+                return 1;
+              }
+          )];
+          this.changeHp(target, tier + tier);
+          this.changeAttack(target, tier);
+        }
         break;
       case 'Challenger Arrow':
+        const target = enemyTeam[utils.pickRandom(enemyTeam)];
+        this.dealDamage(target, character, 10 * tier);
+        this.changeAttack(character, tier);
         break;
       case 'Energetic Ally':
         break;
@@ -251,6 +323,11 @@ class Battle {
     this.triggerEnergy(active);
 
     this.checkAllHp();
+    for (const i in this.teams) {
+      if (this.teamHasLost(i)) {
+        return;
+      }
+    }
 
     const mainAttackTargetIndex = utils.pickRandom(defendingTeam);
     const mainTarget = defendingTeam[mainAttackTargetIndex];
@@ -263,7 +340,7 @@ class Battle {
     );
     utils.logIf(this.verbose, 'main attack damage: ' + damageAmount);
 
-    this.loseHp(mainAttackTargetName, damageAmount);
+    this.dealDamage(mainAttackTargetName, active, damageAmount);
     this.checkAllHp();
   }
 

@@ -34,8 +34,12 @@ export function sum(iterable, key=null) {
   var total = 0;
   for (const i in iterable) {
     const currentValue = iterable[i];
+    if (typeof key === 'function') {
+      total += key(currentValue);
+      continue;
+    }
     if (key == null) {
-      if (typeof currentValue == 'number') {
+      if (typeof currentValue === 'number') {
         total += currentValue;
         continue;
       }
@@ -57,7 +61,9 @@ export function pickRandom(iterable, weightKey=null) {
 
   for (const key in iterable) {
     var weight = 1;
-    if (weightKey != null) {
+    if (typeof weightKey === 'function') {
+      weight = weightKey(iterable[key]);
+    } else if (weightKey != null) {
       weight = iterable[key][weightKey];
     }
     if (r < weight) {
