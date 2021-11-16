@@ -105,7 +105,20 @@ class Battle {
     this.verbose = verbose;
     this.season = season;
     this.initTeams(team1, team2);
-    this.items = data.getItems(season);
+  }
+
+  getItems() {
+    if (!('_items' in this)) {
+      this._items = data.getItems(this.season);
+    }
+    return this._items;
+  }
+
+  getTemplates() {
+    if (!('_templates' in this)) {
+      this._templates = data.getTemplates(this.season);
+    }
+    return this._templates;
   }
 
   initTeams(team1, team2) {
@@ -199,6 +212,16 @@ class Battle {
     );
   }
 
+  changeEnergy(id, amount) {
+    const [character, name] = this.getCharacterAndName(id);
+    const originalEnergy = character['Energy'];
+    character['Energy'] = Math.max(character['Energy'] + amount, 0);
+    utils.logIf(
+        this.verbose,
+        name + ' energy changed by ' + amount + ': ' + originalEnergy + ' -> ' + character['Energy']
+    );
+  }
+
   checkAllHp() {
     for (const name in this.allCharacters) {
       const character = this.allCharacters[name];
@@ -217,7 +240,7 @@ class Battle {
       return;
     }
     const item = Object.keys(character['_triggers']['Energy'])[0];
-    const cost = this.items['Energy'][item]['Cost'];
+    const cost = this.getItems()['Energy'][item]['Cost'];
     if (character['Energy'] < cost) {
       return;
     }
@@ -225,12 +248,12 @@ class Battle {
     const tier = character['Items'][item];
     utils.logIf(this.verbose, 'Activating energy item ' + item);
 
-    const friendlyTeamIndex = this.getTeamOf[characterName];
-    const friendlyTeam = this.teams[friendlyTeamIndex];
-    const enemyTeam = this.teams[1 - friendlyTeamIndex];
+    const allyTeamIndex = this.getTeamOf[characterName];
+    const allyTeam = this.teams[allyTeamIndex];
+    const enemyTeam = this.teams[1 - allyTeamIndex];
 
     switch (item) {
-      case 'Avalanche':
+      case 'Avalanche': {
         for (var i = 0; i < 2; i++) {
           const target = enemyTeam[utils.pickRandom(enemyTeam)];
           this.dealDamage(
@@ -244,10 +267,11 @@ class Battle {
           );
         }
         break;
-      case 'Boosting Bugle':
+      }
+      case 'Boosting Bugle': {
         for (var i = 0; i < 2; i++) {
-          const target = friendlyTeam[utils.pickRandom(
-              friendlyTeam,
+          const target = allyTeam[utils.pickRandom(
+              allyTeam,
               (c) => {
                 if (c['Summoned'] || c['Character'] === characterName) {
                   return 0;
@@ -259,44 +283,110 @@ class Battle {
           this.changeAttack(target, tier);
         }
         break;
-      case 'Challenger Arrow':
+      }
+      case 'Challenger Arrow': {
         const target = enemyTeam[utils.pickRandom(enemyTeam)];
         this.dealDamage(target, character, 10 * tier);
         this.changeAttack(character, tier);
         break;
-      case 'Energetic Ally':
+      }
+      case 'Energetic Ally': {
+        const minHp = allyTeam.reduce(
+          (a, c) => {
+            return Math.min(a, c['HP']);
+          },
+          Infinity
+        );
+        const target = allyTeam[utils.pickRandom(
+            allyTeam,
+            (c) => {
+              if (c['HP'] === minHp) {
+                return 1;
+              }
+              return 0;
+            }
+        )];
+        this.changeHp(target, 5 * tier);
+        this.changeEnergy(target, 20);
         break;
-      case 'Explosion Powder':
+      }
+      case 'Explosion Powder': {
+        if (enemyTeam.length == 1) {
+          const target = enemyTeam[Object.keys(enemyTeam)[0]];
+          this.dealDamage(
+              target,
+              character,
+              utils.pickRandomWithinRange(10 * tier, 20 * tier)
+          );
+          break;
+        }
+        for (const i in enemyTeam) {
+          const target = enemyTeam[i];
+          this.dealDamage(
+            target,
+            character,
+            utils.pickRandomWithinRange(5 * tier, 10 * tier)
+          );
+        }
         break;
-      case 'Imp Whistle':
+      }
+      case 'Imp Whistle': {
+        const template = this.getTemplates()[item];
+        const summon = utils.getScaledTemplate(template, tier);
+        _preprocessCharacterItems(summon, this.season);
+        this.addCopyOfCharacterToTeam(summon, allyTeamIndex);
         break;
-      case 'Knight\'s Lance':
+      }
+      case 'Knight\'s Lance': {
+        const target = enemyTeam[utils.pickRandom(enemyTeam)];
+        if (character['HP'] === character['HP Max']) {
+          this.dealDamage(
+              target,
+              character,
+              utils.pickRandomWithinRange(10 * tier, 14 * tier)
+          );
+          break;
+        }
+        const amount = utils.pickRandomWithinRange(5 * tier, 7 * tier);
+        this.dealDamage(target, character, amount);
+        this.changeHp(character, amount);
         break;
-      default:
+      }
+      default: {
         throw Error('Energy item ' + item + ' unknown');
+      }
     }
   }
 
   useItemAbility(item, phase, character, other=null) {
     switch (phase) {
-      case 'BattleStart':
+      case 'BattleStart': {
         break;
-      case 'TurnStart':
+      }
+      case 'TurnStart': {
         break;
-      case 'Target':
+      }
+      case 'Target': {
         break;
-      case 'Block':
+      }
+      case 'Block': {
         break;
-      case 'PreDamage':
+      }
+      case 'PreDamage': {
         break;
-      case 'EnemyDamage':
+      }
+      case 'EnemyDamage': {
         break;
-      case 'PostDamage':
+      }
+      case 'PostDamage': {
         break;
-      case 'Death':
+      }
+      case 'Death': {
         break;
-      default:
+      }
+      default: {
         throw Error('Phase ' + phase + ' unknown');
+      }
     }
   }
 

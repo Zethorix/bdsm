@@ -1,5 +1,6 @@
 const MOBS_BY_SEASON = {};
 const ITEMS_BY_SEASON = {};
+const TEMPLATES_BY_SEASON = {};
 
 export function getDungeon(season, dungeon) {
   if (!(season in MOBS_BY_SEASON)) {
@@ -34,4 +35,11 @@ export function getItems(season) {
     };
   }
   return ITEMS_BY_SEASON[season];
+}
+
+export function getTemplates(season) {
+  if (!(season in TEMPLATES_BY_SEASON)) {
+    TEMPLATES_BY_SEASON[season] = require('../data/season_' + season + '/mobs/summon_templates.json')
+  }
+  return TEMPLATES_BY_SEASON[season];
 }

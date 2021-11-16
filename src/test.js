@@ -56,6 +56,19 @@ export function buttontest() {
       "Energy": 1000,
       "Summoned": false,
       "Items": {
+        'Energetic Ally': 1
+      }
+    },
+    {
+      "Character": "Zethorix",
+      "HP": 100,
+      "HP Max": 100,
+      "Speed": 10,
+      "Attack Low": 0,
+      "Attack High": 0,
+      "Energy": 1000,
+      "Summoned": false,
+      "Items": {
         'Explosion Powder': 1
       }
     },
