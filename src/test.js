@@ -1,27 +1,11 @@
+import * as data from './data.js';
 import * as simulator from './simulator.js';
 import * as utils from './utils.js';
-
-const MOBS_BY_SEASON = {};
-
-function _loadDungeon(season, dungeon) {
-  if (!(season in MOBS_BY_SEASON)) {
-    MOBS_BY_SEASON[season] = {};
-  }
-  const dungeonsForSeason = MOBS_BY_SEASON[season];
-
-  if (!(dungeon in dungeonsForSeason)) {
-    dungeonsForSeason[dungeon] = require(
-        '../data/season_' + season + '/mobs/dungeon_' + dungeon + '.json'
-    );
-  }
-
-  return dungeonsForSeason[dungeon];
-}
 
 export function buttontest() {
   const season = 2;
   const dungeon = 0;
-  const waves = _loadDungeon(season, dungeon);
+  const waves = data.getDungeon(season, dungeon);
   console.log(waves);
   const players = [
     {
@@ -33,7 +17,11 @@ export function buttontest() {
       "Attack High": 10,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": {
+        'Draining Dagger': 5,
+        'Survival Kit': 3,
+        'Energetic Ally': 10
+      }
     },
     {
       "Character": "Oof",
@@ -47,5 +35,5 @@ export function buttontest() {
       "Items": {}
     }
   ];
-  console.log('winning team: ' + simulator.runDungeon(players, waves, true));
+  console.log('winning team: ' + simulator.runDungeon(players, waves, season, true));
 }
