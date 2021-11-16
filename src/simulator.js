@@ -269,6 +269,9 @@ class Battle {
         break;
       }
       case 'Boosting Bugle': {
+        if (allyTeam.length === 1) {
+          break;
+        }
         for (var i = 0; i < 2; i++) {
           const target = allyTeam[utils.pickRandom(
               allyTeam,
