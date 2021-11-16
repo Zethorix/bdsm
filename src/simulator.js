@@ -314,7 +314,7 @@ class Battle {
         break;
       }
       case 'Explosion Powder': {
-        if (enemyTeam.length == 1) {
+        if (enemyTeam.length === 1) {
           const target = enemyTeam[Object.keys(enemyTeam)[0]];
           this.dealDamage(
               target,
