@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/boxbox-dungeon-simulator/static/js/main.b280327c.chunk.js",
-    "main.js.map": "/boxbox-dungeon-simulator/static/js/main.b280327c.chunk.js.map",
+    "main.js": "/boxbox-dungeon-simulator/static/js/main.d168c7db.chunk.js",
+    "main.js.map": "/boxbox-dungeon-simulator/static/js/main.d168c7db.chunk.js.map",
     "runtime-main.js": "/boxbox-dungeon-simulator/static/js/runtime-main.37f3ce15.js",
     "runtime-main.js.map": "/boxbox-dungeon-simulator/static/js/runtime-main.37f3ce15.js.map",
     "static/js/2.24f292cc.chunk.js": "/boxbox-dungeon-simulator/static/js/2.24f292cc.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.37f3ce15.js",
     "static/js/2.24f292cc.chunk.js",
-    "static/js/main.b280327c.chunk.js"
+    "static/js/main.d168c7db.chunk.js"
   ]
 }
