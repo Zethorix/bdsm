@@ -1,6 +1,5 @@
 import * as data from './data.js';
 import * as simulator from './simulator.js';
-import * as utils from './utils.js';
 
 export function buttontest() {
   const season = 2;

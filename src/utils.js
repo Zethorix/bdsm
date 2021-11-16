@@ -5,7 +5,7 @@ export function logIf(bool, toLog) {
 }
 
 export function formatDescriptionWithTier(description, tier) {
-  const re = /\{([\dt\+\-\*]+)\}/;
+  const re = /\{([\dt+\-*]+)\}/;
   var current = description;
   var m = current.match(re);
   while (m != null) {

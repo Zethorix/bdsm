@@ -60,7 +60,7 @@ function _addEnergyTo(obj, amount) {
 function _findPositionWithinTeam(name, team) {
   for (const position in team) {
     const c = team[position];
-    if (c['Character'] == name) {
+    if (c['Character'] === name) {
       return position;
     }
   }
