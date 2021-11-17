@@ -10,12 +10,12 @@
       "Energy": 0,
       "Summoned": false,
       "Items": {
-        "Fire Sword": 
+        "Fire Sword": 8
       },
       "_stats": {
-        "_maxFireSwordTriggers": 4,
-        "_triggeredFireSword": 17,
-        "_attacks": 9
+        "_maxFireSwordTriggers": 5,
+        "_triggeredFireSword": 65,
+        "_attacks": 29
       }
     }
   ],
@@ -30,11 +30,11 @@
       "Energy": 0,
       "Summoned": false,
       "Items": {
-        "Whirlwind Axe": 9
+        "Whirlwind Axe": 10
       },
       "_stats": {
-        "_triggeredWhirlwindAxe": 1,
-        "_attacks": 1
+        "_triggeredWhirlwindAxe": 2,
+        "_attacks": 2
       }
     },
     {
@@ -47,10 +47,11 @@
       "Energy": 0,
       "Summoned": false,
       "Items": {
+        "Survival Kit": 4
       },
       "_stats": {
         "_triggeredBlock": 1,
-        "_availableBlocks": 3
+        "_availableBlocks": 5
       }
     },
     {
@@ -67,8 +68,8 @@
         "Big Club": 8
       },
       "_stats": {
-        "_triggeredBigClub": 4,
-        "_attacks": 4
+        "_triggeredBigClub": 6,
+        "_attacks": 7
       }
     },
     {
@@ -82,7 +83,8 @@
       "Summoned": false,
       "Items": {
         "Boosting Bugle": 5,
-        "Thorns": 5
+        "Thorns": 5,
+        "Cleansing Flames": 7
       }
     }
   ]
