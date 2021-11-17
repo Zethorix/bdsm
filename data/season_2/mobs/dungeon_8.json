@@ -1,0 +1,121 @@
+[
+  [
+    {
+      "Character": "Boomerang Monkey",
+      "HP": 225,
+      "HP Max": 225,
+      "Speed": 17,
+      "Attack Low": 24,
+      "Attack High": 32,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Machete": 8
+      }
+    },
+    {
+      "Character": "Ice Monkey",
+      "HP": 200,
+      "HP Max": 200,
+      "Speed": 20,
+      "Attack Low": 10,
+      "Attack High": 25,
+      "Energy": 999,
+      "Summoned": false,
+      "Items": {
+        "Avalanche": 1
+      }
+    },
+    {
+      "Character": "Wizard Monkey",
+      "HP": 250,
+      "HP Max": 250,
+      "Speed": 10,
+      "Attack Low": 0,
+      "Attack High": 0,
+      "Energy": 999,
+      "Summoned": false,
+      "Items": {
+        "Explosion Powder": 2
+      }
+    }
+  ],
+  [
+    {
+      "Character": "Dart Monkey 1",
+      "HP": 150,
+      "HP Max": 150,
+      "Speed": 18,
+      "Attack Low": 10,
+      "Attack High": 40,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    },
+    {
+      "Character": "Dart Monkey 2",
+      "HP": 150,
+      "HP Max": 150,
+      "Speed": 18,
+      "Attack Low": 10,
+      "Attack High": 40,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    },
+    {
+      "Character": "Tack Shooter 1",
+      "HP": 200,
+      "HP Max": 200,
+      "Speed": 18,
+      "Attack Low": 0,
+      "Attack High": 0,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Thorns": 7
+      }
+    },
+    {
+      "Character": "Tack Shooter 2",
+      "HP": 200,
+      "HP Max": 200,
+      "Speed": 18,
+      "Attack Low": 0,
+      "Attack High": 0,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Thorns": 7
+      }
+    }
+  ],
+  [
+    {
+      "Character": "Super Monkey",
+      "HP": 375,
+      "HP Max": 375,
+      "Speed": 55,
+      "Attack Low": 20,
+      "Attack High": 35,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Seeking Missiles": 5
+      }
+    },
+    {
+      "Character": "Monkey Village",
+      "HP": 200,
+      "HP Max": 200,
+      "Speed": 20,
+      "Attack Low": 0,
+      "Attack High": 0,
+      "Energy": 999,
+      "Summoned": false,
+      "Items": {
+        "Boosting Bugle": 3
+      }
+    }
+  ]
+]
