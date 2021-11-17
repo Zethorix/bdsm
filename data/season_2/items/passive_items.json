@@ -44,16 +44,12 @@
   "Freezeman": {
     "Obtainable": true,
     "Description": "Gain {t} speed.",
-    "Triggers": [
-      "BattleStart"
-    ]
+    "Triggers": []
   },
   "Halberd": {
     "Obtainable": true,
     "Description": "You have +{2*t} attack.",
-    "Triggers": [
-      "BattleStart"
-    ]
+    "Triggers": []
   },
   "Healing Pendant": {
     "Obtainable": true,
@@ -132,7 +128,6 @@
     "Obtainable": true,
     "Description": "Increase Max HP by {20*t}. {7+3*t}% Chance to take a hit when your teammate is attacked if you're feeling brave.",
     "Triggers": [
-      "BattleStart",
       "Block"
     ]
   },
