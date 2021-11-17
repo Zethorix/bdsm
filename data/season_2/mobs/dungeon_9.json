@@ -68,10 +68,10 @@
         "Magic Parasol": 6
       },
       "_stats": {
-        "_triggeredBlock": 20,
-        "_availableBlocks": 58,
-        "_triggeredMagicParasol": 14,
-        "_defended": 37
+        "_triggeredBlock": 33,
+        "_availableBlocks": 81,
+        "_triggeredMagicParasol": 18,
+        "_defended": 53
       }
     },
     {
@@ -85,14 +85,14 @@
       "Summoned": false,
       "Items": {
         "Rough Skin": 5,
-        "Magic Parasol": 5,
-        "Survival Kit": 6
+        "Magic Parasol": 4,
+        "Survival Kit": 7
       },
       "_stats": {
-        "_triggeredBlock": 23,
-        "_availableBlocks": 56,
-        "_triggeredMagicParasol": 16,
-        "_defended": 52
+        "_triggeredBlock": 32,
+        "_availableBlocks": 77,
+        "_triggeredMagicParasol": 18,
+        "_defended": 69
       }
     },
     {
@@ -155,8 +155,8 @@
         "Big Club": 10
       },
       "_stats": {
-        "_triggeredBigClub": 6,
-        "_attacks": 6
+        "_triggeredBigClub": 7,
+        "_attacks": 7
       }
     },
     {
