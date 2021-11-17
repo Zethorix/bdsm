@@ -68,10 +68,10 @@
         "Magic Parasol": 6
       },
       "_stats": {
-        "_triggeredBlock": 33,
-        "_availableBlocks": 81,
-        "_triggeredMagicParasol": 18,
-        "_defended": 53
+        "_triggeredBlock": 39,
+        "_availableBlocks": 92,
+        "_triggeredMagicParasol": 20,
+        "_defended": 56
       }
     },
     {
@@ -86,13 +86,13 @@
       "Items": {
         "Rough Skin": 5,
         "Magic Parasol": 4,
-        "Survival Kit": 7
+        "Survival Kit": 8
       },
       "_stats": {
-        "_triggeredBlock": 32,
-        "_availableBlocks": 77,
-        "_triggeredMagicParasol": 18,
-        "_defended": 69
+        "_triggeredBlock": 38,
+        "_availableBlocks": 88,
+        "_triggeredMagicParasol": 21,
+        "_defended": 77
       }
     },
     {
