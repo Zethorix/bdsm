@@ -1,0 +1,174 @@
+[
+  [
+    {
+      "Character": "Trundle",
+      "HP": 250,
+      "HP Max": 250,
+      "Speed": 17,
+      "Attack Low": 20,
+      "Attack High": 75,
+      "Energy": 999,
+      "Summoned": false,
+      "Items": {
+        "Challenger Arrow": 2,
+        "Draining Dagger": 2
+      }
+    },
+    {
+      "Character": "Sejuani",
+      "HP": 250,
+      "HP Max": 250,
+      "Speed": 13,
+      "Attack Low": 50,
+      "Attack High": 100,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Avalanche": 4
+      }
+    },
+    {
+      "Character": "Teemo",
+      "HP": 100,
+      "HP Max": 100,
+      "Speed": 20,
+      "Attack Low": 10,
+      "Attack High": 20,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Poison Dagger": 5
+      }
+    },
+    {
+      "Character": "Ezreal",
+      "HP": 100,
+      "HP Max": 100,
+      "Speed": 20,
+      "Attack Low": 10,
+      "Attack High": 20,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    }
+  ],
+  [
+    {
+      "Character": "Tahm Kench",
+      "HP": 200,
+      "HP Max": 200,
+      "Speed": 6,
+      "Attack Low": 50,
+      "Attack High": 150,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Rough Skin": 5,
+        "Healing Pendant": 5,
+        "Magic Parasol": 6
+      },
+      "_stats": {
+        "_triggeredBlock": 20,
+        "_availableBlocks": 58,
+        "_triggeredMagicParasol": 14,
+        "_defended": 37
+      }
+    },
+    {
+      "Character": "Braum",
+      "HP": 300,
+      "HP Max": 300,
+      "Speed": 7,
+      "Attack Low": 50,
+      "Attack High": 100,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Rough Skin": 5,
+        "Magic Parasol": 5?,
+        "Survival Kit": 6
+      },
+      "_stats": {
+        "_triggeredBlock": 23,
+        "_availableBlocks": 56,
+        "_triggeredMagicParasol": 16,
+        "_defended": 52
+      }
+    },
+    {
+      "Character": "Brand",
+      "HP": 150,
+      "HP Max": 150,
+      "Speed": 11,
+      "Attack Low": 10,
+      "Attack High": 20,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Thorns": 7,
+        "Explosion Powder": 5,
+        "Machete": 4
+      }
+    },
+    {
+      "Character": "Zyra",
+      "HP": 150,
+      "HP Max": 150,
+      "Speed": 15,
+      "Attack Low": 5,
+      "Attack High": 25,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Thorns": 7,
+        "Machete": 4,
+        "Imp Whistle": 8
+      }
+    },
+    {
+      "Character": "Sona",
+      "HP": 150,
+      "HP Max": 150,
+      "Speed": 12,
+      "Attack Low": 20,
+      "Attack High": 30,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Energetic Ally": 5,
+        "Love Letter": 7
+      }
+    }
+  ],
+  [
+    {
+      "Character": "Riven",
+      "HP": 500,
+      "HP Max": 500,
+      "Speed": 20,
+      "Attack Low": 40,
+      "Attack High": 90,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Machete": 9,
+        "Big Club": 10
+      },
+      "_stats": {
+        "_triggeredBigClub": 6,
+        "_attacks": 6
+      }
+    },
+    {
+      "Character": "Yasuo",
+      "HP": 250,
+      "HP Max": 250,
+      "Speed": 20,
+      "Attack Low": 1,
+      "Attack High": 150,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {}
+    }
+  ]
+]
