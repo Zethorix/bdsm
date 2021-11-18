@@ -134,7 +134,13 @@
       "Summoned": false,
       "Items": {
         "Healing Pendant": 1,
-        "Magic Parasol": 0
+        "Magic Parasol": 1
+      },
+      "_stats": {
+        "_triggeredBlock": 2,
+        "_availableBlocks": 10,
+        "_triggeredMagicParasol": 1,
+        "_defended": 9
       }
     },
     {
