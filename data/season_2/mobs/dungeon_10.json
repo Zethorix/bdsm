@@ -10,7 +10,7 @@
       "Energy": 0,
       "Summoned": false,
       "Items": {
-        "Fire Sword": 8
+        "Fire Sword": 7
       },
       "_stats": {
         "_maxFireSwordTriggers": 5,
@@ -30,11 +30,11 @@
       "Energy": 0,
       "Summoned": false,
       "Items": {
-        "Whirlwind Axe": 10
+        "Whirlwind Axe": 9
       },
       "_stats": {
-        "_triggeredWhirlwindAxe": 2,
-        "_attacks": 2
+        "_triggeredWhirlwindAxe": 16,
+        "_attacks": 16
       }
     },
     {
@@ -47,11 +47,14 @@
       "Energy": 0,
       "Summoned": false,
       "Items": {
-        "Survival Kit": 4
+        "Healing Pendant": 3,
+        "Magic Parasol": 9
       },
       "_stats": {
-        "_triggeredBlock": 1,
-        "_availableBlocks": 5
+        "_triggeredBlock": 11,
+        "_availableBlocks": 27,
+        "_triggeredMagicParasol": 12,
+        "_defended": 23
       }
     },
     {
@@ -65,11 +68,11 @@
       "Summoned": false,
       "Items": {
         "Seeking Missiles": 5,
-        "Big Club": 8
+        "Big Club": 6
       },
       "_stats": {
-        "_triggeredBigClub": 6,
-        "_attacks": 7
+        "_triggeredBigClub": 15,
+        "_attacks": 21
       }
     },
     {
@@ -85,6 +88,23 @@
         "Boosting Bugle": 5,
         "Thorns": 5,
         "Cleansing Flames": 7
+      }
+    }
+  ],
+  [
+    {
+      "Character": "Shadow The Hedgehog",
+      "HP": 600,
+      "HP Max": 600,
+      "Speed": 80,
+      "Attack Low": 5,
+      "Attack High": 20,
+      "Energy": 0,
+      "Summoned": false,
+      "Items": {
+        "Thorns": 9,
+        "Explosion Powder": 9,
+        "Healing Pendant": 9
       }
     }
   ]
