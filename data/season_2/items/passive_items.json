@@ -31,7 +31,7 @@
     "Obtainable": true,
     "Description": "Your attacks decrease the target's attack by {t}. {5*t}% chance to drain 1 energy from the target.",
     "Triggers": [
-      "PostDamage"
+      "Target"
     ]
   },
   "Fire Sword": {
@@ -99,7 +99,7 @@
     "Obtainable": true,
     "Description": "Your attacks add {t} poison stack to the target. A poisoned enemy takes 1 damage after they attack for each poison stack they have.",
     "Triggers": [
-      "TurnStart"
+      "Target"
     ]
   },
   "Rock Companion": {
