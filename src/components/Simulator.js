@@ -4,7 +4,7 @@ import { useState } from 'react';
 function Simulator() {
   const [text, setText] = useState("Click the button to start a test run!");
 
-  const onRunTest = () => {
+  function onRunTest() {
     const output = outputTest();
     setText(output);
   }
