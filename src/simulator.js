@@ -444,10 +444,42 @@ class Battle {
             this.currentTarget['Poison'] += tier;
             break;
           }
+          default: {
+            throw Error('InternalError: Item ' + itemName + ' does not have phase ' + phase);
+          }
         }
         break;
       }
       case 'Block': {
+        switch (itemName) {
+          case 'Healing Pendant':
+          case 'Magic Parasol':
+          case 'Survival Kit': {
+            if (this.currentTarget['Character'] === characterName) {
+              break;
+            }
+            if (!(utils.withProbability(0.07 + 0.03 * tier))) {
+              break;
+            }
+            if (this.currentTarget['HP'] < character['HP']) {
+              utils.logIf(
+                  this.verbose,
+                  this.output,
+                  characterName + ' blocks for ' + this.currentTarget['Character']
+              );
+              this.currentTarget = character;
+              break;
+            }
+            utils.logIf(
+                this.verbose,
+                this.output,
+                characterName + ' is a coward'
+            );
+          }
+          default: {
+            throw Error('InternalError: Item ' + itemName + ' does not have phase ' + phase);
+          }
+        }
         break;
       }
       case 'PreDamage': {
@@ -498,6 +530,9 @@ class Battle {
 
     this.currentTarget = defendingTeam[utils.pickRandom(defendingTeam)];
     this.triggerPhase('Target', this.activeCharacter);
+    for (const defendingCharacter of defendingTeam) {
+      this.triggerPhase('Block', defendingCharacter);
+    }
     this.triggerPhase('PostTarget', this.activeCharacter);
 
     const mainAttackTargetName = this.currentTarget['Character'];
