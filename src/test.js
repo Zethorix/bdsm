@@ -1,8 +1,8 @@
 import * as data from './data.js';
 import * as simulator from './simulator.js';
 
-export function outputTest(item) {
-  return "Test run finished with item " + item.name + " " + item.tier + "!";
+export function outputTest(items) {
+  return "Test run finished with item " + JSON.stringify(items) + "!";
 }
 
 export function buttontest() {
