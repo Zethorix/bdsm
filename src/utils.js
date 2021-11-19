@@ -55,6 +55,10 @@ export function sum(iterable, key=null) {
   return total;
 }
 
+export function withProbability(p) {
+  return Math.random() < p;
+}
+
 export function pickRandom(iterable, weightKey=null) {
   const total = sum(iterable, weightKey);
   var r = Math.floor(Math.random() * total);
