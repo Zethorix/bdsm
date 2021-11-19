@@ -1,14 +1,17 @@
 import * as data from './data.js';
 import * as simulator from './simulator.js';
 
-export function outputTest(item) {
+export function outputTest(items) {
+  const toEquip = [];
+  for (const item of items) {
+    if (item['Name'] !== '') {
+      toEquip.push(item);
+    }
+  }
   const season = 2;
   const dungeon = 0;
   const waves = data.getDungeon(season, dungeon);
 
-  if (item === '') {
-    return 'Please select an item';
-  }
   const players = [
     {
       "Character": "Zethorix",
@@ -19,16 +22,11 @@ export function outputTest(item) {
       "Attack High": 10,
       "Energy": 0,
       "Summoned": false,
-      "Items": [
-        {
-          "Name": item,
-          "Tier": 9
-        }
-      ]
+      "Items": items
     }
   ]
 
-  const output = ['Test run with item: ' + item];
+  const output = ['Test run with items: ' + items];
   output.push('Winning team: ' + simulator.runDungeon(players, waves, season, output, true));
   return output.join('\n');
 }
