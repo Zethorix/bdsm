@@ -1,6 +1,9 @@
-export function logIf(bool, toLog) {
+export function logIf(bool, logs, toLog) {
   if (bool) {
     console.log(toLog);
+  }
+  if (logs != null && typeof toLog === 'string') {
+    logs.push(toLog);
   }
 }
 

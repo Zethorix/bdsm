@@ -45,25 +45,25 @@ function _findPositionWithinTeam(name, team) {
   return -1;
 }
 
-export function runDungeon(team, waves, season, verbose=false) {
-  utils.logIf(verbose, '\n\n\nStarting dungeon');
+export function runDungeon(team, waves, season, output=null, verbose=false) {
+  utils.logIf(verbose, output, '\n\n\nStarting dungeon');
   var currTeam = team;
   for (const character of team) {
     _preprocessCharacterItems(character, season);
   }
   for (const index in waves) {
-    utils.logIf(verbose, 'loading wave ' + index);
+    utils.logIf(verbose, output, 'loading wave ' + index);
     const wave = waves[index];
     for (const character of wave) {
       _preprocessCharacterItems(character, season);
     }
-    utils.logIf(verbose, wave);
-    const battle = new Battle(currTeam, wave, season, verbose);
-    utils.logIf(verbose, utils.deepCopyJson(battle));
+    utils.logIf(verbose, output, wave);
+    const battle = new Battle(currTeam, wave, season, output, verbose);
+    utils.logIf(verbose, output, utils.deepCopyJson(battle));
     while (true) {
       battle.tick();
 
-      utils.logIf(verbose, utils.deepCopyJson(battle));
+      utils.logIf(verbose, output, utils.deepCopyJson(battle));
 
       if (battle.teamHasLost(0)) {
         return 1;
@@ -79,9 +79,10 @@ export function runDungeon(team, waves, season, verbose=false) {
 }
 
 class Battle {
-  constructor(team1, team2, season, verbose=false) {
+  constructor(team1, team2, season, output=null, verbose=false) {
     this.verbose = verbose;
     this.season = season;
+    this.output = output;
     this.initTeams(team1, team2);
   }
 
@@ -145,7 +146,7 @@ class Battle {
 
   kill(id) {
     const [character, name] = this.getCharacterAndName(id);
-    utils.logIf(this.verbose, 'killing: ' + name);
+    utils.logIf(this.verbose, this.output, 'killing: ' + name);
     const team = this.teams[this.getTeamOf[name]];
     const pos = _findPositionWithinTeam(name, team);
     if (pos < 0) {
@@ -162,6 +163,7 @@ class Battle {
     character['HP'] += amount;
     utils.logIf(
         this.verbose,
+        this.output,
         name + ' hp changed by ' + amount + ': ' + originalHp + ' -> ' + character['HP']
     );
   }
@@ -176,6 +178,7 @@ class Battle {
     character['Speed'] = Math.max(character['Speed'] + amount, 1);
     utils.logIf(
         this.verbose,
+        this.output,
         name + ' speed changed by ' + amount + ': ' + originalSpeed + ' -> ' + character['Speed']
     );
   }
@@ -189,6 +192,7 @@ class Battle {
     character['Attack High'] += amountToGain;
     utils.logIf(
         this.verbose,
+        this.output,
         name +
         ' attack changed by ' +
         amount +
@@ -205,6 +209,7 @@ class Battle {
     character['Energy'] = Math.max(character['Energy'] + amount, 0);
     utils.logIf(
         this.verbose,
+        this.output,
         name + ' energy changed by ' + amount + ': ' + originalEnergy + ' -> ' + character['Energy']
     );
   }
@@ -222,7 +227,7 @@ class Battle {
   }
 
   useItemAbility(item, phase, other=null) {
-    utils.logIf(this.verbose, 'Checking item: ' + item['Name']);
+    utils.logIf(this.verbose, this.output, 'Checking item: ' + item['Name']);
     const [character, characterName] = this.getCharacterAndName(this.activeCharacter);
     const allyTeamIndex = this.getTeamOf[characterName];
     const allyTeam = this.teams[allyTeamIndex];
@@ -393,7 +398,7 @@ class Battle {
               throw Error('InternalError: Seeking Missiles could not find a target from ' + enemyTeam);
             }
             this.currentTarget = target;
-            utils.logIf(this.verbose, 'Seeking Missiles selected target: ' + target['Character']);
+            utils.logIf(this.verbose, this.output, 'Seeking Missiles selected target: ' + target['Character']);
             break;
           }
           default: {
@@ -467,7 +472,7 @@ class Battle {
 
   tick() {
     const activeName = utils.pickRandom(this.allCharacters, 'Speed');
-    utils.logIf(this.verbose, '\n' + activeName + '\'s turn:');
+    utils.logIf(this.verbose, this.output, '\n' + activeName + '\'s turn:');
     this.activeCharacter = this.allCharacters[activeName];
     const activeTeamIndex = this.getTeamOf[activeName];
     const defendingTeam = this.teams[1 - activeTeamIndex];
@@ -488,13 +493,13 @@ class Battle {
     this.triggerPhase('PostTarget');
 
     const mainAttackTargetName = this.currentTarget['Character'];
-    utils.logIf(this.verbose, 'main target: ' + mainAttackTargetName);
+    utils.logIf(this.verbose, this.output, 'main target: ' + mainAttackTargetName);
 
     var damageAmount = utils.pickRandomWithinRange(
         this.activeCharacter['Attack Low'],
         this.activeCharacter['Attack High']
     );
-    utils.logIf(this.verbose, 'main attack damage: ' + damageAmount);
+    utils.logIf(this.verbose, this.output, 'main attack damage: ' + damageAmount);
 
     this.dealDamage(mainAttackTargetName, this.activeCharacter, damageAmount);
     this.checkAllHp();
