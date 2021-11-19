@@ -9,9 +9,12 @@
       "Attack High": 32,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Machete": 8
-      }
+      "Items": [
+        {
+          "Name": "Machete",
+          "Tier": 8
+        }
+      ]
     },
     {
       "Character": "Ice Monkey",
@@ -22,9 +25,12 @@
       "Attack High": 25,
       "Energy": 999,
       "Summoned": false,
-      "Items": {
-        "Avalanche": 1
-      }
+      "Items": [
+        {
+          "Name": "Avalanche",
+          "Tier": 1
+        }
+      ]
     },
     {
       "Character": "Wizard Monkey",
@@ -35,9 +41,12 @@
       "Attack High": 0,
       "Energy": 999,
       "Summoned": false,
-      "Items": {
-        "Explosion Powder": 2
-      }
+      "Items": [
+        {
+          "Name": "Explosion Powder",
+          "Tier": 2
+        }
+      ]
     }
   ],
   [
@@ -50,7 +59,7 @@
       "Attack High": 40,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": []
     },
     {
       "Character": "Dart Monkey 2",
@@ -61,7 +70,7 @@
       "Attack High": 40,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": []
     },
     {
       "Character": "Tack Shooter 1",
@@ -72,9 +81,12 @@
       "Attack High": 0,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Thorns": 7
-      }
+      "Items": [
+        {
+          "Name": "Thorns",
+          "Tier": 7
+        }
+      ]
     },
     {
       "Character": "Tack Shooter 2",
@@ -85,9 +97,12 @@
       "Attack High": 0,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Thorns": 7
-      }
+      "Items": [
+        {
+          "Name": "Thorns",
+          "Tier": 7
+        }
+      ]
     }
   ],
   [
@@ -100,9 +115,12 @@
       "Attack High": 35,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Seeking Missiles": 5
-      }
+      "Items": [
+        {
+          "Name": "Seeking Missiles",
+          "Tier": 5
+        }
+      ]
     },
     {
       "Character": "Monkey Village",
@@ -113,9 +131,12 @@
       "Attack High": 0,
       "Energy": 999,
       "Summoned": false,
-      "Items": {
-        "Boosting Bugle": 3
-      }
+      "Items": [
+        {
+          "Name": "Boosting Bugle",
+          "Tier": 3
+        }
+      ]
     }
   ]
 ]

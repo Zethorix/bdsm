@@ -8,7 +8,7 @@
       "Attack Low": 6,
       "Attack High": 8,
       "Energy": 0,
-      "Items": {}
+      "Items": []
     },
     {
       "Character": "Ribbon Pig",
@@ -18,7 +18,7 @@
       "Attack Low": 6,
       "Attack High": 8,
       "Energy": 0,
-      "Items": {}
+      "Items": []
     },
     {
       "Character": "Boar",
@@ -28,7 +28,7 @@
       "Attack Low": 6,
       "Attack High": 8,
       "Energy": 0,
-      "Items": {}
+      "Items": []
     },
     {
       "Character": "Fire Boar",
@@ -38,7 +38,7 @@
       "Attack Low": 8,
       "Attack High": 12,
       "Energy": 0,
-      "Items": {}
+      "Items": []
     }
   ],
   [
@@ -50,7 +50,7 @@
       "Attack Low": 15,
       "Attack High": 15,
       "Energy": 0,
-      "Items": {}
+      "Items": []
     },
     {
       "Character": "Orange Mushroom",
@@ -60,7 +60,7 @@
       "Attack Low": 8,
       "Attack High": 16,
       "Energy": 0,
-      "Items": {}
+      "Items": []
     },
     {
       "Character": "Green Mushroom",
@@ -70,9 +70,12 @@
       "Attack Low": 10,
       "Attack High": 15,
       "Energy": 0,
-      "Items": {
-        "Poison Dagger": 1
-      }
+      "Items": [
+        {
+          "Name": "Poison Dagger",
+          "Tier": 1
+        }
+      ]
     }
   ],
   [
@@ -84,9 +87,12 @@
       "Attack Low": 1,
       "Attack High": 2,
       "Energy": 0,
-      "Items": {
-        "Rough Skin": 1
-      }
+      "Items": [
+        {
+          "Name": "Rough Skin",
+          "Tier": 1
+        }
+      ]
     },
     {
       "Character": "A Very Large Snail",
@@ -96,9 +102,12 @@
       "Attack Low": 20,
       "Attack High": 40,
       "Energy": 0,
-      "Items": {
-        "Rough Skin": 3
-      }
+      "Items": [
+        {
+          "Name": "Rough Skin",
+          "Tier": 3
+        }
+      ]
     },
     {
       "Character": "Blue Snail",
@@ -108,9 +117,12 @@
       "Attack Low": 1,
       "Attack High": 2,
       "Energy": 0,
-      "Items": {
-        "Rough Skin": 1
-      }
+      "Items": [
+        {
+          "Name": "Rough Skin",
+          "Tier": 1
+        }
+      ]
     }
   ]
 ]

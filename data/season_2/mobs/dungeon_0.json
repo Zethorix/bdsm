@@ -9,7 +9,7 @@
       "Attack High": 5,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": []
     },
     {
       "Character": "Stickbaby 2",
@@ -20,7 +20,7 @@
       "Attack High": 5,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": []
     },
     {
       "Character": "Stickbaby 3",
@@ -31,7 +31,7 @@
       "Attack High": 5,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": []
     },
     {
       "Character": "Stickbaby 4",
@@ -42,7 +42,7 @@
       "Attack High": 5,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": []
     }
   ],
   [
@@ -55,7 +55,7 @@
       "Attack High": 10,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": []
     },
     {
       "Character": "Stickwoman",
@@ -66,7 +66,7 @@
       "Attack High": 12,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": []
     }
   ],
   [
@@ -79,7 +79,7 @@
       "Attack High": 12,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": []
     }
   ]
 ]

@@ -16,91 +16,36 @@ export function buttontest() {
       "HP": 100,
       "HP Max": 100,
       "Speed": 10,
-      "Attack Low": 0,
-      "Attack High": 0,
-      "Energy": 1000,
+      "Attack Low": 1,
+      "Attack High": 10,
+      "Energy": 0,
       "Summoned": false,
-      "Items": {
-        'Avalanche': 1
-      }
+      "Items": [
+        {
+          "Name": 'Avalanche',
+          "Tier": 1
+        },
+        {
+          "Name": 'Rock Companion',
+          "Tier": 9
+        }
+      ]
     },
     {
-      "Character": "Zethorix",
+      "Character": "Oof",
       "HP": 100,
       "HP Max": 100,
       "Speed": 10,
-      "Attack Low": 0,
-      "Attack High": 0,
-      "Energy": 1000,
+      "Attack Low": 1,
+      "Attack High": 10,
+      "Energy": 0,
       "Summoned": false,
-      "Items": {
-        'Boosting Bugle': 1
-      }
-    },
-    {
-      "Character": "Zethorix",
-      "HP": 100,
-      "HP Max": 100,
-      "Speed": 10,
-      "Attack Low": 0,
-      "Attack High": 0,
-      "Energy": 1000,
-      "Summoned": false,
-      "Items": {
-        'Challenger Arrow': 1
-      }
-    },
-    {
-      "Character": "Zethorix",
-      "HP": 100,
-      "HP Max": 100,
-      "Speed": 10,
-      "Attack Low": 0,
-      "Attack High": 0,
-      "Energy": 1000,
-      "Summoned": false,
-      "Items": {
-        'Energetic Ally': 1
-      }
-    },
-    {
-      "Character": "Zethorix",
-      "HP": 100,
-      "HP Max": 100,
-      "Speed": 10,
-      "Attack Low": 0,
-      "Attack High": 0,
-      "Energy": 1000,
-      "Summoned": false,
-      "Items": {
-        'Explosion Powder': 1
-      }
-    },
-    {
-      "Character": "Zethorix",
-      "HP": 100,
-      "HP Max": 100,
-      "Speed": 10,
-      "Attack Low": 0,
-      "Attack High": 0,
-      "Energy": 1000,
-      "Summoned": false,
-      "Items": {
-        'Imp Whistle': 1
-      }
-    },
-    {
-      "Character": "Zethorix",
-      "HP": 100,
-      "HP Max": 100,
-      "Speed": 10,
-      "Attack Low": 0,
-      "Attack High": 0,
-      "Energy": 1000,
-      "Summoned": false,
-      "Items": {
-        'Knight\'s Lance': 1
-      }
+      "Items": [
+        {
+          "Name": 'Avalanche',
+          "Tier": 1
+        }
+      ]
     }
   ];
   console.log('winning team: ' + simulator.runDungeon(players, waves, season, true));

@@ -9,9 +9,12 @@
       "Attack High": 0,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Fire Sword": 7
-      },
+      "Items": [
+        {
+          "Name": "Fire Sword",
+          "Tier": 7
+        }
+      ],
       "_stats": {
         "_maxFireSwordTriggers": 5,
         "_triggeredFireSword": 65,
@@ -29,9 +32,12 @@
       "Attack High": 30,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Whirlwind Axe": 9
-      },
+      "Items": [
+        {
+          "Name": "Whirlwind Axe",
+          "Tier": 9
+        }
+      ],
       "_stats": {
         "_triggeredWhirlwindAxe": 16,
         "_attacks": 16
@@ -46,10 +52,16 @@
       "Attack High": 80,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Healing Pendant": 3,
-        "Magic Parasol": 9
-      },
+      "Items": [
+        {
+          "Name": "Healing Pendant",
+          "Tier": 3
+        },
+        {
+          "Name": "Magic Parasol",
+          "Tier": 9
+        }
+      ],
       "_stats": {
         "_triggeredBlock": 11,
         "_availableBlocks": 27,
@@ -66,10 +78,16 @@
       "Attack High": 60,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Seeking Missiles": 5,
-        "Big Club": 6
-      },
+      "Items": [
+        {
+          "Name": "Seeking Missiles",
+          "Tier": 5
+        },
+        {
+          "Name": "Big Club",
+          "Tier": 6
+        }
+      ],
       "_stats": {
         "_triggeredBigClub": 15,
         "_attacks": 21
@@ -84,11 +102,20 @@
       "Attack High": 30,
       "Energy": 90,
       "Summoned": false,
-      "Items": {
-        "Boosting Bugle": 5,
-        "Thorns": 5,
-        "Cleansing Flames": 7
-      }
+      "Items": [
+        {
+          "Name": "Boosting Bugle",
+          "Tier": 5
+        },
+        {
+          "Name": "Thorns",
+          "Tier": 5
+        },
+        {
+          "Name": "Cleansing Flames",
+          "Tier": 7
+        }
+      ]
     }
   ],
   [
@@ -101,11 +128,20 @@
       "Attack High": 20,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Thorns": 9,
-        "Explosion Powder": 9,
-        "Healing Pendant": 9
-      }
+      "Items": [
+        {
+          "Name": "Thorns",
+          "Tier": 9
+        },
+        {
+          "Name": "Explosion Powder",
+          "Tier": 9
+        },
+        {
+          "Name": "Healing Pendant",
+          "Tier": 9
+        }
+      ]
     }
   ]
 ]

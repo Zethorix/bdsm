@@ -8,9 +8,12 @@
     "Attack High": 1,
     "Energy": 0,
     "Summoned": true,
-    "Items": {
-      "Chicken Dinner": {"Base": 0, "Scaling": 1}
-    }
+    "Items": [
+      {
+        "Name": "Chicken Dinner",
+        "Tier": {"Base": 0, "Scaling": 1}
+      }
+    ]
   },
   "Imp Whistle": {
     "Character": "Small Imp Companion",
@@ -21,7 +24,7 @@
     "Attack High": {"Base": 0, "Scaling": 4},
     "Energy": 0,
     "Summoned": true,
-    "Items": {}
+    "Items": []
   },
   "Pet Imp": {
     "Character": "Big Imp Companion",
@@ -32,7 +35,7 @@
     "Attack High": {"Base": 0, "Scaling": 4},
     "Energy": 0,
     "Summoned": true,
-    "Items": {}
+    "Items": []
   },
   "Rock Companion": {
     "Character": "Rock Companion",
@@ -43,8 +46,11 @@
     "Attack High": {"Base": 0, "Scaling": 5},
     "Energy": 0,
     "Summoned": true,
-    "Items": {
-      "Healing Pendant": {"Base": 0, "Scaling": 1}
-    }
+    "Items": [
+      {
+        "Name": "Healing Pendant",
+        "Tier": {"Base": 0, "Scaling": 1}
+      }
+    ]
   }
 }

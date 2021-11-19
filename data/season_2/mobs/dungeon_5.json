@@ -9,10 +9,16 @@
       "Attack High": 4,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Seeking Missiles": 1,
-        "Fire Sword": 3
-      },
+      "Items": [
+        {
+          "Name": "Seeking Missiles",
+          "Tier": 1
+        },
+        {
+          "Name": "Fire Sword",
+          "Tier": 3
+        }
+      ],
       "_stats": {
         "_maxFireSwordTriggers": 3,
         "_triggeredFireSword": 52,
@@ -28,7 +34,7 @@
       "Attack High": 15,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": []
     },
     {
       "Character": "Ivan, The Drunken Brawler",
@@ -39,9 +45,12 @@
       "Attack High": 20,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Whirlwind Axe": 3
-      },
+      "Items": [
+        {
+          "Name": "Whirlwind Axe",
+          "Tier": 3
+        }
+      ],
       "_stats": {
         "_triggeredWhirlwindAxe": 7,
         "_attacks": 19
@@ -56,7 +65,7 @@
       "Attack High": 25,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": []
     }
   ],
   [
@@ -69,7 +78,7 @@
       "Attack High": 25,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": []
     },
     {
       "Character": "The Great Forest Seer",
@@ -80,9 +89,12 @@
       "Attack High": 22,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Avalanche": 3
-      }
+      "Items": [
+        {
+          "Name": "Avalanche",
+          "Tier": 3
+        }
+      ]
     },
     {
       "Character": "The Masked Samurai",
@@ -93,9 +105,12 @@
       "Attack High": 16,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Machete": 4
-      }
+      "Items": [
+        {
+          "Name": "Machete",
+          "Tier": 4
+        }
+      ]
     }
   ],
   [
@@ -108,7 +123,7 @@
       "Attack High": 50,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": []
     },
     {
       "Character": "Betty Clicker",
@@ -119,9 +134,12 @@
       "Attack High": 5,
       "Energy": 200,
       "Summoned": false,
-      "Items": {
-        "Boosting Bugle": 3
-      }
+      "Items": [
+        {
+          "Name": "Boosting Bugle",
+          "Tier": 3
+        }
+      ]
     },
     {
       "Character": "King Midas",
@@ -132,10 +150,16 @@
       "Attack High": 15,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Healing Pendant": 1,
-        "Magic Parasol": 1
-      },
+      "Items": [
+        {
+          "Name": "Healing Pendant",
+          "Tier": 1
+        },
+        {
+          "Name": "Magic Parasol",
+          "Tier": 1
+        }
+      ],
       "_stats": {
         "_triggeredBlock": 2,
         "_availableBlocks": 10,
@@ -152,9 +176,12 @@
       "Attack High": 15,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Seeking Missiles": 3
-      }
+      "Items": [
+        {
+          "Name": "Seeking Missiles",
+          "Tier": 3
+        }
+      ]
     },
     {
       "Character": "Amenhotep",
@@ -165,7 +192,7 @@
       "Attack High": 10,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": []
     }
   ]
 ]

@@ -10,7 +10,7 @@
     "Obtainable": true,
     "Description": "The first time you attack each wave, summon a chumby chicken. {t}HP, Heals all allies for {2*t}HP when it dies.",
     "Triggers": [
-      "PostDamage"
+      "TurnStart"
     ]
   },
   "Chicken Dinner": {
@@ -31,7 +31,7 @@
     "Obtainable": true,
     "Description": "Your attacks decrease the target's attack by {t}. {5*t}% chance to drain 1 energy from the target.",
     "Triggers": [
-      "PostDamage"
+      "Target"
     ]
   },
   "Fire Sword": {
@@ -56,7 +56,7 @@
     "Description": "Your attacks have a 50% chance to heal yourself for {5*t} HP. {7+3*t}% Chance to take the hit when your teammate is attacked, if you're feeling brave.",
     "Triggers": [
       "Block",
-      "PostDamage"
+      "TurnStart"
     ]
   },
   "Love Letter": {
@@ -70,7 +70,7 @@
     "Obtainable": true,
     "Description": "Your attacks deal {3*t}-{4*t} damage to an additional enemy.",
     "Triggers": [
-      "PostDamage"
+      "Target"
     ]
   },
   "Magic Parasol": {
@@ -99,7 +99,7 @@
     "Obtainable": true,
     "Description": "Your attacks add {t} poison stack to the target. A poisoned enemy takes 1 damage after they attack for each poison stack they have.",
     "Triggers": [
-      "PostDamage"
+      "Target"
     ]
   },
   "Rock Companion": {
@@ -142,7 +142,7 @@
     "Obtainable": true,
     "Description": "When you attack, you have a {11*t}% chance of making your attack deal splash damage to all other enemies.",
     "Triggers": [
-      "PostDamage"
+      "PreDamage"
     ]
   }
 }
