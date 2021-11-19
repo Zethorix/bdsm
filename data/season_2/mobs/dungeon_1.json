@@ -9,7 +9,7 @@
       "Attack High": 2,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": []
     },
     {
       "Character": "Blobther",
@@ -20,7 +20,7 @@
       "Attack High": 4,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": []
     },
     {
       "Character": "Blob's Mom",
@@ -31,7 +31,7 @@
       "Attack High": 3,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": []
     },
     {
       "Character": "Blob's Dad",
@@ -42,7 +42,7 @@
       "Attack High": 4,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": []
     },
     {
       "Character": "Blob's Grandpa",
@@ -53,7 +53,7 @@
       "Attack High": 16,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": []
     }
   ],
   [
@@ -66,7 +66,7 @@
       "Attack High": 10,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": []
     },
     {
       "Character": "Bandit's Hot GF",
@@ -77,7 +77,7 @@
       "Attack High": 10,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": []
     },
     {
       "Character": "Bandad",
@@ -88,7 +88,7 @@
       "Attack High": 12,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": []
     },
     {
       "Character": "Bandit's Twin",
@@ -99,7 +99,7 @@
       "Attack High": 10,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": []
     }
   ],
   [
@@ -112,9 +112,12 @@
       "Attack High": 15,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Fire Sword": 1
-      },
+      "Items": [
+        {
+          "Name": "Fire Sword",
+          "Tier": 1
+        }
+      ],
       "_stats": {
         "_triggeredFireSword": 8,
         "_attacks": 30
@@ -129,9 +132,12 @@
       "Attack High": 12,
       "Energy": 56,
       "Summoned": false,
-      "Items": {
-        "Love Letter": 1
-      }
+      "Items": [
+        {
+          "Name": "Love Letter",
+          "Tier": 1
+        }
+      ]
     },
     {
       "Character": "Kelvinzorz",
@@ -142,9 +148,12 @@
       "Attack High": 12,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Poison Dagger": 1
-      }
+      "Items": [
+        {
+          "Name": "Poison Dagger",
+          "Tier": 1
+        }
+      ]
     }
   ]
 ]

@@ -9,9 +9,12 @@
       "Attack High": 66,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Seeking Missiles": 1
-      }
+      "Items": [
+        {
+          "Name": "Seeking Missiles",
+          "Tier": 1
+        }
+      ]
     },
     {
       "Character": "Bowsette",
@@ -22,9 +25,12 @@
       "Attack High": 66,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Rough Skin": 3
-      }
+      "Items": [
+        {
+          "Name": "Rough Skin",
+          "Tier": 3
+        }
+      ]
     }
   ],
   [
@@ -37,9 +43,12 @@
       "Attack High": 25,
       "Energy": 55,
       "Summoned": false,
-      "Items": {
-        "Challenger Arrow": 5
-      }
+      "Items": [
+        {
+          "Name": "Challenger Arrow",
+          "Tier": 5
+        }
+      ]
     },
     {
       "Character": "Rem",
@@ -50,9 +59,12 @@
       "Attack High": 20,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Challenger Arrow": 5
-      }
+      "Items": [
+        {
+          "Name": "Challenger Arrow",
+          "Tier": 5
+        }
+      ]
     },
     {
       "Character": "Ram",
@@ -63,7 +75,7 @@
       "Attack High": 50,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": []
     }
   ],
   [
@@ -76,9 +88,12 @@
       "Attack High": 2,
       "Energy": 40,
       "Summoned": false,
-      "Items": {
-        "Explosion Powder": 7
-      }
+      "Items": [
+        {
+          "Name": "Explosion Powder",
+          "Tier": 7
+        }
+      ]
     },
     {
       "Character": "Aqua",
@@ -89,9 +104,12 @@
       "Attack High": 20,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Love Letter": 6
-      }
+      "Items": [
+        {
+          "Name": "Love Letter",
+          "Tier": 6
+        }
+      ]
     },
     {
       "Character": "Darkness",
@@ -102,11 +120,20 @@
       "Attack High": 9,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Knight's Lance": 5,
-        "Magic Parasol": 8,
-        "Poison Dagger": 1
-      },
+      "Items": [
+        {
+          "Name": "Knight's Lance",
+          "Tier": 5
+        },
+        {
+          "Name": "Magic Parasol",
+          "Tier": 8
+        },
+        {
+          "Name": "Poison Dagger",
+          "Tier": 1
+        }
+      ],
       "_stats": {
         "_triggeredBlock": 28,
         "_availableBlocks": 92,

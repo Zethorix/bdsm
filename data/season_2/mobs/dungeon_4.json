@@ -9,9 +9,12 @@
       "Attack High": 30,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Imp Whistle": 2
-      }
+      "Items": [
+        {
+          "Name": "Imp Whistle",
+          "Tier": 2
+        }
+      ]
     },
     {
       "Character": "Boba",
@@ -22,9 +25,12 @@
       "Attack High": 25,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Avalanche": 1
-      }
+      "Items": [
+        {
+          "Name": "Avalanche",
+          "Tier": 1
+        }
+      ]
     },
     {
       "Character": "A Hearty Glass of Water",
@@ -35,9 +41,12 @@
       "Attack High": 20,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Love Letter": 4
-      }
+      "Items": [
+        {
+          "Name": "Love Letter",
+          "Tier": 4
+        }
+      ]
     }
   ],
   [
@@ -50,9 +59,12 @@
       "Attack High": 12,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Poison Dagger": 3
-      }
+      "Items": [
+        {
+          "Name": "Poison Dagger",
+          "Tier": 3
+        }
+      ]
     },
     {
       "Character": "Miso Soup",
@@ -63,7 +75,7 @@
       "Attack High": 15,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": []
     },
     {
       "Character": "Salad",
@@ -74,9 +86,12 @@
       "Attack High": 14,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Healing Pendant": 3
-      },
+      "Items": [
+        {
+          "Name": "Healing Pendant",
+          "Tier": 3
+        }
+      ],
       "_stats": {
         "_triggeredBlock": 9,
         "_availableBlocks": 46
@@ -91,9 +106,12 @@
       "Attack High": 10,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Poison Dagger": 3
-      }
+      "Items": [
+        {
+          "Name": "Poison Dagger",
+          "Tier": 3
+        }
+      ]
     }
   ],
   [
@@ -106,9 +124,12 @@
       "Attack High": 30,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Machete": 2
-      }
+      "Items": [
+        {
+          "Name": "Machete",
+          "Tier": 2
+        }
+      ]
     }
   ]
 ]

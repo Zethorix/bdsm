@@ -7,9 +7,9 @@ function _preprocessCharacterItems(character, season) {
   }
   const items = data.getItems(season);
   const triggers = {};
-  for (const item in character['Items']) {
-    const tier = character['Items'][item];
-    if (item in items['Energy']) {
+  for (const item of character['Items']) {
+    const name = item['Name'];
+    if (name in items['Energy']) {
       if ('Energy' in triggers) {
         throw Error(
             'Could not add ' +
@@ -19,27 +19,16 @@ function _preprocessCharacterItems(character, season) {
             ': Already has an energy item.'
         );
       }
-      triggers['Energy'] = {};
-      triggers['Energy'][item] = tier;
+      triggers['Energy'] = [item];
       continue;
     }
 
-    const triggerTypes = items['Passive'][item]['Triggers'];
-    for (const i in triggerTypes) {
-      const triggerType = triggerTypes[i];
+    const triggerTypes = items['Passive'][name]['Triggers'];
+    for (const triggerType of triggerTypes) {
       if (!(triggerType in triggers)) {
-        triggers[triggerType] = {};
+        triggers[triggerType] = [item];
       }
-      if (item in triggers[triggerType]) {
-        throw Error(
-            'Could not add ' +
-            item +
-            ' to ' +
-            JSON.stringify(character) +
-            ': Already has item.'
-        );
-      }
-      triggers[triggerType][item] = tier;
+      triggers[triggerType].push(item);
     }
   }
   character['_triggers'] = triggers;
@@ -239,14 +228,14 @@ class Battle {
     if (!('Energy' in character['_triggers'])) {
       return;
     }
-    const item = Object.keys(character['_triggers']['Energy'])[0];
+    const item = character['_triggers']['Energy'][0]["Name"];
     const cost = this.getItems()['Energy'][item]['Cost'];
     if (character['Energy'] < cost) {
       return;
     }
     character['Energy'] -= cost;
-    const tier = character['Items'][item];
-    utils.logIf(this.verbose, 'Activating energy item ' + item);
+    const tier = character['_triggers']['Energy'][0]["Tier"];
+    utils.logIf(this.verbose, 'Activating energy item: ' + item);
 
     const allyTeamIndex = this.getTeamOf[characterName];
     const allyTeam = this.teams[allyTeamIndex];

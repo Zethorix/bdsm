@@ -9,9 +9,12 @@
       "Attack High": 15,
       "Energy": 999,
       "Summoned": false,
-      "Items": {
-        "Boosting Bugle": 1
-      }
+      "Items": [
+        {
+          "Name": "Boosting Bugle",
+          "Tier": 1
+        }
+      ]
     },
     {
       "Character": "Shoto Todoroki",
@@ -22,10 +25,16 @@
       "Attack High": 40,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Avalanche": 3,
-        "Fire Sword": 5
-      },
+      "Items": [
+        {
+          "Name": "Avalanche",
+          "Tier": 3
+        },
+        {
+          "Name": "Fire Sword",
+          "Tier": 5
+        }
+      ],
       "_stats": {
         "_maxFireSwordTriggers": 4,
         "_triggeredFireSword": 30,
@@ -41,10 +50,16 @@
       "Attack High": 25,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Draining Dagger": 1,
-        "Rough Skin": 2
-      }
+      "Items": [
+        {
+          "Name": "Draining Dagger",
+          "Tier": 1
+        },
+        {
+          "Name": "Rough Skin",
+          "Tier": 2
+        }
+      ]
     }
   ],
   [
@@ -57,9 +72,12 @@
       "Attack High": 100,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Martyr Armor": 3
-      }
+      "Items": [
+        {
+          "Name": "Martyr Armor",
+          "Tier": 3
+        }
+      ]
     },
     {
       "Character": "Hawks",
@@ -70,10 +88,16 @@
       "Attack High": 10,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Challenger Arrow": 2,
-        "Thorns": 3
-      }
+      "Items": [
+        {
+          "Name": "Challenger Arrow",
+          "Tier": 2
+        },
+        {
+          "Name": "Thorns",
+          "Tier": 3
+        }
+      ]
     }
   ],
   [
@@ -86,7 +110,7 @@
       "Attack High": 55,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": []
     },
     {
       "Character": "Izuku Midoriya",
@@ -97,7 +121,7 @@
       "Attack High": 35,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": []
     }
   ]
 ]

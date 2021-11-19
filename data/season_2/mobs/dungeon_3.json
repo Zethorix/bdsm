@@ -9,10 +9,16 @@
       "Attack High": 20,
       "Energy": 20,
       "Summoned": false,
-      "Items": {
-        "Knight's Lance": 2,
-        "Love Letter": 2
-      }
+      "Items": [
+        {
+          "Name": "Knight's Lance",
+          "Tier": 2
+        },
+        {
+          "Name": "Love Letter",
+          "Tier": 2
+        }
+      ]
     },
     {
       "Character": "KappaPride",
@@ -23,10 +29,16 @@
       "Attack High": 14,
       "Energy": 10,
       "Summoned": false,
-      "Items": {
-        "Knight's Lance": 2,
-        "Love Letter": 2
-      }
+      "Items": [
+        {
+          "Name": "Knight's Lance",
+          "Tier": 2
+        },
+        {
+          "Name": "Love Letter",
+          "Tier": 2
+        }
+      ]
     }
   ],
   [
@@ -39,9 +51,12 @@
       "Attack High": 12,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Cleansing Flames": 1
-      }
+      "Items": [
+        {
+          "Name": "Cleansing Flames",
+          "Tier": 1
+        }
+      ]
     },
     {
       "Character": "Pepega",
@@ -52,9 +67,12 @@
       "Attack High": 10,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Poison Dagger": 2
-      }
+      "Items": [
+        {
+          "Name": "Poison Dagger",
+          "Tier": 2
+        }
+      ]
     },
     {
       "Character": "MonkaS",
@@ -65,9 +83,12 @@
       "Attack High": 30,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Big Club": 5
-      },
+      "Items": [
+        {
+          "Name": "Big Club",
+          "Tier": 5
+        }
+      ],
       "_stats": {
         "_triggeredBigClub": "10",
         "_attacks": "16"
@@ -82,9 +103,12 @@
       "Attack High": 10,
       "Energy": 0,
       "Summoned": true,
-      "Items": {
-        "Healing Pendant": 2
-      }
+      "Items": [
+        {
+          "Name": "Healing Pendant",
+          "Tier": 2
+        }
+      ]
     }
   ],
   [
@@ -97,9 +121,12 @@
       "Attack High": 30,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Whirlwind Axe": 3
-      },
+      "Items": [
+        {
+          "Name": "Whirlwind Axe",
+          "Tier": 3
+        }
+      ],
       "_stats": {
         "_triggeredWhirlwindAxe": 7,
         "_attacks": 21
@@ -114,7 +141,7 @@
       "Attack High": 15,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": []
     }
   ]
 ]

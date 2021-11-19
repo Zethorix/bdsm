@@ -9,10 +9,16 @@
       "Attack High": 75,
       "Energy": 999,
       "Summoned": false,
-      "Items": {
-        "Challenger Arrow": 2,
-        "Draining Dagger": 2
-      }
+      "Items": [
+        {
+          "Name": "Challenger Arrow",
+          "Tier": 2
+        },
+        {
+          "Name": "Draining Dagger",
+          "Tier": 2
+        }
+      ]
     },
     {
       "Character": "Sejuani",
@@ -23,9 +29,12 @@
       "Attack High": 100,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Avalanche": 4
-      }
+      "Items": [
+        {
+          "Name": "Avalanche",
+          "Tier": 4
+        }
+      ]
     },
     {
       "Character": "Teemo",
@@ -36,9 +45,12 @@
       "Attack High": 20,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Poison Dagger": 5
-      }
+      "Items": [
+        {
+          "Name": "Poison Dagger",
+          "Tier": 5
+        }
+      ]
     },
     {
       "Character": "Ezreal",
@@ -49,7 +61,7 @@
       "Attack High": 20,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": []
     }
   ],
   [
@@ -62,11 +74,20 @@
       "Attack High": 150,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Rough Skin": 5,
-        "Healing Pendant": 5,
-        "Magic Parasol": 6
-      },
+      "Items": [
+        {
+          "Name": "Rough Skin",
+          "Tier": 5
+        },
+        {
+          "Name": "Healing Pendant",
+          "Tier": 5
+        },
+        {
+          "Name": "Magic Parasol",
+          "Tier": 6
+        }
+      ],
       "_stats": {
         "_triggeredBlock": 39,
         "_availableBlocks": 92,
@@ -83,11 +104,20 @@
       "Attack High": 100,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Rough Skin": 5,
-        "Magic Parasol": 4,
-        "Survival Kit": 8
-      },
+      "Items": [
+        {
+          "Name": "Rough Skin",
+          "Tier": 5
+        },
+        {
+          "Name": "Magic Parasol",
+          "Tier": 4
+        },
+        {
+          "Name": "Survival Kit",
+          "Tier": 8
+        }
+      ],
       "_stats": {
         "_triggeredBlock": 38,
         "_availableBlocks": 88,
@@ -104,11 +134,20 @@
       "Attack High": 20,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Thorns": 7,
-        "Explosion Powder": 5,
-        "Machete": 4
-      }
+      "Items": [
+        {
+          "Name": "Thorns",
+          "Tier": 7
+        },
+        {
+          "Name": "Explosion Powder",
+          "Tier": 5
+        },
+        {
+          "Name": "Machete",
+          "Tier": 4
+        }
+      ]
     },
     {
       "Character": "Zyra",
@@ -119,11 +158,20 @@
       "Attack High": 25,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Thorns": 7,
-        "Machete": 4,
-        "Imp Whistle": 8
-      }
+      "Items": [
+        {
+          "Name": "Thorns",
+          "Tier": 7
+        },
+        {
+          "Name": "Machete",
+          "Tier": 4
+        },
+        {
+          "Name": "Imp Whistle",
+          "Tier": 8
+        }
+      ]
     },
     {
       "Character": "Sona",
@@ -134,10 +182,16 @@
       "Attack High": 30,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Energetic Ally": 5,
-        "Love Letter": 7
-      }
+      "Items": [
+        {
+          "Name": "Energetic Ally",
+          "Tier": 5
+        },
+        {
+          "Name": "Love Letter",
+          "Tier": 7
+        }
+      ]
     }
   ],
   [
@@ -150,10 +204,16 @@
       "Attack High": 90,
       "Energy": 0,
       "Summoned": false,
-      "Items": {
-        "Machete": 9,
-        "Big Club": 9
-      },
+      "Items": [
+        {
+          "Name": "Machete",
+          "Tier": 9
+        },
+        {
+          "Name": "Big Club",
+          "Tier": 9
+        }
+      ],
       "_stats": {
         "_triggeredBigClub": 7,
         "_attacks": 7
@@ -168,7 +228,7 @@
       "Attack High": 150,
       "Energy": 0,
       "Summoned": false,
-      "Items": {}
+      "Items": []
     }
   ]
 ]
