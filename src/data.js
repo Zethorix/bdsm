@@ -1,5 +1,8 @@
+import * as utils from './utils.js';
+
 const MOBS_BY_SEASON = {};
 const ITEMS_BY_SEASON = {};
+const ITEM_NAMES_BY_SEASON = {};
 const TEMPLATES_BY_SEASON = {};
 
 export function getDungeon(season, dungeon) {
@@ -35,6 +38,16 @@ export function getItems(season) {
     };
   }
   return ITEMS_BY_SEASON[season];
+}
+
+export function getAllItemNames(season) {
+  if (!(season in ITEM_NAMES_BY_SEASON)) {
+    const items = getItems(season);
+    const itemNames = Object.keys(items['Energy']);
+    utils.extend(itemNames, Object.keys(items['Passive']));
+    ITEM_NAMES_BY_SEASON[season] = itemNames;
+  }
+  return ITEM_NAMES_BY_SEASON[season];
 }
 
 export function getTemplates(season) {
