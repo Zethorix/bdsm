@@ -3,7 +3,7 @@ import ItemDropdown from './ItemDropdown.js';
 import { useState } from 'react';
 
 function Simulator() {
-  const [text, setText] = useState("Click the button to start a test run!");
+  const [outputText, setOutputText] = useState("Select your items with the dropdowns.\nClick the button to start a test run!");
   const [items, setItems] = useState([getInitialItem(), getInitialItem(), getInitialItem(), getInitialItem()]);
 
   function getInitialItem() {
@@ -12,7 +12,7 @@ function Simulator() {
 
   function onRunTest() {
     const output = outputTest(items);
-    setText(output);
+    setOutputText(output);
   }
 
   return (
@@ -31,7 +31,7 @@ function Simulator() {
       <button onClick={onRunTest}>
         Run Test
       </button>
-      <div>{text}</div>
+      <div style={{whiteSpace: 'pre-line'}}>{outputText}</div>
     </div>
   );
 }
