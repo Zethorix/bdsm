@@ -176,7 +176,13 @@ class Battle {
   }
 
   dealDamage(target, source, amount) {
-    this.changeHp(target, -amount);
+    const damageAmount = [amount];
+    this.triggerPhase(
+        'EnemyDamage',
+        target,
+        {'Source': source, 'Damage': damageAmount}
+    );
+    this.changeHp(target, -damageAmount[0]);
   }
 
   changeSpeed(id, amount) {
@@ -509,6 +515,43 @@ class Battle {
         break;
       }
       case 'EnemyDamage': {
+        switch (itemName) {
+          case 'Magic Parasol': {
+            if (!utils.withProbability(0.05 + 0.05 * tier)) {
+              break;
+            }
+            utils.logIf(this.verbose, this.output, 'Magic Parasol triggered');
+            other['Damage'][0] = 0;
+          }
+          case 'Martyr Armor': {
+            if (!utils.withProbability(0.66)) {
+              break;
+            }
+            const team = this.getTeamOf[characterName];
+            const target = this.teams[team][utils.pickRandom(
+                this.teams[team],
+                (c) => {
+                  if (c['Character'] == characterName) {
+                    return 0;
+                  }
+                  return 1;
+                }
+            )];
+            this.changeHp(target, 2 * tier);
+            this.changeEnergy(target, tier);
+          }
+          case 'Rough Skin': {
+            if (!utils.withProbability(0.5)) {
+              break;
+            }
+            this.changeHp(other['Source'], -2 * tier);
+            const damageAmount = other['Damage'];
+            damageAmount[0] = Math.max(0, damageAmount[0] - (2 * tier));
+          }
+          default: {
+            throw Error('InternalError: Item ' + itemName + ' does not have phase ' + phase);
+          }
+        }
         break;
       }
       case 'PostDamage': {
