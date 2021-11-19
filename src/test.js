@@ -1,6 +1,10 @@
 import * as data from './data.js';
 import * as simulator from './simulator.js';
 
+export function outputTest() {
+  return "Test run finished!";
+}
+
 export function buttontest() {
   const season = 2;
   const dungeon = 0;

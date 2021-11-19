@@ -1,13 +1,11 @@
-import {buttontest} from "./test.js";
+import Simulator from "./components/Simulator.js";
 
 function App() {
   return (
     <div>
       Hello World!
       <br />
-      <button onClick={buttontest}>
-        Run Test
-      </button>
+      <Simulator />
     </div>
   );
 }
