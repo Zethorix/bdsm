@@ -1,4 +1,6 @@
 import { outputTest } from '../test.js';
+import { getItems } from "../data.js";
+import Dropdown from './Dropdown.js';
 import { useState } from 'react';
 
 function Simulator() {
@@ -11,6 +13,8 @@ function Simulator() {
 
   return (
     <div>
+      <Dropdown options={Object.keys(getItems(2)['Energy'])}/>
+      <br />
       <button onClick={onRunTest}>
         Run Test
       </button>
