@@ -26,7 +26,7 @@ export function outputTest(items) {
     }
   ]
 
-  const output = ['Test run with items: ' + JSON.stringify(items)];
+  const output = ['Test run with items: ' + JSON.stringify(toEquip)];
   output.push('', 'Winning team: ' + simulator.runDungeon(players, waves, season, output, true));
   return output.join('\n');
 }
