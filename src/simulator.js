@@ -484,6 +484,7 @@ class Battle {
                 this.output,
                 characterName + ' is a coward'
             );
+            break;
           }
           default: {
             throw Error('InternalError: Item ' + itemName + ' does not have phase ' + phase);
@@ -498,15 +499,18 @@ class Battle {
               break;
             }
             this.finalDamage += Math.round(1.5 * this.baseDamage);
+            break;
           }
           case 'Seeking Missiles': {
             const missingHpProportion = this.currentTarget['HP'] / this.currentTarget['HP Max'];
             this.finalDamage += Math.floor(5 * missingHpProportion * tier);
+            break;
           }
           case 'Whirlwind Axe': {
             for (const enemy of enemyTeam) {
               this.dealDamage(enemy, character, this.baseDamage);
             }
+            break;
           }
           default: {
             throw Error('InternalError: Item ' + itemName + ' does not have phase ' + phase);
@@ -522,6 +526,7 @@ class Battle {
             }
             utils.logIf(this.verbose, this.output, 'Magic Parasol triggered');
             other['Damage'][0] = 0;
+            break;
           }
           case 'Martyr Armor': {
             if (!utils.withProbability(0.66)) {
@@ -534,11 +539,18 @@ class Battle {
                   if (c['Character'] == characterName) {
                     return 0;
                   }
+                  if (c['Summoned']) {
+                    return 0;
+                  }
                   return 1;
                 }
             )];
+            if (target == null) {
+              break;
+            }
             this.changeHp(target, 2 * tier);
             this.changeEnergy(target, tier);
+            break;
           }
           case 'Rough Skin': {
             if (!utils.withProbability(0.5)) {
@@ -547,6 +559,7 @@ class Battle {
             this.changeHp(other['Source'], -2 * tier);
             const damageAmount = other['Damage'];
             damageAmount[0] = Math.max(0, damageAmount[0] - (2 * tier));
+            break;
           }
           default: {
             throw Error('InternalError: Item ' + itemName + ' does not have phase ' + phase);
@@ -555,6 +568,50 @@ class Battle {
         break;
       }
       case 'PostDamage': {
+        switch (itemName) {
+          case 'Cleansing Flames': {
+            if (!utils.withProbability(0.5)) {
+              break;
+            }
+            for (const ally of allyTeam) {
+              this.changeHp(ally, tier);
+            }
+            break;
+          }
+          case 'Fire Sword': {
+            var attackIncrease = 0;
+            for (var i = 0; i < tier; i++) {
+              if (!utils.withProbability(0.3)) {
+                continue;
+              }
+              attackIncrease++;
+            }
+            this.changeAttack(character, attackIncrease);
+            break;
+          }
+          case 'Love Letter': {
+            const target = allyTeam[utils.pickRandom(
+                allyTeam,
+                (c) => {
+                  if (c['Character'] === characterName) {
+                    return 0;
+                  }
+                  if (c['Summoned']) {
+                    return 0;
+                  }
+                  return 1;
+                }
+            )];
+            if (target == null) {
+              break;
+            }
+            this.changeHp(target, 2 * tier);
+            this.changeEnergy(target, tier);
+            break;
+          }
+          default: {
+          }
+        }
         break;
       }
       case 'Death': {
