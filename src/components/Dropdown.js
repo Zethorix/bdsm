@@ -1,7 +1,7 @@
 function Dropdown(props) {
   return (
-    <select>
-      {props.options.map((option) => <option>{option}</option>)}
+    <select value={props.selectedOption} onChange={props.onChange}>
+      {props.options.map((option) => <option key={option}>{option}</option>)}
     </select>
   );
 }
