@@ -675,8 +675,7 @@ class Battle {
     }
     this.triggerPhase('PostTarget', this.activeCharacter);
 
-    const mainAttackTargetName = this.currentTarget['Character'];
-    utils.logIf(this.verbose, this.output, 'main target: ' + mainAttackTargetName);
+    utils.logIf(this.verbose, this.output, 'main target: ' + this.currentTarget['Character']);
 
     this.baseDamage = utils.pickRandomWithinRange(
         this.activeCharacter['Attack Low'],
@@ -692,7 +691,7 @@ class Battle {
         'final attack damage: ' + this.baseDamage
     );
 
-    this.dealDamage(mainAttackTargetName, this.activeCharacter, this.finalDamage);
+    this.dealDamage(this.currentTarget, this.activeCharacter, this.finalDamage);
     this.checkAllHp();
 
     delete this['curentTarget'];
