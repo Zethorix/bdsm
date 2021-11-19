@@ -621,7 +621,8 @@ class Battle {
       case 'Death': {
         switch (itemName) {
           case 'Chicken Dinner': {
-            if (this.getTeamOf[this.activeCharacter] !== allyTeamIndex) {
+            if (this.getTeamOf[this.activeCharacter] === allyTeamIndex) {
+              break;
             }
             for (const ally of allyTeam) {
               this.changeHp(ally, tier);
