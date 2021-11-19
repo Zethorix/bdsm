@@ -42,7 +42,7 @@ export function buttontest() {
       "Summoned": false,
       "Items": [
         {
-          "Name": 'Avalanche',
+          "Name": 'Seeking Missiles',
           "Tier": 1
         }
       ]

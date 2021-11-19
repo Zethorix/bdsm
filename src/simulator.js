@@ -381,6 +381,25 @@ class Battle {
         break;
       }
       case 'Target': {
+        switch (itemName) {
+          case 'Seeking Missiles': {
+            var target = {'HP': Infinity};
+            for (const character of enemyTeam) {
+              if (character['HP'] < target['HP']) {
+                target = character;
+              }
+            }
+            if (target['HP'] === Infinity) {
+              throw Error('InternalError: Seeking Missiles could not find a target from ' + enemyTeam);
+            }
+            this.currentTarget = target;
+            utils.logIf(this.verbose, 'Seeking Missiles selected target: ' + target['Character']);
+            break;
+          }
+          default: {
+            throw Error('InternalError: Item ' + itemName + ' does not have phase ' + phase);
+          }
+        }
         break;
       }
       case 'PostTarget': {
@@ -464,8 +483,10 @@ class Battle {
       }
     }
 
-    const mainAttackTargetIndex = utils.pickRandom(defendingTeam);
-    this.currentTarget = defendingTeam[mainAttackTargetIndex];
+    this.currentTarget = defendingTeam[utils.pickRandom(defendingTeam)];
+    this.triggerPhase('Target');
+    this.triggerPhase('PostTarget');
+
     const mainAttackTargetName = this.currentTarget['Character'];
     utils.logIf(this.verbose, 'main target: ' + mainAttackTargetName);
 
