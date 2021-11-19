@@ -20,6 +20,10 @@ export function buttontest() {
         {
           "Name": 'Avalanche',
           "Tier": 1
+        },
+        {
+          "Name": 'Rock Companion',
+          "Tier": 9
         }
       ]
     },

@@ -113,7 +113,6 @@ class Battle {
 
   addCopyOfCharacterToTeam(character, teamIndex) {
     const toAdd = utils.deepCopyJson(character);
-    _preprocessCharacterItems(toAdd, this.season);
     var name = toAdd['Character'];
     const originalName = name;
     var copyNum = 1;
@@ -124,7 +123,10 @@ class Battle {
     toAdd['Character'] = name;
     this.getTeamOf[name] = teamIndex;
     this.allCharacters[name] = toAdd;
+    this.activeCharacter = toAdd;
+    this.triggerPhase('BattleStart');
     this.teams[teamIndex].push(toAdd);
+    delete this['activeCharacter'];
   }
 
   addSummonToTeam(item, teamIndex) {
@@ -147,7 +149,7 @@ class Battle {
     const team = this.teams[this.getTeamOf[name]];
     const pos = _findPositionWithinTeam(name, team);
     if (pos < 0) {
-      throw Error('Internal Error: ' + name + ' is not in team ' + team);
+      throw Error('InternalError: ' + name + ' is not in team ' + team);
     }
     delete this.allCharacters[name];
     delete this.getTeamOf[name];
@@ -230,6 +232,16 @@ class Battle {
 
     switch (phase) {
       case 'BattleStart': {
+        switch (itemName) {
+          case 'Pet Imp':
+          case 'Rock Companion': {
+            this.addSummonToTeam(item, allyTeamIndex);
+            break;
+          }
+          default: {
+            throw Error('InternalError: Item ' + itemName + ' does not have phase ' + phase);
+          }
+        }
         break;
       }
       case 'TurnStart': {
@@ -347,7 +359,7 @@ class Battle {
           }
           case 'Healing Pendant': {
             if (utils.withProbability(0.5)) {
-              this.changeHp(5 * tier);
+              this.changeHp(character, 5 * tier);
             }
             break;
           }
@@ -363,7 +375,7 @@ class Battle {
             break;
           }
           default: {
-            throw Error('Internal Error: Item ' + itemName + ' does not have phase ' + phase);
+            throw Error('InternalError: Item ' + itemName + ' does not have phase ' + phase);
           }
         }
         break;
@@ -400,7 +412,7 @@ class Battle {
         break;
       }
       default: {
-        throw Error('Phase ' + phase + ' unknown');
+        throw Error('InternalError: Phase ' + phase + ' unknown');
       }
     }
   }
