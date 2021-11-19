@@ -165,6 +165,9 @@ class Battle {
     const [character, name] = this.getCharacterAndName(id);
     const originalHp = character['HP'];
     character['HP'] += amount;
+    if (character['HP'] > character['HP Max']) {
+      character['HP'] = character['HP Max'];
+    }
     utils.logIf(
         this.verbose,
         this.output,
