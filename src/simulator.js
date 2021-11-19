@@ -483,6 +483,26 @@ class Battle {
         break;
       }
       case 'PreDamage': {
+        switch (itemName) {
+          case 'Big Club': {
+            if (!utils.withProbability(0.11 * tier)) {
+              break;
+            }
+            this.finalDamage += Math.round(1.5 * this.baseDamage);
+          }
+          case 'Seeking Missiles': {
+            const missingHpProportion = this.currentTarget['HP'] / this.currentTarget['HP Max'];
+            this.finalDamage += Math.floor(5 * missingHpProportion * tier);
+          }
+          case 'Whirlwind Axe': {
+            for (const enemy of enemyTeam) {
+              this.dealDamage(enemy, character, this.baseDamage);
+            }
+          }
+          default: {
+            throw Error('InternalError: Item ' + itemName + ' does not have phase ' + phase);
+          }
+        }
         break;
       }
       case 'EnemyDamage': {
@@ -538,17 +558,27 @@ class Battle {
     const mainAttackTargetName = this.currentTarget['Character'];
     utils.logIf(this.verbose, this.output, 'main target: ' + mainAttackTargetName);
 
-    var damageAmount = utils.pickRandomWithinRange(
+    this.baseDamage = utils.pickRandomWithinRange(
         this.activeCharacter['Attack Low'],
         this.activeCharacter['Attack High']
     );
-    utils.logIf(this.verbose, this.output, 'main attack damage: ' + damageAmount);
+    this.finalDamage = this.baseDamage;
+    utils.logIf(this.verbose, this.output, 'main attack damage: ' + this.baseDamage);
 
-    this.dealDamage(mainAttackTargetName, this.activeCharacter, damageAmount);
+    this.triggerPhase('PreDamage', this.activeCharacter);
+    utils.logIf(
+        this.finalDamage !== this.baseDamage && this.verbose,
+        this.output,
+        'final attack damage: ' + this.baseDamage
+    );
+
+    this.dealDamage(mainAttackTargetName, this.activeCharacter, this.finalDamage);
     this.checkAllHp();
 
     delete this['curentTarget'];
     delete this['activeCharacter'];
+    delete this['baseDamage'];
+    delete this['finalDamage'];
   }
 
   teamHasLost(index) {
