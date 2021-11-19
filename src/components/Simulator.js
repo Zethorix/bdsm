@@ -19,6 +19,7 @@ function Simulator() {
     <div>
       {items.map((item, index) =>
         <ItemDropdown
+          key={index}
           item={item}
           onItemChanged={(name, tier) => {
             let newItems = [...items];

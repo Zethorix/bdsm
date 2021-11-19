@@ -44,8 +44,21 @@ export function getAllItemNamesAndBlank(season) {
   if (!(season in ITEM_NAMES_BY_SEASON)) {
     const items = getItems(season);
     const itemNames = [''];
-    utils.extend(itemNames, Object.keys(items['Energy']));
-    utils.extend(itemNames, Object.keys(items['Passive']));
+    const obtainableItems = [];
+    const unobtainableItems = [];
+    for (const type of ['Energy', 'Passive']) {
+      for (const item in items[type]) {
+        if (items[type][item]['Obtainable']) {
+          obtainableItems.push(item);
+          continue;
+        }
+        unobtainableItems.push(item);
+      }
+    }
+    obtainableItems.sort();
+    unobtainableItems.sort();
+    utils.extend(itemNames, obtainableItems);
+    utils.extend(itemNames, unobtainableItems);
     ITEM_NAMES_BY_SEASON[season] = itemNames;
   }
   return ITEM_NAMES_BY_SEASON[season];
