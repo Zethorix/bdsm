@@ -1,13 +1,13 @@
 import { outputTest } from '../test.js';
-import { getAllItemNames } from "../data.js";
+import { getAllItemNamesAndBlank } from "../data.js";
 import Dropdown from './Dropdown.js';
 import { useState } from 'react';
 
 function Simulator() {
-  const energyItems = getAllItemNames(2);
+  const itemNames = getAllItemNamesAndBlank(2);
 
   const [text, setText] = useState("Click the button to start a test run!");
-  const [item, setItem] = useState(energyItems[0]);
+  const [item, setItem] = useState('');
 
   function onRunTest() {
     const output = outputTest(item);
@@ -19,7 +19,7 @@ function Simulator() {
       <Dropdown
         selectedOption={item}
         onChange={(event) => setItem(event.target.value)}
-        options={energyItems}
+        options={itemNames}
       />
       <br />
       <button onClick={onRunTest}>

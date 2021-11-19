@@ -40,10 +40,11 @@ export function getItems(season) {
   return ITEMS_BY_SEASON[season];
 }
 
-export function getAllItemNames(season) {
+export function getAllItemNamesAndBlank(season) {
   if (!(season in ITEM_NAMES_BY_SEASON)) {
     const items = getItems(season);
-    const itemNames = Object.keys(items['Energy']);
+    const itemNames = [''];
+    utils.extend(itemNames, Object.keys(items['Energy']));
     utils.extend(itemNames, Object.keys(items['Passive']));
     ITEM_NAMES_BY_SEASON[season] = itemNames;
   }
