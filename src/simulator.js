@@ -168,6 +168,9 @@ class Battle {
     if (character['HP'] > character['HP Max']) {
       character['HP'] = character['HP Max'];
     }
+    if (character['HP'] <= 0) {
+      this.triggerPhase('Death', character);
+    }
     utils.logIf(
         this.verbose,
         this.output,
@@ -610,11 +613,25 @@ class Battle {
             break;
           }
           default: {
+            throw Error('InternalError: Item ' + itemName + ' does not have phase ' + phase);
           }
         }
         break;
       }
       case 'Death': {
+        switch (itemName) {
+          case 'Chicken Dinner': {
+            if (this.getTeamOf[this.activeCharacter] !== allyTeamIndex) {
+            }
+            for (const ally of allyTeam) {
+              this.changeHp(ally, tier);
+            }
+            break;
+          }
+          default: {
+            throw Error('InternalError: Item ' + itemName + ' does not have phase ' + phase);
+          }
+        }
         break;
       }
       default: {
