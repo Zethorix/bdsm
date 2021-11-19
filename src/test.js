@@ -4,8 +4,8 @@ import * as simulator from './simulator.js';
 export function outputTest(items) {
   const toEquip = [];
   for (const item of items) {
-    if (item['Name'] !== '') {
-      toEquip.push(item);
+    if (item.name !== '') {
+      toEquip.push({'Name': item.name, 'Tier': item.tier});
     }
   }
   const season = 2;
@@ -22,12 +22,12 @@ export function outputTest(items) {
       "Attack High": 10,
       "Energy": 0,
       "Summoned": false,
-      "Items": items
+      "Items": toEquip
     }
   ]
 
-  const output = ['Test run with items: ' + items];
-  output.push('Winning team: ' + simulator.runDungeon(players, waves, season, output, true));
+  const output = ['Test run with items: ' + JSON.stringify(items)];
+  output.push('', 'Winning team: ' + simulator.runDungeon(players, waves, season, output, true));
   return output.join('\n');
 }
 

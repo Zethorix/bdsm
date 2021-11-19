@@ -7,6 +7,7 @@ function _preprocessCharacterItems(character, season) {
   }
   const items = data.getItems(season);
   const triggers = {};
+  console.log(character);
   for (const item of character['Items']) {
     const name = item['Name'];
     const triggerTypes = name in items['Energy']
@@ -83,6 +84,7 @@ class Battle {
     this.verbose = verbose;
     this.season = season;
     this.output = output;
+    this.summonedChicken = {};
     this.initTeams(team1, team2);
   }
 
@@ -124,15 +126,14 @@ class Battle {
     toAdd['Character'] = name;
     this.getTeamOf[name] = teamIndex;
     this.allCharacters[name] = toAdd;
-    this.activeCharacter = toAdd;
-    this.triggerPhase('BattleStart');
+    this.triggerPhase('BattleStart', toAdd);
     this.teams[teamIndex].push(toAdd);
-    delete this['activeCharacter'];
   }
 
   addSummonToTeam(item, teamIndex) {
     const template = this.getTemplates()[item['Name']];
     const summon = utils.getScaledTemplate(template, item['Tier']);
+    utils.logIf(this.verbose, this.output, 'Summoning ' + summon['Character'] + ' for team ' + teamIndex);
     _preprocessCharacterItems(summon, this.season);
     this.addCopyOfCharacterToTeam(summon, teamIndex);
   }
@@ -155,6 +156,9 @@ class Battle {
     delete this.allCharacters[name];
     delete this.getTeamOf[name];
     team.splice(pos, 1);
+    if (name in this.summonedChicken) {
+      delete this.summonedChicken[name];
+    }
   }
 
   changeHp(id, amount) {
@@ -226,9 +230,9 @@ class Battle {
     }
   }
 
-  useItemAbility(item, phase, other=null) {
+  useItemAbility(item, phase, activeCharacter, other=null) {
     utils.logIf(this.verbose, this.output, 'Checking item: ' + item['Name']);
-    const [character, characterName] = this.getCharacterAndName(this.activeCharacter);
+    const [character, characterName] = this.getCharacterAndName(activeCharacter);
     const allyTeamIndex = this.getTeamOf[characterName];
     const allyTeam = this.teams[allyTeamIndex];
     const enemyTeam = this.teams[1 - allyTeamIndex];
@@ -359,6 +363,10 @@ class Battle {
             break;
           }
           case 'Celine\'s Chumby Chicken': {
+            if (characterName in this.summonedChicken) {
+              break;
+            }
+            this.summonedChicken[characterName] = 0;
             this.addSummonToTeam(item, allyTeamIndex);
             break;
           }
@@ -460,13 +468,13 @@ class Battle {
     }
   }
 
-  triggerPhase(phase, other=null) {
-    if (!(phase in this.activeCharacter['_triggers'])) {
+  triggerPhase(phase, activeCharacter, other=null) {
+    if (!(phase in activeCharacter['_triggers'])) {
       return;
     }
 
-    for (const item of this.activeCharacter['_triggers'][phase]) {
-      this.useItemAbility(item, phase, other);
+    for (const item of activeCharacter['_triggers'][phase]) {
+      this.useItemAbility(item, phase, activeCharacter, other);
     }
   }
 
@@ -479,7 +487,7 @@ class Battle {
 
     _addEnergyTo(this.allCharacters, 2);
 
-    this.triggerPhase('TurnStart');
+    this.triggerPhase('TurnStart', this.activeCharacter);
 
     this.checkAllHp();
     for (const i in this.teams) {
@@ -489,8 +497,8 @@ class Battle {
     }
 
     this.currentTarget = defendingTeam[utils.pickRandom(defendingTeam)];
-    this.triggerPhase('Target');
-    this.triggerPhase('PostTarget');
+    this.triggerPhase('Target', this.activeCharacter);
+    this.triggerPhase('PostTarget', this.activeCharacter);
 
     const mainAttackTargetName = this.currentTarget['Character'];
     utils.logIf(this.verbose, this.output, 'main target: ' + mainAttackTargetName);
