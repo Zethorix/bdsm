@@ -381,12 +381,31 @@ class Battle {
         break;
       }
       case 'Target': {
+        break;
+      }
+      case 'PostTarget': {
         switch (itemName) {
           case 'Draining Dagger': {
             this.changeAttack(this.currentTarget, -tier);
             if (utils.withProbability(0.05 * tier)) {
               this.changeEnergy(this.currentTarget, -1);
             }
+            break;
+          }
+          case 'Machete': {
+            if (enemyTeam.length === 1) {
+              break;
+            }
+            const target = enemyTeam[utils.pickRandom(
+                enemyTeam,
+                (c) => {
+                  if (c['Character'] === this.currentTarget['Character']) {
+                    return 0;
+                  }
+                  return 1;
+                }
+            )];
+            this.dealDamage(target, character, utils.pickRandomWithinRange(3 * tier, 4 * tier));
             break;
           }
           case 'Poison Dagger': {
