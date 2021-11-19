@@ -1,13 +1,10 @@
 import { outputTest } from '../test.js';
-import { getAllItemNamesAndBlank } from "../data.js";
-import Dropdown from './Dropdown.js';
+import ItemDropdown from './ItemDropdown.js';
 import { useState } from 'react';
 
 function Simulator() {
-  const itemNames = getAllItemNamesAndBlank(2);
-
   const [text, setText] = useState("Click the button to start a test run!");
-  const [item, setItem] = useState('');
+  const [item, setItem] = useState({ name: "", tier: 1 });
 
   function onRunTest() {
     const output = outputTest(item);
@@ -16,10 +13,9 @@ function Simulator() {
 
   return (
     <div>
-      <Dropdown
-        selectedOption={item}
-        onChange={(event) => setItem(event.target.value)}
-        options={itemNames}
+      <ItemDropdown
+        item={item}
+        onItemChanged={(name, tier) => setItem({ name: name, tier: tier })}
       />
       <br />
       <button onClick={onRunTest}>
