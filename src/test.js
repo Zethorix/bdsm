@@ -1,5 +1,6 @@
 import * as data from './data.js';
 import * as simulator from './simulator.js';
+import * as utils from './utils.js';
 
 export function outputTest(items) {
   const toEquip = [];
@@ -27,7 +28,9 @@ export function outputTest(items) {
   ]
 
   const output = ['Test run with items: ' + JSON.stringify(toEquip)];
-  output.push('', 'Winning team: ' + simulator.runDungeon(players, waves, season, output, true));
+  const outputLogs = [];
+  output.push('\nWinning team: ' + simulator.runDungeon(players, waves, season, outputLogs, true));
+  utils.extend(output, outputLogs);
   return output.join('\n');
 }
 

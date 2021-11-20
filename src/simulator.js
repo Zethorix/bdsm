@@ -23,17 +23,6 @@ function _preprocessCharacterItems(character, season) {
   return character;
 }
 
-function _addEnergyTo(obj, amount) {
-  if ('energy' in obj) {
-    obj.energy += amount;
-    return;
-  }
-
-  for (const key in obj) {
-    obj[key].energy += amount;
-  }
-}
-
 function _findPositionWithinTeam(name, team) {
   for (const position in team) {
     const c = team[position];
@@ -45,18 +34,19 @@ function _findPositionWithinTeam(name, team) {
 }
 
 export function runDungeon(team, waves, season, output=null, verbose=false) {
-  utils.logIf(verbose, output, '\n\n\nStarting dungeon');
   var currTeam = team;
   for (const character of team) {
     _preprocessCharacterItems(character, season);
   }
+  utils.logIf(verbose, output, '\nTeam 0: ' + JSON.stringify(team));
+  utils.logIf(verbose, output, '\n\nStarting dungeon');
   for (const index in waves) {
-    utils.logIf(verbose, output, 'loading wave ' + index);
+    utils.logIf(verbose, output, '\nloading wave ' + index);
     const wave = waves[index];
     for (const character of wave) {
       _preprocessCharacterItems(character, season);
     }
-    utils.logIf(verbose, output, wave);
+    utils.logIf(verbose, output, 'Team 1: ' + JSON.stringify(wave));
     const battle = new Battle(currTeam, wave, season, output, verbose);
     utils.logIf(verbose, output, utils.deepCopyJson(battle));
     while (true) {
@@ -84,6 +74,10 @@ class Battle {
     this.output = output;
     this.summonedChicken = {};
     this.initTeams(team1, team2);
+  }
+
+  log(obj) {
+    utils.logIf(this.verbose, this.output, obj);
   }
 
   getItems() {
@@ -131,7 +125,7 @@ class Battle {
   addSummonToTeam(item, teamIndex) {
     const template = this.getTemplates()[item.name];
     const summon = utils.getScaledTemplate(template, item.tier);
-    utils.logIf(this.verbose, this.output, 'Summoning ' + summon.character + ' for team ' + teamIndex);
+    this.log('Summoning ' + summon.character + ' for team ' + teamIndex);
     _preprocessCharacterItems(summon, this.season);
     this.addCopyOfCharacterToTeam(summon, teamIndex);
   }
@@ -145,7 +139,7 @@ class Battle {
 
   kill(id) {
     const [character, name] = this.getCharacterAndName(id);
-    utils.logIf(this.verbose, this.output, 'killing: ' + name);
+    this.log('killing: ' + name);
     const team = this.teams[this.getTeamOf[name]];
     const pos = _findPositionWithinTeam(name, team);
     if (pos < 0) {
@@ -169,11 +163,7 @@ class Battle {
     if (character.hp <= 0) {
       this.triggerPhase('Death', character);
     }
-    utils.logIf(
-        this.verbose,
-        this.output,
-        name + ' hp changed by ' + amount + ': ' + originalHp + ' -> ' + character.hp
-    );
+    this.log(name + ' HP changed by ' + amount + ': ' + originalHp + ' -> ' + character.hp);
   }
 
   dealDamage(target, source, amount) {
@@ -190,11 +180,7 @@ class Battle {
     const [character, name] = this.getCharacterAndName(id);
     const originalSpeed = character.speed;
     character.speed = Math.max(character.speed + amount, 1);
-    utils.logIf(
-        this.verbose,
-        this.output,
-        name + ' speed changed by ' + amount + ': ' + originalSpeed + ' -> ' + character.speed
-    );
+    this.log(name + ' speed changed by ' + amount + ': ' + originalSpeed + ' -> ' + character.speed);
   }
 
   changeAttack(id, amount) {
@@ -204,9 +190,7 @@ class Battle {
     const amountToGain = Math.max(-originalAttackLow, amount);
     character.attackLow += amountToGain;
     character.attackHigh += amountToGain;
-    utils.logIf(
-        this.verbose,
-        this.output,
+    this.log(
         name +
         ' attack changed by ' +
         amount +
@@ -217,14 +201,24 @@ class Battle {
     );
   }
 
+  changeAllEnergy(iterable, amount) {
+    for (const key in iterable) {
+      this.changeEnergy(iterable[key], amount);
+    }
+  }
+
   changeEnergy(id, amount) {
     const [character, name] = this.getCharacterAndName(id);
     const originalEnergy = character.energy;
     character.energy = Math.max(character.energy + amount, 0);
-    utils.logIf(
-        this.verbose,
-        this.output,
-        name + ' energy changed by ' + amount + ': ' + originalEnergy + ' -> ' + character.energy
+    this.log(
+        name +
+        ' energy changed by ' +
+        amount +
+        ': ' +
+        originalEnergy +
+        ' -> ' +
+        character.energy
     );
   }
 
@@ -238,7 +232,7 @@ class Battle {
   }
 
   useItemAbility(item, phase, activeCharacter, other=null) {
-    utils.logIf(this.verbose, this.output, 'Checking item: ' + item.name);
+    this.log('Checking item for phase ' + phase + ': ' + item.name);
     const [character, characterName] = this.getCharacterAndName(activeCharacter);
     const allyTeamIndex = this.getTeamOf[characterName];
     const allyTeam = this.teams[allyTeamIndex];
@@ -378,9 +372,11 @@ class Battle {
             break;
           }
           case 'Healing Pendant': {
-            if (utils.withProbability(0.5)) {
-              this.changeHp(character, 5 * tier);
+            if (!utils.withProbability(0.5)) {
+              this.log(itemName + ' did not trigger');
+              break;
             }
+            this.changeHp(character, 5 * tier);
             break;
           }
           case 'Thorns': {
@@ -413,7 +409,7 @@ class Battle {
               throw Error('InternalError: Seeking Missiles could not find a target from ' + enemyTeam);
             }
             this.currentTarget = target;
-            utils.logIf(this.verbose, this.output, 'Seeking Missiles selected target: ' + target.character);
+            this.log('Seeking Missiles selected target: ' + target.character);
             break;
           }
           default: {
@@ -469,22 +465,15 @@ class Battle {
               break;
             }
             if (!(utils.withProbability(0.07 + 0.03 * tier))) {
+              this.log(itemName + ' did not trigger');
               break;
             }
             if (this.currentTarget.hp < character.hp) {
-              utils.logIf(
-                  this.verbose,
-                  this.output,
-                  characterName + ' blocks for ' + this.currentTarget.character
-              );
+              this.log(characterName + ' blocks for ' + this.currentTarget.character);
               this.currentTarget = character;
               break;
             }
-            utils.logIf(
-                this.verbose,
-                this.output,
-                characterName + ' is a coward'
-            );
+            this.log(characterName + ' is a coward');
             break;
           }
           default: {
@@ -508,7 +497,13 @@ class Battle {
             break;
           }
           case 'Whirlwind Axe': {
+            if (!(utils.withProbability(0.11 * tier))) {
+              break;
+            }
             for (const enemy of enemyTeam) {
+              if (enemy.character === this.currentTarget.character) {
+                continue;
+              }
               this.dealDamage(enemy, character, this.baseDamage);
             }
             break;
@@ -523,9 +518,10 @@ class Battle {
         switch (itemName) {
           case 'Magic Parasol': {
             if (!utils.withProbability(0.05 + 0.05 * tier)) {
+              this.log('Magic Parasol not triggered');
               break;
             }
-            utils.logIf(this.verbose, this.output, 'Magic Parasol triggered');
+            this.log('Damage reduced from ' + other.damage[0] + ' -> 0');
             other.damage[0] = 0;
             break;
           }
@@ -558,11 +554,15 @@ class Battle {
           }
           case 'Rough Skin': {
             if (!utils.withProbability(0.5)) {
+              this.log(itemName + ' did not trigger');
               break;
             }
+            this.log(itemName + ' triggered');
             this.changeHp(other.source, -2 * tier);
             const damageAmount = other.damage;
+            const originalDamage = damageAmount[0];
             damageAmount[0] = Math.max(0, damageAmount[0] - (2 * tier));
+            this.log('Damage reduced by ' + 2 * tier + ': ' + originalDamage + ' -> ' + damageAmount[0]);
             break;
           }
           default: {
@@ -657,12 +657,12 @@ class Battle {
 
   tick() {
     const activeName = utils.pickRandom(this.allCharacters, 'speed');
-    utils.logIf(this.verbose, this.output, '\n' + activeName + '\'s turn:');
+    this.log('\n' + activeName + '\'s turn:');
     this.activeCharacter = this.allCharacters[activeName];
     const activeTeamIndex = this.getTeamOf[activeName];
     const defendingTeam = this.teams[1 - activeTeamIndex];
 
-    _addEnergyTo(this.allCharacters, 2);
+    this.changeAllEnergy(this.allCharacters, 2);
 
     this.triggerPhase('TurnStart', this.activeCharacter);
 
@@ -680,30 +680,25 @@ class Battle {
     }
     this.triggerPhase('PostTarget', this.activeCharacter);
 
-    utils.logIf(this.verbose, this.output, 'main target: ' + this.currentTarget.character);
+    this.log('Main target: ' + this.currentTarget.character);
 
     this.baseDamage = utils.pickRandomWithinRange(
         this.activeCharacter.attackLow,
         this.activeCharacter.attackHigh
     );
     this.finalDamage = this.baseDamage;
-    utils.logIf(this.verbose, this.output, 'main attack damage: ' + this.baseDamage);
+    this.log('Attack base damage: ' + this.baseDamage);
 
     this.triggerPhase('PreDamage', this.activeCharacter);
-    utils.logIf(
-        this.finalDamage !== this.baseDamage && this.verbose,
-        this.output,
-        'final attack damage: ' + this.baseDamage
-    );
+    if (this.finalDamage !== this.baseDamage) {
+      this.log('Attack final damage: ' + this.finalDamage);
+    }
 
+    this.log('Normal attack:');
     this.dealDamage(this.currentTarget, this.activeCharacter, this.finalDamage);
 
     if ('poison' in this.currentTarget) {
-      utils.logIf(
-          this.verbose,
-          this.output,
-          this.currentTarget.character + ' takes poison damage.'
-      );
+      this.log(this.currentTarget.character + ' takes poison damage.');
       this.changeHp(this.currentTarget, -this.currentTarget.poison);
     }
     this.checkAllHp();
