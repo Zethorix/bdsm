@@ -625,6 +625,9 @@ class Battle {
               break;
             }
             for (const ally of allyTeam) {
+              if (ally['Character'] == characterName) {
+                continue;
+              }
               this.changeHp(ally, tier);
             }
             break;
