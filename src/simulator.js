@@ -453,6 +453,9 @@ class Battle {
             break;
           }
           case 'Poison Dagger': {
+            if (!('Poison' in this.currentTarget)) {
+              this.currentTarget['Poison'] = 0;
+            }
             this.currentTarget['Poison'] += tier;
             break;
           }
@@ -696,6 +699,15 @@ class Battle {
     );
 
     this.dealDamage(this.currentTarget, this.activeCharacter, this.finalDamage);
+
+    if ('Poison' in this.currentTarget) {
+      utils.logIf(
+          this.verbose,
+          this.output,
+          this.currentTarget['Character'] + ' takes poison damage.'
+      );
+      this.changeHp(this.currentTarget, -this.currentTarget['Poison']);
+    }
     this.checkAllHp();
 
     delete this['curentTarget'];
