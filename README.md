@@ -1,7 +1,7 @@
 # WIP
 This project is still a work-in-progress. Data can be freely used, but may be incorrect.
 
-# Boxbox Dungeon Simulator
+# Boxbox Dungeon SiMulator (BDSM)
 Created by `Zethorix#1064` and `Oof#4389` (qaisklyi)
 
 Simulating winrates for the Boxbox discord server "dungeons" game
