@@ -1,92 +1,92 @@
 [
   [
     {
-      "Character": "Kappa",
-      "HP": 100,
-      "HP Max": 100,
-      "Speed": 16,
-      "Attack Low": 10,
-      "Attack High": 20,
-      "Energy": 20,
-      "Summoned": false,
-      "Items": [
+      "character": "Kappa",
+      "hp": 100,
+      "hpMax": 100,
+      "speed": 16,
+      "attackLow": 10,
+      "attackHigh": 20,
+      "energy": 20,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Knight's Lance",
-          "Tier": 2
+          "name": "Knight's Lance",
+          "tier": 2
         },
         {
-          "Name": "Love Letter",
-          "Tier": 2
+          "name": "Love Letter",
+          "tier": 2
         }
       ]
     },
     {
-      "Character": "KappaPride",
-      "HP": 80,
-      "HP Max": 80,
-      "Speed": 16,
-      "Attack Low": 8,
-      "Attack High": 14,
-      "Energy": 10,
-      "Summoned": false,
-      "Items": [
+      "character": "KappaPride",
+      "hp": 80,
+      "hpMax": 80,
+      "speed": 16,
+      "attackLow": 8,
+      "attackHigh": 14,
+      "energy": 10,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Knight's Lance",
-          "Tier": 2
+          "name": "Knight's Lance",
+          "tier": 2
         },
         {
-          "Name": "Love Letter",
-          "Tier": 2
+          "name": "Love Letter",
+          "tier": 2
         }
       ]
     }
   ],
   [
     {
-      "Character": "PepeHands",
-      "HP": 50,
-      "HP Max": 50,
-      "Speed": 12,
-      "Attack Low": 8,
-      "Attack High": 12,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
+      "character": "PepeHands",
+      "hp": 50,
+      "hpMax": 50,
+      "speed": 12,
+      "attackLow": 8,
+      "attackHigh": 12,
+      "energy": 0,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Cleansing Flames",
-          "Tier": 1
+          "name": "Cleansing Flames",
+          "tier": 1
         }
       ]
     },
     {
-      "Character": "Pepega",
-      "HP": 75,
-      "HP Max": 75,
-      "Speed": 10,
-      "Attack Low": 5,
-      "Attack High": 10,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
+      "character": "Pepega",
+      "hp": 75,
+      "hpMax": 75,
+      "speed": 10,
+      "attackLow": 5,
+      "attackHigh": 10,
+      "energy": 0,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Poison Dagger",
-          "Tier": 2
+          "name": "Poison Dagger",
+          "tier": 2
         }
       ]
     },
     {
-      "Character": "MonkaS",
-      "HP": 75,
-      "HP Max": 75,
-      "Speed": 11,
-      "Attack Low": 1,
-      "Attack High": 30,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
+      "character": "MonkaS",
+      "hp": 75,
+      "hpMax": 75,
+      "speed": 11,
+      "attackLow": 1,
+      "attackHigh": 30,
+      "energy": 0,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Big Club",
-          "Tier": 5
+          "name": "Big Club",
+          "tier": 5
         }
       ],
       "_stats": {
@@ -95,36 +95,36 @@
       }
     },
     {
-      "Character": "Rock Companion",
-      "HP": 30,
-      "HP Max": 30,
-      "Speed": 2,
-      "Attack Low": 10,
-      "Attack High": 10,
-      "Energy": 0,
-      "Summoned": true,
-      "Items": [
+      "character": "Rock Companion",
+      "hp": 30,
+      "hpMax": 30,
+      "speed": 2,
+      "attackLow": 10,
+      "attackHigh": 10,
+      "energy": 0,
+      "summoned": true,
+      "items": [
         {
-          "Name": "Healing Pendant",
-          "Tier": 2
+          "name": "Healing Pendant",
+          "tier": 2
         }
       ]
     }
   ],
   [
     {
-      "Character": "PogChamp",
-      "HP": 150,
-      "HP Max": 150,
-      "Speed": 15,
-      "Attack Low": 10,
-      "Attack High": 30,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
+      "character": "PogChamp",
+      "hp": 150,
+      "hpMax": 150,
+      "speed": 15,
+      "attackLow": 10,
+      "attackHigh": 30,
+      "energy": 0,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Whirlwind Axe",
-          "Tier": 3
+          "name": "Whirlwind Axe",
+          "tier": 3
         }
       ],
       "_stats": {
@@ -133,15 +133,15 @@
       }
     },
     {
-      "Character": "Pog",
-      "HP": 125,
-      "HP Max": 125,
-      "Speed": 15,
-      "Attack Low": 10,
-      "Attack High": 15,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": []
+      "character": "Pog",
+      "hp": 125,
+      "hpMax": 125,
+      "speed": 15,
+      "attackLow": 10,
+      "attackHigh": 15,
+      "energy": 0,
+      "summoned": false,
+      "items": []
     }
   ]
 ]

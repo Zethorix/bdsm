@@ -33,8 +33,8 @@ export function getDungeon(season, dungeon) {
 export function getItems(season) {
   if (!(season in ITEMS_BY_SEASON)) {
     ITEMS_BY_SEASON[season] = {
-      'Passive': require('../data/season_' + season + '/items/passive_items.json'),
-      'Energy': require('../data/season_' + season + '/items/energy_items.json')
+      passive: require('../data/season_' + season + '/items/passive_items.json'),
+      energy: require('../data/season_' + season + '/items/energy_items.json')
     };
   }
   return ITEMS_BY_SEASON[season];
@@ -46,9 +46,9 @@ export function getAllItemNamesAndBlank(season) {
     const itemNames = [''];
     const obtainableItems = [];
     const unobtainableItems = [];
-    for (const type of ['Energy', 'Passive']) {
+    for (const type of ['energy', 'passive']) {
       for (const item in items[type]) {
-        if (items[type][item]['Obtainable']) {
+        if (items[type][item].obtainable) {
           obtainableItems.push(item);
           continue;
         }

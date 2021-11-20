@@ -1,22 +1,22 @@
 [
   [
     {
-      "Character": "Cidd The Helpful",
-      "HP": 2,
-      "HP Max": 2,
-      "Speed": 100,
-      "Attack Low": 4,
-      "Attack High": 4,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
+      "character": "Cidd The Helpful",
+      "hp": 2,
+      "hpMax": 2,
+      "speed": 100,
+      "attackLow": 4,
+      "attackHigh": 4,
+      "energy": 0,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Seeking Missiles",
-          "Tier": 1
+          "name": "Seeking Missiles",
+          "tier": 1
         },
         {
-          "Name": "Fire Sword",
-          "Tier": 3
+          "name": "Fire Sword",
+          "tier": 3
         }
       ],
       "_stats": {
@@ -26,29 +26,29 @@
       }
     },
     {
-      "Character": "Treebeast",
-      "HP": 120,
-      "HP Max": 120,
-      "Speed": 15,
-      "Attack Low": 10,
-      "Attack High": 15,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": []
+      "character": "Treebeast",
+      "hp": 120,
+      "hpMax": 120,
+      "speed": 15,
+      "attackLow": 10,
+      "attackHigh": 15,
+      "energy": 0,
+      "summoned": false,
+      "items": []
     },
     {
-      "Character": "Ivan, The Drunken Brawler",
-      "HP": 140,
-      "HP Max": 140,
-      "Speed": 16,
-      "Attack Low": 15,
-      "Attack High": 20,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
+      "character": "Ivan, The Drunken Brawler",
+      "hp": 140,
+      "hpMax": 140,
+      "speed": 16,
+      "attackLow": 15,
+      "attackHigh": 20,
+      "energy": 0,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Whirlwind Axe",
-          "Tier": 3
+          "name": "Whirlwind Axe",
+          "tier": 3
         }
       ],
       "_stats": {
@@ -57,107 +57,107 @@
       }
     },
     {
-      "Character": "Brittney, Beach Princess",
-      "HP": 160,
-      "HP Max": 160,
-      "Speed": 17,
-      "Attack Low": 20,
-      "Attack High": 25,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": []
+      "character": "Brittney, Beach Princess",
+      "hp": 160,
+      "hpMax": 160,
+      "speed": 17,
+      "attackLow": 20,
+      "attackHigh": 25,
+      "energy": 0,
+      "summoned": false,
+      "items": []
     }
   ],
   [
     {
-      "Character": "The Wandering Fisherman",
-      "HP": 125,
-      "HP Max": 125,
-      "Speed": 8,
-      "Attack Low": 25,
-      "Attack High": 25,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": []
+      "character": "The Wandering Fisherman",
+      "hp": 125,
+      "hpMax": 125,
+      "speed": 8,
+      "attackLow": 25,
+      "attackHigh": 25,
+      "energy": 0,
+      "summoned": false,
+      "items": []
     },
     {
-      "Character": "The Great Forest Seer",
-      "HP": 150,
-      "HP Max": 150,
-      "Speed": 17,
-      "Attack Low": 12,
-      "Attack High": 22,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
+      "character": "The Great Forest Seer",
+      "hp": 150,
+      "hpMax": 150,
+      "speed": 17,
+      "attackLow": 12,
+      "attackHigh": 22,
+      "energy": 0,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Avalanche",
-          "Tier": 3
+          "name": "Avalanche",
+          "tier": 3
         }
       ]
     },
     {
-      "Character": "The Masked Samurai",
-      "HP": 175,
-      "HP Max": 175,
-      "Speed": 21,
-      "Attack Low": 12,
-      "Attack High": 16,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
+      "character": "The Masked Samurai",
+      "hp": 175,
+      "hpMax": 175,
+      "speed": 21,
+      "attackLow": 12,
+      "attackHigh": 16,
+      "energy": 0,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Machete",
-          "Tier": 4
+          "name": "Machete",
+          "tier": 4
         }
       ]
     }
   ],
   [
     {
-      "Character": "Dread Knight",
-      "HP": 175,
-      "HP Max": 175,
-      "Speed": 9,
-      "Attack Low": 30,
-      "Attack High": 50,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": []
+      "character": "Dread Knight",
+      "hp": 175,
+      "hpMax": 175,
+      "speed": 9,
+      "attackLow": 30,
+      "attackHigh": 50,
+      "energy": 0,
+      "summoned": false,
+      "items": []
     },
     {
-      "Character": "Betty Clicker",
-      "HP": 75,
-      "HP Max": 75,
-      "Speed": 15,
-      "Attack Low": 5,
-      "Attack High": 5,
-      "Energy": 200,
-      "Summoned": false,
-      "Items": [
+      "character": "Betty Clicker",
+      "hp": 75,
+      "hpMax": 75,
+      "speed": 15,
+      "attackLow": 5,
+      "attackHigh": 5,
+      "energy": 200,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Boosting Bugle",
-          "Tier": 3
+          "name": "Boosting Bugle",
+          "tier": 3
         }
       ]
     },
     {
-      "Character": "King Midas",
-      "HP": 150,
-      "HP Max": 150,
-      "Speed": 11,
-      "Attack Low": 10,
-      "Attack High": 15,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
+      "character": "King Midas",
+      "hp": 150,
+      "hpMax": 150,
+      "speed": 11,
+      "attackLow": 10,
+      "attackHigh": 15,
+      "energy": 0,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Healing Pendant",
-          "Tier": 1
+          "name": "Healing Pendant",
+          "tier": 1
         },
         {
-          "Name": "Magic Parasol",
-          "Tier": 1
+          "name": "Magic Parasol",
+          "tier": 1
         }
       ],
       "_stats": {
@@ -168,31 +168,31 @@
       }
     },
     {
-      "Character": "Leon",
-      "HP": 100,
-      "HP Max": 100,
-      "Speed": 25,
-      "Attack Low": 5,
-      "Attack High": 15,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
+      "character": "Leon",
+      "hp": 100,
+      "hpMax": 100,
+      "speed": 25,
+      "attackLow": 5,
+      "attackHigh": 15,
+      "energy": 0,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Seeking Missiles",
-          "Tier": 3
+          "name": "Seeking Missiles",
+          "tier": 3
         }
       ]
     },
     {
-      "Character": "Amenhotep",
-      "HP": 40,
-      "HP Max": 40,
-      "Speed": 13,
-      "Attack Low": 0,
-      "Attack High": 10,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": []
+      "character": "Amenhotep",
+      "hp": 40,
+      "hpMax": 40,
+      "speed": 13,
+      "attackLow": 0,
+      "attackHigh": 10,
+      "energy": 0,
+      "summoned": false,
+      "items": []
     }
   ]
 ]

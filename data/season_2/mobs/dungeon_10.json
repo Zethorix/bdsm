@@ -1,18 +1,18 @@
 [
   [
     {
-      "Character": "Sonic The Hedgehog",
-      "HP": 750,
-      "HP Max": 750,
-      "Speed": 150,
-      "Attack Low": 0,
-      "Attack High": 0,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
+      "character": "Sonic The Hedgehog",
+      "hp": 750,
+      "hpMax": 750,
+      "speed": 150,
+      "attackLow": 0,
+      "attackHigh": 0,
+      "energy": 0,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Fire Sword",
-          "Tier": 7
+          "name": "Fire Sword",
+          "tier": 7
         }
       ],
       "_stats": {
@@ -24,18 +24,18 @@
   ],
   [
     {
-      "Character": "Amy Rose",
-      "HP": 250,
-      "HP Max": 250,
-      "Speed": 22,
-      "Attack Low": 20,
-      "Attack High": 30,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
+      "character": "Amy Rose",
+      "hp": 250,
+      "hpMax": 250,
+      "speed": 22,
+      "attackLow": 20,
+      "attackHigh": 30,
+      "energy": 0,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Whirlwind Axe",
-          "Tier": 9
+          "name": "Whirlwind Axe",
+          "tier": 9
         }
       ],
       "_stats": {
@@ -44,22 +44,22 @@
       }
     },
     {
-      "Character": "Big The Cat",
-      "HP": 300,
-      "HP Max": 300,
-      "Speed": 12,
-      "Attack Low": 40,
-      "Attack High": 80,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
+      "character": "Big The Cat",
+      "hp": 300,
+      "hpMax": 300,
+      "speed": 12,
+      "attackLow": 40,
+      "attackHigh": 80,
+      "energy": 0,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Healing Pendant",
-          "Tier": 3
+          "name": "Healing Pendant",
+          "tier": 3
         },
         {
-          "Name": "Magic Parasol",
-          "Tier": 9
+          "name": "Magic Parasol",
+          "tier": 9
         }
       ],
       "_stats": {
@@ -70,22 +70,22 @@
       }
     },
     {
-      "Character": "Knuckles The Echidna",
-      "HP": 200,
-      "HP Max": 200,
-      "Speed": 25,
-      "Attack Low": 10,
-      "Attack High": 60,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
+      "character": "Knuckles The Echidna",
+      "hp": 200,
+      "hpMax": 200,
+      "speed": 25,
+      "attackLow": 10,
+      "attackHigh": 60,
+      "energy": 0,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Seeking Missiles",
-          "Tier": 5
+          "name": "Seeking Missiles",
+          "tier": 5
         },
         {
-          "Name": "Big Club",
-          "Tier": 6
+          "name": "Big Club",
+          "tier": 6
         }
       ],
       "_stats": {
@@ -94,52 +94,52 @@
       }
     },
     {
-      "Character": "Miles Tails Prowler",
-      "HP": 250,
-      "HP Max": 250,
-      "Speed": 30,
-      "Attack Low": 10,
-      "Attack High": 30,
-      "Energy": 90,
-      "Summoned": false,
-      "Items": [
+      "character": "Miles Tails Prowler",
+      "hp": 250,
+      "hpMax": 250,
+      "speed": 30,
+      "attackLow": 10,
+      "attackHigh": 30,
+      "energy": 90,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Boosting Bugle",
-          "Tier": 5
+          "name": "Boosting Bugle",
+          "tier": 5
         },
         {
-          "Name": "Thorns",
-          "Tier": 5
+          "name": "Thorns",
+          "tier": 5
         },
         {
-          "Name": "Cleansing Flames",
-          "Tier": 7
+          "name": "Cleansing Flames",
+          "tier": 7
         }
       ]
     }
   ],
   [
     {
-      "Character": "Shadow The Hedgehog",
-      "HP": 600,
-      "HP Max": 600,
-      "Speed": 80,
-      "Attack Low": 5,
-      "Attack High": 20,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
+      "character": "Shadow The Hedgehog",
+      "hp": 600,
+      "hpMax": 600,
+      "speed": 80,
+      "attackLow": 5,
+      "attackHigh": 20,
+      "energy": 0,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Thorns",
-          "Tier": 9
+          "name": "Thorns",
+          "tier": 9
         },
         {
-          "Name": "Explosion Powder",
-          "Tier": 9
+          "name": "Explosion Powder",
+          "tier": 9
         },
         {
-          "Name": "Healing Pendant",
-          "Tier": 9
+          "name": "Healing Pendant",
+          "tier": 9
         }
       ]
     }

@@ -1,126 +1,126 @@
 [
   [
     {
-      "Character": "Pig",
-      "HP": 35,
-      "HP Max": 35,
-      "Speed": 12,
-      "Attack Low": 6,
-      "Attack High": 8,
-      "Energy": 0,
-      "Items": []
+      "character": "Pig",
+      "hp": 35,
+      "hpMax": 35,
+      "speed": 12,
+      "attackLow": 6,
+      "attackHigh": 8,
+      "energy": 0,
+      "items": []
     },
     {
-      "Character": "Ribbon Pig",
-      "HP": 35,
-      "HP Max": 35,
-      "Speed": 12,
-      "Attack Low": 6,
-      "Attack High": 8,
-      "Energy": 0,
-      "Items": []
+      "character": "Ribbon Pig",
+      "hp": 35,
+      "hpMax": 35,
+      "speed": 12,
+      "attackLow": 6,
+      "attackHigh": 8,
+      "energy": 0,
+      "items": []
     },
     {
-      "Character": "Boar",
-      "HP": 35,
-      "HP Max": 35,
-      "Speed": 12,
-      "Attack Low": 6,
-      "Attack High": 8,
-      "Energy": 0,
-      "Items": []
+      "character": "Boar",
+      "hp": 35,
+      "hpMax": 35,
+      "speed": 12,
+      "attackLow": 6,
+      "attackHigh": 8,
+      "energy": 0,
+      "items": []
     },
     {
-      "Character": "Fire Boar",
-      "HP": 50,
-      "HP Max": 50,
-      "Speed": 15,
-      "Attack Low": 8,
-      "Attack High": 12,
-      "Energy": 0,
-      "Items": []
+      "character": "Fire Boar",
+      "hp": 50,
+      "hpMax": 50,
+      "speed": 15,
+      "attackLow": 8,
+      "attackHigh": 12,
+      "energy": 0,
+      "items": []
     }
   ],
   [
     {
-      "Character": "Horny Mushroom",
-      "HP": 60,
-      "HP Max": 60,
-      "Speed": 10,
-      "Attack Low": 15,
-      "Attack High": 15,
-      "Energy": 0,
-      "Items": []
+      "character": "Horny Mushroom",
+      "hp": 60,
+      "hpMax": 60,
+      "speed": 10,
+      "attackLow": 15,
+      "attackHigh": 15,
+      "energy": 0,
+      "items": []
     },
     {
-      "Character": "Orange Mushroom",
-      "HP": 45,
-      "HP Max": 45,
-      "Speed": 12,
-      "Attack Low": 8,
-      "Attack High": 16,
-      "Energy": 0,
-      "Items": []
+      "character": "Orange Mushroom",
+      "hp": 45,
+      "hpMax": 45,
+      "speed": 12,
+      "attackLow": 8,
+      "attackHigh": 16,
+      "energy": 0,
+      "items": []
     },
     {
-      "Character": "Green Mushroom",
-      "HP": 45,
-      "HP Max": 45,
-      "Speed": 10,
-      "Attack Low": 10,
-      "Attack High": 15,
-      "Energy": 0,
-      "Items": [
+      "character": "Green Mushroom",
+      "hp": 45,
+      "hpMax": 45,
+      "speed": 10,
+      "attackLow": 10,
+      "attackHigh": 15,
+      "energy": 0,
+      "items": [
         {
-          "Name": "Poison Dagger",
-          "Tier": 1
+          "name": "Poison Dagger",
+          "tier": 1
         }
       ]
     }
   ],
   [
     {
-      "Character": "Red Snail",
-      "HP": 20,
-      "HP Max": 20,
-      "Speed": 3,
-      "Attack Low": 1,
-      "Attack High": 2,
-      "Energy": 0,
-      "Items": [
+      "character": "Red Snail",
+      "hp": 20,
+      "hpMax": 20,
+      "speed": 3,
+      "attackLow": 1,
+      "attackHigh": 2,
+      "energy": 0,
+      "items": [
         {
-          "Name": "Rough Skin",
-          "Tier": 1
+          "name": "Rough Skin",
+          "tier": 1
         }
       ]
     },
     {
-      "Character": "A Very Large Snail",
-      "HP": 150,
-      "HP Max": 150,
-      "Speed": 7,
-      "Attack Low": 20,
-      "Attack High": 40,
-      "Energy": 0,
-      "Items": [
+      "character": "A Very Large Snail",
+      "hp": 150,
+      "hpMax": 150,
+      "speed": 7,
+      "attackLow": 20,
+      "attackHigh": 40,
+      "energy": 0,
+      "items": [
         {
-          "Name": "Rough Skin",
-          "Tier": 3
+          "name": "Rough Skin",
+          "tier": 3
         }
       ]
     },
     {
-      "Character": "Blue Snail",
-      "HP": 20,
-      "HP Max": 20,
-      "Speed": 3,
-      "Attack Low": 1,
-      "Attack High": 2,
-      "Energy": 0,
-      "Items": [
+      "character": "Blue Snail",
+      "hp": 20,
+      "hpMax": 20,
+      "speed": 3,
+      "attackLow": 1,
+      "attackHigh": 2,
+      "energy": 0,
+      "items": [
         {
-          "Name": "Rough Skin",
-          "Tier": 1
+          "name": "Rough Skin",
+          "tier": 1
         }
       ]
     }

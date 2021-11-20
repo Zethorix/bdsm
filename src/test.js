@@ -5,7 +5,7 @@ export function outputTest(items) {
   const toEquip = [];
   for (const item of items) {
     if (item.name !== '') {
-      toEquip.push({'Name': item.name, 'Tier': item.tier});
+      toEquip.push(item);
     }
   }
   const season = 2;
@@ -14,15 +14,15 @@ export function outputTest(items) {
 
   const players = [
     {
-      "Character": "Zethorix",
-      "HP": 100,
-      "HP Max": 100,
-      "Speed": 10,
-      "Attack Low": 1,
-      "Attack High": 10,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": toEquip
+      character: "Zethorix",
+      hp: 100,
+      hpMax: 100,
+      speed: 10,
+      attackLow: 1,
+      attackHigh: 10,
+      energy: 0,
+      summoned: false,
+      items: toEquip
     }
   ]
 
@@ -38,38 +38,38 @@ export function buttontest() {
   console.log(waves);
   const players = [
     {
-      "Character": "Zethorix",
-      "HP": 100,
-      "HP Max": 100,
-      "Speed": 10,
-      "Attack Low": 1,
-      "Attack High": 10,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
+      character: "Zethorix",
+      hp: 100,
+      hpMax: 100,
+      speed: 10,
+      attackLow: 1,
+      attackHigh: 10,
+      energy: 0,
+      summoned: false,
+      items: [
         {
-          "Name": 'Avalanche',
-          "Tier": 1
+          name: 'Avalanche',
+          tier: 1
         },
         {
-          "Name": 'Rock Companion',
-          "Tier": 9
+          name: 'Rock Companion',
+          tier: 9
         }
       ]
     },
     {
-      "Character": "Oof",
-      "HP": 100,
-      "HP Max": 100,
-      "Speed": 10,
-      "Attack Low": 1,
-      "Attack High": 10,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
+      character: "Oof",
+      hp: 100,
+      hpMax: 100,
+      speed: 10,
+      attackLow: 1,
+      attackHigh: 10,
+      energy: 0,
+      summoned: false,
+      items: [
         {
-          "Name": 'Seeking Missiles',
-          "Tier": 1
+          name: 'Seeking Missiles',
+          tier: 1
         }
       ]
     }

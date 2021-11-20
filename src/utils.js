@@ -100,8 +100,8 @@ function _mutateTemplate(template, scale) {
     return template;
   }
 
-  if ('Base' in template && 'Scaling' in template) {
-    return template['Base'] + template['Scaling'] * scale;
+  if ('base' in template && 'scaling' in template) {
+    return template.base + template.scaling * scale;
   }
 
   // recursive check

@@ -1,121 +1,121 @@
 [
   [
     {
-      "Character": "Blob",
-      "HP": 10,
-      "HP Max": 10,
-      "Speed": 10,
-      "Attack Low": 2,
-      "Attack High": 2,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": []
+      "character": "Blob",
+      "hp": 10,
+      "hpMax": 10,
+      "speed": 10,
+      "attackLow": 2,
+      "attackHigh": 2,
+      "energy": 0,
+      "summoned": false,
+      "items": []
     },
     {
-      "Character": "Blobther",
-      "HP": 15,
-      "HP Max": 15,
-      "Speed": 10,
-      "Attack Low": 2,
-      "Attack High": 4,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": []
+      "character": "Blobther",
+      "hp": 15,
+      "hpMax": 15,
+      "speed": 10,
+      "attackLow": 2,
+      "attackHigh": 4,
+      "energy": 0,
+      "summoned": false,
+      "items": []
     },
     {
-      "Character": "Blob's Mom",
-      "HP": 20,
-      "HP Max": 20,
-      "Speed": 10,
-      "Attack Low": 3,
-      "Attack High": 3,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": []
+      "character": "Blob's Mom",
+      "hp": 20,
+      "hpMax": 20,
+      "speed": 10,
+      "attackLow": 3,
+      "attackHigh": 3,
+      "energy": 0,
+      "summoned": false,
+      "items": []
     },
     {
-      "Character": "Blob's Dad",
-      "HP": 20,
-      "HP Max": 20,
-      "Speed": 10,
-      "Attack Low": 3,
-      "Attack High": 4,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": []
+      "character": "Blob's Dad",
+      "hp": 20,
+      "hpMax": 20,
+      "speed": 10,
+      "attackLow": 3,
+      "attackHigh": 4,
+      "energy": 0,
+      "summoned": false,
+      "items": []
     },
     {
-      "Character": "Blob's Grandpa",
-      "HP": 30,
-      "HP Max": 30,
-      "Speed": 10,
-      "Attack Low": 8,
-      "Attack High": 16,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": []
+      "character": "Blob's Grandpa",
+      "hp": 30,
+      "hpMax": 30,
+      "speed": 10,
+      "attackLow": 8,
+      "attackHigh": 16,
+      "energy": 0,
+      "summoned": false,
+      "items": []
     }
   ],
   [
     {
-      "Character": "Bandit",
-      "HP": 15,
-      "HP Max": 15,
-      "Speed": 12,
-      "Attack Low": 6,
-      "Attack High": 10,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": []
+      "character": "Bandit",
+      "hp": 15,
+      "hpMax": 15,
+      "speed": 12,
+      "attackLow": 6,
+      "attackHigh": 10,
+      "energy": 0,
+      "summoned": false,
+      "items": []
     },
     {
-      "Character": "Bandit's Hot GF",
-      "HP": 20,
-      "HP Max": 20,
-      "Speed": 12,
-      "Attack Low": 8,
-      "Attack High": 10,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": []
+      "character": "Bandit's Hot GF",
+      "hp": 20,
+      "hpMax": 20,
+      "speed": 12,
+      "attackLow": 8,
+      "attackHigh": 10,
+      "energy": 0,
+      "summoned": false,
+      "items": []
     },
     {
-      "Character": "Bandad",
-      "HP": 25,
-      "HP Max": 25,
-      "Speed": 12,
-      "Attack Low": 8,
-      "Attack High": 12,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": []
+      "character": "Bandad",
+      "hp": 25,
+      "hpMax": 25,
+      "speed": 12,
+      "attackLow": 8,
+      "attackHigh": 12,
+      "energy": 0,
+      "summoned": false,
+      "items": []
     },
     {
-      "Character": "Bandit's Twin",
-      "HP": 15,
-      "HP Max": 15,
-      "Speed": 12,
-      "Attack Low": 6,
-      "Attack High": 10,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": []
+      "character": "Bandit's Twin",
+      "hp": 15,
+      "hpMax": 15,
+      "speed": 12,
+      "attackLow": 6,
+      "attackHigh": 10,
+      "energy": 0,
+      "summoned": false,
+      "items": []
     }
   ],
   [
     {
-      "Character": "Albert",
-      "HP": 53,
-      "HP Max": 100,
-      "Speed": 10,
-      "Attack Low": 6,
-      "Attack High": 15,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
+      "character": "Albert",
+      "hp": 53,
+      "hpMax": 100,
+      "speed": 10,
+      "attackLow": 6,
+      "attackHigh": 15,
+      "energy": 0,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Fire Sword",
-          "Tier": 1
+          "name": "Fire Sword",
+          "tier": 1
         }
       ],
       "_stats": {
@@ -124,34 +124,34 @@
       }
     },
     {
-      "Character": "Annie",
-      "HP": 47,
-      "HP Max": 100,
-      "Speed": 10,
-      "Attack Low": 3,
-      "Attack High": 12,
-      "Energy": 56,
-      "Summoned": false,
-      "Items": [
+      "character": "Annie",
+      "hp": 47,
+      "hpMax": 100,
+      "speed": 10,
+      "attackLow": 3,
+      "attackHigh": 12,
+      "energy": 56,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Love Letter",
-          "Tier": 1
+          "name": "Love Letter",
+          "tier": 1
         }
       ]
     },
     {
-      "Character": "Kelvinzorz",
-      "HP": 43,
-      "HP Max": 100,
-      "Speed": 10,
-      "Attack Low": 3,
-      "Attack High": 12,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
+      "character": "Kelvinzorz",
+      "hp": 43,
+      "hpMax": 100,
+      "speed": 10,
+      "attackLow": 3,
+      "attackHigh": 12,
+      "energy": 0,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Poison Dagger",
-          "Tier": 1
+          "name": "Poison Dagger",
+          "tier": 1
         }
       ]
     }

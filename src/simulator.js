@@ -7,12 +7,10 @@ function _preprocessCharacterItems(character, season) {
   }
   const items = data.getItems(season);
   const triggers = {};
-  console.log(character);
-  for (const item of character['Items']) {
-    const name = item['Name'];
-    const triggerTypes = name in items['Energy']
-        ? ["TurnStart"]
-        : items['Passive'][name]['Triggers'];
+  for (const item of character.items) {
+    const triggerTypes = item.name in items.energy
+        ? ['TurnStart']
+        : items.passive[item.name].triggers;
     for (const triggerType of triggerTypes) {
       if (!(triggerType in triggers)) {
         triggers[triggerType] = [item];
@@ -21,25 +19,25 @@ function _preprocessCharacterItems(character, season) {
       triggers[triggerType].push(item);
     }
   }
-  character['_triggers'] = triggers;
+  character._triggers = triggers;
   return character;
 }
 
 function _addEnergyTo(obj, amount) {
-  if ('Energy' in obj) {
-    obj['Energy'] += amount;
+  if ('energy' in obj) {
+    obj.energy += amount;
     return;
   }
 
   for (const key in obj) {
-    obj[key]['Energy'] += amount;
+    obj[key].energy += amount;
   }
 }
 
 function _findPositionWithinTeam(name, team) {
   for (const position in team) {
     const c = team[position];
-    if (c['Character'] === name) {
+    if (c.character === name) {
       return position;
     }
   }
@@ -116,14 +114,14 @@ class Battle {
 
   addCopyOfCharacterToTeam(character, teamIndex) {
     const toAdd = utils.deepCopyJson(character);
-    var name = toAdd['Character'];
+    var name = toAdd.character;
     const originalName = name;
     var copyNum = 1;
     while (name in this.allCharacters) {
       copyNum++;
       name = originalName + ' ' + copyNum;
     }
-    toAdd['Character'] = name;
+    toAdd.character = name;
     this.getTeamOf[name] = teamIndex;
     this.allCharacters[name] = toAdd;
     this.triggerPhase('BattleStart', toAdd);
@@ -131,9 +129,9 @@ class Battle {
   }
 
   addSummonToTeam(item, teamIndex) {
-    const template = this.getTemplates()[item['Name']];
-    const summon = utils.getScaledTemplate(template, item['Tier']);
-    utils.logIf(this.verbose, this.output, 'Summoning ' + summon['Character'] + ' for team ' + teamIndex);
+    const template = this.getTemplates()[item.name];
+    const summon = utils.getScaledTemplate(template, item.tier);
+    utils.logIf(this.verbose, this.output, 'Summoning ' + summon.character + ' for team ' + teamIndex);
     _preprocessCharacterItems(summon, this.season);
     this.addCopyOfCharacterToTeam(summon, teamIndex);
   }
@@ -142,7 +140,7 @@ class Battle {
     if (typeof id === 'string') {
       return [this.allCharacters[id], id];
     }
-    return [id, id['Character']];
+    return [id, id.character];
   }
 
   kill(id) {
@@ -163,18 +161,18 @@ class Battle {
 
   changeHp(id, amount) {
     const [character, name] = this.getCharacterAndName(id);
-    const originalHp = character['HP'];
-    character['HP'] += amount;
-    if (character['HP'] > character['HP Max']) {
-      character['HP'] = character['HP Max'];
+    const originalHp = character.hp;
+    character.hp += amount;
+    if (character.hp > character.hpMax) {
+      character.hp = character.hpMax;
     }
-    if (character['HP'] <= 0) {
+    if (character.hp <= 0) {
       this.triggerPhase('Death', character);
     }
     utils.logIf(
         this.verbose,
         this.output,
-        name + ' hp changed by ' + amount + ': ' + originalHp + ' -> ' + character['HP']
+        name + ' hp changed by ' + amount + ': ' + originalHp + ' -> ' + character.hp
     );
   }
 
@@ -183,29 +181,29 @@ class Battle {
     this.triggerPhase(
         'EnemyDamage',
         target,
-        {'Source': source, 'Damage': damageAmount}
+        {source: source, damage: damageAmount}
     );
     this.changeHp(target, -damageAmount[0]);
   }
 
   changeSpeed(id, amount) {
     const [character, name] = this.getCharacterAndName(id);
-    const originalSpeed = character['Speed'];
-    character['Speed'] = Math.max(character['Speed'] + amount, 1);
+    const originalSpeed = character.speed;
+    character.speed = Math.max(character.speed + amount, 1);
     utils.logIf(
         this.verbose,
         this.output,
-        name + ' speed changed by ' + amount + ': ' + originalSpeed + ' -> ' + character['Speed']
+        name + ' speed changed by ' + amount + ': ' + originalSpeed + ' -> ' + character.speed
     );
   }
 
   changeAttack(id, amount) {
     const [character, name] = this.getCharacterAndName(id);
-    const originalAttackLow = character['Attack Low'];
-    const originalAttackHigh = character['Attack High'];
+    const originalAttackLow = character.attackLow;
+    const originalAttackHigh = character.attackHigh;
     const amountToGain = Math.max(-originalAttackLow, amount);
-    character['Attack Low'] += amountToGain;
-    character['Attack High'] += amountToGain;
+    character.attackLow += amountToGain;
+    character.attackHigh += amountToGain;
     utils.logIf(
         this.verbose,
         this.output,
@@ -215,41 +213,38 @@ class Battle {
         ': ' +
         [originalAttackLow, originalAttackHigh] +
         ' -> ' +
-        [character['Attack Low'], character['Attack High']]
+        [character.attackLow, character.attackHigh]
     );
   }
 
   changeEnergy(id, amount) {
     const [character, name] = this.getCharacterAndName(id);
-    const originalEnergy = character['Energy'];
-    character['Energy'] = Math.max(character['Energy'] + amount, 0);
+    const originalEnergy = character.energy;
+    character.energy = Math.max(character.energy + amount, 0);
     utils.logIf(
         this.verbose,
         this.output,
-        name + ' energy changed by ' + amount + ': ' + originalEnergy + ' -> ' + character['Energy']
+        name + ' energy changed by ' + amount + ': ' + originalEnergy + ' -> ' + character.energy
     );
   }
 
   checkAllHp() {
     for (const name in this.allCharacters) {
       const character = this.allCharacters[name];
-      if (character['HP'] <= 0) {
+      if (character.hp <= 0) {
         this.kill(name);
-      }
-      if (character['HP'] > character['HP Max']) {
-        character['HP'] = character['HP Max'];
       }
     }
   }
 
   useItemAbility(item, phase, activeCharacter, other=null) {
-    utils.logIf(this.verbose, this.output, 'Checking item: ' + item['Name']);
+    utils.logIf(this.verbose, this.output, 'Checking item: ' + item.name);
     const [character, characterName] = this.getCharacterAndName(activeCharacter);
     const allyTeamIndex = this.getTeamOf[characterName];
     const allyTeam = this.teams[allyTeamIndex];
     const enemyTeam = this.teams[1 - allyTeamIndex];
-    const itemName = item["Name"];
-    const tier = item["Tier"];
+    const itemName = item.name;
+    const tier = item.tier;
 
     switch (phase) {
       case 'BattleStart': {
@@ -266,9 +261,9 @@ class Battle {
         break;
       }
       case 'TurnStart': {
-        if (itemName in this.getItems()['Energy']) {
-          const cost = this.getItems()['Energy'][itemName]['Cost'];
-          if (character['Energy'] < cost) {
+        if (itemName in this.getItems().energy) {
+          const cost = this.getItems().energy[itemName].cost;
+          if (character.energy < cost) {
             return;
           }
           this.changeEnergy(character, -cost);
@@ -284,7 +279,7 @@ class Battle {
                   utils.pickRandomWithinRange(3 * tier, 5 * tier)
               );
               this.changeSpeed(
-                  target['Character'],
+                  target.character,
                   -utils.pickRandomWithinRange(0, tier)
               );
             }
@@ -298,7 +293,7 @@ class Battle {
               const target = allyTeam[utils.pickRandom(
                   allyTeam,
                   (c) => {
-                    if (c['Summoned'] || c['Character'] === characterName) {
+                    if (c.summoned || c.character === characterName) {
                       return 0;
                     }
                     return 1;
@@ -318,14 +313,14 @@ class Battle {
           case 'Energetic Ally': {
             const minHp = allyTeam.reduce(
               (a, c) => {
-                return Math.min(a, c['HP']);
+                return Math.min(a, c.hp);
               },
               Infinity
             );
             const target = allyTeam[utils.pickRandom(
                 allyTeam,
                 (c) => {
-                  if (c['HP'] === minHp) {
+                  if (c.hp === minHp) {
                     return 1;
                   }
                   return 0;
@@ -361,7 +356,7 @@ class Battle {
           }
           case 'Knight\'s Lance': {
             const target = enemyTeam[utils.pickRandom(enemyTeam)];
-            if (character['HP'] === character['HP Max']) {
+            if (character.hp === character.hpMax) {
               this.dealDamage(
                   target,
                   character,
@@ -408,17 +403,17 @@ class Battle {
       case 'Target': {
         switch (itemName) {
           case 'Seeking Missiles': {
-            var target = {'HP': Infinity};
+            var target = {hp: Infinity};
             for (const character of enemyTeam) {
-              if (character['HP'] < target['HP']) {
+              if (character.hp < target.hp) {
                 target = character;
               }
             }
-            if (target['HP'] === Infinity) {
+            if (target.hp === Infinity) {
               throw Error('InternalError: Seeking Missiles could not find a target from ' + enemyTeam);
             }
             this.currentTarget = target;
-            utils.logIf(this.verbose, this.output, 'Seeking Missiles selected target: ' + target['Character']);
+            utils.logIf(this.verbose, this.output, 'Seeking Missiles selected target: ' + target.character);
             break;
           }
           default: {
@@ -443,7 +438,7 @@ class Battle {
             const target = enemyTeam[utils.pickRandom(
                 enemyTeam,
                 (c) => {
-                  if (c['Character'] === this.currentTarget['Character']) {
+                  if (c.character === this.currentTarget.character) {
                     return 0;
                   }
                   return 1;
@@ -453,10 +448,10 @@ class Battle {
             break;
           }
           case 'Poison Dagger': {
-            if (!('Poison' in this.currentTarget)) {
-              this.currentTarget['Poison'] = 0;
+            if (!('poison' in this.currentTarget)) {
+              this.currentTarget.poison = 0;
             }
-            this.currentTarget['Poison'] += tier;
+            this.currentTarget.poison += tier;
             break;
           }
           default: {
@@ -470,17 +465,17 @@ class Battle {
           case 'Healing Pendant':
           case 'Magic Parasol':
           case 'Survival Kit': {
-            if (this.currentTarget['Character'] === characterName) {
+            if (this.currentTarget.character === characterName) {
               break;
             }
             if (!(utils.withProbability(0.07 + 0.03 * tier))) {
               break;
             }
-            if (this.currentTarget['HP'] < character['HP']) {
+            if (this.currentTarget.hp < character.hp) {
               utils.logIf(
                   this.verbose,
                   this.output,
-                  characterName + ' blocks for ' + this.currentTarget['Character']
+                  characterName + ' blocks for ' + this.currentTarget.character
               );
               this.currentTarget = character;
               break;
@@ -508,7 +503,7 @@ class Battle {
             break;
           }
           case 'Seeking Missiles': {
-            const missingHpProportion = this.currentTarget['HP'] / this.currentTarget['HP Max'];
+            const missingHpProportion = this.currentTarget.hp / this.currentTarget.hpMax;
             this.finalDamage += Math.floor(5 * missingHpProportion * tier);
             break;
           }
@@ -531,21 +526,24 @@ class Battle {
               break;
             }
             utils.logIf(this.verbose, this.output, 'Magic Parasol triggered');
-            other['Damage'][0] = 0;
+            other.damage[0] = 0;
             break;
           }
           case 'Martyr Armor': {
+            const team = this.getTeamOf[characterName];
+            if (this.teams[team].length === 1) {
+              break;
+            }
             if (!utils.withProbability(0.66)) {
               break;
             }
-            const team = this.getTeamOf[characterName];
             const target = this.teams[team][utils.pickRandom(
                 this.teams[team],
                 (c) => {
-                  if (c['Character'] == characterName) {
+                  if (c.character == characterName) {
                     return 0;
                   }
-                  if (c['Summoned']) {
+                  if (c.summoned) {
                     return 0;
                   }
                   return 1;
@@ -562,8 +560,8 @@ class Battle {
             if (!utils.withProbability(0.5)) {
               break;
             }
-            this.changeHp(other['Source'], -2 * tier);
-            const damageAmount = other['Damage'];
+            this.changeHp(other.source, -2 * tier);
+            const damageAmount = other.damage;
             damageAmount[0] = Math.max(0, damageAmount[0] - (2 * tier));
             break;
           }
@@ -599,10 +597,10 @@ class Battle {
             const target = allyTeam[utils.pickRandom(
                 allyTeam,
                 (c) => {
-                  if (c['Character'] === characterName) {
+                  if (c.character === characterName) {
                     return 0;
                   }
-                  if (c['Summoned']) {
+                  if (c.summoned) {
                     return 0;
                   }
                   return 1;
@@ -628,7 +626,7 @@ class Battle {
               break;
             }
             for (const ally of allyTeam) {
-              if (ally['Character'] == characterName) {
+              if (ally.character == characterName) {
                 continue;
               }
               this.changeHp(ally, tier);
@@ -648,17 +646,17 @@ class Battle {
   }
 
   triggerPhase(phase, activeCharacter, other=null) {
-    if (!(phase in activeCharacter['_triggers'])) {
+    if (!(phase in activeCharacter._triggers)) {
       return;
     }
 
-    for (const item of activeCharacter['_triggers'][phase]) {
+    for (const item of activeCharacter._triggers[phase]) {
       this.useItemAbility(item, phase, activeCharacter, other);
     }
   }
 
   tick() {
-    const activeName = utils.pickRandom(this.allCharacters, 'Speed');
+    const activeName = utils.pickRandom(this.allCharacters, 'speed');
     utils.logIf(this.verbose, this.output, '\n' + activeName + '\'s turn:');
     this.activeCharacter = this.allCharacters[activeName];
     const activeTeamIndex = this.getTeamOf[activeName];
@@ -682,11 +680,11 @@ class Battle {
     }
     this.triggerPhase('PostTarget', this.activeCharacter);
 
-    utils.logIf(this.verbose, this.output, 'main target: ' + this.currentTarget['Character']);
+    utils.logIf(this.verbose, this.output, 'main target: ' + this.currentTarget.character);
 
     this.baseDamage = utils.pickRandomWithinRange(
-        this.activeCharacter['Attack Low'],
-        this.activeCharacter['Attack High']
+        this.activeCharacter.attackLow,
+        this.activeCharacter.attackHigh
     );
     this.finalDamage = this.baseDamage;
     utils.logIf(this.verbose, this.output, 'main attack damage: ' + this.baseDamage);
@@ -700,13 +698,13 @@ class Battle {
 
     this.dealDamage(this.currentTarget, this.activeCharacter, this.finalDamage);
 
-    if ('Poison' in this.currentTarget) {
+    if ('poison' in this.currentTarget) {
       utils.logIf(
           this.verbose,
           this.output,
-          this.currentTarget['Character'] + ' takes poison damage.'
+          this.currentTarget.character + ' takes poison damage.'
       );
-      this.changeHp(this.currentTarget, -this.currentTarget['Poison']);
+      this.changeHp(this.currentTarget, -this.currentTarget.poison);
     }
     this.checkAllHp();
 
@@ -720,7 +718,7 @@ class Battle {
     return utils.all(
         this.teams[index],
         (character) => {
-          return character['HP'] <= 0;
+          return character.hp <= 0;
         }
     );
   }

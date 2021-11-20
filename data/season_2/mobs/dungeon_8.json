@@ -1,140 +1,140 @@
 [
   [
     {
-      "Character": "Boomerang Monkey",
-      "HP": 225,
-      "HP Max": 225,
-      "Speed": 17,
-      "Attack Low": 24,
-      "Attack High": 32,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
+      "character": "Boomerang Monkey",
+      "hp": 225,
+      "hpMax": 225,
+      "speed": 17,
+      "attackLow": 24,
+      "attackHigh": 32,
+      "energy": 0,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Machete",
-          "Tier": 8
+          "name": "Machete",
+          "tier": 8
         }
       ]
     },
     {
-      "Character": "Ice Monkey",
-      "HP": 200,
-      "HP Max": 200,
-      "Speed": 20,
-      "Attack Low": 10,
-      "Attack High": 25,
-      "Energy": 999,
-      "Summoned": false,
-      "Items": [
+      "character": "Ice Monkey",
+      "hp": 200,
+      "hpMax": 200,
+      "speed": 20,
+      "attackLow": 10,
+      "attackHigh": 25,
+      "energy": 999,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Avalanche",
-          "Tier": 1
+          "name": "Avalanche",
+          "tier": 1
         }
       ]
     },
     {
-      "Character": "Wizard Monkey",
-      "HP": 250,
-      "HP Max": 250,
-      "Speed": 10,
-      "Attack Low": 0,
-      "Attack High": 0,
-      "Energy": 999,
-      "Summoned": false,
-      "Items": [
+      "character": "Wizard Monkey",
+      "hp": 250,
+      "hpMax": 250,
+      "speed": 10,
+      "attackLow": 0,
+      "attackHigh": 0,
+      "energy": 999,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Explosion Powder",
-          "Tier": 2
-        }
-      ]
-    }
-  ],
-  [
-    {
-      "Character": "Dart Monkey 1",
-      "HP": 150,
-      "HP Max": 150,
-      "Speed": 18,
-      "Attack Low": 10,
-      "Attack High": 40,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": []
-    },
-    {
-      "Character": "Dart Monkey 2",
-      "HP": 150,
-      "HP Max": 150,
-      "Speed": 18,
-      "Attack Low": 10,
-      "Attack High": 40,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": []
-    },
-    {
-      "Character": "Tack Shooter 1",
-      "HP": 200,
-      "HP Max": 200,
-      "Speed": 18,
-      "Attack Low": 0,
-      "Attack High": 0,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
-        {
-          "Name": "Thorns",
-          "Tier": 7
-        }
-      ]
-    },
-    {
-      "Character": "Tack Shooter 2",
-      "HP": 200,
-      "HP Max": 200,
-      "Speed": 18,
-      "Attack Low": 0,
-      "Attack High": 0,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
-        {
-          "Name": "Thorns",
-          "Tier": 7
+          "name": "Explosion Powder",
+          "tier": 2
         }
       ]
     }
   ],
   [
     {
-      "Character": "Super Monkey",
-      "HP": 375,
-      "HP Max": 375,
-      "Speed": 55,
-      "Attack Low": 20,
-      "Attack High": 35,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
+      "character": "Dart Monkey 1",
+      "hp": 150,
+      "hpMax": 150,
+      "speed": 18,
+      "attackLow": 10,
+      "attackHigh": 40,
+      "energy": 0,
+      "summoned": false,
+      "items": []
+    },
+    {
+      "character": "Dart Monkey 2",
+      "hp": 150,
+      "hpMax": 150,
+      "speed": 18,
+      "attackLow": 10,
+      "attackHigh": 40,
+      "energy": 0,
+      "summoned": false,
+      "items": []
+    },
+    {
+      "character": "Tack Shooter 1",
+      "hp": 200,
+      "hpMax": 200,
+      "speed": 18,
+      "attackLow": 0,
+      "attackHigh": 0,
+      "energy": 0,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Seeking Missiles",
-          "Tier": 5
+          "name": "Thorns",
+          "tier": 7
         }
       ]
     },
     {
-      "Character": "Monkey Village",
-      "HP": 200,
-      "HP Max": 200,
-      "Speed": 20,
-      "Attack Low": 0,
-      "Attack High": 0,
-      "Energy": 999,
-      "Summoned": false,
-      "Items": [
+      "character": "Tack Shooter 2",
+      "hp": 200,
+      "hpMax": 200,
+      "speed": 18,
+      "attackLow": 0,
+      "attackHigh": 0,
+      "energy": 0,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Boosting Bugle",
-          "Tier": 3
+          "name": "Thorns",
+          "tier": 7
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "character": "Super Monkey",
+      "hp": 375,
+      "hpMax": 375,
+      "speed": 55,
+      "attackLow": 20,
+      "attackHigh": 35,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Seeking Missiles",
+          "tier": 5
+        }
+      ]
+    },
+    {
+      "character": "Monkey Village",
+      "hp": 200,
+      "hpMax": 200,
+      "speed": 20,
+      "attackLow": 0,
+      "attackHigh": 0,
+      "energy": 999,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Boosting Bugle",
+          "tier": 3
         }
       ]
     }

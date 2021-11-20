@@ -1,91 +1,91 @@
 [
   [
     {
-      "Character": "Trundle",
-      "HP": 250,
-      "HP Max": 250,
-      "Speed": 17,
-      "Attack Low": 20,
-      "Attack High": 75,
-      "Energy": 999,
-      "Summoned": false,
-      "Items": [
+      "character": "Trundle",
+      "hp": 250,
+      "hpMax": 250,
+      "speed": 17,
+      "attackLow": 20,
+      "attackHigh": 75,
+      "energy": 999,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Challenger Arrow",
-          "Tier": 2
+          "name": "Challenger Arrow",
+          "tier": 2
         },
         {
-          "Name": "Draining Dagger",
-          "Tier": 2
+          "name": "Draining Dagger",
+          "tier": 2
         }
       ]
     },
     {
-      "Character": "Sejuani",
-      "HP": 250,
-      "HP Max": 250,
-      "Speed": 13,
-      "Attack Low": 50,
-      "Attack High": 100,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
+      "character": "Sejuani",
+      "hp": 250,
+      "hpMax": 250,
+      "speed": 13,
+      "attackLow": 50,
+      "attackHigh": 100,
+      "energy": 0,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Avalanche",
-          "Tier": 4
+          "name": "Avalanche",
+          "tier": 4
         }
       ]
     },
     {
-      "Character": "Teemo",
-      "HP": 100,
-      "HP Max": 100,
-      "Speed": 20,
-      "Attack Low": 10,
-      "Attack High": 20,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
+      "character": "Teemo",
+      "hp": 100,
+      "hpMax": 100,
+      "speed": 20,
+      "attackLow": 10,
+      "attackHigh": 20,
+      "energy": 0,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Poison Dagger",
-          "Tier": 5
+          "name": "Poison Dagger",
+          "tier": 5
         }
       ]
     },
     {
-      "Character": "Ezreal",
-      "HP": 100,
-      "HP Max": 100,
-      "Speed": 20,
-      "Attack Low": 10,
-      "Attack High": 20,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": []
+      "character": "Ezreal",
+      "hp": 100,
+      "hpMax": 100,
+      "speed": 20,
+      "attackLow": 10,
+      "attackHigh": 20,
+      "energy": 0,
+      "summoned": false,
+      "items": []
     }
   ],
   [
     {
-      "Character": "Tahm Kench",
-      "HP": 200,
-      "HP Max": 200,
-      "Speed": 6,
-      "Attack Low": 50,
-      "Attack High": 150,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
+      "character": "Tahm Kench",
+      "hp": 200,
+      "hpMax": 200,
+      "speed": 6,
+      "attackLow": 50,
+      "attackHigh": 150,
+      "energy": 0,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Rough Skin",
-          "Tier": 5
+          "name": "Rough Skin",
+          "tier": 5
         },
         {
-          "Name": "Healing Pendant",
-          "Tier": 5
+          "name": "Healing Pendant",
+          "tier": 5
         },
         {
-          "Name": "Magic Parasol",
-          "Tier": 6
+          "name": "Magic Parasol",
+          "tier": 6
         }
       ],
       "_stats": {
@@ -96,26 +96,26 @@
       }
     },
     {
-      "Character": "Braum",
-      "HP": 300,
-      "HP Max": 300,
-      "Speed": 7,
-      "Attack Low": 50,
-      "Attack High": 100,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
+      "character": "Braum",
+      "hp": 300,
+      "hpMax": 300,
+      "speed": 7,
+      "attackLow": 50,
+      "attackHigh": 100,
+      "energy": 0,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Rough Skin",
-          "Tier": 5
+          "name": "Rough Skin",
+          "tier": 5
         },
         {
-          "Name": "Magic Parasol",
-          "Tier": 4
+          "name": "Magic Parasol",
+          "tier": 4
         },
         {
-          "Name": "Survival Kit",
-          "Tier": 8
+          "name": "Survival Kit",
+          "tier": 8
         }
       ],
       "_stats": {
@@ -126,92 +126,92 @@
       }
     },
     {
-      "Character": "Brand",
-      "HP": 150,
-      "HP Max": 150,
-      "Speed": 11,
-      "Attack Low": 10,
-      "Attack High": 20,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
+      "character": "Brand",
+      "hp": 150,
+      "hpMax": 150,
+      "speed": 11,
+      "attackLow": 10,
+      "attackHigh": 20,
+      "energy": 0,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Thorns",
-          "Tier": 7
+          "name": "Thorns",
+          "tier": 7
         },
         {
-          "Name": "Explosion Powder",
-          "Tier": 5
+          "name": "Explosion Powder",
+          "tier": 5
         },
         {
-          "Name": "Machete",
-          "Tier": 4
+          "name": "Machete",
+          "tier": 4
         }
       ]
     },
     {
-      "Character": "Zyra",
-      "HP": 150,
-      "HP Max": 150,
-      "Speed": 15,
-      "Attack Low": 5,
-      "Attack High": 25,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
+      "character": "Zyra",
+      "hp": 150,
+      "hpMax": 150,
+      "speed": 15,
+      "attackLow": 5,
+      "attackHigh": 25,
+      "energy": 0,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Thorns",
-          "Tier": 7
+          "name": "Thorns",
+          "tier": 7
         },
         {
-          "Name": "Machete",
-          "Tier": 4
+          "name": "Machete",
+          "tier": 4
         },
         {
-          "Name": "Imp Whistle",
-          "Tier": 8
+          "name": "Imp Whistle",
+          "tier": 8
         }
       ]
     },
     {
-      "Character": "Sona",
-      "HP": 150,
-      "HP Max": 150,
-      "Speed": 12,
-      "Attack Low": 20,
-      "Attack High": 30,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
+      "character": "Sona",
+      "hp": 150,
+      "hpMax": 150,
+      "speed": 12,
+      "attackLow": 20,
+      "attackHigh": 30,
+      "energy": 0,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Energetic Ally",
-          "Tier": 5
+          "name": "Energetic Ally",
+          "tier": 5
         },
         {
-          "Name": "Love Letter",
-          "Tier": 7
+          "name": "Love Letter",
+          "tier": 7
         }
       ]
     }
   ],
   [
     {
-      "Character": "Riven",
-      "HP": 500,
-      "HP Max": 500,
-      "Speed": 20,
-      "Attack Low": 40,
-      "Attack High": 90,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": [
+      "character": "Riven",
+      "hp": 500,
+      "hpMax": 500,
+      "speed": 20,
+      "attackLow": 40,
+      "attackHigh": 90,
+      "energy": 0,
+      "summoned": false,
+      "items": [
         {
-          "Name": "Machete",
-          "Tier": 9
+          "name": "Machete",
+          "tier": 9
         },
         {
-          "Name": "Big Club",
-          "Tier": 9
+          "name": "Big Club",
+          "tier": 9
         }
       ],
       "_stats": {
@@ -220,15 +220,15 @@
       }
     },
     {
-      "Character": "Yasuo",
-      "HP": 250,
-      "HP Max": 250,
-      "Speed": 20,
-      "Attack Low": 1,
-      "Attack High": 150,
-      "Energy": 0,
-      "Summoned": false,
-      "Items": []
+      "character": "Yasuo",
+      "hp": 250,
+      "hpMax": 250,
+      "speed": 20,
+      "attackLow": 1,
+      "attackHigh": 150,
+      "energy": 0,
+      "summoned": false,
+      "items": []
     }
   ]
 ]
