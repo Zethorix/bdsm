@@ -1,9 +1,27 @@
-export function logIf(bool, logs, toLog) {
-  if (bool) {
+import * as global from './global.js'
+
+export function format() {
+  const args = arguments;
+  return args[0].replace(/{(\d+)}/g, function(match, number) {
+      const index = parseInt(number) + 1;
+      return typeof[args[index]] !== 'undefined'
+        ? args[index]
+        : match;
+  });
+}
+
+export function log() {
+  if (!global.verbose && global.output === null) {
+    return;
+  }
+  const toLog = typeof arguments[0] === 'string'
+      ? format(...arguments)
+      : arguments[0];
+  if (global.verbose) {
     console.log(toLog);
   }
-  if (logs != null && typeof toLog === 'string') {
-    logs.push(toLog);
+  if (global.output !== null) {
+    global.output.push(toLog);
   }
 }
 

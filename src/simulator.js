@@ -33,26 +33,31 @@ function _findPositionWithinTeam(name, team) {
   return -1;
 }
 
-export function runDungeon(team, waves, season, output=null, verbose=false) {
+function _throwPhaseError(itemName, phase) {
+  throw Error(utils.format('InternalError: Item {0} does not have phase {1}',
+                           itemName, phase));
+}
+
+export function runDungeon(team, waves, season) {
   var currTeam = team;
   for (const character of team) {
     _preprocessCharacterItems(character, season);
   }
-  utils.logIf(verbose, output, '\nTeam 0: ' + JSON.stringify(team));
-  utils.logIf(verbose, output, '\n\nStarting dungeon');
+  utils.log('\nTeam 0: {0}', JSON.stringify(team));
+  utils.log('\n\nStarting dungeon');
   for (const index in waves) {
-    utils.logIf(verbose, output, '\nloading wave ' + index);
+    utils.log('\nloading wave {0}', index);
     const wave = waves[index];
     for (const character of wave) {
       _preprocessCharacterItems(character, season);
     }
-    utils.logIf(verbose, output, 'Team 1: ' + JSON.stringify(wave));
-    const battle = new Battle(currTeam, wave, season, output, verbose);
-    utils.logIf(verbose, output, utils.deepCopyJson(battle));
+    utils.log('Team 1: {0}', JSON.stringify(wave));
+    const battle = new Battle(currTeam, wave, season);
+    utils.log(utils.deepCopyJson(battle));
     while (true) {
       battle.tick();
 
-      utils.logIf(verbose, output, utils.deepCopyJson(battle));
+      utils.log(utils.deepCopyJson(battle));
 
       if (battle.teamHasLost(0)) {
         return 1;
@@ -68,16 +73,10 @@ export function runDungeon(team, waves, season, output=null, verbose=false) {
 }
 
 class Battle {
-  constructor(team1, team2, season, output=null, verbose=false) {
-    this.verbose = verbose;
+  constructor(team1, team2, season) {
     this.season = season;
-    this.output = output;
     this.summonedChicken = {};
     this.initTeams(team1, team2);
-  }
-
-  log(obj) {
-    utils.logIf(this.verbose, this.output, obj);
   }
 
   getItems() {
@@ -125,7 +124,7 @@ class Battle {
   addSummonToTeam(item, teamIndex) {
     const template = this.getTemplates()[item.name];
     const summon = utils.getScaledTemplate(template, item.tier);
-    this.log('Summoning ' + summon.character + ' for team ' + teamIndex);
+    utils.log('Summoning {0} for team {1}', summon.character, teamIndex);
     _preprocessCharacterItems(summon, this.season);
     this.addCopyOfCharacterToTeam(summon, teamIndex);
   }
@@ -139,11 +138,12 @@ class Battle {
 
   kill(id) {
     const [character, name] = this.getCharacterAndName(id);
-    this.log('killing: ' + name);
+    utils.log('killing: {0}', name);
     const team = this.teams[this.getTeamOf[name]];
     const pos = _findPositionWithinTeam(name, team);
     if (pos < 0) {
-      throw Error('InternalError: ' + name + ' is not in team ' + team);
+      throw Error(utils.format('InternalError: {0} is not in team {1}',
+                               name, team));
     }
     delete this.allCharacters[name];
     delete this.getTeamOf[name];
@@ -163,7 +163,8 @@ class Battle {
     if (character.hp <= 0) {
       this.triggerPhase('Death', character);
     }
-    this.log(name + ' HP changed by ' + amount + ': ' + originalHp + ' -> ' + character.hp);
+    utils.log('{0} HP changed by {1}: {2} -> {3}',
+              name, amount, originalHp, character.hp);
   }
 
   dealDamage(target, source, amount) {
@@ -180,7 +181,8 @@ class Battle {
     const [character, name] = this.getCharacterAndName(id);
     const originalSpeed = character.speed;
     character.speed = Math.max(character.speed + amount, 1);
-    this.log(name + ' speed changed by ' + amount + ': ' + originalSpeed + ' -> ' + character.speed);
+    utils.log('{0} speed changed by {1}: {2} -> {3}',
+              name, amount, originalSpeed, character.speed);
   }
 
   changeAttack(id, amount) {
@@ -190,13 +192,11 @@ class Battle {
     const amountToGain = Math.max(-originalAttackLow, amount);
     character.attackLow += amountToGain;
     character.attackHigh += amountToGain;
-    this.log(
-        name +
-        ' attack changed by ' +
-        amount +
-        ': ' +
-        [originalAttackLow, originalAttackHigh] +
-        ' -> ' +
+    utils.log(
+        '{0} attack changed by {1}: {2} -> {3}',
+        name,
+        amount,
+        [originalAttackLow, originalAttackHigh],
         [character.attackLow, character.attackHigh]
     );
   }
@@ -211,15 +211,8 @@ class Battle {
     const [character, name] = this.getCharacterAndName(id);
     const originalEnergy = character.energy;
     character.energy = Math.max(character.energy + amount, 0);
-    this.log(
-        name +
-        ' energy changed by ' +
-        amount +
-        ': ' +
-        originalEnergy +
-        ' -> ' +
-        character.energy
-    );
+    utils.log('{0} energy changed by {1}: {2} -> {3}',
+              name, amount, originalEnergy, character.energy);
   }
 
   checkAllHp() {
@@ -232,7 +225,7 @@ class Battle {
   }
 
   useItemAbility(item, phase, activeCharacter, other=null) {
-    this.log('Checking item for phase ' + phase + ': ' + item.name);
+    utils.log('Checking item for phase {0}: {1}', phase, item.name);
     const [character, characterName] = this.getCharacterAndName(activeCharacter);
     const allyTeamIndex = this.getTeamOf[characterName];
     const allyTeam = this.teams[allyTeamIndex];
@@ -249,7 +242,7 @@ class Battle {
             break;
           }
           default: {
-            throw Error('InternalError: Item ' + itemName + ' does not have phase ' + phase);
+            _throwPhaseError(itemName, phase);
           }
         }
         break;
@@ -373,7 +366,7 @@ class Battle {
           }
           case 'Healing Pendant': {
             if (!utils.withProbability(0.5)) {
-              this.log(itemName + ' did not trigger');
+              utils.log('{0} did not trigger', itemName);
               break;
             }
             this.changeHp(character, 5 * tier);
@@ -391,7 +384,7 @@ class Battle {
             break;
           }
           default: {
-            throw Error('InternalError: Item ' + itemName + ' does not have phase ' + phase);
+            _throwPhaseError(itemName, phase);
           }
         }
         break;
@@ -406,14 +399,17 @@ class Battle {
               }
             }
             if (target.hp === Infinity) {
-              throw Error('InternalError: Seeking Missiles could not find a target from ' + enemyTeam);
+              throw Error(utils.format(
+                  'InternalError: Seeking Missiles could not find a target from {0}',
+                  enemyTeam
+              ));
             }
             this.currentTarget = target;
-            this.log('Seeking Missiles selected target: ' + target.character);
+            utils.log('Seeking Missiles selected target: {0}', target.character);
             break;
           }
           default: {
-            throw Error('InternalError: Item ' + itemName + ' does not have phase ' + phase);
+            _throwPhaseError(itemName, phase);
           }
         }
         break;
@@ -451,7 +447,7 @@ class Battle {
             break;
           }
           default: {
-            throw Error('InternalError: Item ' + itemName + ' does not have phase ' + phase);
+            _throwPhaseError(itemName, phase);
           }
         }
         break;
@@ -465,19 +461,20 @@ class Battle {
               break;
             }
             if (!(utils.withProbability(0.07 + 0.03 * tier))) {
-              this.log(itemName + ' did not trigger');
+              utils.log('{0} did not trigger', itemName);
               break;
             }
             if (this.currentTarget.hp < character.hp) {
-              this.log(characterName + ' blocks for ' + this.currentTarget.character);
+              utils.log('{0} blocks for {1}',
+                        characterName, this.currentTarget.character);
               this.currentTarget = character;
               break;
             }
-            this.log(characterName + ' is a coward');
+            utils.log('{0} is a coward', characterName);
             break;
           }
           default: {
-            throw Error('InternalError: Item ' + itemName + ' does not have phase ' + phase);
+            _throwPhaseError(itemName, phase);
           }
         }
         break;
@@ -509,7 +506,7 @@ class Battle {
             break;
           }
           default: {
-            throw Error('InternalError: Item ' + itemName + ' does not have phase ' + phase);
+            _throwPhaseError(itemName, phase);
           }
         }
         break;
@@ -518,10 +515,10 @@ class Battle {
         switch (itemName) {
           case 'Magic Parasol': {
             if (!utils.withProbability(0.05 + 0.05 * tier)) {
-              this.log('Magic Parasol not triggered');
+              utils.log('Magic Parasol not triggered');
               break;
             }
-            this.log('Damage reduced from ' + other.damage[0] + ' -> 0');
+            utils.log('Damage reduced from {0} to 0', other.damage[0]);
             other.damage[0] = 0;
             break;
           }
@@ -554,19 +551,20 @@ class Battle {
           }
           case 'Rough Skin': {
             if (!utils.withProbability(0.5)) {
-              this.log(itemName + ' did not trigger');
+              utils.log('{0} did not trigger', itemName);
               break;
             }
-            this.log(itemName + ' triggered');
+            utils.log('{0} triggered', itemName);
             this.changeHp(other.source, -2 * tier);
             const damageAmount = other.damage;
             const originalDamage = damageAmount[0];
-            damageAmount[0] = Math.max(0, damageAmount[0] - (2 * tier));
-            this.log('Damage reduced by ' + 2 * tier + ': ' + originalDamage + ' -> ' + damageAmount[0]);
+            damageAmount[0] = Math.max(0, damageAmount[0] - (tier + tier));
+            utils.log('Damage reduced by {0}: {1} -> {2}',
+                      tier + tier, originalDamage, damageAmount[0]);
             break;
           }
           default: {
-            throw Error('InternalError: Item ' + itemName + ' does not have phase ' + phase);
+            _throwPhaseError(itemName, phase);
           }
         }
         break;
@@ -614,7 +612,7 @@ class Battle {
             break;
           }
           default: {
-            throw Error('InternalError: Item ' + itemName + ' does not have phase ' + phase);
+            _throwPhaseError(itemName, phase);
           }
         }
         break;
@@ -634,13 +632,13 @@ class Battle {
             break;
           }
           default: {
-            throw Error('InternalError: Item ' + itemName + ' does not have phase ' + phase);
+            _throwPhaseError(itemName, phase);
           }
         }
         break;
       }
       default: {
-        throw Error('InternalError: Phase ' + phase + ' unknown');
+        throw Error('InternalError: Phase {0} unknown', phase);
       }
     }
   }
@@ -657,7 +655,7 @@ class Battle {
 
   tick() {
     const activeName = utils.pickRandom(this.allCharacters, 'speed');
-    this.log('\n' + activeName + '\'s turn:');
+    utils.log('\n{0}\'s turn:', activeName);
     this.activeCharacter = this.allCharacters[activeName];
     const activeTeamIndex = this.getTeamOf[activeName];
     const defendingTeam = this.teams[1 - activeTeamIndex];
@@ -680,25 +678,25 @@ class Battle {
     }
     this.triggerPhase('PostTarget', this.activeCharacter);
 
-    this.log('Main target: ' + this.currentTarget.character);
+    utils.log('Main target: {0}', this.currentTarget.character);
 
     this.baseDamage = utils.pickRandomWithinRange(
         this.activeCharacter.attackLow,
         this.activeCharacter.attackHigh
     );
     this.finalDamage = this.baseDamage;
-    this.log('Attack base damage: ' + this.baseDamage);
+    utils.log('Attack base damage: {0}', this.baseDamage);
 
     this.triggerPhase('PreDamage', this.activeCharacter);
     if (this.finalDamage !== this.baseDamage) {
-      this.log('Attack final damage: ' + this.finalDamage);
+      utils.log('Attack final damage: {0}', this.finalDamage);
     }
 
-    this.log('Normal attack:');
+    utils.log('Normal attack:');
     this.dealDamage(this.currentTarget, this.activeCharacter, this.finalDamage);
 
     if ('poison' in this.currentTarget) {
-      this.log(this.currentTarget.character + ' takes poison damage.');
+      utils.log('{0} takes poison damage', this.currentTarget.character);
       this.changeHp(this.currentTarget, -this.currentTarget.poison);
     }
     this.checkAllHp();

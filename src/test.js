@@ -1,4 +1,5 @@
 import * as data from './data.js';
+import * as global from './global.js';
 import * as simulator from './simulator.js';
 import * as utils from './utils.js';
 
@@ -28,9 +29,10 @@ export function outputTest(items) {
   ]
 
   const output = ['Test run with items: ' + JSON.stringify(toEquip)];
-  const outputLogs = [];
-  output.push('\nWinning team: ' + simulator.runDungeon(players, waves, season, outputLogs, true));
-  utils.extend(output, outputLogs);
+  global.setOutput([]);
+  global.setVerbose(true);
+  output.push('\nWinning team: ' + simulator.runDungeon(players, waves, season));
+  utils.extend(output, global.output);
   return output.join('\n');
 }
 
