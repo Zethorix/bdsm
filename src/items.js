@@ -543,7 +543,9 @@ function magicParasol(params) {
         break;
       }
       utils.log('Activating {0}', params.item.name);
-      params.damage = Math.max(0, params.damage - 6 * tier);
+      params.damage = Math.max(
+          0,
+          params.damage - utils.pickRandomWithinRange(0, 6 * tier));
       break;
     }
     default: {
