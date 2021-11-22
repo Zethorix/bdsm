@@ -19,7 +19,7 @@ function PlayerForm(props) {
             let newItems = [...items];
             newItems[index] = {name: name, tier: parseInt(tier)};
             setItems(newItems);
-            props.onPlayerChanged(props.player.username, newItems, props.players.monuments);
+            props.onPlayerChanged(props.player.username, newItems, props.player.monuments);
           }}
         />
       )}
