@@ -8,6 +8,10 @@ Simulating winrates for the Boxbox discord server "dungeons" game
 
 Uses [manually collected data](https://docs.google.com/spreadsheets/d/1NIThIrcgI00mKHmzBkO9HjSx3BKdprqhsu35EWmfxPY), as the actual source code of Boxbox Dungeons is unknown.
 
+## Usage
+
+This project is being hosted on GitHub Pages. Click [here](https://zethorix.github.io/bdsm) to use the simulator.
+
 ## Contributing
 Contributions are always welcome.
 
