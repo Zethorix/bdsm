@@ -7,7 +7,7 @@ import { useState } from 'react';
 function Simulator() {
   const dungeonList = data.getDungeonList();
   const [numRuns, setNumRuns] = useState(100);
-  const [selectedDungeon, setSelectedDungeon] = useState('[2,0]');
+  const [selectedDungeon, setSelectedDungeon] = useState('[3,0]');
   const [outputText, setOutputText] = useState("Select your items with the dropdowns.\nClick the button to start a test run!");
   const [players, setPlayers] = useState([
       getInitialPlayer(),
@@ -29,7 +29,8 @@ function Simulator() {
       monuments: {
         Health: 0,
         Power: 0,
-        Speed: 0
+        Speed: 0,
+        Angel: false
       }
     };
   }

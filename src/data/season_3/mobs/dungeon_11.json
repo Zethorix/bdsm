@@ -1,0 +1,126 @@
+[
+  [
+    {
+      "character": "Sonic The Hedgehog",
+      "hp": 750,
+      "hpMax": 750,
+      "speed": 150,
+      "attackLow": 0,
+      "attackHigh": 0,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Fire Sword",
+          "tier": 7
+        }
+      ],
+      "_stats": {
+        "_maxFireSwordTriggers": 5,
+        "_triggeredFireSword": 65,
+        "_attacks": 29
+      }
+    }
+  ],
+  [
+    {
+      "character": "Amy Rose",
+      "hp": 250,
+      "hpMax": 250,
+      "speed": 22,
+      "attackLow": 20,
+      "attackHigh": 30,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Whirlwind Axe",
+          "tier": 9
+        }
+      ],
+      "_stats": {
+        "_triggeredWhirlwindAxe": 16,
+        "_attacks": 16
+      }
+    },
+    {
+      "character": "Big The Cat",
+      "hp": 300,
+      "hpMax": 300,
+      "speed": 12,
+      "attackLow": 40,
+      "attackHigh": 80,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Healing Pendant",
+          "tier": 3
+        },
+        {
+          "name": "Magic Parasol",
+          "tier": 9
+        }
+      ],
+      "_stats": {
+        "_triggeredBlock": 11,
+        "_availableBlocks": 27,
+        "_triggeredMagicParasol": 12,
+        "_defended": 23
+      }
+    },
+    {
+      "character": "Knuckles The Echidna",
+      "hp": 200,
+      "hpMax": 200,
+      "speed": 25,
+      "attackLow": 10,
+      "attackHigh": 60,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Seeking Missiles",
+          "tier": 5
+        },
+        {
+          "name": "Big Club",
+          "tier": 6
+        }
+      ],
+      "_stats": {
+        "_triggeredBigClub": 15,
+        "_attacks": 21
+      }
+    },
+    {
+      "character": "Miles Tails Prowler",
+      "hp": 250,
+      "hpMax": 250,
+      "speed": 30,
+      "attackLow": 10,
+      "attackHigh": 30,
+      "energy": 90,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Boosting Bugle",
+          "tier": 5
+        },
+        {
+          "name": "Thorns",
+          "tier": 5
+        },
+        {
+          "name": "Cleansing Flames",
+          "tier": 7
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "character": "Shadow The Hedgehog"
+    }
+  ]
+]

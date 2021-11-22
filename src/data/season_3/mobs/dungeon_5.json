@@ -1,0 +1,198 @@
+[
+  [
+    {
+      "character": "Cidd The Helpful",
+      "hp": 2,
+      "hpMax": 2,
+      "speed": 100,
+      "attackLow": 4,
+      "attackHigh": 4,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Seeking Missiles",
+          "tier": 1
+        },
+        {
+          "name": "Fire Sword",
+          "tier": 3
+        }
+      ],
+      "_stats": {
+        "_maxFireSwordTriggers": 3,
+        "_triggeredFireSword": 52,
+        "_attacks": 54
+      }
+    },
+    {
+      "character": "Treebeast",
+      "hp": 120,
+      "hpMax": 120,
+      "speed": 15,
+      "attackLow": 10,
+      "attackHigh": 15,
+      "energy": 0,
+      "summoned": false,
+      "items": []
+    },
+    {
+      "character": "Ivan, The Drunken Brawler",
+      "hp": 140,
+      "hpMax": 140,
+      "speed": 16,
+      "attackLow": 15,
+      "attackHigh": 20,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Whirlwind Axe",
+          "tier": 3
+        }
+      ],
+      "_stats": {
+        "_triggeredWhirlwindAxe": 7,
+        "_attacks": 19
+      }
+    },
+    {
+      "character": "Brittney, Beach Princess",
+      "hp": 160,
+      "hpMax": 160,
+      "speed": 17,
+      "attackLow": 20,
+      "attackHigh": 25,
+      "energy": 0,
+      "summoned": false,
+      "items": []
+    }
+  ],
+  [
+    {
+      "character": "The Wandering Fisherman",
+      "hp": 125,
+      "hpMax": 125,
+      "speed": 8,
+      "attackLow": 25,
+      "attackHigh": 25,
+      "energy": 0,
+      "summoned": false,
+      "items": []
+    },
+    {
+      "character": "The Great Forest Seer",
+      "hp": 150,
+      "hpMax": 150,
+      "speed": 17,
+      "attackLow": 12,
+      "attackHigh": 22,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Avalanche",
+          "tier": 3
+        }
+      ]
+    },
+    {
+      "character": "The Masked Samurai",
+      "hp": 175,
+      "hpMax": 175,
+      "speed": 21,
+      "attackLow": 12,
+      "attackHigh": 16,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Machete",
+          "tier": 4
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "character": "Dread Knight",
+      "hp": 175,
+      "hpMax": 175,
+      "speed": 9,
+      "attackLow": 30,
+      "attackHigh": 50,
+      "energy": 0,
+      "summoned": false,
+      "items": []
+    },
+    {
+      "character": "Betty Clicker",
+      "hp": 75,
+      "hpMax": 75,
+      "speed": 15,
+      "attackLow": 5,
+      "attackHigh": 5,
+      "energy": 200,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Boosting Bugle",
+          "tier": 3
+        }
+      ]
+    },
+    {
+      "character": "King Midas",
+      "hp": 150,
+      "hpMax": 150,
+      "speed": 11,
+      "attackLow": 10,
+      "attackHigh": 15,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Healing Pendant",
+          "tier": 1
+        },
+        {
+          "name": "Magic Parasol",
+          "tier": 1
+        }
+      ],
+      "_stats": {
+        "_triggeredBlock": 2,
+        "_availableBlocks": 10,
+        "_triggeredMagicParasol": 1,
+        "_defended": 9
+      }
+    },
+    {
+      "character": "Leon",
+      "hp": 100,
+      "hpMax": 100,
+      "speed": 25,
+      "attackLow": 5,
+      "attackHigh": 15,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Seeking Missiles",
+          "tier": 3
+        }
+      ]
+    },
+    {
+      "character": "Amenhotep",
+      "hp": 40,
+      "hpMax": 40,
+      "speed": 13,
+      "attackLow": 0,
+      "attackHigh": 10,
+      "energy": 0,
+      "summoned": false,
+      "items": []
+    }
+  ]
+]

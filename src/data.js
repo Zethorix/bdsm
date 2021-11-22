@@ -33,7 +33,10 @@ export function getDungeon(season, dungeon) {
 export function getDungeonList() {
   const dungeonsBySeason = require('./data/dungeons.json');
   const dungeonList = [];
-  for (const season in dungeonsBySeason) {
+
+  const keys = Object.keys(dungeonsBySeason);
+  keys.sort().reverse();
+  for (const season of keys) {
     for (const dungeon of dungeonsBySeason[season]) {
       dungeonList.push(JSON.stringify([parseInt(season), dungeon]));
     }

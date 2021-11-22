@@ -38,7 +38,6 @@ export function parsePlayer(input) {
       player.items.push({name: matchItem[1], tier: parseInt(matchItem[2])});
     }
   }
-  console.log(player);
   return player;
 }
 

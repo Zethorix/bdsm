@@ -1,0 +1,234 @@
+[
+  [
+    {
+      "character": "Trundle",
+      "hp": 250,
+      "hpMax": 250,
+      "speed": 17,
+      "attackLow": 20,
+      "attackHigh": 75,
+      "energy": 999,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Challenger Arrow",
+          "tier": 2
+        },
+        {
+          "name": "Draining Dagger",
+          "tier": 2
+        }
+      ]
+    },
+    {
+      "character": "Sejuani",
+      "hp": 250,
+      "hpMax": 250,
+      "speed": 13,
+      "attackLow": 50,
+      "attackHigh": 100,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Avalanche",
+          "tier": 4
+        }
+      ]
+    },
+    {
+      "character": "Teemo",
+      "hp": 100,
+      "hpMax": 100,
+      "speed": 20,
+      "attackLow": 10,
+      "attackHigh": 20,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Poison Dagger",
+          "tier": 5
+        }
+      ]
+    },
+    {
+      "character": "Ezreal",
+      "hp": 100,
+      "hpMax": 100,
+      "speed": 20,
+      "attackLow": 10,
+      "attackHigh": 20,
+      "energy": 0,
+      "summoned": false,
+      "items": []
+    }
+  ],
+  [
+    {
+      "character": "Tahm Kench",
+      "hp": 200,
+      "hpMax": 200,
+      "speed": 6,
+      "attackLow": 50,
+      "attackHigh": 150,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Rough Skin",
+          "tier": 5
+        },
+        {
+          "name": "Healing Pendant",
+          "tier": 5
+        },
+        {
+          "name": "Magic Parasol",
+          "tier": 6
+        }
+      ],
+      "_stats": {
+        "_triggeredBlock": 39,
+        "_availableBlocks": 92,
+        "_triggeredMagicParasol": 20,
+        "_defended": 56
+      }
+    },
+    {
+      "character": "Braum",
+      "hp": 300,
+      "hpMax": 300,
+      "speed": 7,
+      "attackLow": 50,
+      "attackHigh": 100,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Rough Skin",
+          "tier": 5
+        },
+        {
+          "name": "Magic Parasol",
+          "tier": 4
+        },
+        {
+          "name": "Survival Kit",
+          "tier": 8
+        }
+      ],
+      "_stats": {
+        "_triggeredBlock": 38,
+        "_availableBlocks": 88,
+        "_triggeredMagicParasol": 21,
+        "_defended": 77
+      }
+    },
+    {
+      "character": "Brand",
+      "hp": 150,
+      "hpMax": 150,
+      "speed": 11,
+      "attackLow": 10,
+      "attackHigh": 20,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Thorns",
+          "tier": 7
+        },
+        {
+          "name": "Explosion Powder",
+          "tier": 5
+        },
+        {
+          "name": "Machete",
+          "tier": 4
+        }
+      ]
+    },
+    {
+      "character": "Zyra",
+      "hp": 150,
+      "hpMax": 150,
+      "speed": 15,
+      "attackLow": 5,
+      "attackHigh": 25,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Thorns",
+          "tier": 7
+        },
+        {
+          "name": "Machete",
+          "tier": 4
+        },
+        {
+          "name": "Imp Whistle",
+          "tier": 8
+        }
+      ]
+    },
+    {
+      "character": "Sona",
+      "hp": 150,
+      "hpMax": 150,
+      "speed": 12,
+      "attackLow": 20,
+      "attackHigh": 30,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Energetic Ally",
+          "tier": 5
+        },
+        {
+          "name": "Love Letter",
+          "tier": 7
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "character": "Riven",
+      "hp": 500,
+      "hpMax": 500,
+      "speed": 20,
+      "attackLow": 40,
+      "attackHigh": 90,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Machete",
+          "tier": 9
+        },
+        {
+          "name": "Big Club",
+          "tier": 9
+        }
+      ],
+      "_stats": {
+        "_triggeredBigClub": 7,
+        "_attacks": 7
+      }
+    },
+    {
+      "character": "Yasuo",
+      "hp": 250,
+      "hpMax": 250,
+      "speed": 20,
+      "attackLow": 1,
+      "attackHigh": 150,
+      "energy": 0,
+      "summoned": false,
+      "items": []
+    }
+  ]
+]

@@ -1,0 +1,159 @@
+[
+  [
+    {
+      "character": "Blob",
+      "hp": 10,
+      "hpMax": 10,
+      "speed": 10,
+      "attackLow": 2,
+      "attackHigh": 2,
+      "energy": 0,
+      "summoned": false,
+      "items": []
+    },
+    {
+      "character": "Blobther",
+      "hp": 15,
+      "hpMax": 15,
+      "speed": 10,
+      "attackLow": 2,
+      "attackHigh": 4,
+      "energy": 0,
+      "summoned": false,
+      "items": []
+    },
+    {
+      "character": "Blob's Mom",
+      "hp": 20,
+      "hpMax": 20,
+      "speed": 10,
+      "attackLow": 3,
+      "attackHigh": 3,
+      "energy": 0,
+      "summoned": false,
+      "items": []
+    },
+    {
+      "character": "Blob's Dad",
+      "hp": 20,
+      "hpMax": 20,
+      "speed": 10,
+      "attackLow": 3,
+      "attackHigh": 4,
+      "energy": 0,
+      "summoned": false,
+      "items": []
+    },
+    {
+      "character": "Blob's Grandpa",
+      "hp": 30,
+      "hpMax": 30,
+      "speed": 10,
+      "attackLow": 8,
+      "attackHigh": 16,
+      "energy": 0,
+      "summoned": false,
+      "items": []
+    }
+  ],
+  [
+    {
+      "character": "Bandit",
+      "hp": 15,
+      "hpMax": 15,
+      "speed": 12,
+      "attackLow": 6,
+      "attackHigh": 10,
+      "energy": 0,
+      "summoned": false,
+      "items": []
+    },
+    {
+      "character": "Bandit's Hot GF",
+      "hp": 20,
+      "hpMax": 20,
+      "speed": 12,
+      "attackLow": 8,
+      "attackHigh": 10,
+      "energy": 0,
+      "summoned": false,
+      "items": []
+    },
+    {
+      "character": "Bandad",
+      "hp": 25,
+      "hpMax": 25,
+      "speed": 12,
+      "attackLow": 8,
+      "attackHigh": 12,
+      "energy": 0,
+      "summoned": false,
+      "items": []
+    },
+    {
+      "character": "Bandit's Twin",
+      "hp": 15,
+      "hpMax": 15,
+      "speed": 12,
+      "attackLow": 6,
+      "attackHigh": 10,
+      "energy": 0,
+      "summoned": false,
+      "items": []
+    }
+  ],
+  [
+    {
+      "character": "Albert",
+      "hp": 53,
+      "hpMax": 100,
+      "speed": 10,
+      "attackLow": 6,
+      "attackHigh": 15,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Fire Sword",
+          "tier": 1
+        }
+      ],
+      "_stats": {
+        "_triggeredFireSword": 8,
+        "_attacks": 30
+      }
+    },
+    {
+      "character": "Annie",
+      "hp": 47,
+      "hpMax": 100,
+      "speed": 10,
+      "attackLow": 3,
+      "attackHigh": 12,
+      "energy": 56,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Love Letter",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "character": "Kelvinzorz",
+      "hp": 43,
+      "hpMax": 100,
+      "speed": 10,
+      "attackLow": 3,
+      "attackHigh": 12,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Poison Dagger",
+          "tier": 1
+        }
+      ]
+    }
+  ]
+]

@@ -66,6 +66,12 @@ export class Battle {
 
   kill(character) {
     const name = character.character;
+    if (character.angelAvailable) {
+      utils.log('reviving: {0}', name);
+      character.hp = Math.floor(character.hpMax * 0.33);
+      character.angelAvailable = false;
+      return;
+    }
     utils.log('killing: {0}', name);
     const team = this.teams[this.getTeamOf[name]];
     const pos = _findPositionWithinTeam(name, team);
@@ -133,15 +139,18 @@ export class Battle {
     };
     activeCharacter.triggerPhase(targetParams);
 
-    const blockParams = {
-        currentTarget: targetParams.currentTarget,
-        phase: 'Block'
-    };
-    for (const defendingCharacter of defendingTeam) {
-      defendingCharacter.triggerPhase(blockParams);
+    var currentTarget = targetParams.currentTarget;
+    if (targetParams.currentTarget.canBeSaved) {
+      const blockParams = {
+          currentTarget: currentTarget,
+          phase: 'Block'
+      };
+      for (const defendingCharacter of defendingTeam) {
+        defendingCharacter.triggerPhase(blockParams);
+      }
+      currentTarget = blockParams.currentTarget;
     }
 
-    const currentTarget = blockParams.currentTarget;
     activeCharacter.triggerPhase({
         battle: this,
         currentTarget: currentTarget, enemyTeam: defendingTeam,

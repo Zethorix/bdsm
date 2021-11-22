@@ -21,6 +21,8 @@ export class Character {
     this.summoned = _extractParam(params, 'summoned', false);
     this.items = _extractParam(params, 'items', []);
 
+    this.angelAvailable = _extractParam(params, 'angelAvailable', false);
+    this.canBeSaved = _extractParam(params, 'canBeSaved', true);
     this.poison = _extractParam(params, 'poison', 0);
     this._preprocessTriggers();
     this.processedInitCharacter =
@@ -51,6 +53,13 @@ export class Character {
   deepCopy() {
     const params = utils.deepCopyJson(this);
     return new Character(params);
+  }
+
+  changeHpMax(params) {
+    const originalHpMax = this.hpMax;
+    this.hpMax += params.amount;
+    utils.log('{0} max hp changed by {1}: {2} -> {3}',
+              this.character, params.amount, originalHpMax, this.hpMax);
   }
 
   changeHp(params) {

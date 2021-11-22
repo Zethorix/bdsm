@@ -1,0 +1,37 @@
+{
+  "Avalanche": {
+    "obtainable": true,
+    "description": "Spend 40 energy. Deal {3*t}-{5*t} damage to a random enemy twice. They lose 0-{t} speed.",
+    "cost": 40
+  },
+  "Boosting Bugle": {
+    "obtainable": true,
+    "description": "Spend 55 energy: heal an ally for {2*t}HP. They gain {t} attack. Repeat this once. This cannot target yourself or summons.",
+    "cost": 55
+  },
+  "Challenger Arrow": {
+    "obtainable": true,
+    "description": "Spend 55 energy: Deal {10*t} damage to a random enemy. Gain +{t} attack.",
+    "cost": 55
+  },
+  "Energetic Ally": {
+    "obtainable": true,
+    "description": "Spend 50 energy: The lowest non-summoned ally heals for {5*t}HP and gains 20 energy.",
+    "cost": 50
+  },
+  "Explosion Powder": {
+    "obtainable": true,
+    "description": "Spend 60 energy: Deal {5*t}-{10*t} damage to all enemies. If there is only one enemy, this deals double damage.",
+    "cost": 60
+  },
+  "Imp Whistle": {
+    "obtainable": true,
+    "description": "Spend 45 energy: summon a small imp companion. {t}hp {3*t}-{4*t}atk 16 spd",
+    "cost": 45
+  },
+  "Knight's Lance": {
+    "obtainable": true,
+    "description": "Spend 45 energy. Deal {5*t}-{7*t} damage to a random enemy and heal the same amount. If you are at full health, this deals double damage.",
+    "cost": 45
+  }
+}

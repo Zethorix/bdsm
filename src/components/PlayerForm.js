@@ -26,7 +26,7 @@ function PlayerForm(props) {
       Monuments:
       <br/>
       Health:
-      <input type="number" min={0} value={props.player.Health} onChange={(event) => {
+      <input type="number" min={0} value={props.player.monuments.Health} onChange={(event) => {
         let newMonuments = {...monuments};
         newMonuments.Health = event.target.value;
         setMonuments(newMonuments);
@@ -37,7 +37,7 @@ function PlayerForm(props) {
       }} />
       &nbsp;
       Power:
-      <input type="number" min={0} value={props.player.Power} onChange={(event) => {
+      <input type="number" min={0} value={props.player.monuments.Power} onChange={(event) => {
         let newMonuments = {...monuments};
         newMonuments.Power = event.target.value;
         setMonuments(newMonuments);
@@ -48,9 +48,20 @@ function PlayerForm(props) {
       }} />
       &nbsp;
       Speed:
-      <input type="number" min={0} value={props.player.Speed} onChange={(event) => {
+      <input type="number" min={0} value={props.player.monuments.Speed} onChange={(event) => {
         let newMonuments = {...monuments};
         newMonuments.Speed = event.target.value;
+        setMonuments(newMonuments);
+        props.onPlayerChanged(
+            props.player.username,
+            props.player.items,
+            newMonuments);
+      }} />
+      &nbsp;
+      Angel:
+      <input type="checkbox" checked={props.player.monuments.Angel} onChange={(event) => {
+        let newMonuments = {...monuments};
+        newMonuments.Angel = event.target.checked;
         setMonuments(newMonuments);
         props.onPlayerChanged(
             props.player.username,

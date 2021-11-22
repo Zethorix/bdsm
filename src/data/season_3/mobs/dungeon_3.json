@@ -1,0 +1,147 @@
+[
+  [
+    {
+      "character": "Kappa",
+      "hp": 100,
+      "hpMax": 100,
+      "speed": 16,
+      "attackLow": 10,
+      "attackHigh": 20,
+      "energy": 20,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Knight's Lance",
+          "tier": 2
+        },
+        {
+          "name": "Love Letter",
+          "tier": 2
+        }
+      ]
+    },
+    {
+      "character": "KappaPride",
+      "hp": 80,
+      "hpMax": 80,
+      "speed": 16,
+      "attackLow": 8,
+      "attackHigh": 14,
+      "energy": 10,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Knight's Lance",
+          "tier": 2
+        },
+        {
+          "name": "Love Letter",
+          "tier": 2
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "character": "PepeHands",
+      "hp": 50,
+      "hpMax": 50,
+      "speed": 12,
+      "attackLow": 8,
+      "attackHigh": 12,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Cleansing Flames",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "character": "Pepega",
+      "hp": 75,
+      "hpMax": 75,
+      "speed": 10,
+      "attackLow": 5,
+      "attackHigh": 10,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Poison Dagger",
+          "tier": 2
+        }
+      ]
+    },
+    {
+      "character": "MonkaS",
+      "hp": 75,
+      "hpMax": 75,
+      "speed": 11,
+      "attackLow": 1,
+      "attackHigh": 30,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Big Club",
+          "tier": 5
+        }
+      ],
+      "_stats": {
+        "_triggeredBigClub": "10",
+        "_attacks": "16"
+      }
+    },
+    {
+      "character": "Rock Companion",
+      "hp": 30,
+      "hpMax": 30,
+      "speed": 2,
+      "attackLow": 10,
+      "attackHigh": 10,
+      "energy": 0,
+      "summoned": true,
+      "items": [
+        {
+          "name": "Healing Pendant",
+          "tier": 2
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "character": "PogChamp",
+      "hp": 150,
+      "hpMax": 150,
+      "speed": 15,
+      "attackLow": 10,
+      "attackHigh": 30,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Whirlwind Axe",
+          "tier": 3
+        }
+      ],
+      "_stats": {
+        "_triggeredWhirlwindAxe": 7,
+        "_attacks": 21
+      }
+    },
+    {
+      "character": "Pog",
+      "hp": 125,
+      "hpMax": 125,
+      "speed": 15,
+      "attackLow": 10,
+      "attackHigh": 15,
+      "energy": 0,
+      "summoned": false,
+      "items": []
+    }
+  ]
+]

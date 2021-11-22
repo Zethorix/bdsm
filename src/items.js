@@ -316,7 +316,9 @@ function halberd(params) {
   switch (params.phase) {
     case 'InitCharacter': {
       utils.log('Activating {0}', params.item.name);
-      params.character.changeAttack({amount: tier});
+      params.character.changeAttack({amount: tier + tier});
+      params.character.changeHpMax({amount: 4 * tier});
+      params.character.changeHp({amount: 4 * tier});
       break;
     }
     default: {
@@ -629,7 +631,7 @@ function survivalKit(params) {
     case 'InitCharacter': {
       utils.log('Activating {0}', params.item.name);
       const amount = 20 * tier;
-      params.character.hpMax += amount;
+      params.character.changeHpMax({amount: amount});
       params.character.changeHp({amount: amount});
       break;
     }

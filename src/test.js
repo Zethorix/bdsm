@@ -35,14 +35,15 @@ export function outputTest(players, selectedDungeon, numRuns) {
       attackHigh: 10 + player.monuments.Power * 1,
       energy: 0,
       summoned: false,
-      items: toEquip
+      items: toEquip,
+      angelAvailable: player.monuments.Angel
     });
   }
   
   const [season, dungeon] = JSON.parse(selectedDungeon);
   const waves = data.getDungeon(season, dungeon);
 
-  global.setSeason(2);
+  global.setSeason(3);
   global.setVerbose(false);
   global.setOutput(null);
   const numWins = simulator.runMany(team, waves, numRuns * 1);

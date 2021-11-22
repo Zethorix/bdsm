@@ -1,0 +1,127 @@
+[
+  [
+    {
+      "character": "Tenya Iida",
+      "hp": 175,
+      "hpMax": 175,
+      "speed": 25,
+      "attackLow": 5,
+      "attackHigh": 15,
+      "energy": 999,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Boosting Bugle",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "character": "Shoto Todoroki",
+      "hp": 200,
+      "hpMax": 200,
+      "speed": 12,
+      "attackLow": 0,
+      "attackHigh": 40,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Avalanche",
+          "tier": 3
+        },
+        {
+          "name": "Fire Sword",
+          "tier": 5
+        }
+      ],
+      "_stats": {
+        "_maxFireSwordTriggers": 4,
+        "_triggeredFireSword": 30,
+        "_attacks": 20
+      }
+    },
+    {
+      "character": "Tsuyu Asui",
+      "hp": 150,
+      "hpMax": 150,
+      "speed": 18,
+      "attackLow": 5,
+      "attackHigh": 25,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Draining Dagger",
+          "tier": 1
+        },
+        {
+          "name": "Rough Skin",
+          "tier": 2
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "character": "Fat Gum",
+      "hp": 300,
+      "hpMax": 300,
+      "speed": 6,
+      "attackLow": 50,
+      "attackHigh": 100,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Martyr Armor",
+          "tier": 3
+        }
+      ]
+    },
+    {
+      "character": "Hawks",
+      "hp": 200,
+      "hpMax": 200,
+      "speed": 35,
+      "attackLow": 1,
+      "attackHigh": 10,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Challenger Arrow",
+          "tier": 2
+        },
+        {
+          "name": "Thorns",
+          "tier": 3
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "character": "All-Might",
+      "hp": 200,
+      "hpMax": 200,
+      "speed": 15,
+      "attackLow": 35+???,
+      "attackHigh": 55+???,
+      "energy": 0,
+      "summoned": false,
+      "items": []
+    },
+    {
+      "character": "Izuku Midoriya",
+      "hp": 200,
+      "hpMax": 200,
+      "speed": 25,
+      "attackLow": 20+???,
+      "attackHigh": 35+???,
+      "energy": 0,
+      "summoned": false,
+      "items": []
+    }
+  ]
+]

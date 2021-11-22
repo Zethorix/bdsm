@@ -8,7 +8,7 @@ export function setOutput(val) {
   output = val;
 }
 
-export var season = 2;
+export var season = 3;
 export function setSeason(val) {
   season = val;
 }
