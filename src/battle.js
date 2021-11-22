@@ -185,6 +185,11 @@ export class Battle {
         source: activeCharacter
     });
 
+    activeCharacter.triggerPhase({
+        allyTeam: this.teams[this.activeTeamIndex],
+        phase: 'PostDamage'
+    });
+
     if (activeCharacter.poison > 0) {
       utils.log('{0} takes poison damage', activeCharacter.character);
       activeCharacter.changeHp({amount: -activeCharacter.poison});
