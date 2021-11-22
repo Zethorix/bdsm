@@ -26,7 +26,7 @@ function PlayerForm(props) {
       Monuments:
       <br/>
       Health:
-      <input type="number" min={0} value={props.player.Power} onChange={(event) => {
+      <input type="number" min={0} value={props.player.Health} onChange={(event) => {
         let newMonuments = {...monuments};
         newMonuments.Health = event.target.value;
         setMonuments(newMonuments);
