@@ -240,8 +240,8 @@ function drainingDagger(params) {
     case 'PostTarget': {
       utils.log('Activating {0}', params.item.name);
       params.currentTarget.changeAttack({amount: -tier});
-      if (utils.withProbability(0.05 * tier)) {
-        params.currentTarget.changeEnergy({amount: -1});
+      if (utils.withProbability(0.2)) {
+        params.currentTarget.changeEnergy({amount: -tier});
       }
       break;
     }
@@ -539,11 +539,11 @@ function magicParasol(params) {
       break;
     }
     case 'EnemyDamage': {
-      if (!utils.withProbability(0.05 + 0.05 * tier)) {
+      if (!utils.withProbability(0.2)) {
         break;
       }
       utils.log('Activating {0}', params.item.name);
-      params.damage = 0;
+      params.damage = Math.max(0, params.damage - 6 * tier);
       break;
     }
     default: {

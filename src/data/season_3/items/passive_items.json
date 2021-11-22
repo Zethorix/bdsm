@@ -37,7 +37,7 @@
   },
   "Draining Dagger": {
     "obtainable": true,
-    "description": "Your attacks decrease the target's attack by {t}. {5*t}% chance to drain {t} energy from the target.",
+    "description": "Your attacks decrease the target's attack by {t}. 20% chance to decrease target's energy by {t}.",
     "triggers": [
       "PostTarget"
     ]
@@ -87,7 +87,7 @@
   },
   "Magic Parasol": {
     "obtainable": true,
-    "description": "When you are attacked, you have a {5+5*t}% chance to block {???} damage from the attack. {7+3*t}% Chance to take the hit when your teammate is attacked, if you're feeling brave.",
+    "description": "When you are attacked, you have a 20% chance to block up to {6*tier} damage. {7+3*t}% Chance to take the hit when your teammate is attacked, if you're feeling brave.",
     "triggers": [
       "Block",
       "EnemyDamage"
