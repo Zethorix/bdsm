@@ -1,6 +1,7 @@
 import {Character} from './character.js';
 import * as data from './data.js';
 import * as utils from './utils.js';
+import * as dungeonUtils from './dungeonUtils.js';
 
 function _findPositionWithinTeam(name, team) {
   for (const position in team) {
@@ -58,7 +59,7 @@ export class Battle {
 
   addSummonToTeam(item, teamIndex) {
     const template = data.getTemplates()[item.name];
-    const summon = new Character(utils.getScaledTemplate(template, item.tier));
+    const summon = new Character(dungeonUtils.getScaledTemplate(template, item.tier));
     utils.log('Summoning {0} for team {1}', summon.character, teamIndex);
     this.addCharacterToTeam(summon, teamIndex);
   }
