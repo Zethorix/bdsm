@@ -92,17 +92,12 @@ export function pickRandom(iterable, weightKey=null) {
       weight = iterable[key][weightKey];
     }
     if (r < weight) {
-      return key;
+      return iterable[key];
     }
     r -= weight;
   }
 
-  throw Error(
-      'Internal Error: Something went wrong while selecting random element from '
-      + iterable
-      + ' with weightKey '
-      + weightKey
-  );
+  return null;
 }
 
 export function pickRandomWithinRange(lower, upper) {
@@ -131,5 +126,7 @@ function _mutateTemplate(template, scale) {
 
 export function getScaledTemplate(template, scale) {
   const obj = deepCopyJson(template);
-  return _mutateTemplate(obj, scale);
+  _mutateTemplate(obj, scale);
+  obj.processedInitCharacter = false;
+  return obj;
 }

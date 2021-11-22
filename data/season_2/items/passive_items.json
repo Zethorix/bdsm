@@ -44,12 +44,16 @@
   "Freezeman": {
     "obtainable": true,
     "description": "Gain {t} speed.",
-    "triggers": []
+    "triggers": [
+      "InitCharacter"
+    ]
   },
   "Halberd": {
     "obtainable": true,
     "description": "You have +{2*t} attack.",
-    "triggers": []
+    "triggers": [
+      "InitCharacter"
+    ]
   },
   "Healing Pendant": {
     "obtainable": true,
@@ -92,7 +96,7 @@
     "obtainable": true,
     "description": "At the start of the dungeon, summon a big imp companion. {10*t}hp {3*t}-{4*t}atk. Spd: {11+t}",
     "triggers": [
-      "BattleStart"
+      "InitCharacter"
     ]
   },
   "Poison Dagger": {
@@ -106,7 +110,7 @@
     "obtainable": true,
     "description": "At the start of the dungeon, summon a brave Rock Companion. {15*t}hp {5*t}atk 2spd",
     "triggers": [
-      "BattleStart"
+      "InitCharacter"
     ]
   },
   "Rough Skin": {

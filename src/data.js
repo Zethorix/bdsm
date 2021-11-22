@@ -1,3 +1,4 @@
+import * as global from './global.js';
 import * as utils from './utils.js';
 
 const MOBS_BY_SEASON = {};
@@ -12,9 +13,7 @@ export function getDungeon(season, dungeon) {
   const dungeonsForSeason = MOBS_BY_SEASON[season];
 
   if (!(dungeon in dungeonsForSeason)) {
-    const waves = require(
-        '../data/season_' + season + '/mobs/dungeon_' + dungeon + '.json'
-    );
+    const waves = require('../data/season_' + season + '/mobs/dungeon_' + dungeon + '.json');
     for (const i in waves) {
       const wave = waves[i];
       for (const j in wave) {
@@ -30,19 +29,19 @@ export function getDungeon(season, dungeon) {
   return dungeonsForSeason[dungeon];
 }
 
-export function getItems(season) {
-  if (!(season in ITEMS_BY_SEASON)) {
-    ITEMS_BY_SEASON[season] = {
-      passive: require('../data/season_' + season + '/items/passive_items.json'),
-      energy: require('../data/season_' + season + '/items/energy_items.json')
+export function getItems() {
+  if (!(global.season in ITEMS_BY_SEASON)) {
+    ITEMS_BY_SEASON[global.season] = {
+      passive: require('../data/season_' + global.season + '/items/passive_items.json'),
+      energy: require('../data/season_' + global.season + '/items/energy_items.json')
     };
   }
-  return ITEMS_BY_SEASON[season];
+  return ITEMS_BY_SEASON[global.season];
 }
 
-export function getAllItemNamesAndBlank(season) {
-  if (!(season in ITEM_NAMES_BY_SEASON)) {
-    const items = getItems(season);
+export function getAllItemNamesAndBlank() {
+  if (!(global.season in ITEM_NAMES_BY_SEASON)) {
+    const items = getItems();
     const itemNames = [''];
     const obtainableItems = [];
     const unobtainableItems = [];
@@ -59,14 +58,15 @@ export function getAllItemNamesAndBlank(season) {
     unobtainableItems.sort();
     utils.extend(itemNames, obtainableItems);
     utils.extend(itemNames, unobtainableItems);
-    ITEM_NAMES_BY_SEASON[season] = itemNames;
+    ITEM_NAMES_BY_SEASON[global.season] = itemNames;
   }
-  return ITEM_NAMES_BY_SEASON[season];
+  return ITEM_NAMES_BY_SEASON[global.season];
 }
 
-export function getTemplates(season) {
-  if (!(season in TEMPLATES_BY_SEASON)) {
-    TEMPLATES_BY_SEASON[season] = require('../data/season_' + season + '/mobs/summon_templates.json')
+export function getTemplates() {
+  if (!(global.season in TEMPLATES_BY_SEASON)) {
+    TEMPLATES_BY_SEASON[global.season] = require(
+        '../data/season_' + global.season + '/mobs/summon_templates.json');
   }
-  return TEMPLATES_BY_SEASON[season];
+  return TEMPLATES_BY_SEASON[global.season];
 }
