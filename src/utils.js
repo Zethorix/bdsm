@@ -130,3 +130,15 @@ export function getScaledTemplate(template, scale) {
   obj.processedInitCharacter = false;
   return obj;
 }
+
+export function parseMonuments(input) {
+  const monumentLevels = {};
+  for (const line of input.split('\n')) {
+    const matches = line.match(/\|\s*(Health|Power|Speed)\s*\|\s*(\d+)\s*\|/);
+    if (matches === null) {
+      continue;
+    }
+    monumentLevels[matches[1]] = parseInt(matches[2]);
+  }
+  return monumentLevels;
+}
