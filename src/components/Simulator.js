@@ -61,7 +61,7 @@ function Simulator() {
           }}
         />
       )}
-      Dungeon:
+      [Season, Dungeon]:
       <Dropdown
         selectedOption={selectedDungeon}
         onChange={(event) => {setSelectedDungeon(event.target.value);}}
