@@ -94,7 +94,8 @@ export class Character {
     const phaseParams = {
         battle: params.battle,
         damage: params.amount,
-        phase: 'EnemyDamage'
+        phase: 'EnemyDamage',
+        source: params.source
     };
     this.triggerPhase(phaseParams);
     this.changeHp({

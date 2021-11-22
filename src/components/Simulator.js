@@ -23,7 +23,7 @@ function Simulator() {
           item={item}
           onItemChanged={(name, tier) => {
             let newItems = [...items];
-            newItems[index] = {name: name, tier: tier};
+            newItems[index] = {name: name, tier: parseInt(tier)};
             setItems(newItems);
           }}
         />

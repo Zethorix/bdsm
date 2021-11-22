@@ -132,6 +132,7 @@
     "obtainable": true,
     "description": "Increase Max HP by {20*t}. {7+3*t}% Chance to take a hit when your teammate is attacked if you're feeling brave.",
     "triggers": [
+      "InitCharacter",
       "Block"
     ]
   },

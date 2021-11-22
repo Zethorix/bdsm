@@ -45,6 +45,7 @@ function _checkEnergy(params) {
   if (originalEnergy < cost) {
     return false;
   }
+  utils.log('Activating {0}', params.item.name);
   params.character.changeEnergy({amount: -cost});
   return true;
 }
@@ -83,7 +84,6 @@ function bigClub(params) {
   switch (params.phase) {
     case 'PreDamage': {
       if (!utils.withProbability(0.11 * tier)) {
-        utils.log('Did not use {0}', params.item.name);
         break;
       }
       utils.log('Activated {0}', params.item.name);
@@ -194,6 +194,7 @@ function cleansingFlames(params) {
       if (!utils.withProbability(0.5)) {
         break;
       }
+      utils.log('Activating {0}', params.item.name);
       for (const ally of allyTeam) {
         ally.changeHp({amount: tier});
       }
@@ -209,6 +210,7 @@ function drainingDagger(params) {
   const tier = params.item.tier;
   switch (params.phase) {
     case 'PostTarget': {
+      utils.log('Activating {0}', params.item.name);
       params.currentTarget.changeAttack({amount: -tier});
       if (utils.withProbability(0.05 * tier)) {
         params.currentTarget.changeEnergy({amount: -1});
@@ -233,7 +235,7 @@ function energeticAlly(params) {
         }
       }
       if (target.hp === Infinity) {
-        throw Error(utils.format('InternalError: Ally team has no members'));
+        throw Error('InternalError: Ally team has no members');
       }
       target.changeHp({amount: 5 * tier});
       target.changeEnergy({amount: 20});
@@ -278,6 +280,7 @@ function fireSword(params) {
   const tier = params.item.tier;
   switch (params.phase) {
     case 'PostDamage': {
+      utils.log('Activating {0}', params.item.name);
       var attackIncrease = 0;
       for (var i = 0; i < tier; i++) {
         if (!utils.withProbability(0.3)) {
@@ -298,6 +301,7 @@ function freezeman(params) {
   const tier = params.item.tier;
   switch (params.phase) {
     case 'InitCharacter': {
+      utils.log('Activating {0}', params.item.name);
       params.character.changeSpeed({amount: tier});
       break;
     }
@@ -311,6 +315,7 @@ function halberd(params) {
   const tier = params.item.tier;
   switch (params.phase) {
     case 'InitCharacter': {
+      utils.log('Activating {0}', params.item.name);
       params.character.changeAttack({amount: tier});
       break;
     }
@@ -327,6 +332,7 @@ function healingPendant(params) {
       if (!utils.withProbability(0.5)) {
         break;
       }
+      utils.log('Activating {0}', params.item.name);
       params.character.changeHp({amount: 5 * tier});
       break;
     }
@@ -335,8 +341,18 @@ function healingPendant(params) {
         break;
       }
       if (params.currentTarget.hp < params.character.hp) {
+        utils.log(
+            '{0} blocks for {1}',
+            params.character.character,
+            params.currentTarget.character
+        );
         params.currentTarget = params.character;
+        break;
       }
+      utils.log(
+          '{0} is a coward',
+          params.character.character,
+      );
       break;
     }
     default: {
@@ -390,6 +406,7 @@ function loveLetter(params) {
   const tier = params.item.tier;
   switch (params.phase) {
     case 'PostDamage': {
+      utils.log('Activating {0}', params.item.name);
       const allyTeam = params.allyTeam;
       const target = utils.pickRandom(
           allyTeam,
@@ -420,6 +437,7 @@ function machete(params) {
   const tier = params.item.tier;
   switch (params.phase) {
     case 'PostTarget': {
+      utils.log('Activating {0}', params.item.name);
       const enemyTeam = params.enemyTeam;
       if (enemyTeam.length === 1) {
         break;
@@ -454,14 +472,26 @@ function magicParasol(params) {
         break;
       }
       if (params.currentTarget.hp < params.character.hp) {
+        utils.log(
+            '{0} blocks for {1}',
+            params.character.character,
+            params.currentTarget.character
+        );
         params.currentTarget = params.character;
+        break;
       }
+      utils.log(
+          '{0} is a coward',
+          params.character.character,
+      );
       break;
     }
     case 'EnemyDamage': {
       if (!utils.withProbability(0.05 + 0.05 * tier)) {
-        params.damage = 0;
+        break;
       }
+      utils.log('Activating {0}', params.item.name);
+      params.damage = 0;
       break;
     }
     default: {
@@ -477,6 +507,7 @@ function martyrArmor(params) {
       if (!utils.withProbability(0.66)) {
         break;
       }
+      utils.log('Activating {0}', params.item.name);
       const target = utils.pickRandom(
           params.battle.teams[
               params.battle.getTeamOf[params.character.character]
@@ -507,6 +538,7 @@ function martyrArmor(params) {
 function petImp(params) {
   switch (params.phase) {
     case 'InitCharacter': {
+      utils.log('Activating {0}', params.item.name);
       params.battle.addSummonToTeam(params.item, params.allyTeamIndex);
       break;
     }
@@ -520,6 +552,7 @@ function poisonDagger(params) {
   const tier = params.item.tier;
   switch (params.phase) {
     case 'PostTarget': {
+      utils.log('Activating {0}', params.item.name);
       params.currentTarget.poison += tier;
       break;
     }
@@ -532,6 +565,7 @@ function poisonDagger(params) {
 function rockCompanion(params) {
   switch (params.phase) {
     case 'InitCharacter': {
+      utils.log('Activating {0}', params.item.name);
       params.battle.addSummonToTeam(params.item, params.allyTeamIndex);
       break;
     }
@@ -548,8 +582,9 @@ function roughSkin(params) {
       if (!utils.withProbability(0.5)) {
         break;
       }
+      utils.log('Activating {0}', params.item.name);
       params.damage = Math.max(0, params.damage - tier - tier);
-      params.source.changeHp(-tier - tier);
+      params.source.changeHp({amount: -tier - tier});
       break;
     }
     default: {
@@ -571,12 +606,14 @@ function seekingMissiles(params) {
       if (target.hp === Infinity) {
         throw Error('InternalError: No target in enemy team');
       }
+      utils.log('{0} selected target {1}', params.item.name, target.character);
       params.currentTarget = target;
       break;
     }
     case 'PreDamage': {
       const missingHpProportion =
-          params.currentTarget.hp / params.currentTarget.hpMax;
+          1 - params.currentTarget.hp / params.currentTarget.hpMax;
+      utils.log('Activating {0}', params.item.name);
       params.damageFinal += Math.floor(5 * missingHpProportion * tier);
       break;
     }
@@ -589,13 +626,30 @@ function seekingMissiles(params) {
 function survivalKit(params) {
   const tier = params.item.tier;
   switch (params.phase) {
+    case 'InitCharacter': {
+      utils.log('Activating {0}', params.item.name);
+      const amount = 20 * tier;
+      params.character.hpMax += amount;
+      params.character.changeHp({amount: amount});
+      break;
+    }
     case 'Block': {
       if (!utils.withProbability(0.07 + 0.03 * tier)) {
         break;
       }
       if (params.currentTarget.hp < params.character.hp) {
+        utils.log(
+            '{0} blocks for {1}',
+            params.character.character,
+            params.currentTarget.character
+        );
         params.currentTarget = params.character;
+        break;
       }
+      utils.log(
+          '{0} is a coward',
+          params.character.character,
+      );
       break;
     }
     default: {
@@ -608,6 +662,7 @@ function thorns(params) {
   const tier = params.item.tier;
   switch (params.phase) {
     case 'TurnStart': {
+      utils.log('Activating {0}', params.item.name);
       var addedEnergy = false;
       for (const enemy of params.enemyTeam) {
         enemy.takeDamage({
@@ -616,10 +671,10 @@ function thorns(params) {
             battle: params.battle
         });
         if (addedEnergy) {
-          break;
+          continue;
         }
         if (!utils.withProbability(0.25)) {
-          break;
+          continue;
         }
         params.character.changeEnergy({amount: tier});
         addedEnergy = true;
@@ -639,6 +694,7 @@ function whirlwindAxe(params) {
       if (!utils.withProbability(0.11 * tier)) {
         break;
       }
+      utils.log('Activating {0}', params.item.name);
       for (const enemy of params.enemyTeam) {
         if (enemy.character === params.currentTarget.character) {
           continue;
