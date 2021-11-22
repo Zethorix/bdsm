@@ -3,7 +3,7 @@ import * as global from './global.js';
 import * as simulator from './simulator.js';
 import * as utils from './utils.js';
 
-export function outputTest(players) {
+export function outputTest(players, selectedDungeon) {
   const output = [];
   const team = [];
 
@@ -38,9 +38,8 @@ export function outputTest(players) {
       items: toEquip
     });
   }
-
-  const season = 2;
-  const dungeon = 0;
+  
+  const [season, dungeon] = JSON.parse(selectedDungeon);
   const waves = data.getDungeon(season, dungeon);
 
   const numRuns = 100;

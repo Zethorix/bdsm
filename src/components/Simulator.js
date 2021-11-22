@@ -1,8 +1,12 @@
+import * as data from '../data.js';
+import Dropdown from './Dropdown.js';
 import { outputTest } from '../test.js';
 import PlayerForm from './PlayerForm.js';
 import { useState } from 'react';
 
 function Simulator() {
+  const dungeonList = data.getDungeonList();
+  const [selectedDungeon, setSelectedDungeon] = useState('[2,0]');
   const [outputText, setOutputText] = useState("Select your items with the dropdowns.\nClick the button to start a test run!");
   const [players, setPlayers] = useState([
       getInitialPlayer(),
@@ -29,7 +33,7 @@ function Simulator() {
   }
 
   function onRunTest() {
-    const output = outputTest(players);
+    const output = outputTest(players, selectedDungeon);
     setOutputText(output);
   }
 
@@ -46,6 +50,13 @@ function Simulator() {
           }}
         />
       )}
+      Dungeon:
+      <Dropdown
+        selectedOption={selectedDungeon}
+        onChange={(event) => {setSelectedDungeon(event.target.value);}}
+        options={dungeonList}
+      />
+      <br/>
       <button onClick={onRunTest}>
         Run Test
       </button>
