@@ -63,6 +63,11 @@
     "attackHigh": 0,
     "energy": 0,
     "summoned": true,
-    "items": []
+    "items": [
+      {
+        "name": "Boosting Bugle",
+        "tier": {"base": 0, "scaling": 1}
+      }
+    ]
   }
 }
