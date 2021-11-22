@@ -96,6 +96,12 @@ export class Battle {
   }
 
   tick() {
+    for (const i in this.teams) {
+      if (this.teamHasLost(i)) {
+        return;
+      }
+    }
+    if (this.teamlength);
     const activeCharacter = utils.pickRandom(this.allCharacters, 'speed');
     const activeName = activeCharacter.character;
     utils.log('\n{0}\'s turn:', activeName);
@@ -177,15 +183,6 @@ export class Battle {
   }
 
   teamHasLost(index) {
-    return utils.all(
-        this.teams[index],
-        (character) => {
-          return character.hp <= 0;
-        }
-    );
-  }
-
-  getTeam(index) {
-    return this.teams[index];
+    return this.teams[index].length === 0;
   }
 }
