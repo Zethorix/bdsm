@@ -3,6 +3,7 @@ import * as utils from './utils.js';
 
 const ABILITY_FOR_ITEM = {
   'Avalanche': avalanche,
+  'BF Cannon': bfCannon,
   'Big Club': bigClub,
   'Boosting Bugle': boostingBugle,
   'Celine\'s Chumby Chicken': celinesChumbyChicken,
@@ -73,6 +74,31 @@ function avalanche(params) {
         });
       }
       break;
+    }
+    default: {
+      _throwInvalidPhaseError(params);
+    }
+  }
+}
+
+function bfCannon(params) {
+  const tier = params.item.tier;
+  switch (params.phase) {
+    case 'InitCharacter': {
+      utils.log('Activating {0}', params.item.name);
+      params.character.changeAttack({amount: 10});
+      params.character.changeHpMax({amount: 12});
+      params.character.changeHp({amount: 12});
+      break;
+    }
+    case 'SkipTurn': {
+      if (params.character.usedCannon) {
+        utils.log('Activating {0}: Skipping Turn', params.item.name);
+        params.character.usedCannon = false;
+        return true;
+      }
+      params.character.usedCannon = true;
+      return false;
     }
     default: {
       _throwInvalidPhaseError(params);

@@ -24,6 +24,7 @@ export class Character {
     this.angelAvailable = _extractParam(params, 'angelAvailable', false);
     this.canBeSaved = _extractParam(params, 'canBeSaved', true);
     this.poison = _extractParam(params, 'poison', 0);
+    this.usedCannon = _extractParam(params, 'usedCannon', false);
     this._preprocessTriggers();
     this.processedInitCharacter =
         _extractParam(params, 'processedInitCharacter', true);
@@ -125,21 +126,25 @@ export class Character {
 
   triggerPhase(params) {
     if (!(params.phase in this.triggers)) {
-      return;
+      return false;
     }
     if (params.phase === 'InitCharacter' && this.processedInitCharacter) {
-      return;
+      return false;
     }
 
     params.character = this;
+    var ret = false;
     for (const item of this.triggers[params.phase]) {
-      items.useItemAbility(Object.assign(params, {
-          item: item
-      }));
+      if (items.useItemAbility(Object.assign(params, {
+            item: item
+        })) === true) {
+        ret = true;
+      }
     }
     if (params.phase === 'InitCharacter') {
       this.processedInitCharacter = true;
     }
+    return ret;
   }
 }
 

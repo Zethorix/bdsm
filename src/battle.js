@@ -117,6 +117,10 @@ export class Battle {
 
     this.changeAllEnergy(this.allCharacters, 2);
 
+    if (activeCharacter.triggerPhase({phase: 'SkipTurn'})) {
+      return;
+    }
+
     activeCharacter.triggerPhase({
         allyTeam: this.teams[this.activeTeamIndex],
         allyTeamIndex: this.activeTeamIndex,
