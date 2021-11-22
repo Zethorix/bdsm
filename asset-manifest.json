@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/boxbox-dungeon-simulator/static/js/main.cda0e935.chunk.js",
-    "main.js.map": "/boxbox-dungeon-simulator/static/js/main.cda0e935.chunk.js.map",
+    "main.js": "/boxbox-dungeon-simulator/static/js/main.a651ea87.chunk.js",
+    "main.js.map": "/boxbox-dungeon-simulator/static/js/main.a651ea87.chunk.js.map",
     "runtime-main.js": "/boxbox-dungeon-simulator/static/js/runtime-main.37f3ce15.js",
     "runtime-main.js.map": "/boxbox-dungeon-simulator/static/js/runtime-main.37f3ce15.js.map",
-    "static/js/2.6899e2ae.chunk.js": "/boxbox-dungeon-simulator/static/js/2.6899e2ae.chunk.js",
-    "static/js/2.6899e2ae.chunk.js.map": "/boxbox-dungeon-simulator/static/js/2.6899e2ae.chunk.js.map",
+    "static/js/2.8b4fc1b1.chunk.js": "/boxbox-dungeon-simulator/static/js/2.8b4fc1b1.chunk.js",
+    "static/js/2.8b4fc1b1.chunk.js.map": "/boxbox-dungeon-simulator/static/js/2.8b4fc1b1.chunk.js.map",
     "index.html": "/boxbox-dungeon-simulator/index.html",
-    "static/js/2.6899e2ae.chunk.js.LICENSE.txt": "/boxbox-dungeon-simulator/static/js/2.6899e2ae.chunk.js.LICENSE.txt"
+    "static/js/2.8b4fc1b1.chunk.js.LICENSE.txt": "/boxbox-dungeon-simulator/static/js/2.8b4fc1b1.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.37f3ce15.js",
-    "static/js/2.6899e2ae.chunk.js",
-    "static/js/main.cda0e935.chunk.js"
+    "static/js/2.8b4fc1b1.chunk.js",
+    "static/js/main.a651ea87.chunk.js"
   ]
 }
