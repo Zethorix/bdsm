@@ -32,3 +32,12 @@ export function runDungeon(team, waves) {
   return 0;
 }
 
+export function runMany(team, waves, numRuns) {
+  var winsForTeam0 = 0;
+  for (var i = 0; i < numRuns; i++) {
+    if (runDungeon(team, waves) === 0) {
+      winsForTeam0++;
+    }
+  }
+  return winsForTeam0;
+}

@@ -28,11 +28,19 @@ export function outputTest(items) {
     }
   ]
 
+  const numRuns = 100;
+  global.setSeason(2);
+  global.setVerbose(false);
+  global.setOutput(null);
+  const numWins = simulator.runMany(players, waves, numRuns);
+
   const output = ['Test run with items: ' + JSON.stringify(toEquip)];
+  output.push(utils.format('Wins out of {0} runs: {1} ({2}%)',
+                           numRuns, numWins, numWins * 100 / numRuns));
+  output.push('\nExample Run:');
   global.setOutput([]);
   global.setVerbose(true);
-  global.setSeason(2);
-  output.push('\nWinning team: ' + simulator.runDungeon(players, waves, season));
+  output.push('\nWinning team: ' + simulator.runDungeon(players, waves));
   utils.extend(output, global.output);
   return output.join('\n');
 }
