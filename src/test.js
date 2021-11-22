@@ -3,7 +3,7 @@ import * as global from './global.js';
 import * as simulator from './simulator.js';
 import * as utils from './utils.js';
 
-export function outputTest(players, selectedDungeon) {
+export function outputTest(players, selectedDungeon, numRuns) {
   const output = [];
   const team = [];
 
@@ -42,11 +42,10 @@ export function outputTest(players, selectedDungeon) {
   const [season, dungeon] = JSON.parse(selectedDungeon);
   const waves = data.getDungeon(season, dungeon);
 
-  const numRuns = 100;
   global.setSeason(2);
   global.setVerbose(false);
   global.setOutput(null);
-  const numWins = simulator.runMany(team, waves, numRuns);
+  const numWins = simulator.runMany(team, waves, numRuns * 1);
 
   output.push(utils.format('Wins out of {0} runs: {1} ({2}%)',
                            numRuns, numWins, numWins * 100 / numRuns));
