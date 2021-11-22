@@ -26,6 +26,22 @@ export function parseMonuments(input) {
   return monumentLevels;
 }
 
+export function parsePlayer(input) {
+  const player = {username: '', items: []};
+  for (const line of input.split('\n')) {
+    const matchUsername = line.match(/(.*)'s Inventory/);
+    const matchItem = line.match(/:[^\s]+:\s+(.*)\s+(\d+):/);
+    if (matchUsername !== null) {
+      player.username = matchUsername[1];
+    }
+    if (matchItem !== null) {
+      player.items.push({name: matchItem[1], tier: parseInt(matchItem[2])});
+    }
+  }
+  console.log(player);
+  return player;
+}
+
 function _mutateTemplate(template, scale) {
   if (typeof template != 'object') {
     return template;
