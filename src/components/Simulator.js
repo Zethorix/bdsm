@@ -1,34 +1,51 @@
 import { outputTest } from '../test.js';
-import ItemDropdown from './ItemDropdown.js';
+import PlayerForm from './PlayerForm.js';
 import { useState } from 'react';
 
 function Simulator() {
   const [outputText, setOutputText] = useState("Select your items with the dropdowns.\nClick the button to start a test run!");
-  const [items, setItems] = useState([getInitialItem(), getInitialItem(), getInitialItem(), getInitialItem()]);
+  const [players, setPlayers] = useState([
+      getInitialPlayer(),
+      getInitialPlayer(),
+      getInitialPlayer(),
+      getInitialPlayer(),
+      getInitialPlayer()
+  ]);
 
+  function getInitialPlayer() {
+    return {
+      username: "",
+      items: [
+        getInitialItem(),
+        getInitialItem(),
+        getInitialItem(),
+        getInitialItem()
+      ]
+    };
+  }
+  
   function getInitialItem() {
     return { name: "", tier: 1 };
   }
 
   function onRunTest() {
-    const output = outputTest(items);
+    const output = outputTest(players);
     setOutputText(output);
   }
 
   return (
     <div>
-      {items.map((item, index) =>
-        <ItemDropdown
+      {players.map((player, index) =>
+        <PlayerForm
           key={index}
-          item={item}
-          onItemChanged={(name, tier) => {
-            let newItems = [...items];
-            newItems[index] = {name: name, tier: parseInt(tier)};
-            setItems(newItems);
+          player={player}
+          onPlayerChanged={(username, items) => {
+            let newPlayers = [...players];
+            newPlayers[index] = {username: username, items: items};
+            setPlayers(newPlayers);
           }}
         />
       )}
-      <br />
       <button onClick={onRunTest}>
         Run Test
       </button>
