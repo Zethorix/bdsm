@@ -13,7 +13,8 @@ export function getDungeon(season, dungeon) {
   const dungeonsForSeason = MOBS_BY_SEASON[season];
 
   if (!(dungeon in dungeonsForSeason)) {
-    const waves = require('../data/season_' + season + '/mobs/dungeon_' + dungeon + '.json');
+    const waves = require(
+        './data/season_' + season + '/mobs/dungeon_' + dungeon + '.json');
     for (const i in waves) {
       const wave = waves[i];
       for (const j in wave) {
@@ -29,11 +30,24 @@ export function getDungeon(season, dungeon) {
   return dungeonsForSeason[dungeon];
 }
 
+export function getDungeonList() {
+  const dungeonsBySeason = require('./data/dungeons.json');
+  const dungeonList = [];
+  for (const season in dungeonsBySeason) {
+    for (const dungeon of dungeonsBySeason[season]) {
+      dungeonList.push(JSON.stringify([parseInt(season), dungeon]));
+    }
+  }
+  return dungeonList;
+}
+
 export function getItems() {
   if (!(global.season in ITEMS_BY_SEASON)) {
     ITEMS_BY_SEASON[global.season] = {
-      passive: require('../data/season_' + global.season + '/items/passive_items.json'),
-      energy: require('../data/season_' + global.season + '/items/energy_items.json')
+      passive: require(
+          './data/season_' + global.season + '/items/passive_items.json'),
+      energy: require(
+          './data/season_' + global.season + '/items/energy_items.json')
     };
   }
   return ITEMS_BY_SEASON[global.season];
@@ -66,7 +80,7 @@ export function getAllItemNamesAndBlank() {
 export function getTemplates() {
   if (!(global.season in TEMPLATES_BY_SEASON)) {
     TEMPLATES_BY_SEASON[global.season] = require(
-        '../data/season_' + global.season + '/mobs/summon_templates.json');
+        './data/season_' + global.season + '/mobs/summon_templates.json');
   }
   return TEMPLATES_BY_SEASON[global.season];
 }

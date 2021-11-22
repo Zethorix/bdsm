@@ -28,7 +28,6 @@ export class Character {
   }
 
   _preprocessTriggers() {
-    console.log(this);
     if ('triggers' in this) {
       return;
     }
