@@ -27,7 +27,7 @@ export function runDungeon(team, waves) {
         break;
       }
     }
-    currTeam = battle.getTeam(0);
+    currTeam = battle.teams[0];
   }
   return 0;
 }

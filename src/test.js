@@ -28,11 +28,11 @@ export function outputTest(players, selectedDungeon) {
 
     team.push({
       character: player.username,
-      hp: 100,
-      hpMax: 100,
-      speed: 10,
-      attackLow: 1,
-      attackHigh: 10,
+      hp: 100 + player.monuments.Health * 5,
+      hpMax: 100 + player.monuments.Health * 5,
+      speed: 10 + player.monuments.Speed * 1,
+      attackLow: 1 + player.monuments.Power * 1,
+      attackHigh: 10 + player.monuments.Power * 1,
       energy: 0,
       summoned: false,
       items: toEquip

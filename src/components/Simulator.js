@@ -24,7 +24,12 @@ function Simulator() {
         getInitialItem(),
         getInitialItem(),
         getInitialItem()
-      ]
+      ],
+      monuments: {
+        Health: 0,
+        Power: 0,
+        Speed: 0
+      }
     };
   }
   
@@ -43,9 +48,13 @@ function Simulator() {
         <PlayerForm
           key={index}
           player={player}
-          onPlayerChanged={(username, items) => {
+          onPlayerChanged={(username, items, monuments) => {
             let newPlayers = [...players];
-            newPlayers[index] = {username: username, items: items};
+            newPlayers[index] = {
+              username: username,
+              items: items,
+              monuments: monuments
+            };
             setPlayers(newPlayers);
           }}
         />
