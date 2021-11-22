@@ -29,6 +29,7 @@ const ABILITY_FOR_ITEM = {
   'Seeking Missiles': seekingMissiles,
   'Survival Kit': survivalKit,
   'Thorns': thorns,
+  'Trusty Steed': trustySteed,
   'Whirlwind Axe': whirlwindAxe
 }
 
@@ -681,6 +682,19 @@ function thorns(params) {
         params.character.changeEnergy({amount: tier});
         addedEnergy = true;
       }
+      break;
+    }
+    default: {
+      _throwInvalidPhaseError(params);
+    }
+  }
+}
+
+function trustySteed(params) {
+  switch (params.phase) {
+    case 'InitCharacter': {
+      utils.log('Activating {0}', params.item.name);
+      params.battle.addSummonToTeam(params.item, params.allyTeamIndex);
       break;
     }
     default: {

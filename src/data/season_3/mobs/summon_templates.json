@@ -53,5 +53,16 @@
         "tier": {"base": 0, "scaling": 1}
       }
     ]
+  },
+  "Trusty Steed": {
+    "character": "Trusty Steed",
+    "hp": {"base": 0, "scaling": 10},
+    "hpMax": {"base": 0, "scaling": 10},
+    "speed": 20,
+    "attackLow": 0,
+    "attackHigh": 0,
+    "energy": 0,
+    "summoned": true,
+    "items": []
   }
 }

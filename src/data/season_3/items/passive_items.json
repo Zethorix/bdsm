@@ -143,6 +143,13 @@
       "TurnStart"
     ]
   },
+  "Trusty Steed": {
+    "obtainable": true,
+    "description": "At the start of the dungeon, summon a loyal steed... 10 HP, 20 speed. Will boost teammates.",
+    "triggers": [
+      "InitCharacter"
+    ]
+  },
   "Whirlwind Axe": {
     "obtainable": true,
     "description": "When you attack, you have a {11*t}% chance of making your attack deal splash damage to all other enemies.",
