@@ -6,7 +6,7 @@ const ABILITY_FOR_ITEM = {
   'BF Cannon': bfCannon,
   'Big Club': bigClub,
   'Boosting Bugle': boostingBugle,
-  'Celine\'s Chumby Chicken': celinesChumbyChicken,
+  'Chumby Chicken': chumbyChicken,
   'Challenger Arrow': challengerArrow,
   'Chicken Dinner': chickenDinner,
   'Cleansing Flames': cleansingFlames,
@@ -156,7 +156,7 @@ function boostingBugle(params) {
   }
 }
 
-function celinesChumbyChicken(params) {
+function chumbyChicken(params) {
   switch (params.phase) {
     case 'TurnStart': {
       const allyTeamIndex = params.allyTeamIndex;
