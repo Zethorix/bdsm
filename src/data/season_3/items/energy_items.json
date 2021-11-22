@@ -24,6 +24,11 @@
     "description": "Spend 60 energy: Deal {5*t}-{10*t} damage to all enemies. If there is only one enemy, this deals double damage.",
     "cost": 60
   },
+  "Festive Feast": {
+    "obtainable": true,
+    "description": "Spend 80 energy: deal {3*t} damage to all opponents and heal {3*t} HP to all allies",
+    "cost": 80
+  },
   "Imp Whistle": {
     "obtainable": true,
     "description": "Spend 45 energy: summon a small imp companion. {t}hp {3*t}-{4*t}atk 16 spd",

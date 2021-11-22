@@ -13,6 +13,7 @@ const ABILITY_FOR_ITEM = {
   'Draining Dagger': drainingDagger,
   'Energetic Ally': energeticAlly,
   'Explosion Powder': explosionPowder,
+  'Festive Feast': festiveFeast,
   'Fire Sword': fireSword,
   'Freezeman': freezeman,
   'Halberd': halberd,
@@ -294,6 +295,28 @@ function explosionPowder(params) {
             amount: utils.pickRandomWithinRange(5 * tier, 10 * tier),
             battle: params.battle
         });
+      }
+      break;
+    }
+    default: {
+      _throwInvalidPhaseError(params);
+    }
+  }
+}
+
+function festiveFeast(params) {
+  const tier = params.item.tier;
+  switch (params.phase) {
+    case 'TurnStart': {
+      for (const enemy of params.enemyTeam) {
+        enemy.takeDamage({
+            source: params.character,
+            amount: 3 * tier,
+            battle: params.battle
+        });
+      }
+      for (const ally of params.allyTeam) {
+        ally.changeHp({amount: 3 * tier});
       }
       break;
     }
