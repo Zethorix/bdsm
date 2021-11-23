@@ -286,7 +286,7 @@ function explosionPowder(params) {
       if (enemyTeam.length === 1) {
         const target = enemyTeam[Object.keys(enemyTeam)[0]];
         target.takeDamage({
-            source: params.charcter,
+            source: params.character,
             amount: utils.pickRandomWithinRange(10 * tier, 20 * tier),
             battle: params.battle
         });
