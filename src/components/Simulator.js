@@ -70,7 +70,7 @@ function Simulator() {
       <br/>
       Number of runs:
       <input type="number" min={0} value={numRuns} onChange={(event) => {
-        setNumRuns(event.target.value);
+        setNumRuns(parseInt(event.target.value));
       }} />
       <br/>
       <button onClick={onRunTest}>
