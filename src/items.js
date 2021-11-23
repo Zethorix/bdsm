@@ -87,9 +87,9 @@ function bfCannon(params) {
   switch (params.phase) {
     case 'InitCharacter': {
       utils.log('Activating {0}', params.item.name);
-      params.character.changeAttack({amount: 10});
-      params.character.changeHpMax({amount: 12});
-      params.character.changeHp({amount: 12});
+      params.character.changeAttack({amount: 6 + 6 * tier});
+      params.character.changeHpMax({amount: 10 * tier});
+      params.character.changeHp({amount: 10 * tier});
       break;
     }
     case 'SkipTurn': {
