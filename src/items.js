@@ -261,12 +261,16 @@ function energeticAlly(params) {
       const allyTeam = params.allyTeam;
       var target = {hp: Infinity};
       for (const ally of allyTeam) {
-        if (ally.hp < target.hp) {
-          target = ally;
+        if (ally.summoned) {
+          continue;
         }
+        if (ally.hp >= target.hp) {
+          continue;
+        }
+        target = ally;
       }
       if (target.hp === Infinity) {
-        throw Error('InternalError: Ally team has no members');
+        break;
       }
       target.changeHp({amount: 5 * tier});
       target.changeEnergy({amount: 20});
