@@ -69,7 +69,7 @@ function Simulator() {
       />
       <br/>
       Number of runs:
-      <input type="number" value={numRuns} onChange={(event) => {
+      <input type="number" min={0} value={numRuns} onChange={(event) => {
         setNumRuns(event.target.value);
       }} />
       <br/>
