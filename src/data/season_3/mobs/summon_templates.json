@@ -61,7 +61,7 @@
     "speed": 20,
     "attackLow": 0,
     "attackHigh": 0,
-    "energy": 0,
+    "energy": 55,
     "summoned": true,
     "items": [
       {
