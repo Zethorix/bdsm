@@ -545,13 +545,11 @@ function magicParasol(params) {
       break;
     }
     case 'EnemyDamage': {
-      if (!utils.withProbability(0.2)) {
+      if (!utils.withProbability(0.17 + 0.03 * tier)) {
         break;
       }
       utils.log('Activating {0}', params.item.name);
-      params.damage = Math.max(
-          0,
-          params.damage - utils.pickRandomWithinRange(0, 6 * tier));
+      params.damage = Math.max(0, params.damage - 2 - 3 * tier);
       break;
     }
     default: {
