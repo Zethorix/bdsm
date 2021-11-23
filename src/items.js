@@ -145,6 +145,9 @@ function boostingBugle(params) {
               return 1;
             }
         );
+        if (target === null) {
+          break;
+        }
         target.changeHp({amount: tier + tier});
         target.changeAttack({amount: tier});
       }
