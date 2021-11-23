@@ -392,6 +392,9 @@ function healingPendant(params) {
       if (!utils.withProbability(0.07 + 0.03 * tier)) {
         break;
       }
+      if (params.currentTarget.character === params.character.character) {
+        break;
+      }
       if (params.currentTarget.hp < params.character.hp) {
         utils.log(
             '{0} blocks for {1}',
@@ -521,6 +524,9 @@ function magicParasol(params) {
   switch (params.phase) {
     case 'Block': {
       if (!utils.withProbability(0.07 + 0.03 * tier)) {
+        break;
+      }
+      if (params.currentTarget.character === params.character.character) {
         break;
       }
       if (params.currentTarget.hp < params.character.hp) {
@@ -689,6 +695,9 @@ function survivalKit(params) {
     }
     case 'Block': {
       if (!utils.withProbability(0.07 + 0.03 * tier)) {
+        break;
+      }
+      if (params.currentTarget.character === params.character.character) {
         break;
       }
       if (params.currentTarget.hp < params.character.hp) {
