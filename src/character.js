@@ -120,7 +120,8 @@ export class Character {
       allyTeamIndex: allyTeamIndex,
       battle: params.battle,
       character: this,
-      phase: 'Death'
+      phase: 'Death',
+      source: params.source
     });
   }
 

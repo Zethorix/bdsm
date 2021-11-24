@@ -20,14 +20,18 @@ const ABILITY_FOR_ITEM = {
   'Healing Pendant': healingPendant,
   'Imp Whistle': impWhistle,
   'Knight\'s Lance': knightsLance,
+  'Last Resort': lastResort,
   'Love Letter': loveLetter,
   'Machete': machete,
   'Magic Parasol': magicParasol,
   'Martyr Armor': martyrArmor,
   'Pet Imp': petImp,
   'Poison Dagger': poisonDagger,
+  'Quickening Death': quickeningDeath,
+  'Quickening Death: Focused': quickeningDeathFocused,
   'Rock Companion': rockCompanion,
   'Rough Skin': roughSkin,
+  'Rousing Death': rousingDeath,
   'Seeking Missiles': seekingMissiles,
   'Survival Kit': survivalKit,
   'Thorns': thorns,
@@ -464,6 +468,29 @@ function knightsLance(params) {
   }
 }
 
+function lastResort(params) {
+  const tier = params.item.tier;
+  switch (params.phase) {
+    case 'Death': {
+      if (params.battle.activeTeamIndex === params.allyTeamIndex) {
+        break;
+      }
+      if (params.source === null) {
+        break;
+      }
+      params.source.takeDamage({
+        amount: 10 * tier,
+        battle: params.battle,
+        source: params.character
+      });
+      break;
+    }
+    default: {
+      _throwInvalidPhaseError(params);
+    }
+  }
+}
+
 function loveLetter(params) {
   const tier = params.item.tier;
   switch (params.phase) {
@@ -627,6 +654,52 @@ function poisonDagger(params) {
   }
 }
 
+function quickeningDeath(params) {
+  const tier = params.item.tier;
+  switch (params.phase) {
+    case 'Death': {
+      if (params.battle.activeTeamIndex === params.allyTeamIndex) {
+        break;
+      }
+      for (const ally of params.allyTeam) {
+        if (ally.character === params.character.character) {
+          continue;
+        }
+        ally.changeSpeed({amount: tier});
+      }
+      break;
+    }
+    default: {
+      _throwInvalidPhaseError(params);
+    }
+  }
+}
+
+function quickeningDeathFocused(params) {
+  const tier = params.item.tier;
+  switch (params.phase) {
+    case 'Death': {
+      if (params.battle.activeTeamIndex === params.allyTeamIndex) {
+        break;
+      }
+      const target = utils.pickRandom(params.allyTeam, (c) => {
+        if (c.character === params.character.character) {
+          return 0;
+        }
+        return 1;
+      });
+      if (target === null) {
+        break;
+      }
+      target.changeSpeed({amount: 5 * tier});
+      break;
+    }
+    default: {
+      _throwInvalidPhaseError(params);
+    }
+  }
+}
+
 function rockCompanion(params) {
   switch (params.phase) {
     case 'InitCharacter': {
@@ -650,6 +723,27 @@ function roughSkin(params) {
       utils.log('Activating {0}', params.item.name);
       params.damage = Math.max(0, params.damage - tier - tier);
       params.source.changeHp({amount: -tier - tier});
+      break;
+    }
+    default: {
+      _throwInvalidPhaseError(params);
+    }
+  }
+}
+
+function rousingDeath(params) {
+  const tier = params.item.tier;
+  switch (params.phase) {
+    case 'Death': {
+      if (params.battle.activeTeamIndex === params.allyTeamIndex) {
+        break;
+      }
+      for (const ally of params.allyTeam) {
+        if (ally.character === params.character.character) {
+          continue;
+        }
+        ally.changeEnergy({amount: 10 * tier});
+      }
       break;
     }
     default: {

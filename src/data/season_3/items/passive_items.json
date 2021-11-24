@@ -71,6 +71,13 @@
       "TurnStart"
     ]
   },
+  "Last Resort": {
+    "obtainable": false,
+    "description": "When an oponent kills you, you shoot them in the face for {10*t} damage. This item cannot be obtained, so its exact description is unknown.",
+    "triggers": [
+      "Death"
+    ]
+  },
   "Love Letter": {
     "obtainable": true,
     "description": "After you attack, you heal an ally for {2*t} and they gain {t} energy. This cannot target yourself or summons.",
@@ -114,6 +121,20 @@
       "PostTarget"
     ]
   },
+  "Quickening Death": {
+    "obtainable": false,
+    "description": "When you die on an opponent's turn, your allies become enraged. They gain {t} Speed. This item cannot be obtained, so its exact description is unknown.",
+    "triggers": [
+      "Death"
+    ]
+  },
+  "Quickening Death: Focused": {
+    "obtainable": false,
+    "description": "When you die on an opponent's turn, a random ally becomes enraged. They gain {5*t} Speed. This item cannot be obtained, so its exact description is unknown.",
+    "triggers": [
+      "Death"
+    ]
+  },
   "Rock Companion": {
     "obtainable": true,
     "description": "At the start of the dungeon, summon a brave Rock Companion. {15*t}hp {5*t}atk 2spd",
@@ -126,6 +147,13 @@
     "description": "50% chance to reduce an attack by {2*t} and deal {2*t} damage to the attacker.",
     "triggers": [
       "EnemyDamage"
+    ]
+  },
+  "Rousing Death": {
+    "obtainable": false,
+    "description": "When you die on an opponent's turn, your allies become enraged. They gain {10*t} Energy. This item cannot be obtained, so its exact description is unknown.",
+    "triggers": [
+      "Death"
     ]
   },
   "Seeking Missiles": {

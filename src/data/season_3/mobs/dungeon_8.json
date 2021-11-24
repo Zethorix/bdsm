@@ -1,0 +1,212 @@
+[
+  [
+    {
+      "character": "Gi-Hun",
+      "hp": 150,
+      "hpMax": 150,
+      "speed": 16,
+      "attackLow": 15,
+      "attackHigh": 30,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Quickening Death",
+          "tier": 6
+        }
+      ]
+    },
+    {
+      "character": "Ali Abdul",
+      "hp": 150,
+      "hpMax": 150,
+      "speed": 11,
+      "attackLow": 30,
+      "attackHigh": 60,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Festive Feast",
+          "tier": 5
+        },
+        {
+          "name": "Quickening Death",
+          "tier": 6
+        }
+      ]
+    },
+    {
+      "character": "Il-nam",
+      "hp": 175,
+      "hpMax": 175,
+      "speed": 17,
+      "attackLow": 15,
+      "attackHigh": 30,
+      "energy": 45,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Imp Whistle",
+          "tier": 5
+        },
+        {
+          "name": "Quickening Death",
+          "tier": 3
+        },
+        {
+          "name": "Rousing Death",
+          "tier": 5
+        }
+      ]
+    },
+    {
+      "character": "Sang-woo",
+      "hp": 175,
+      "hpMax": 175,
+      "speed": 15,
+      "attackLow": 10,
+      "attackHigh": 50,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Knight's Lance",
+          "tier": 6
+        }
+      ],
+      "_stats": {
+        "_knightsLanceDamageLow": 31,
+        "_knightsLanceDamageHigh": 34
+      }
+    }
+  ],
+  [
+    {
+      "character": "Sae-byeok",
+      "hp": 250,
+      "hpMax": 250,
+      "speed": 12,
+      "attackLow": 30,
+      "attackHigh": 60,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Big Club",
+          "tier": 9
+        },
+        {
+          "name": "Fire Sword",
+          "tier": 3
+        },
+        {
+          "name": "Quickening Death: Focused",
+          "tier": 5
+        }
+      ],
+      "_stats": {
+        "_maxFireSwordTriggers": 2,
+        "_triggeredFireSword": 2,
+        "_triggeredBigClub": 2,
+        "_attacks": 2
+      }
+    },
+    {
+      "character": "Ji-yeong",
+      "hp": 250,
+      "hpMax": 250,
+      "speed": 12,
+      "attackLow": 20,
+      "attackHigh": 30,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Fire Sword",
+          "tier": 5
+        },
+        {
+          "name": "Whirlwind Axe",
+          "tier": 3
+        }
+      ],
+      "_stats": {
+        "_maxFireSwordTriggers": 3,
+        "_triggeredFireSword": 7,
+        "_triggeredWhirlwindAxe": 1,
+        "_attacks": 3
+      }
+    }
+  ],
+  [
+    {
+      "character": "Circle",
+      "hp": 75,
+      "hpMax": 75,
+      "speed": 12,
+      "attackLow": 5,
+      "attackHigh": 10,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Last Resort",
+          "tier": 6
+        }
+      ]
+    },
+    {
+      "character": "Triangle",
+      "hp": 75,
+      "hpMax": 75,
+      "speed": 14,
+      "attackLow": 5,
+      "attackHigh": 15,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Last Resort",
+          "tier": 7
+        }
+      ]
+    },
+    {
+      "character": "Square",
+      "hp": 75,
+      "hpMax": 75,
+      "speed": 16,
+      "attackLow": 10,
+      "attackHigh": 20,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Last Resort",
+          "tier": 8
+        }
+      ]
+    },
+    {
+      "character": "Frontman",
+      "hp": 225,
+      "hpMax": 225,
+      "speed": 25,
+      "attackLow": 75,
+      "attackHigh": 125,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Big Club",
+          "tier": 6
+        }
+      ],
+      "_stats": {
+        "_triggeredBigClub": 2,
+        "_attacks": 3
+      }
+    }
+  ]
+]
