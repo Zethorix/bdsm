@@ -37,8 +37,8 @@
       ],
       "_stats": {
         "_maxFireSwordTriggers": 4,
-        "_triggeredFireSword": 30,
-        "_attacks": 20
+        "_triggeredFireSword": 38,
+        "_attacks": 23
       }
     },
     {
@@ -106,8 +106,8 @@
       "hp": 200,
       "hpMax": 200,
       "speed": 15,
-      "attackLow": 35+???,
-      "attackHigh": 55+???,
+      "attackLow": 35,
+      "attackHigh": 60,
       "energy": 0,
       "summoned": false,
       "items": []
@@ -117,8 +117,8 @@
       "hp": 200,
       "hpMax": 200,
       "speed": 25,
-      "attackLow": 20+???,
-      "attackHigh": 35+???,
+      "attackLow": 20,
+      "attackHigh": 35,
       "energy": 0,
       "summoned": false,
       "items": []
