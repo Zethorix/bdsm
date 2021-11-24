@@ -11,6 +11,10 @@
       "summoned": false,
       "items": [
         {
+          "name": "Festive Feast",
+          "tier": 5
+        },
+        {
           "name": "Quickening Death",
           "tier": 6
         }
@@ -72,13 +76,17 @@
       "items": [
         {
           "name": "Knight's Lance",
-          "tier": 6
+          "tier": 5
+        },
+        {
+          "name": "Quickening Death",
+          "tier": 3
+        },
+        {
+          "name": "Rousing Death",
+          "tier": 5
         }
-      ],
-      "_stats": {
-        "_knightsLanceDamageLow": 31,
-        "_knightsLanceDamageHigh": 34
-      }
+      ]
     }
   ],
   [
@@ -94,11 +102,11 @@
       "items": [
         {
           "name": "Big Club",
-          "tier": 9
+          "tier": 5
         },
         {
           "name": "Fire Sword",
-          "tier": 3
+          "tier": 9
         },
         {
           "name": "Quickening Death: Focused",
@@ -106,10 +114,10 @@
         }
       ],
       "_stats": {
-        "_maxFireSwordTriggers": 2,
-        "_triggeredFireSword": 2,
-        "_triggeredBigClub": 2,
-        "_attacks": 2
+        "_maxFireSwordTriggers": 5,
+        "_triggeredFireSword": 82,
+        "_triggeredBigClub": 17,
+        "_attacks": 29
       }
     },
     {
@@ -124,18 +132,23 @@
       "items": [
         {
           "name": "Fire Sword",
-          "tier": 5
+          "tier": 8
         },
         {
           "name": "Whirlwind Axe",
-          "tier": 3
+          "tier": 4
+        },
+        {
+          "name": "Quickening Death: Focused",
+          "tier": 5
         }
       ],
       "_stats": {
-        "_maxFireSwordTriggers": 3,
-        "_triggeredFireSword": 7,
-        "_triggeredWhirlwindAxe": 1,
-        "_attacks": 3
+        "_maxFireSwordTriggers": 6,
+        "_triggeredFireSword": 60,
+        "_availableFireSword": 25,
+        "_triggeredWhirlwindAxe": 10,
+        "_availableWhirlwindAxe": 23
       }
     }
   ],
@@ -204,8 +217,8 @@
         }
       ],
       "_stats": {
-        "_triggeredBigClub": 2,
-        "_attacks": 3
+        "_triggeredBigClub": 29,
+        "_attacks": 47
       }
     }
   ]
