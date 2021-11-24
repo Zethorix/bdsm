@@ -5,8 +5,8 @@
       "hp": 200,
       "hpMax": 200,
       "speed": 15,
-      "attackLow": ???,
-      "attackHigh": ???,
+      "attackLow": 30,
+      "attackHigh": 69,
       "energy": 0,
       "summoned": false,
       "items": [
@@ -21,8 +21,8 @@
       "hp": 140,
       "hpMax": 140,
       "speed": 15,
-      "attackLow": ???,
-      "attackHigh": ???,
+      "attackLow": 30,
+      "attackHigh": 69,
       "energy": 0,
       "summoned": false,
       "items": [
@@ -78,7 +78,15 @@
       "items": []
     },
     {
-      "character": "puck"
+      "character": "Puck",
+      "hp": 10,
+      "hpMax": 10,
+      "speed": 16,
+      "attackLow": 3,
+      "attackHigh": 4,
+      "energy": 0,
+      "summoned": false,
+      "item": []
     }
   ],
   [
@@ -139,9 +147,7 @@
       ],
       "_stats": {
         "_triggeredBlock": 28,
-        "_availableBlocks": 92,
-        "_triggeredMagicParasol": 62,
-        "_defended": 154
+        "_availableBlocks": 92
       }
     }
   ]
