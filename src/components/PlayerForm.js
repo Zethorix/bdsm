@@ -1,14 +1,32 @@
 import ItemDropdown from './ItemDropdown.js';
+import { parseInventory, parseMonuments } from '../dungeonUtils.js';
 import { useState } from 'react';
 
 function PlayerForm(props) {
   const [items, setItems] = useState(props.player.items);
   const [monuments, setMonuments] = useState(props.player.monuments);
+  const [rawInput, setRawInput] = useState('');
 
   return (
     <div>
+      Load from !api e or !appr:&nbsp;
+      <textarea value={rawInput} onChange={(event) => {
+        var newPlayer = parseInventory(event.target.value);
+        if (newPlayer === null) {
+          newPlayer = props.player;
+        }
+        var newMonuments = parseMonuments(event.target.value);
+        if (newMonuments === null) {
+          newMonuments = props.player.monuments;
+        }
+        props.onPlayerChanged(newPlayer.username, newPlayer.items, newMonuments)
+        setItems(newPlayer.items);
+        setMonuments(newMonuments);
+        setRawInput('');
+      }} />
+      <br />
       Username:
-      <input onChange={(event) => {
+      <input value={props.player.username} onChange={(event) => {
         props.onPlayerChanged(event.target.value, props.player.items, props.player.monuments);
       }} />
       {items.map((item, index) =>
