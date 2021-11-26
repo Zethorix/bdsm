@@ -15,7 +15,11 @@ export function formatDescriptionWithTier(description, tier) {
 }
 
 export function parseMonuments(input) {
-  const monumentLevels = {};
+  const monumentLevels = {
+    'Health': 0,
+    'Power': 0,
+    'Speed': 0
+  };
   var empty = true;
   for (const line of input.split('\n')) {
     const matches = line.match(/\|\s*(Health|Power|Speed)\s*\|\s*(\d+)\s*\|/);
@@ -36,7 +40,7 @@ export function parseInventory(input) {
   var empty = true;
   for (const line of input.split('\n')) {
     const matchUsername = line.match(/(.*)'s Inventory/);
-    const matchItem = line.match(/:[^\s]+:\s+(.*)\s+(\d+):/);
+    const matchItem = line.match(/\d-\s[\w:]+\s([\w'\s]+)\s(\d+):/);
     if (matchUsername !== null) {
       empty = false;
       player.username = matchUsername[1];
@@ -48,6 +52,12 @@ export function parseInventory(input) {
   }
   if (empty) {
     return null;
+  }
+  if (player.items.length > 4) {
+    return null;
+  }
+  for (var i = player.items.length; i < 4; i++) {
+    player.items.push({name: '', tier: 1});
   }
   return player;
 }
