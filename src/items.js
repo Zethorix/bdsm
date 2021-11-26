@@ -67,6 +67,7 @@ function avalanche(params) {
     case 'TurnStart': {
       const enemyTeam = params.enemyTeam;
       const tier = params.item.tier;
+      const speedDelta = -utils.pickRandomWithinRange(0, tier);
       for (var i = 0; i < 2; i++) {
         const target = utils.pickRandom(enemyTeam);
         target.takeDamage({
@@ -74,9 +75,7 @@ function avalanche(params) {
           amount: utils.pickRandomWithinRange(3 * tier, 5 * tier),
           battle: params.battle
         });
-        target.changeSpeed({
-          amount: -utils.pickRandomWithinRange(0, tier)
-        });
+        target.changeSpeed({amount: speedDelta});
       }
       break;
     }
