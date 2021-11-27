@@ -3,6 +3,7 @@ import Dropdown from './Dropdown.js';
 import { outputTest } from '../test.js';
 import PlayerForm from './PlayerForm.js';
 import { useState } from 'react';
+import './Simulator.css';
 
 function Simulator() {
   const dungeonList = data.getDungeonList();
@@ -45,7 +46,8 @@ function Simulator() {
   }
 
   return (
-    <div>
+    <div className="simulator">
+      <div className="party">
       {players.map((player, index) =>
         <PlayerForm
           key={index}
@@ -61,6 +63,7 @@ function Simulator() {
           }}
         />
       )}
+      </div>
       [Season, Dungeon]:
       <Dropdown
         selectedOption={selectedDungeon}

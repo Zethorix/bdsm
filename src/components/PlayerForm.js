@@ -2,6 +2,7 @@ import ItemDropdown from './ItemDropdown.js';
 import MonumentInput from './MonumentInput.js';
 import { parseInventory, parseMonuments } from '../dungeonUtils.js';
 import { useState } from 'react';
+import './PlayerForm.css';
 
 function PlayerForm(props) {
   const [items, setItems] = useState(props.player.items);
@@ -9,7 +10,7 @@ function PlayerForm(props) {
   const [rawInput, setRawInput] = useState('');
 
   return (
-    <div>
+    <div className="playerForm">
       Load from !api e or !appr:&nbsp;
       <textarea value={rawInput} onChange={(event) => {
         var newPlayer = parseInventory(event.target.value);
@@ -93,8 +94,6 @@ function PlayerForm(props) {
           props.player.items,
           newMonuments);
       }} />
-      <br />
-      <br />
     </div>
   );
 }
