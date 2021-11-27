@@ -1,8 +1,9 @@
 import Simulator from "./components/Simulator.js";
+import './App.css';
 
 function App() {
   return (
-    <div style={{backgroundColor: 'dimgrey', color:'white'}}>
+    <div className="App">
       <h1>Boxbox Dungeon SiMulator (BDSM)</h1>
       <div><i>Created by Zethorix#1064 and Oof#4389 (qaisklyi)</i></div>
       <h3>(The pity system is currently not implemented)</h3>
