@@ -1,0 +1,13 @@
+.monumentsSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.statMonuments {
+  display: flex;
+}
+
+.monumentInput {
+  margin-left: 4px;
+  margin-right: 4px;
+}

@@ -1,12 +1,11 @@
 import ItemDropdown from './ItemDropdown.js';
-import MonumentInput from './MonumentInput.js';
+import MonumentsSection from './MonumentsSection.js';
 import { parseInventory, parseMonuments } from '../dungeonUtils.js';
 import { useState } from 'react';
 import './PlayerForm.css';
 
 function PlayerForm(props) {
   const [items, setItems] = useState(props.player.items);
-  const [monuments, setMonuments] = useState(props.player.monuments);
   const [rawInput, setRawInput] = useState('');
 
   return (
@@ -23,7 +22,6 @@ function PlayerForm(props) {
         }
         props.onPlayerChanged(newPlayer.username, newPlayer.items, newMonuments)
         setItems(newPlayer.items);
-        setMonuments(newMonuments);
         setRawInput('');
       }} />
       <br />
@@ -43,57 +41,13 @@ function PlayerForm(props) {
           }}
         />
       )}
-      Monuments:
-      <br />
-      Health:
-      <MonumentInput
-        value={props.player.monuments.Health}
-        onValueChanged={(newHealth) => {
-          let newMonuments = { ...monuments };
-          newMonuments.Health = newHealth;
-          setMonuments(newMonuments);
-          props.onPlayerChanged(
-            props.player.username,
-            props.player.items,
-            newMonuments);
-        }} />
-      &nbsp;
-      Power:
-      <MonumentInput
-        value={props.player.monuments.Power}
-        onValueChanged={(newPower) => {
-        let newMonuments = { ...monuments };
-        newMonuments.Power = newPower;
-        setMonuments(newMonuments);
-        props.onPlayerChanged(
-          props.player.username,
-          props.player.items,
-          newMonuments);
-      }} />
-      &nbsp;
-      Speed:
-      <MonumentInput
-        value={props.player.monuments.Speed}
-        onValueChanged={(newSpeed) => {
-        let newMonuments = { ...monuments };
-        newMonuments.Speed = newSpeed;
-        setMonuments(newMonuments);
-        props.onPlayerChanged(
-          props.player.username,
-          props.player.items,
-          newMonuments);
-      }} />
-      &nbsp;
-      Angel:
-      <input type="checkbox" checked={props.player.monuments.Angel} onChange={(event) => {
-        let newMonuments = { ...monuments };
-        newMonuments.Angel = event.target.checked;
-        setMonuments(newMonuments);
-        props.onPlayerChanged(
-          props.player.username,
-          props.player.items,
-          newMonuments);
-      }} />
+      <MonumentsSection
+        monuments={props.player.monuments}
+        onMonumentsChanged={
+          (newMonuments) =>
+            props.onPlayerChanged(props.player.username, props.player.items, newMonuments)
+        }
+      />
     </div>
   );
 }
