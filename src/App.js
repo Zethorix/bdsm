@@ -4,10 +4,10 @@ function App() {
   return (
     <div>
       <h1>Boxbox Dungeon SiMulator (BDSM)</h1>
-      <h3>The simulator has been updated with known information from Season 3!</h3>
+      <div><i>Created by Zethorix#1064 and Oof#4389 (qaisklyi)</i></div>
       <h3>(The pity system is currently not implemented)</h3>
-      <p>Enter your party's items and monuments.</p>
       <br />
+      <p>Enter your party's items and monuments.</p>
       <Simulator />
     </div>
   );
