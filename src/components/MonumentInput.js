@@ -6,7 +6,6 @@ function MonumentInput(props) {
       className="monumentInput"
       type="number"
       min={0}
-      size={4}
       value={props.value}
       onChange={(event) => { props.onValueChanged(event.target.value) }}
     />
