@@ -68,7 +68,7 @@
     "description": "Your attacks have a 50% chance to heal yourself for {5*t} HP. {7+3*t}% Chance to take the hit when your teammate is attacked, if you're feeling brave.",
     "triggers": [
       "Block",
-      "TurnStart"
+      "PostTarget"
     ]
   },
   "Last Resort": {
