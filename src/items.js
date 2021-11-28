@@ -389,7 +389,7 @@ function halberd(params) {
 function healingPendant(params) {
   const tier = params.item.tier;
   switch (params.phase) {
-    case 'TurnStart': {
+    case 'PostTarget': {
       if (!utils.withProbability(0.5)) {
         break;
       }
