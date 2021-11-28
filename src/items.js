@@ -183,8 +183,7 @@ function challengerArrow(params) {
   const tier = params.item.tier;
   switch (params.phase) {
     case 'TurnStart': {
-      const enemyTeam = params.enemyTeam;
-      const target = utils.pickRandom(enemyTeam);
+      const target = params.character.pickTargetUsingItems(params.enemyTeam);
       target.takeDamage({
           source: params.character,
           amount: 10 * tier,

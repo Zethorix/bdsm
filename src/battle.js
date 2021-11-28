@@ -136,15 +136,9 @@ export class Battle {
       }
     }
 
-    const targetParams = {
-        currentTarget: utils.pickRandom(defendingTeam),
-        enemyTeam: defendingTeam,
-        phase: 'Target'
-    };
-    activeCharacter.triggerPhase(targetParams);
+    var currentTarget = activeCharacter.pickTargetUsingItems(defendingTeam);
 
-    var currentTarget = targetParams.currentTarget;
-    if (targetParams.currentTarget.canBeSaved) {
+    if (currentTarget.canBeSaved) {
       const blockParams = {
           currentTarget: currentTarget,
           phase: 'Block'
