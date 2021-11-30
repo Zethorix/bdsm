@@ -74,6 +74,7 @@ export function getAllItemNamesAndBlank() {
     obtainableItems.sort();
     unobtainableItems.sort();
     utils.extend(itemNames, obtainableItems);
+    itemNames.push('');
     utils.extend(itemNames, unobtainableItems);
     ITEM_NAMES_BY_SEASON[global.season] = itemNames;
   }
