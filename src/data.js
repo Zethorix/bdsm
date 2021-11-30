@@ -1,4 +1,4 @@
-import * as global from './global.js';
+import { global } from './global.js';
 import * as utils from './utils.js';
 
 const MOBS_BY_SEASON = {};

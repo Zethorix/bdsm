@@ -1,4 +1,4 @@
-import * as global from './global.js'
+import { global } from './global.js'
 
 export function format() {
   const args = arguments;
