@@ -75,7 +75,7 @@ function avalanche(params) {
           battle: params.battle
         });
         target.changeSpeed({
-          amount: -utils.pickRandomWithinRange(0, tier);
+          amount: -utils.pickRandomWithinRange(0, tier)
         });
       }
       break;
