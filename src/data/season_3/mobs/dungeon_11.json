@@ -17,8 +17,8 @@
       ],
       "_stats": {
         "_maxFireSwordTriggers": 5,
-        "_triggeredFireSword": 46,
-        "_attacks": 22
+        "_triggeredFireSword": 200,
+        "_attacks": 91
       }
     }
   ],
@@ -39,8 +39,8 @@
         }
       ],
       "_stats": {
-        "_triggeredWhirlwindAxe": 7,
-        "_attacks": 7
+        "_triggeredWhirlwindAxe": 10,
+        "_attacks": 10
       }
     },
     {
@@ -63,8 +63,8 @@
         }
       ],
       "_stats": {
-        "_triggeredBlock": 5,
-        "_availableBlocks": 9
+        "_triggeredBlock": 7,
+        "_availableBlocks": 18
       }
     },
     {
@@ -87,8 +87,8 @@
         }
       ],
       "_stats": {
-        "_triggeredBigClub": 17,
-        "_attacks": 23
+        "_triggeredBigClub": 20,
+        "_attacks": 30
       }
     },
     {
