@@ -4,7 +4,8 @@
     "description": "Increases your attack by {6+6*t} and health by {10*t}. The recoil knocks you off your feet.",
     "triggers": [
       "InitCharacter",
-      "SkipTurn"
+      "SkipTurn",
+      "PostDamage"
     ]
   },
   "Big Club": {

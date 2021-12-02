@@ -102,8 +102,11 @@ function bfCannon(params) {
         params.character.usedCannon = false;
         return true;
       }
-      params.character.usedCannon = true;
       return false;
+    }
+    case 'PostDamage': {
+      params.character.usedCannon = true;
+      break;
     }
     default: {
       _throwInvalidPhaseError(params);
