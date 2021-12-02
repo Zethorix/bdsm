@@ -263,14 +263,20 @@ function energeticAlly(params) {
     case 'TurnStart': {
       const allyTeam = params.allyTeam;
       var target = {hp: Infinity};
+      var targetIsMaxHp = true;
       for (const ally of allyTeam) {
         if (ally.summoned) {
+          continue;
+        }
+        const allyIsMaxHp = ally.hp == ally.hpMax;
+        if (allyIsMaxHp && !targetIsMaxHp) {
           continue;
         }
         if (ally.hp >= target.hp) {
           continue;
         }
         target = ally;
+        targetIsMaxHp = allyIsMaxHp;
       }
       if (target.hp === Infinity) {
         break;
