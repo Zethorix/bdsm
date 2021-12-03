@@ -39,16 +39,16 @@ export function parseInventory(input) {
   const player = {username: '', items: []};
   var empty = true;
   for (const line of input.split('\n')) {
-    const matchUsername = line.match(/([^\*]*)'s Inventory/);
+    const matchUsername = line.match(/([^*]*)'s Inventory/);
     const matchItem = line.match(
-        /\d-\s_{0,2}<?[\w\d:]+>?\s([\w'\s]+)\s(\d+)_{0,2}:/);
+        /\d-\s(_{0,2}<?[\w\d:]+>?)?\s([\w'\s]+)\s(\d+)_{0,2}:/);
     if (matchUsername !== null) {
       empty = false;
       player.username = matchUsername[1];
     }
     if (matchItem !== null) {
       empty = false;
-      player.items.push({name: matchItem[1], tier: parseInt(matchItem[2])});
+      player.items.push({name: matchItem[2], tier: parseInt(matchItem[3])});
     }
   }
   if (empty) {
