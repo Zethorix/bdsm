@@ -271,7 +271,7 @@ function energeticAlly(params) {
         if (ally.summoned) {
           continue;
         }
-        const allyIsMaxHp = ally.hp == ally.hpMax;
+        const allyIsMaxHp = ally.hp === ally.hpMax;
         if (allyIsMaxHp && !targetIsMaxHp) {
           continue;
         }
