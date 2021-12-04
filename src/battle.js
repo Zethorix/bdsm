@@ -17,18 +17,18 @@ function _findPositionWithinTeam(name, team) {
 export class Battle {
   constructor(team1, team2) {
     this.summonedChicken = {};
-    this.initTeams(team1, team2);
+    this.initTeams([team1, team2]);
   }
 
-  initTeams(team1, team2) {
+  initTeams(teams) {
     this.teams = [[], []];
     this.allCharacters = {};
     this.getTeamOf = {};
-    for (const i in team1) {
-      this.addCopyOfCharacterToTeam(team1[i], 0);
-    }
-    for (const i in team2) {
-      this.addCopyOfCharacterToTeam(team2[i], 1);
+    for (const teamIndex in teams) {
+      const team = teams[teamIndex];
+      for (const i in team) {
+        this.addCopyOfCharacterToTeam(team[i], teamIndex);
+      }
     }
   }
 
@@ -67,8 +67,8 @@ export class Battle {
   kill(character) {
     const name = character.character;
     if (character.angelAvailable) {
-      utils.log('reviving: {0}', name);
-      character.hp = Math.floor(character.hpMax * 0.33);
+      utils.log('reviving {0} with angel invite', name);
+      character.hp = Math.round(character.hpMax * 0.33);
       character.angelAvailable = false;
       return;
     }
@@ -102,13 +102,24 @@ export class Battle {
     }
   }
 
-  tick() {
+  teamHasLost(index) {
+    return this.teams[index].length === 0;
+  }
+
+  anyTeamHasLost() {
     for (const i in this.teams) {
       if (this.teamHasLost(i)) {
-        return;
+        return true;
       }
     }
-    if (this.teamlength);
+    return false
+  }
+
+  tick() {
+    if (this.anyTeamHasLost()) {
+      return;
+    }
+
     const activeCharacter = utils.pickRandom(this.allCharacters, 'speed');
     const activeName = activeCharacter.character;
     utils.log('\n{0}\'s turn:', activeName);
@@ -130,10 +141,8 @@ export class Battle {
     });
 
     this.checkAllHp();
-    for (const i in this.teams) {
-      if (this.teamHasLost(i)) {
-        return;
-      }
+    if (this.anyTeamHasLost()) {
+      return;
     }
 
     var currentTarget = activeCharacter.pickTargetUsingItems(defendingTeam);
@@ -193,9 +202,5 @@ export class Battle {
       activeCharacter.changeHp({amount: -activeCharacter.poison});
     }
     this.checkAllHp();
-  }
-
-  teamHasLost(index) {
-    return this.teams[index].length === 0;
   }
 }
