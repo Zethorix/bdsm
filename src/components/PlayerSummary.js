@@ -16,7 +16,7 @@ function PlayerSummary(props) {
               return;
             }
             return <div className="itemDescription">
-              <strong>{item.name} {item.tier}</strong>:&nbsp;
+              <span className="itemName">{item.name} {item.tier}</span>{": "}
               {dungeonUtils.getDescriptionOfItem(item)}
             </div>
           })}

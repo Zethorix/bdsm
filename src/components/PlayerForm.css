@@ -7,6 +7,11 @@
   width: 300px;
 }
 
+.playerSummary .itemName {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 .playerSummary .itemDescription {
   font-size: 12px;
   margin-top: 4px;
