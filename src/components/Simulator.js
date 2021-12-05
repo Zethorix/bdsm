@@ -9,7 +9,7 @@ import './Simulator.css';
 function Simulator() {
   const dungeonList = data.getDungeonList();
   const [numRuns, setNumRuns] = useState(100);
-  const [selectedDungeon, setSelectedDungeon] = useState('[3,0]');
+  const [selectedDungeon, setSelectedDungeon] = useState(dungeonList[0]);
   const [outputText, setOutputText] = useState("Select your items with the dropdowns.\nClick the button to start a test run!");
   const [rawInput, setRawInput] = useState('');
   const [players, setPlayers] = useState([

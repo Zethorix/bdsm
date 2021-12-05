@@ -92,8 +92,8 @@ function bfCannon(params) {
     case 'InitCharacter': {
       utils.log('Activating {0}', params.item.name);
       params.character.changeAttack({amount: 6 + 6 * tier});
-      params.character.changeHpMax({amount: 10 * tier});
-      params.character.changeHp({amount: 10 * tier});
+      params.character.changeHpMax({amount: 7 * tier});
+      params.character.changeHp({amount: 7 * tier});
       break;
     }
     case 'SkipTurn': {
@@ -193,7 +193,7 @@ function challengerArrow(params) {
           amount: 10 * tier,
           battle: params.battle
       });
-      params.character.changeAttack({amount: tier});
+      params.character.changeAttack({amount: 2*tier});
       break;
     }
     default: {
@@ -213,7 +213,7 @@ function chickenDinner(params) {
         if (ally.character === params.character.character) {
           continue;
         }
-        ally.changeHp({amount: tier});
+        ally.changeHp({amount: 3*tier});
       }
       break;
     }
@@ -651,6 +651,12 @@ function petImp(params) {
 function poisonDagger(params) {
   const tier = params.item.tier;
   switch (params.phase) {
+    case 'InitCharacter': {
+      utils.log('Activating {0}', params.item.name);
+      params.character.changeHpMax({amount: 3 * tier});
+      params.character.changeHp({amount: 3 * tier});
+      break;
+    }
     case 'PostTarget': {
       utils.log('Activating {0}', params.item.name);
       params.currentTarget.poison += tier;
@@ -782,6 +788,11 @@ function seekingMissiles(params) {
           1 - params.currentTarget.hp / params.currentTarget.hpMax;
       utils.log('Activating {0}', params.item.name);
       params.damageFinal += Math.floor(5 * missingHpProportion * tier);
+      break;
+    }
+    case 'Kill': {
+      utils.log('Activating {0}', params.item.name);
+      params.character.changeHp({amount: tier});
       break;
     }
     default: {

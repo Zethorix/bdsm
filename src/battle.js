@@ -120,19 +120,19 @@ export class Battle {
       return;
     }
 
-    const activeCharacter = utils.pickRandom(this.allCharacters, 'speed');
-    const activeName = activeCharacter.character;
+    this.activeCharacter = utils.pickRandom(this.allCharacters, 'speed');
+    const activeName = this.activeCharacter.character;
     utils.log('\n{0}\'s turn:', activeName);
     this.activeTeamIndex = this.getTeamOf[activeName];
     const defendingTeam = this.teams[1 - this.activeTeamIndex];
 
     this.changeAllEnergy(this.allCharacters, 2);
 
-    if (activeCharacter.triggerPhase({phase: 'SkipTurn'})) {
+    if (this.activeCharacter.triggerPhase({phase: 'SkipTurn'})) {
       return;
     }
 
-    activeCharacter.triggerPhase({
+    this.activeCharacter.triggerPhase({
         allyTeam: this.teams[this.activeTeamIndex],
         allyTeamIndex: this.activeTeamIndex,
         enemyTeam: defendingTeam,
@@ -145,7 +145,7 @@ export class Battle {
       return;
     }
 
-    var currentTarget = activeCharacter.pickTargetUsingItems(defendingTeam);
+    var currentTarget = this.activeCharacter.pickTargetUsingItems(defendingTeam);
 
     if (currentTarget.canBeSaved) {
       const blockParams = {
@@ -158,7 +158,7 @@ export class Battle {
       currentTarget = blockParams.currentTarget;
     }
 
-    activeCharacter.triggerPhase({
+    this.activeCharacter.triggerPhase({
         battle: this,
         currentTarget: currentTarget, enemyTeam: defendingTeam,
         phase: 'PostTarget'
@@ -167,8 +167,8 @@ export class Battle {
     utils.log('Main target: {0}', currentTarget.character);
 
     const damageBase = utils.pickRandomWithinRange(
-        activeCharacter.attackLow,
-        activeCharacter.attackHigh
+        this.activeCharacter.attackLow,
+        this.activeCharacter.attackHigh
     );
     utils.log('Attack base damage: {0}', damageBase);
 
@@ -180,7 +180,7 @@ export class Battle {
         enemyTeam: defendingTeam,
         phase: 'PreDamage'
     };
-    activeCharacter.triggerPhase(preDamageParams);
+    this.activeCharacter.triggerPhase(preDamageParams);
     if (preDamageParams.damageFinal !== damageBase) {
       utils.log('Attack final damage: {0}', preDamageParams.damageFinal);
     }
@@ -189,17 +189,17 @@ export class Battle {
     currentTarget.takeDamage({
         amount: preDamageParams.damageFinal,
         battle: this,
-        source: activeCharacter
+        source: this.activeCharacter
     });
 
-    activeCharacter.triggerPhase({
+    this.activeCharacter.triggerPhase({
         allyTeam: this.teams[this.activeTeamIndex],
         phase: 'PostDamage'
     });
 
-    if (activeCharacter.poison > 0) {
-      utils.log('{0} takes poison damage', activeCharacter.character);
-      activeCharacter.changeHp({amount: -activeCharacter.poison});
+    if (this.activeCharacter.poison > 0) {
+      utils.log('{0} takes poison damage', this.activeCharacter.character);
+      this.activeCharacter.changeHp({amount: -this.activeCharacter.poison});
     }
     this.checkAllHp();
   }

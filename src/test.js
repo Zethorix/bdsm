@@ -43,7 +43,7 @@ export function outputTest(players, selectedDungeon, numRuns) {
   const [season, dungeon] = JSON.parse(selectedDungeon);
   const waves = data.getDungeon(season, dungeon);
 
-  global.season = 3;
+  global.season = 4;
   global.verbose = false;
   global.output = null;
   const numWins = simulator.runMany(team, waves, numRuns * 1);

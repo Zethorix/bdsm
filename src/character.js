@@ -123,6 +123,9 @@ export class Character {
       phase: 'Death',
       source: params.source
     });
+    params.battle.activeCharacter.triggerPhase({
+      phase: 'Kill'
+    });
   }
 
   triggerPhase(params) {
