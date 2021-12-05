@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons'
 import * as dungeonUtils from '../dungeonUtils.js';
 import { useState } from 'react';
 
@@ -6,8 +8,9 @@ function PlayerSummary(props) {
 
   return (
     <div className="playerSummary">
-      <button onClick={() => setIsExpanded(!isExpanded)}>
-        {isExpanded ? "Collapse" : "Expand"} player info
+      <button className="button" onClick={() => setIsExpanded(!isExpanded)}>
+        {isExpanded ? <FontAwesomeIcon icon={faCaretUp} /> : <FontAwesomeIcon icon={faCaretDown} />}
+        {isExpanded ? " Collapse" : " Expand"} player info
       </button>
       {isExpanded ?
         <div className="content">

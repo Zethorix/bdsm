@@ -7,6 +7,24 @@
   width: 300px;
 }
 
+.playerSummary {
+  margin-top: 12px;
+}
+
+.playerSummary .button {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: white;
+  text-align: start;
+  font-size: 15px;
+  padding: 4px;
+}
+
+.playerSummary .button:hover {
+  background-color: #2f3237;
+}
+
 .playerSummary .itemName {
   font-weight: bold;
   text-decoration: underline;
