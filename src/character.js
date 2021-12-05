@@ -2,6 +2,29 @@ import * as data from './data.js';
 import * as items from './items.js';
 import * as utils from './utils.js';
 
+export function getBaseStats(player) {
+  const params = {
+    username: player.username,
+    items: [],
+    processedInitCharacter: false
+  }
+  for (const item of player.items) {
+    if (item.name === '') {
+      continue;
+    }
+    params.items.push(item);
+  }
+  const character = new Character(params);
+  character.changeHpMax({amount: player.monuments.Health * 5});
+  character.changeAttack({amount: player.monuments.Power});
+  character.changeSpeed({amount: player.monuments.Speed});
+  character.triggerPhase({
+    battle: null,
+    phase: 'InitCharacter'
+  });
+  return character;
+}
+
 function _extractParam(params, param, defaultValue) {
   if (param in params) {
     return params[param];

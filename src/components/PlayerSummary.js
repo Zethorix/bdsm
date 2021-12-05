@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons'
+import * as character from '../character.js';
 import * as dungeonUtils from '../dungeonUtils.js';
 import { useState } from 'react';
 
@@ -14,6 +15,7 @@ function PlayerSummary(props) {
       </button>
       {isExpanded ?
         <div className="content">
+          <div>{JSON.stringify(character.getBaseStats(props.player))}</div>
           {props.player.items.map((item) => {
             if (item.name === '') {
               return;

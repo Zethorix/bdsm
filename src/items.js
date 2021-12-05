@@ -638,6 +638,9 @@ function martyrArmor(params) {
 function petImp(params) {
   switch (params.phase) {
     case 'InitCharacter': {
+      if (params.battle === null) {
+        break;
+      }
       utils.log('Activating {0}', params.item.name);
       params.battle.addSummonToTeam(params.item, params.allyTeamIndex);
       break;
@@ -717,6 +720,9 @@ function quickeningDeathFocused(params) {
 function rockCompanion(params) {
   switch (params.phase) {
     case 'InitCharacter': {
+      if (params.battle === null) {
+        break;
+      }
       utils.log('Activating {0}', params.item.name);
       params.battle.addSummonToTeam(params.item, params.allyTeamIndex);
       break;
@@ -871,6 +877,9 @@ function thorns(params) {
 function trustySteed(params) {
   switch (params.phase) {
     case 'InitCharacter': {
+      if (params.battle === null) {
+        break;
+      }
       utils.log('Activating {0}', params.item.name);
       params.battle.addSummonToTeam(params.item, params.allyTeamIndex);
       break;
