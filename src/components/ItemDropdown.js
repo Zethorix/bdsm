@@ -18,7 +18,6 @@ function ItemDropdown(props) {
         onChange={(event) => props.onItemChanged(props.item.name, event.target.value)}
         options={itemTiers}
       />
-      &nbsp;{dungeonUtils.getDescriptionOfItem(props.item)}
     </div>
   )
 }

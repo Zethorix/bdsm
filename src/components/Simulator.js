@@ -4,6 +4,7 @@ import * as dungeonUtils from '../dungeonUtils.js';
 import { outputTest } from '../test.js';
 import PlayerForm from './PlayerForm.js';
 import { useState } from 'react';
+import './Simulator.css';
 
 function Simulator() {
   const dungeonList = data.getDungeonList();
@@ -12,11 +13,11 @@ function Simulator() {
   const [outputText, setOutputText] = useState("Select your items with the dropdowns.\nClick the button to start a test run!");
   const [rawInput, setRawInput] = useState('');
   const [players, setPlayers] = useState([
-      getInitialPlayer(),
-      getInitialPlayer(),
-      getInitialPlayer(),
-      getInitialPlayer(),
-      getInitialPlayer()
+    getInitialPlayer(),
+    getInitialPlayer(),
+    getInitialPlayer(),
+    getInitialPlayer(),
+    getInitialPlayer()
   ]);
 
   function getInitialPlayer() {
@@ -53,7 +54,7 @@ function Simulator() {
     }
     return players;
   }
-  
+
   function getInitialItem() {
     return { name: "", tier: 1 };
   }
@@ -64,7 +65,7 @@ function Simulator() {
   }
 
   return (
-    <div>
+    <div className="simulator">
       Load BDSM party profile:&nbsp;
       <textarea value={rawInput} onChange={(event) => {
         const newParty = parsePlayers(event.target.value);
@@ -73,42 +74,44 @@ function Simulator() {
         }
         setRawInput('');
       }} />
-      <br/>
+      <br />
       <button onClick={() => {
         navigator.clipboard.writeText(dungeonUtils.serializePlayers(players))
       }}> Copy BDSM party profile </button>
-      <br/>
-      {players.map((player, index) =>
-        <PlayerForm
-          key={index}
-          player={player}
-          onPlayerChanged={(username, items, monuments) => {
-            let newPlayers = [...players];
-            newPlayers[index] = {
-              username: username,
-              items: items,
-              monuments: monuments
-            };
-            setPlayers(newPlayers);
-          }}
-        />
-      )}
+      <br />
+      <div className="party">
+        {players.map((player, index) =>
+          <PlayerForm
+            key={index}
+            player={player}
+            onPlayerChanged={(username, items, monuments) => {
+              let newPlayers = [...players];
+              newPlayers[index] = {
+                username: username,
+                items: items,
+                monuments: monuments
+              };
+              setPlayers(newPlayers);
+            }}
+          />
+        )}
+      </div>
       [Season, Dungeon]:
       <Dropdown
         selectedOption={selectedDungeon}
-        onChange={(event) => {setSelectedDungeon(event.target.value);}}
+        onChange={(event) => { setSelectedDungeon(event.target.value); }}
         options={dungeonList}
       />
-      <br/>
+      <br />
       Number of runs:
       <input type="number" min={0} value={numRuns} onChange={(event) => {
         setNumRuns(parseInt(event.target.value));
       }} />
-      <br/>
+      <br />
       <button onClick={onRunTest}>
         Run Test
       </button>
-      <div style={{whiteSpace: 'pre-line'}}>{outputText}</div>
+      <div style={{ whiteSpace: 'pre-line' }}>{outputText}</div>
     </div>
   );
 }

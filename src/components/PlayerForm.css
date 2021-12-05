@@ -1,0 +1,13 @@
+.playerForm {
+  margin: 4px;
+  padding: 12px;
+  border: black;
+  border-width: 2px;
+  border-style: solid;
+  width: 300px;
+}
+
+.itemDescription {
+  font-size: 12px;
+  margin-top: 4px;
+}

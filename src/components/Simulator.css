@@ -1,0 +1,10 @@
+.simulator {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.party {
+  display: flex;
+  flex-wrap: wrap;
+}
