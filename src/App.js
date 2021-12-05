@@ -5,8 +5,7 @@ function App() {
     <div>
       <h1>Boxbox Dungeon SiMulator (BDSM)</h1>
       <div><i>Created by Zethorix#1064 and Oof#4389 (qaisklyi)</i></div>
-      <h3>(The pity system is currently not implemented)</h3>
-      <br />
+      <div><i><strong>(The pity system is currently not implemented)</strong></i></div>
       <p>Enter your party's items and monuments.</p>
       <Simulator />
     </div>

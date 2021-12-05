@@ -89,6 +89,16 @@ export function serializePlayer(player) {
   return output.join('\n');
 }
 
+export function serializePlayers(players) {
+  const output = ['BDSM.partyStart'];
+  for (const player of players) {
+    output.push(serializePlayer(player));
+    output.push('BDSM.playerDivider');
+  }
+  output.pop();
+  return output.join('\n');
+}
+
 function _mutateTemplate(template, scale) {
   if (typeof template != 'object') {
     return template;
