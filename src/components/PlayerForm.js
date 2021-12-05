@@ -1,42 +1,41 @@
 import ItemDropdown from './ItemDropdown.js';
 import MonumentsSection from './MonumentsSection.js';
-import { parseInventory, parseMonuments } from '../dungeonUtils.js';
+import * as dungeonUtils from '../dungeonUtils.js';
 import { useState } from 'react';
 import './PlayerForm.css';
 
 function PlayerForm(props) {
-  const [items, setItems] = useState(props.player.items);
   const [rawInput, setRawInput] = useState('');
 
   return (
     <div className="playerForm">
-      Load from !api e or !appr:&nbsp;
+      Load from !api e, !appr, or BDSM profile:&nbsp;
       <textarea value={rawInput} onChange={(event) => {
-        var newPlayer = parseInventory(event.target.value);
+        var newPlayer = dungeonUtils.parseInventory(event.target.value);
         if (newPlayer === null) {
           newPlayer = props.player;
         }
-        var newMonuments = parseMonuments(event.target.value);
-        if (newMonuments === null) {
-          newMonuments = props.player.monuments;
-        }
+        const newMonuments = {...props.player.monuments};
+        Object.assign(newMonuments, dungeonUtils.parseMonuments(event.target.value));
         props.onPlayerChanged(newPlayer.username, newPlayer.items, newMonuments)
-        setItems(newPlayer.items);
         setRawInput('');
       }} />
+      <br />
+      <button onClick={() => {
+        navigator.clipboard.writeText(dungeonUtils.serializePlayer(props.player))
+      }}> Copy BDSM profile </button>
       <br />
       Username:
       <input value={props.player.username} onChange={(event) => {
         props.onPlayerChanged(event.target.value, props.player.items, props.player.monuments);
       }} />
-      {items.map((item, index) =>
+      {props.player.items.map((item, index) =>
         <ItemDropdown
           key={index}
           item={item}
           onItemChanged={(name, tier) => {
-            let newItems = [...items];
-            newItems[index] = { name: name, tier: parseInt(tier) };
-            setItems(newItems);
+            let newItems = [...props.player.items];
+            newItems[index] = {name: name, tier: parseInt(tier)};
             props.onPlayerChanged(props.player.username, newItems, props.player.monuments);
           }}
         />

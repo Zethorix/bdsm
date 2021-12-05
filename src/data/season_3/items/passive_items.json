@@ -4,7 +4,8 @@
     "description": "Increases your attack by {6+6*t} and health by {10*t}. The recoil knocks you off your feet.",
     "triggers": [
       "InitCharacter",
-      "SkipTurn"
+      "SkipTurn",
+      "PostDamage"
     ]
   },
   "Big Club": {
@@ -68,7 +69,7 @@
     "description": "Your attacks have a 50% chance to heal yourself for {5*t} HP. {7+3*t}% Chance to take the hit when your teammate is attacked, if you're feeling brave.",
     "triggers": [
       "Block",
-      "TurnStart"
+      "PostTarget"
     ]
   },
   "Last Resort": {
@@ -94,7 +95,7 @@
   },
   "Magic Parasol": {
     "obtainable": true,
-    "description": "When you are attacked, you have a (17+3*t)% chance to block up to {2+3*t} damage. {7+3*t}% Chance to take the hit when your teammate is attacked, if you're feeling brave.",
+    "description": "When you are attacked, you have a {17+3*t}% chance to block up to {2+3*t} damage. {7+3*t}% Chance to take the hit when your teammate is attacked, if you're feeling brave.",
     "triggers": [
       "Block",
       "EnemyDamage"

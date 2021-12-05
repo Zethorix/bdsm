@@ -147,6 +147,17 @@ export class Character {
     }
     return ret;
   }
+
+  pickTargetUsingItems(enemyTeam) {
+    const params = {
+        currentTarget: utils.pickRandom(enemyTeam),
+        enemyTeam: enemyTeam,
+        phase: 'Target'
+    };
+
+    this.triggerPhase(params);
+    return params.currentTarget;
+  }
 }
 
 Character.prototype.toString = function() {

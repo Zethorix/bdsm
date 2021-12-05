@@ -1,4 +1,4 @@
-import * as global from './global.js'
+import { global } from './global.js'
 
 export function format() {
   const args = arguments;
@@ -37,6 +37,10 @@ export function all(iterable, condition) {
   }, true);
 }
 
+export function withProbability(p) {
+  return Math.random() < p;
+}
+
 export function sum(iterable, key=null) {
   var total = 0;
   for (const i in iterable) {
@@ -45,7 +49,7 @@ export function sum(iterable, key=null) {
       total += key(currentValue);
       continue;
     }
-    if (key == null) {
+    if (key === null) {
       if (typeof currentValue === 'number') {
         total += currentValue;
         continue;
@@ -57,33 +61,29 @@ export function sum(iterable, key=null) {
       total += currentValue[key];
       continue;
     }
-    total++;
   }
   return total;
 }
 
-export function withProbability(p) {
-  return Math.random() < p;
-}
-
 export function pickRandom(iterable, weightKey=null) {
-  const total = sum(iterable, weightKey);
-  var r = Math.floor(Math.random() * total);
-
-  for (const key in iterable) {
-    var weight = 1;
+  var selected = null;
+  var total = 0;
+  for (const i in iterable) {
+    const currentValue = iterable[i];
+    var weight;
     if (typeof weightKey === 'function') {
-      weight = weightKey(iterable[key]);
-    } else if (weightKey != null) {
-      weight = iterable[key][weightKey];
+      weight = weightKey(currentValue);
+    } else if (weightKey === null) {
+      weight = typeof currentValue === 'number' ? currentValue : 1;
+    } else if (weightKey in currentValue) {
+      weight = currentValue[weightKey];
     }
-    if (r < weight) {
-      return iterable[key];
+    total += weight
+    if(withProbability(weight / total)) {
+      selected = currentValue;
     }
-    r -= weight;
   }
-
-  return null;
+  return selected;
 }
 
 export function pickRandomWithinRange(lower, upper) {

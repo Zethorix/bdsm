@@ -1,4 +1,4 @@
-import * as global from './global.js';
+import { global } from './global.js';
 import * as utils from './utils.js';
 
 const MOBS_BY_SEASON = {};
@@ -74,6 +74,7 @@ export function getAllItemNamesAndBlank() {
     obtainableItems.sort();
     unobtainableItems.sort();
     utils.extend(itemNames, obtainableItems);
+    itemNames.push('');
     utils.extend(itemNames, unobtainableItems);
     ITEM_NAMES_BY_SEASON[global.season] = itemNames;
   }

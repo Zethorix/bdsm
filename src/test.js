@@ -1,5 +1,5 @@
 import * as data from './data.js';
-import * as global from './global.js';
+import { global } from './global.js';
 import * as simulator from './simulator.js';
 import * as utils from './utils.js';
 
@@ -43,9 +43,9 @@ export function outputTest(players, selectedDungeon, numRuns) {
   const [season, dungeon] = JSON.parse(selectedDungeon);
   const waves = data.getDungeon(season, dungeon);
 
-  global.setSeason(3);
-  global.setVerbose(false);
-  global.setOutput(null);
+  global.season = 3;
+  global.verbose = false;
+  global.output = null;
   const numWins = simulator.runMany(team, waves, numRuns * 1);
 
   output.push(utils.format('Wins out of {0} runs: {1} ({2}%)',
@@ -53,8 +53,8 @@ export function outputTest(players, selectedDungeon, numRuns) {
   const winratePercentage = Math.round((1 + numWins) * 1000 / (numRuns + 2));
   output.push(utils.format('Estimated winrate: {0}%', winratePercentage / 10.0));
   output.push('\nExample Run:');
-  global.setOutput([]);
-  global.setVerbose(true);
+  global.output = [];
+  global.verbose = true;
   output.push('\nWinning team: ' + simulator.runDungeon(team, waves));
   utils.extend(output, global.output);
   return output.join('\n');

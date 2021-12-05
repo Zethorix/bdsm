@@ -1,6 +1,7 @@
+import * as data from './data.js';
 import * as utils from './utils.js';
 
-export function formatDescriptionWithTier(description, tier) {
+function formatDescriptionWithTier(description, tier) {
   const re = /\{([\dt+\-*]+)\}/;
   var current = description;
   var m = current.match(re);
@@ -14,23 +15,29 @@ export function formatDescriptionWithTier(description, tier) {
   return current;
 }
 
+export function getDescriptionOfItem(item) {
+  const items = data.getItems();
+  const itemData = item.name in items.passive ?
+    items.passive[item.name] :
+    items.energy[item.name];
+  if (typeof itemData === 'undefined') {
+    return '';
+  }
+  return formatDescriptionWithTier(itemData.description, item.tier);
+}
+
 export function parseMonuments(input) {
-  const monumentLevels = {
-    'Health': 0,
-    'Power': 0,
-    'Speed': 0
-  };
-  var empty = true;
+  const monumentLevels = {};
   for (const line of input.split('\n')) {
+    if (line.startsWith('BDSM:Angel:')) {
+      monumentLevels.Angel = line[line.length - 1] !== '0';
+      continue;
+    }
     const matches = line.match(/\|\s*(Health|Power|Speed)\s*\|\s*(\d+)\s*\|/);
     if (matches === null) {
       continue;
     }
-    empty = false;
     monumentLevels[matches[1]] = parseInt(matches[2]);
-  }
-  if (empty) {
-    return null;
   }
   return monumentLevels;
 }
@@ -39,16 +46,16 @@ export function parseInventory(input) {
   const player = {username: '', items: []};
   var empty = true;
   for (const line of input.split('\n')) {
-    const matchUsername = line.match(/([^\*]*)'s Inventory/);
+    const matchUsername = line.match(/([^*]*)'s Inventory/);
     const matchItem = line.match(
-        /\d-\s_{0,2}<?[\w\d:]+>?\s([\w'\s]+)\s(\d+)_{0,2}:/);
+        /\d-\s(_{0,2}<?[\w\d:]+>?)?\s([\w'\s]+)\s(\d+)_{0,2}:/);
     if (matchUsername !== null) {
       empty = false;
       player.username = matchUsername[1];
     }
     if (matchItem !== null) {
       empty = false;
-      player.items.push({name: matchItem[1], tier: parseInt(matchItem[2])});
+      player.items.push({name: matchItem[2], tier: parseInt(matchItem[3])});
     }
   }
   if (empty) {
@@ -61,6 +68,35 @@ export function parseInventory(input) {
     player.items.push({name: '', tier: 1});
   }
   return player;
+}
+
+export function serializePlayer(player) {
+  const output = [];
+  output.push(utils.format("{0}'s Inventory", player.username));
+  for (const item of player.items) {
+    output.push(utils.format('1-  {0} {1}:', item.name, item.tier));
+  }
+  for (const monument in player.monuments) {
+    if (monument === 'Angel') {
+      output.push(utils.format('BDSM.Angel.{0}',
+                               player.monuments.Angel ? '1' : '0'));
+      continue;
+    }
+    output.push(utils.format('|{0}|{1}|',
+                             monument,
+                             player.monuments[monument]));
+  }
+  return output.join('\n');
+}
+
+export function serializePlayers(players) {
+  const output = ['BDSM.partyStart'];
+  for (const player of players) {
+    output.push(serializePlayer(player));
+    output.push('BDSM.playerDivider');
+  }
+  output.pop();
+  return output.join('\n');
 }
 
 function _mutateTemplate(template, scale) {

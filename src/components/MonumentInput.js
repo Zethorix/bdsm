@@ -7,7 +7,7 @@ function MonumentInput(props) {
       type="number"
       min={0}
       value={props.value}
-      onChange={(event) => { props.onValueChanged(event.target.value) }}
+      onChange={(event) => { props.onValueChanged(event.target.value >>> 0) }}
     />
   )
 }

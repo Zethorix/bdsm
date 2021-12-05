@@ -85,14 +85,12 @@
         },
         {
           "name": "Magic Parasol",
-          "tier": 6
+          "tier": 5
         }
       ],
       "_stats": {
-        "_triggeredBlock": 39,
-        "_availableBlocks": 92,
-        "_triggeredMagicParasol": 20,
-        "_defended": 56
+        "_triggeredBlock": 53,
+        "_availableBlocks": 143
       }
     },
     {
@@ -111,18 +109,16 @@
         },
         {
           "name": "Magic Parasol",
-          "tier": 4
+          "tier": 5
         },
         {
           "name": "Survival Kit",
-          "tier": 8
+          "tier": 7
         }
       ],
       "_stats": {
-        "_triggeredBlock": 38,
-        "_availableBlocks": 88,
-        "_triggeredMagicParasol": 21,
-        "_defended": 77
+        "_triggeredBlock": 63,
+        "_availableBlocks": 145
       }
     },
     {

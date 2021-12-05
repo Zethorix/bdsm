@@ -67,7 +67,6 @@ function avalanche(params) {
     case 'TurnStart': {
       const enemyTeam = params.enemyTeam;
       const tier = params.item.tier;
-      const speedDelta = -utils.pickRandomWithinRange(0, tier);
       for (var i = 0; i < 2; i++) {
         const target = utils.pickRandom(enemyTeam);
         target.takeDamage({
@@ -75,7 +74,9 @@ function avalanche(params) {
           amount: utils.pickRandomWithinRange(3 * tier, 5 * tier),
           battle: params.battle
         });
-        target.changeSpeed({amount: speedDelta});
+        target.changeSpeed({
+          amount: -utils.pickRandomWithinRange(0, tier)
+        });
       }
       break;
     }
@@ -101,8 +102,11 @@ function bfCannon(params) {
         params.character.usedCannon = false;
         return true;
       }
-      params.character.usedCannon = true;
       return false;
+    }
+    case 'PostDamage': {
+      params.character.usedCannon = true;
+      break;
     }
     default: {
       _throwInvalidPhaseError(params);
@@ -183,8 +187,7 @@ function challengerArrow(params) {
   const tier = params.item.tier;
   switch (params.phase) {
     case 'TurnStart': {
-      const enemyTeam = params.enemyTeam;
-      const target = utils.pickRandom(enemyTeam);
+      const target = params.character.pickTargetUsingItems(params.enemyTeam);
       target.takeDamage({
           source: params.character,
           amount: 10 * tier,
@@ -263,14 +266,20 @@ function energeticAlly(params) {
     case 'TurnStart': {
       const allyTeam = params.allyTeam;
       var target = {hp: Infinity};
+      var targetIsMaxHp = true;
       for (const ally of allyTeam) {
         if (ally.summoned) {
+          continue;
+        }
+        const allyIsMaxHp = ally.hp === ally.hpMax;
+        if (allyIsMaxHp && !targetIsMaxHp) {
           continue;
         }
         if (ally.hp >= target.hp) {
           continue;
         }
         target = ally;
+        targetIsMaxHp = allyIsMaxHp;
       }
       if (target.hp === Infinity) {
         break;
@@ -390,7 +399,7 @@ function halberd(params) {
 function healingPendant(params) {
   const tier = params.item.tier;
   switch (params.phase) {
-    case 'TurnStart': {
+    case 'PostTarget': {
       if (!utils.withProbability(0.5)) {
         break;
       }

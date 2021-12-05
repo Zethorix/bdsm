@@ -5,8 +5,8 @@
       "hp": 750,
       "hpMax": 750,
       "speed": 150,
-      "attackLow": 0,
-      "attackHigh": 0,
+      "attackLow": 30,
+      "attackHigh": 50,
       "energy": 0,
       "summoned": false,
       "items": [
