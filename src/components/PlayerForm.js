@@ -15,7 +15,7 @@ function PlayerForm(props) {
         if (newPlayer === null) {
           newPlayer = props.player;
         }
-        const newMonuments = {...props.player.monuments};
+        const newMonuments = { ...props.player.monuments };
         Object.assign(newMonuments, dungeonUtils.parseMonuments(event.target.value));
         props.onPlayerChanged(newPlayer.username, newPlayer.items, newMonuments)
         setRawInput('');
@@ -35,7 +35,7 @@ function PlayerForm(props) {
           item={item}
           onItemChanged={(name, tier) => {
             let newItems = [...props.player.items];
-            newItems[index] = {name: name, tier: parseInt(tier)};
+            newItems[index] = { name: name, tier: parseInt(tier) };
             props.onPlayerChanged(props.player.username, newItems, props.player.monuments);
           }}
         />
@@ -47,6 +47,8 @@ function PlayerForm(props) {
             props.onPlayerChanged(props.player.username, props.player.items, newMonuments)
         }
       />
+      {props.player.items.map((item) =>
+        <div className="itemDescription">{dungeonUtils.getDescriptionOfItem(item)}</div>)}
     </div>
   );
 }
