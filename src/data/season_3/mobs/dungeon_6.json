@@ -76,8 +76,16 @@
         {
           "name": "Martyr Armor",
           "tier": 3
+        },
+        {
+          "name": "Survival Kit",
+          "tier": 5
         }
-      ]
+      ],
+      "_stats": {
+        "_triggeredBlock": 6,
+        "_availableBlocks": 27
+      }
     },
     {
       "character": "Hawks",
