@@ -13,7 +13,8 @@ function PlayerForm(props) {
         if (newPlayer === null) {
           newPlayer = props.player;
         }
-        var newMonuments = dungeonUtils.parseMonuments(event.target.value);
+        const newMonuments = {...props.player.monuments};
+        Object.assign(newMonuments, dungeonUtils.parseMonuments(event.target.value));
         props.onPlayerChanged(newPlayer.username, newPlayer.items, newMonuments)
         setRawInput('');
       }} />
