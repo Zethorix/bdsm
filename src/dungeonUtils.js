@@ -27,22 +27,17 @@ export function getDescriptionOfItem(item) {
 }
 
 export function parseMonuments(input) {
-  const monumentLevels = {
-    'Health': 0,
-    'Power': 0,
-    'Speed': 0
-  };
-  var empty = true;
+  const monumentLevels = {};
   for (const line of input.split('\n')) {
+    if (line.startsWith('BDSM:Angel:')) {
+      monumentLevels.Angel = line[line.length - 1] !== '0';
+      continue;
+    }
     const matches = line.match(/\|\s*(Health|Power|Speed)\s*\|\s*(\d+)\s*\|/);
     if (matches === null) {
       continue;
     }
-    empty = false;
     monumentLevels[matches[1]] = parseInt(matches[2]);
-  }
-  if (empty) {
-    return null;
   }
   return monumentLevels;
 }
@@ -73,6 +68,25 @@ export function parseInventory(input) {
     player.items.push({name: '', tier: 1});
   }
   return player;
+}
+
+export function serializePlayer(player) {
+  const output = [];
+  output.push(utils.format("{0}'s Inventory", player.username));
+  for (const item of player.items) {
+    output.push(utils.format('1-  {0} {1}:', item.name, item.tier));
+  }
+  for (const monument in player.monuments) {
+    if (monument === 'Angel') {
+      output.push(utils.format('BDSM.Angel.{0}',
+                               player.monuments.Angel ? '1' : '0'));
+      continue;
+    }
+    output.push(utils.format('|{0}|{1}|',
+                             monument,
+                             player.monuments[monument]));
+  }
+  return output.join('\n');
 }
 
 function _mutateTemplate(template, scale) {
