@@ -1,5 +1,6 @@
 import ItemDropdown from './ItemDropdown.js';
 import MonumentsSection from './MonumentsSection.js';
+import PlayerSummary from './PlayerSummary.js';
 import * as dungeonUtils from '../dungeonUtils.js';
 import { useState } from 'react';
 import './PlayerForm.css';
@@ -47,8 +48,7 @@ function PlayerForm(props) {
             props.onPlayerChanged(props.player.username, props.player.items, newMonuments)
         }
       />
-      {props.player.items.map((item) =>
-        <div className="itemDescription">{dungeonUtils.getDescriptionOfItem(item)}</div>)}
+      <PlayerSummary player={props.player}></PlayerSummary>
     </div>
   );
 }

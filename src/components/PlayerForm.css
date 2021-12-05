@@ -7,7 +7,7 @@
   width: 300px;
 }
 
-.itemDescription {
+.playerSummary .itemDescription {
   font-size: 12px;
   margin-top: 4px;
 }
