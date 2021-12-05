@@ -1,6 +1,7 @@
+import * as data from './data.js';
 import * as utils from './utils.js';
 
-export function formatDescriptionWithTier(description, tier) {
+function formatDescriptionWithTier(description, tier) {
   const re = /\{([\dt+\-*]+)\}/;
   var current = description;
   var m = current.match(re);
@@ -12,6 +13,17 @@ export function formatDescriptionWithTier(description, tier) {
     m = current.match(re);
   }
   return current;
+}
+
+export function getDescriptionOfItem(item) {
+  const items = data.getItems();
+  const itemData = item.name in items.passive ?
+    items.passive[item.name] :
+    items.energy[item.name];
+  if (typeof itemData === 'undefined') {
+    return '';
+  }
+  return formatDescriptionWithTier(itemData.description, item.tier);
 }
 
 export function parseMonuments(input) {

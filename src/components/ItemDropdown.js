@@ -1,4 +1,5 @@
 import { getAllItemNamesAndBlank } from "../data.js";
+import * as dungeonUtils from "../dungeonUtils.js";
 import Dropdown from './Dropdown.js';
 
 function ItemDropdown(props) {
@@ -17,6 +18,7 @@ function ItemDropdown(props) {
         onChange={(event) => props.onItemChanged(props.item.name, event.target.value)}
         options={itemTiers}
       />
+      &nbsp;{dungeonUtils.getDescriptionOfItem(props.item)}
     </div>
   )
 }

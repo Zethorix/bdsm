@@ -95,7 +95,7 @@
   },
   "Magic Parasol": {
     "obtainable": true,
-    "description": "When you are attacked, you have a (17+3*t)% chance to block up to {2+3*t} damage. {7+3*t}% Chance to take the hit when your teammate is attacked, if you're feeling brave.",
+    "description": "When you are attacked, you have a {17+3*t}% chance to block up to {2+3*t} damage. {7+3*t}% Chance to take the hit when your teammate is attacked, if you're feeling brave.",
     "triggers": [
       "Block",
       "EnemyDamage"
