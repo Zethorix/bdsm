@@ -11,8 +11,15 @@ function PlayerSummary(props) {
       </button>
       {isExpanded ?
         <div className="content">
-          {props.player.items.map((item) =>
-            <div className="itemDescription">{dungeonUtils.getDescriptionOfItem(item)}</div>)}
+          {props.player.items.map((item) => {
+            if (item.name === '') {
+              return;
+            }
+            return <div className="itemDescription">
+              <strong>{item.name} {item.tier}</strong>:&nbsp;
+              {dungeonUtils.getDescriptionOfItem(item)}
+            </div>
+          })}
         </div>
         : null}
     </div>
