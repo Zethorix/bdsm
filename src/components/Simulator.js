@@ -2,6 +2,7 @@ import * as data from '../data.js';
 import Dropdown from './Dropdown.js';
 import * as dungeonUtils from '../dungeonUtils.js';
 import { outputTest } from '../test.js';
+import OutputLogs from './OutputLogs.js';
 import PlayerForm from './PlayerForm.js';
 import { useState } from 'react';
 import './Simulator.css';
@@ -111,7 +112,7 @@ function Simulator() {
       <button onClick={onRunTest}>
         Run Test
       </button>
-      <div style={{ whiteSpace: 'pre-line' }}>{outputText}</div>
+      <OutputLogs value={outputText}/>
     </div>
   );
 }
