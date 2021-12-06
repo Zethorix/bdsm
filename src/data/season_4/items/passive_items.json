@@ -17,7 +17,7 @@
   },
   "Chumby Chicken": {
     "obtainable": true,
-    "description": "The first time you attack each wave, summon a chumby chicken. {t}HP, Heals all allies for {3*t}HP when it dies. (Exact description unknown)",
+    "description": "The first time you attack each wave, summon a chumby chicken. {t}HP, Heals all allies for {3*t}HP when it dies.",
     "triggers": [
       "TurnStart"
     ]
