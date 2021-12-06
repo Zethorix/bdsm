@@ -5,6 +5,7 @@ import { outputTest } from '../test.js';
 import OutputLogs from './OutputLogs.js';
 import PlayerForm from './PlayerForm.js';
 import { useState } from 'react';
+import * as utils from '../utils.js';
 import './Simulator.css';
 
 function Simulator() {
@@ -61,8 +62,12 @@ function Simulator() {
   }
 
   function onRunTest() {
-    const output = outputTest(players, selectedDungeon, numRuns);
-    setOutputText(output);
+    try {
+      const output = outputTest(players, selectedDungeon, numRuns);
+      setOutputText(output);
+    } catch(err) {
+      setOutputText(utils.format('An error has occurred: {0}', err.message));
+    }
   }
 
   return (
