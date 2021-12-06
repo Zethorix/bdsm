@@ -6,7 +6,7 @@ import './PlayerForm.css';
 
 function PlayerForm(props) {
   function maybeAddDisabledClassName(className) {
-    return className + (props.player.username == "" ? " disabled" : "")
+    return className + (props.player.username === "" ? " disabled" : "")
   }
 
   return (
