@@ -1,7 +1,7 @@
 {
   "BF Cannon": {
     "obtainable": true,
-    "description": "Increases your attack by {6+6*t} and health by {7*t}. The recoil knocks you off your feet. (Exact description unknown)",
+    "description": "Increases your attack by {6+6*t} and health by {7*t}. The recoil knocks you off your feet.",
     "triggers": [
       "InitCharacter",
       "SkipTurn",
