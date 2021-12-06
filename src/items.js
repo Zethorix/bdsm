@@ -841,7 +841,7 @@ function seekingMissiles(params) {
     }
     case 'Kill': {
       utils.log('Activating {0}', params.item.name);
-      params.character.changeHp({amount: 6 * tier});
+      params.character.changeHp({amount: 6});
       break;
     }
     default: {

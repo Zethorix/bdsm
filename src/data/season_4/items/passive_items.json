@@ -168,7 +168,7 @@
   },
   "Seeking Missiles": {
     "obtainable": true,
-    "description": "Your attacks always target the weakest enemy. Deal {t} bonus damage per 20% HP they are missing. When you kill an enemy, heal {6*t}hp",
+    "description": "Your attacks always target the weakest enemy. Deal {t} bonus damage per 20% HP they are missing. When you kill an enemy, heal 6hp",
     "triggers": [
       "Target",
       "PreDamage",
