@@ -68,9 +68,13 @@ export function outputTest(players, selectedDungeon, numRuns) {
   const winratePercentage = Math.round((1 + numWins) * 1000 / (numRuns + 2));
   output.push(utils.format('Estimated winrate: {0}%', winratePercentage / 10.0));
   output.push('\nExample Run:');
+
   global.output = [];
   global.verbose = true;
   output.push('\nWinning team: ' + simulator.runDungeon(team, waves));
   utils.extend(output, global.output);
+  global.verbose = false;
+  global.output = null;
+
   return output.join('\n');
 }
