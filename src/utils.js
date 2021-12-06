@@ -90,6 +90,41 @@ export function pickRandomWithinRange(lower, upper) {
   return lower + Math.floor(Math.random() * (upper - lower + 1));
 }
 
+export function evalThreeFunctions(expr) {
+  if (expr.match(/^-?\d+$/) !== null) {
+    return parseInt(expr);
+  }
+
+  const splitPlus = expr.split('+');
+  if (splitPlus.length > 1) {
+    var total = 0;
+    for (const val of splitPlus) {
+      total += evalThreeFunctions(val);
+    }
+    return total;
+  }
+
+  const splitMinus = expr.split('-');
+  if (splitMinus.length > 1) {
+    var negTotal = null;
+    for (const val of splitMinus) {
+      if (negTotal === null) {
+        negTotal = val === '' ? 0 : evalThreeFunctions(val);
+        continue;
+      }
+      negTotal -= evalThreeFunctions(val);
+    }
+    return negTotal;
+  }
+
+  var product = 1;
+  const splitMult = expr.split('*');
+  for (const val of splitMult) {
+    product *= parseInt(val);
+  }
+  return product;
+}
+
 export function deepCopyJson(obj) {
   return JSON.parse(JSON.stringify(obj));
 }

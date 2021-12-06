@@ -8,7 +8,7 @@ function formatDescriptionWithTier(description, tier) {
   while (m != null) {
     current = current.replace(
         m[0],
-        eval(m[1].replace('t', tier))
+        utils.evalThreeFunctions(m[1].replace('t', tier))
     );
     m = current.match(re);
   }
