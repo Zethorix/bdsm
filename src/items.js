@@ -263,7 +263,7 @@ function drainingDagger(params) {
 function energeticAlly(params) {
   const tier = params.item.tier;
   switch (params.phase) {
-    case 'TurnStart': {
+    case 'PostTarget': {
       const allyTeam = params.allyTeam;
       var target = {hp: Infinity};
       var targetIsMaxHp = true;

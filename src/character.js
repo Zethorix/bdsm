@@ -61,7 +61,7 @@ export class Character {
     const triggers = {};
     for (const item of this.items) {
       const triggerTypes = item.name in allItems.energy
-          ? ['TurnStart']
+          ? allItems.energy[item.name].triggers
           : allItems.passive[item.name].triggers;
       for (const triggerType of triggerTypes) {
         if (!(triggerType in triggers)) {

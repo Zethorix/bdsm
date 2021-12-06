@@ -159,6 +159,7 @@ export class Battle {
     }
 
     this.activeCharacter.triggerPhase({
+        allyTeam: this.teams[this.activeTeamIndex],
         battle: this,
         currentTarget: currentTarget, enemyTeam: defendingTeam,
         phase: 'PostTarget'
