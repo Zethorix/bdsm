@@ -15,7 +15,7 @@ function PlayerSummary(props) {
       </button>
       {isExpanded ?
         <div className="content">
-          <div>{JSON.stringify(character.getBaseStats(props.player))}</div>
+          <Stats player={props.player} />
           {props.player.items.map((item) => {
             if (item.name === '') {
               return null;
@@ -29,6 +29,18 @@ function PlayerSummary(props) {
         : null}
     </div>
   );
+}
+
+function Stats(props) {
+  const stats = character.getBaseStats(props.player)
+
+  return (
+    <div className="statsSection">
+      <div className="stat"><b>HP:</b> {stats.hpMax}</div>
+      <div className="stat"><b>Speed: </b>{stats.speed}</div>
+      <div className="stat"><b>Attack: </b>{stats.attackLow}-{stats.attackHigh}</div>
+    </div>
+  )
 }
 
 export default PlayerSummary;

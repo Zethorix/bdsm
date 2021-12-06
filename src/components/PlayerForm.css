@@ -54,12 +54,26 @@
   background-color: #2f3237;
 }
 
+.playerSummary .content {
+  font-size: 12px;
+}
+
+.playerSummary .statsSection {
+  display: flex;
+  flex-direction: row;
+  margin-top: 4px;
+  margin-bottom: 12px;
+}
+
+.playerSummary .stat {
+  margin-right: 12px;
+}
+
 .playerSummary .itemName {
   font-weight: bold;
   text-decoration: underline;
 }
 
 .playerSummary .itemDescription {
-  font-size: 12px;
   margin-top: 4px;
 }
