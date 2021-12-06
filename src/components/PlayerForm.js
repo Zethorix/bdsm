@@ -12,6 +12,7 @@ function PlayerForm(props) {
         player={props.player}
         onPlayerChanged={props.onPlayerChanged}
       />
+      <hr className="divider"></hr>
       Username:
       <input value={props.player.username} onChange={(event) => {
         props.onPlayerChanged(event.target.value, props.player.items, props.player.monuments);

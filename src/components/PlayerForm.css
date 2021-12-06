@@ -7,6 +7,35 @@
   width: 300px;
 }
 
+.loadPlayer {
+  margin-bottom: 8px;
+}
+
+.loadPlayer .inputRow {
+  margin-top: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.loadPlayer .input {
+  flex-grow: 1;
+  flex-shrink: 2;
+  resize: none;
+  height: 16px;
+  min-width: 20px;
+}
+
+.loadPlayer .button {
+  flex-shrink: 0;
+  margin-left: 4px;
+  margin-right: 16px;
+}
+
+.playerForm .divider {
+  border: 1px solid black;
+}
+
 .playerSummary {
   margin-top: 12px;
 }
