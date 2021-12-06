@@ -36,9 +36,9 @@ function Stats(props) {
 
   return (
     <div className="statsSection">
-      <div className="stat"><b>HP:</b> {stats.hpMax}</div>
-      <div className="stat"><b>Speed: </b>{stats.speed}</div>
-      <div className="stat"><b>Attack: </b>{stats.attackLow}-{stats.attackHigh}</div>
+      <div className="stat"><b>❤️ HP:</b> {stats.hpMax}</div>
+      <div className="stat"><b>🏃 Speed: </b>{stats.speed}</div>
+      <div className="stat"><b>⚔️ Attack: </b>{stats.attackLow}-{stats.attackHigh}</div>
     </div>
   )
 }

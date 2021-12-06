@@ -61,12 +61,12 @@
 .playerSummary .statsSection {
   display: flex;
   flex-direction: row;
-  margin-top: 4px;
+  margin-top: 12px;
   margin-bottom: 12px;
 }
 
 .playerSummary .stat {
-  margin-right: 12px;
+  margin-right: 16px;
 }
 
 .playerSummary .itemName {
