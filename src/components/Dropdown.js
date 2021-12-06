@@ -1,6 +1,6 @@
 function Dropdown(props) {
   return (
-    <select value={props.selectedOption} onChange={props.onChange}>
+    <select className={props.className} value={props.selectedOption} onChange={props.onChange}>
       {props.options.map((option, index) => <option key={index}>{option}</option>)}
     </select>
   );

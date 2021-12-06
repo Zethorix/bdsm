@@ -17,9 +17,13 @@ function PlayerForm(props) {
       />
       <div className={maybeAddDisabledClassName("profile")}>
         Username:
-        <input value={props.player.username} onChange={(event) => {
-          props.onPlayerChanged(event.target.value, props.player.items, props.player.monuments);
-        }} />
+        <input
+          className="usernameInput"
+          value={props.player.username}
+          onChange={(event) => {
+            props.onPlayerChanged(event.target.value, props.player.items, props.player.monuments);
+          }}
+        />
         {props.player.items.map((item, index) =>
           <ItemDropdown
             key={index}

@@ -6,8 +6,9 @@ function ItemDropdown(props) {
   const itemTiers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   return (
-    <div>
+    <div className="item">
       <Dropdown
+        className="nameInput"
         selectedOption={props.item.name}
         onChange={(event) => props.onItemChanged(event.target.value, props.item.tier)}
         options={itemNames}

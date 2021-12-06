@@ -1,15 +1,23 @@
 .playerForm {
+  display: flex;
+  flex-direction: column;
   margin: 4px;
   width: 330px;
 }
 
-.profile {
+.playerForm .profile {
+  flex-grow: 1;
   border: 2px solid green;
   padding: 12px;
 }
 
-.disabled {
+.playerForm .disabled {
   border-color: #232529;
+}
+
+.playerForm .usernameInput {
+  margin-left: 4px;
+  margin-bottom: 8px;
 }
 
 .loadPlayer {
@@ -37,6 +45,14 @@
   flex-shrink: 0;
   margin-left: 4px;
   margin-right: 16px;
+}
+
+.item {
+  margin-bottom: 4px;
+}
+
+.item .nameInput {
+  margin-right: 4px;
 }
 
 .playerSummary {
