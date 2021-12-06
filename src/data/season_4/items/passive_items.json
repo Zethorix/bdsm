@@ -17,14 +17,14 @@
   },
   "Chumby Chicken": {
     "obtainable": true,
-    "description": "The first time you attack each wave, summon a chumby chicken. {t}HP, Heals all allies for {3*t}HP when it dies.",
+    "description": "The first time you attack each wave, summon a chumby chicken. {t}HP, Heals all allies for {1+2*t}HP when it dies.",
     "triggers": [
       "TurnStart"
     ]
   },
   "Chicken Dinner": {
     "obtainable": false,
-    "description": "When you die on an opponent's turn, your allies all eat you (FLUSH). They heal for {3*t} HP. This item cannot be obtained, so its exact description is unknown.",
+    "description": "When you die on an opponent's turn, your allies all eat you (FLUSH). They heal for {1+2*t} HP. This item cannot be obtained, so its exact description is unknown.",
     "triggers": [
       "Death"
     ]
