@@ -29,6 +29,14 @@
       "Death"
     ]
   },
+  "Cleansed Tome": {
+    "obtainable": true,
+    "description": "When you attack take {t} damage, then heal the lowest HP non-summoned ally for {3*t} HP. You have +{5*t} health.",
+    "triggers": [
+      "InitCharacter",
+      "PostTarget"
+    ]
+  },
   "Cleansing Flames": {
     "obtainable": true,
     "description": "After you attack, you have a 50% chance to heal all allies for {t} HP.",

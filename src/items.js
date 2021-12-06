@@ -9,6 +9,7 @@ const ABILITY_FOR_ITEM = {
   'Chumby Chicken': chumbyChicken,
   'Challenger Arrow': challengerArrow,
   'Chicken Dinner': chickenDinner,
+  'Cleansed Tome': cleansedTome,
   'Cleansing Flames': cleansingFlames,
   'Draining Dagger': drainingDagger,
   'Energetic Ally': energeticAlly,
@@ -215,6 +216,48 @@ function chickenDinner(params) {
         }
         ally.changeHp({amount: 3*tier});
       }
+      break;
+    }
+    default: {
+      _throwInvalidPhaseError(params);
+    }
+  }
+}
+
+function cleansedTome(params) {
+  const tier = params.item.tier;
+  switch (params.phase) {
+    case 'InitCharacter': {
+      utils.log('Activating {0}', params.item.name);
+      const amount = 5 * tier;
+      params.character.changeHpMax({amount: amount});
+      params.character.changeHp({amount: amount});
+      break;
+    }
+    case 'PostTarget': {
+      utils.log('Activating {0}', params.item.name);
+      params.character.changeHp({amount: -tier});
+      const allyTeam = params.allyTeam;
+      var target = {hp: Infinity};
+      var targetIsMaxHp = true;
+      for (const ally of allyTeam) {
+        if (ally.summoned) {
+          continue;
+        }
+        const allyIsMaxHp = ally.hp === ally.hpMax;
+        if (allyIsMaxHp && !targetIsMaxHp) {
+          continue;
+        }
+        if (ally.hp >= target.hp) {
+          continue;
+        }
+        target = ally;
+        targetIsMaxHp = allyIsMaxHp;
+      }
+      if (target.hp === Infinity) {
+        break;
+      }
+      target.changeHp({amount: 3 * tier});
       break;
     }
     default: {
