@@ -11,18 +11,32 @@ export function outputTest(players, selectedDungeon, numRuns) {
     if (player.username === '') {
       continue;
     }
-    output.push(utils.format('Player found: {0}', player.username));
+    output.push(utils.format('Player: {0}', player.username));
 
     const toEquip = [];
     for (const item of player.items) {
       if (item.name === '') {
         continue;
       }
-      output.push(utils.format('Item found: {0} {1}', item.name, item.tier));
       toEquip.push(item);
     }
     if (toEquip.length === 0) {
       output.push('No items found');
+    } else {
+      const itemsToPrint = [];
+      for (const item of toEquip) {
+        itemsToPrint.push(utils.format('{0} {1}', item.name, item.tier));
+      }
+      output.push(utils.format('Items: {0}', itemsToPrint.join(', ')));
+    }
+    output.push(utils.format(
+      'Monuments: {0} Health, {1} Power, {2} Speed',
+      player.monuments.Health,
+      player.monuments.Power,
+      player.monuments.Speed
+    ));
+    if (player.monuments.Angel) {
+      output.push('Angel invite active');
     }
     output.push('');
 
@@ -48,6 +62,7 @@ export function outputTest(players, selectedDungeon, numRuns) {
   global.output = null;
   const numWins = simulator.runMany(team, waves, numRuns * 1);
 
+  output.push(utils.format('Season {0} D{1}:', season, dungeon));
   output.push(utils.format('Wins out of {0} runs: {1} ({2}%)',
                            numRuns, numWins, numWins * 100 / numRuns));
   const winratePercentage = Math.round((1 + numWins) * 1000 / (numRuns + 2));
