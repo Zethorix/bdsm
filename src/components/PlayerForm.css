@@ -1,18 +1,25 @@
 .playerForm {
   margin: 4px;
+  width: 330px;
+}
+
+.profile {
+  border: 2px solid green;
   padding: 12px;
-  border: black;
-  border-width: 2px;
-  border-style: solid;
-  width: 300px;
+}
+
+.disabled {
+  border-color: #232529;
 }
 
 .loadPlayer {
   margin-bottom: 8px;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 .loadPlayer .inputRow {
-  margin-top: 4px;
+  margin-top: 2px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -30,10 +37,6 @@
   flex-shrink: 0;
   margin-left: 4px;
   margin-right: 16px;
-}
-
-.playerForm .divider {
-  border: 1px solid black;
 }
 
 .playerSummary {
