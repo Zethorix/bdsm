@@ -1,5 +1,4 @@
 import { getAllItemNamesAndBlank } from "../data.js";
-import * as dungeonUtils from "../dungeonUtils.js";
 import Dropdown from './Dropdown.js';
 
 function ItemDropdown(props) {

@@ -18,7 +18,7 @@ function PlayerSummary(props) {
           <div>{JSON.stringify(character.getBaseStats(props.player))}</div>
           {props.player.items.map((item) => {
             if (item.name === '') {
-              return;
+              return null;
             }
             return <div className="itemDescription">
               <span className="itemName">{item.name} {item.tier}</span>{": "}

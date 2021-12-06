@@ -2,7 +2,6 @@ import ItemDropdown from './ItemDropdown.js';
 import LoadPlayerSection from './LoadPlayerSection.js';
 import MonumentsSection from './MonumentsSection.js';
 import PlayerSummary from './PlayerSummary.js';
-import { useState } from 'react';
 import './PlayerForm.css';
 
 function PlayerForm(props) {
