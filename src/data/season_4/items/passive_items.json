@@ -125,7 +125,7 @@
   },
   "Poison Dagger": {
     "obtainable": true,
-    "description": "You have +{3*t}HP. Your attacks add {t} poison stack to the target. A poisoned enemy takes 1 damage after they attack for each poison stack they have. (Exact description unknown)",
+    "description": "Your attacks add {t} poison stack to the target. A poisoned enemy takes 1 damage after they attack for each poison stack they have. You have +{3*t} health.",
     "triggers": [
       "InitCharacter",
       "PostTarget"
@@ -168,7 +168,7 @@
   },
   "Seeking Missiles": {
     "obtainable": true,
-    "description": "Your attacks always target the weakest enemy. Deal {t} bonus damage per 20% HP they are missing. When you kill an enemy, heal 6hp",
+    "description": "Your attacks always target the weakest enemy. Deal {t} bonus damage per 20% HP they are missing. When you kill an enemy, heal {6*t}hp",
     "triggers": [
       "Target",
       "PreDamage",
