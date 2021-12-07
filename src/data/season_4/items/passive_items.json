@@ -192,7 +192,7 @@
   },
   "Trusty Steed": {
     "obtainable": true,
-    "description": "At the start of the dungeon, summon a loyal steed... 10 HP, 20 speed. Will boost teammates.",
+    "description": "At the start of the dungeon, summon a loyal steed... {10*t} HP, 20 speed. Will boost teammates.",
     "triggers": [
       "InitCharacter"
     ]
