@@ -135,7 +135,7 @@ function bigClub(params) {
 function boostingBugle(params) {
   const tier = params.item.tier;
   switch (params.phase) {
-    case 'TurnStart': {
+    case 'PostTarget': {
       const allyTeam = params.allyTeam;
       if (allyTeam.length === 1) {
         break;

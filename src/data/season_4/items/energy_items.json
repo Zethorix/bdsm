@@ -12,7 +12,7 @@
     "description": "Spend 55 energy: heal an ally for {2*t}HP. They gain {t} attack. Repeat this once. This cannot target yourself or summons.",
     "cost": 55,
     "triggers": [
-      "TurnStart"
+      "PostTarget"
     ]
   },
   "Challenger Arrow": {
