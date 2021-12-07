@@ -236,7 +236,6 @@ function cleansedTome(params) {
     }
     case 'PostTarget': {
       utils.log('Activating {0}', params.item.name);
-      params.character.changeHp({amount: -tier});
       const allyTeam = params.allyTeam;
       var target = {hp: Infinity};
       var targetIsMaxHp = true;
@@ -257,6 +256,7 @@ function cleansedTome(params) {
       if (target.hp === Infinity) {
         break;
       }
+      params.character.changeHp({amount: -tier});
       target.changeHp({amount: 3 * tier});
       break;
     }
