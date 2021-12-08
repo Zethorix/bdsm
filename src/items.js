@@ -235,6 +235,11 @@ function cleansedTome(params) {
       break;
     }
     case 'PostTarget': {
+      const damageAmount = tier;
+      if (damageAmount >= params.character.hp) {
+        utils.log('Not activating {0}: not enough HP', params.item. name);
+        break;
+      }
       utils.log('Activating {0}', params.item.name);
       const allyTeam = params.allyTeam;
       var target = {hp: Infinity};
@@ -256,7 +261,7 @@ function cleansedTome(params) {
       if (target.hp === Infinity) {
         break;
       }
-      params.character.changeHp({amount: -tier});
+      params.character.changeHp({amount: -damageAmount});
       target.changeHp({amount: 3 * tier});
       break;
     }
