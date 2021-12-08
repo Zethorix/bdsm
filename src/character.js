@@ -88,6 +88,10 @@ export class Character {
 
   changeHp(params) {
     const originalHp = this.hp;
+    if (originalHp <= 0 && params.amount > 0) {
+      // Dead characters cannot be healed
+      return;
+    }
     this.hp = Math.min(this.hp + params.amount, this.hpMax);
     utils.log('{0} hp changed by {1}: {2} -> {3}',
               this.character, params.amount, originalHp, this.hp);
