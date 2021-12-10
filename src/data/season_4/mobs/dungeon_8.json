@@ -115,9 +115,9 @@
       ],
       "_stats": {
         "_maxFireSwordTriggers": 5,
-        "_triggeredFireSword": 82,
-        "_triggeredBigClub": 17,
-        "_attacks": 29
+        "_triggeredFireSword": 91,
+        "_triggeredBigClub": 19,
+        "_attacks": 33
       }
     },
     {
@@ -217,8 +217,8 @@
         }
       ],
       "_stats": {
-        "_triggeredBigClub": 29,
-        "_attacks": 47
+        "_triggeredBigClub": 31,
+        "_attacks": 49
       }
     }
   ]

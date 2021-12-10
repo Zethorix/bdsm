@@ -37,8 +37,8 @@
       ],
       "_stats": {
         "_maxFireSwordTriggers": 4,
-        "_triggeredFireSword": 38,
-        "_attacks": 23
+        "_triggeredFireSword": 52,
+        "_attacks": 32
       }
     },
     {
@@ -83,8 +83,8 @@
         }
       ],
       "_stats": {
-        "_triggeredBlock": 6,
-        "_availableBlocks": 27
+        "_triggeredBlock": 16,
+        "_availableBlocks": 71
       }
     },
     {
