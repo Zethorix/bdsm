@@ -65,8 +65,20 @@ export function outputTest(players, selectedDungeon, numRuns) {
   output.push(utils.format('Season {0} D{1}:', season, dungeon));
   output.push(utils.format('Wins out of {0} runs: {1} ({2}%)',
                            numRuns, numWins, numWins * 100 / numRuns));
-  const winratePercentage = Math.round((1 + numWins) * 1000 / (numRuns + 2));
-  output.push(utils.format('Estimated winrate: {0}%', winratePercentage / 10.0));
+
+  output.push("\nConfidence intervals (using normal approximation):");
+  const a = numWins + 1;
+  const b = numRuns - numWins + 1;
+  const mean = a / (a + b);
+  const stdDev = Math.sqrt(a * b / ((a + b) * (a + b) * (a + b + 1)));
+  output.push(utils.format('Estimated winrate: {0}%', Math.round(mean * 1000) / 10));
+  output.push(utils.format('95%: {0}% - {1}%',
+                           Math.round((mean - stdDev - stdDev) * 1000) / 10,
+                           Math.round((mean + stdDev + stdDev) * 1000) / 10));
+  output.push(utils.format('99.7%: {0}% - {1}%',
+                           Math.round((mean - stdDev - stdDev - stdDev) * 1000) / 10,
+                           Math.round((mean + stdDev + stdDev + stdDev) * 1000) / 10));
+
   output.push('\nExample Run:');
 
   global.output = [];
