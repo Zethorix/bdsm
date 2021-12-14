@@ -1,6 +1,7 @@
 import * as data from '../data.js';
 import Dropdown from './Dropdown.js';
 import * as dungeonUtils from '../dungeonUtils.js';
+import * as localStorageUtils from '../localStorageUtils.js';
 import { outputTest } from '../test.js';
 import OutputLogs from './OutputLogs.js';
 import PlayerForm from './PlayerForm.js';
@@ -10,11 +11,14 @@ import './Simulator.css';
 
 function Simulator() {
   const dungeonList = data.getDungeonList();
-  const [numRuns, setNumRuns] = useState(100);
-  const [selectedDungeon, setSelectedDungeon] = useState(dungeonList[0]);
+  const [numRuns, setNumRuns] = localStorageUtils.useStateWithLocalStorage("numRuns", 100);
+  const [selectedDungeon, setSelectedDungeon] = localStorageUtils.useStateWithLocalStorage(
+    "selectedDungeon",
+    dungeonList[0]);
   const [outputText, setOutputText] = useState("Select your items with the dropdowns.\nClick the button to start a test run!");
   const [rawInput, setRawInput] = useState('');
-  const [players, setPlayers] = useState([
+
+  const [players, setPlayers] = localStorageUtils.useStateWithLocalStorage("players", [
     getInitialPlayer(),
     getInitialPlayer(),
     getInitialPlayer(),
@@ -72,6 +76,11 @@ function Simulator() {
 
   return (
     <div className="simulator">
+      <button onClick={() => {
+        localStorageUtils.clear();
+        window.location.reload();
+      }}>Clear Cache</button>
+      <br />
       Load BDSM party profile:&nbsp;
       <textarea value={rawInput} onChange={(event) => {
         const newParty = parsePlayers(event.target.value);
