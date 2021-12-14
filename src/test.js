@@ -71,13 +71,13 @@ export function outputTest(players, selectedDungeon, numRuns) {
   const b = numRuns - numWins + 1;
   const mean = a / (a + b);
   const stdDev = Math.sqrt(a * b / ((a + b) * (a + b) * (a + b + 1)));
-  output.push(utils.format('Estimated winrate: {0}%', Math.round(mean * 1000) / 10));
+  output.push(utils.format('Estimated winrate: {0}%', Math.round(mean * 100)));
   output.push(utils.format('95%: {0}% - {1}%',
-                           Math.round((mean - stdDev - stdDev) * 1000) / 10,
-                           Math.round((mean + stdDev + stdDev) * 1000) / 10));
+                           Math.round((mean - stdDev - stdDev) * 100),
+                           Math.round((mean + stdDev + stdDev) * 100)));
   output.push(utils.format('99.7%: {0}% - {1}%',
-                           Math.round((mean - stdDev - stdDev - stdDev) * 1000) / 10,
-                           Math.round((mean + stdDev + stdDev + stdDev) * 1000) / 10));
+                           Math.round((mean - stdDev - stdDev - stdDev) * 100),
+                           Math.round((mean + stdDev + stdDev + stdDev) * 100)));
 
   output.push('\nExample Run:');
 
