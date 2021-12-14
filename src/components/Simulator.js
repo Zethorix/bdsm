@@ -2,7 +2,7 @@ import * as data from '../data.js';
 import Dropdown from './Dropdown.js';
 import * as dungeonUtils from '../dungeonUtils.js';
 import * as localStorageUtils from '../localStorageUtils.js';
-import { outputTest } from '../test.js';
+import { outputManyRuns, outputSingleRun } from '../test.js';
 import OutputLogs from './OutputLogs.js';
 import PlayerForm from './PlayerForm.js';
 import { useState } from 'react';
@@ -65,9 +65,18 @@ function Simulator() {
     return { name: "", tier: 1 };
   }
 
-  function onRunTest() {
+  function onRunSingle() {
     try {
-      const output = outputTest(players, selectedDungeon, numRuns);
+      const output = outputSingleRun(players, selectedDungeon);
+      setOutputText(output);
+    } catch(err) {
+      setOutputText(utils.format('An error has occurred: {0}', err.message));
+    }
+  }
+
+  function onRunMany() {
+    try {
+      const output = outputManyRuns(players, selectedDungeon, numRuns);
       setOutputText(output);
     } catch(err) {
       setOutputText(utils.format('An error has occurred: {0}', err.message));
@@ -123,8 +132,12 @@ function Simulator() {
         setNumRuns(parseInt(event.target.value));
       }} />
       <br />
-      <button onClick={onRunTest}>
-        Run Test
+      <button onClick={onRunMany}>
+        Run Simulations
+      </button>
+      <br />
+      <button onClick={onRunSingle}>
+        Example Run
       </button>
       <OutputLogs value={outputText}/>
     </div>

@@ -3,7 +3,7 @@ import { global } from './global.js';
 import * as simulator from './simulator.js';
 import * as utils from './utils.js';
 
-export function outputTest(players, selectedDungeon, numRuns) {
+export function outputManyRuns(players, selectedDungeon, numRuns) {
   const output = [];
   const team = [];
 
@@ -57,7 +57,6 @@ export function outputTest(players, selectedDungeon, numRuns) {
   const [season, dungeon] = JSON.parse(selectedDungeon);
   const waves = data.getDungeon(season, dungeon);
 
-  global.season = 4;
   global.verbose = false;
   global.output = null;
   const numWins = simulator.runMany(team, waves, numRuns * 1);
@@ -78,6 +77,66 @@ export function outputTest(players, selectedDungeon, numRuns) {
   output.push(utils.format('99.7%: {0}% - {1}%',
                            Math.round((mean - stdDev - stdDev - stdDev) * 100),
                            Math.round((mean + stdDev + stdDev + stdDev) * 100)));
+
+  return output.join('\n');
+}
+
+export function outputSingleRun(players, selectedDungeon) {
+  const output = [];
+  const team = [];
+
+  for (const player of players) {
+    if (player.username === '') {
+      continue;
+    }
+    output.push(utils.format('Player: {0}', player.username));
+
+    const toEquip = [];
+    for (const item of player.items) {
+      if (item.name === '') {
+        continue;
+      }
+      toEquip.push(item);
+    }
+    if (toEquip.length === 0) {
+      output.push('No items found');
+    } else {
+      const itemsToPrint = [];
+      for (const item of toEquip) {
+        itemsToPrint.push(utils.format('{0} {1}', item.name, item.tier));
+      }
+      output.push(utils.format('Items: {0}', itemsToPrint.join(', ')));
+    }
+    output.push(utils.format(
+      'Monuments: {0} Health, {1} Power, {2} Speed',
+      player.monuments.Health,
+      player.monuments.Power,
+      player.monuments.Speed
+    ));
+    if (player.monuments.Angel) {
+      output.push('Angel invite active');
+    }
+    output.push('');
+
+    team.push({
+      character: player.username,
+      hp: 100 + player.monuments.Health * 5,
+      hpMax: 100 + player.monuments.Health * 5,
+      speed: 10 + player.monuments.Speed * 1,
+      attackLow: 1 + player.monuments.Power * 1,
+      attackHigh: 10 + player.monuments.Power * 1,
+      energy: 0,
+      summoned: false,
+      items: toEquip,
+      angelAvailable: player.monuments.Angel
+    });
+  }
+  
+  const [season, dungeon] = JSON.parse(selectedDungeon);
+  const waves = data.getDungeon(season, dungeon);
+
+  global.verbose = false;
+  global.output = null;
 
   output.push('\nExample Run:');
 
