@@ -237,7 +237,7 @@ function cleansedTome(params) {
     case 'PostTarget': {
       const damageAmount = tier;
       if (damageAmount >= params.character.hp) {
-        utils.log('Not activating {0}: not enough HP', params.item. name);
+        utils.log('Not activating {0}: not enough HP', params.item.name);
         break;
       }
       utils.log('Activating {0}', params.item.name);
