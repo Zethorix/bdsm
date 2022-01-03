@@ -1,0 +1,135 @@
+[
+  [
+    {
+      "character": "G Fuel",
+      "hp": 80,
+      "hpMax": 80,
+      "speed": 20,
+      "attackLow": 0,
+      "attackHigh": 30,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Imp Whistle",
+          "tier": 2
+        }
+      ]
+    },
+    {
+      "character": "Boba",
+      "hp": 125,
+      "hpMax": 125,
+      "speed": 14,
+      "attackLow": 15,
+      "attackHigh": 25,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Avalanche",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "character": "A Hearty Glass of Water",
+      "hp": 100,
+      "hpMax": 100,
+      "speed": 12,
+      "attackLow": 10,
+      "attackHigh": 20,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Love Letter",
+          "tier": 4
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "character": "Mozzarella Sticks",
+      "hp": 100,
+      "hpMax": 100,
+      "speed": 14,
+      "attackLow": 6,
+      "attackHigh": 12,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Poison Dagger",
+          "tier": 3
+        }
+      ]
+    },
+    {
+      "character": "Miso Soup",
+      "hp": 50,
+      "hpMax": 50,
+      "speed": 13,
+      "attackLow": 5,
+      "attackHigh": 15,
+      "energy": 0,
+      "summoned": false,
+      "items": []
+    },
+    {
+      "character": "Salad",
+      "hp": 125,
+      "hpMax": 125,
+      "speed": 12,
+      "attackLow": 5,
+      "attackHigh": 14,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Healing Pendant",
+          "tier": 3
+        }
+      ],
+      "_stats": {
+        "_triggeredBlock": 21,
+        "_availableBlocks": 127
+      }
+    },
+    {
+      "character": "Takoyaki",
+      "hp": 75,
+      "hpMax": 75,
+      "speed": 12,
+      "attackLow": 5,
+      "attackHigh": 10,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Poison Dagger",
+          "tier": 3
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "character": "Sushi Boat",
+      "hp": 350,
+      "hpMax": 350,
+      "speed": 30,
+      "attackLow": 10,
+      "attackHigh": 30,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Machete",
+          "tier": 2
+        }
+      ]
+    }
+  ]
+]

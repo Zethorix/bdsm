@@ -1,0 +1,73 @@
+{
+  "Chumby Chicken": {
+    "character": "Chumby Chicken",
+    "hp": {"base": 0, "scaling": 1},
+    "hpMax": {"base": 0, "scaling": 1},
+    "speed": 1,
+    "attackLow": 0,
+    "attackHigh": 1,
+    "energy": 0,
+    "summoned": true,
+    "canBeSaved": false,
+    "items": [
+      {
+        "name": "Chicken Dinner",
+        "tier": {"base": 0, "scaling": 1}
+      }
+    ]
+  },
+  "Imp Whistle": {
+    "character": "Small Imp Companion",
+    "hp": {"base": 0, "scaling": 1},
+    "hpMax": {"base": 0, "scaling": 1},
+    "speed": 16,
+    "attackLow": {"base": 0, "scaling": 3},
+    "attackHigh": {"base": 0, "scaling": 4},
+    "energy": 0,
+    "summoned": true,
+    "items": []
+  },
+  "Pet Imp": {
+    "character": "Big Imp Companion",
+    "hp": {"base": 0, "scaling": 10},
+    "hpMax": {"base": 0, "scaling": 10},
+    "speed": 16,
+    "attackLow": {"base": 0, "scaling": 3},
+    "attackHigh": {"base": 0, "scaling": 4},
+    "energy": 0,
+    "summoned": true,
+    "items": []
+  },
+  "Rock Companion": {
+    "character": "Rock Companion",
+    "hp": {"base": 0, "scaling": 15},
+    "hpMax": {"base": 0, "scaling": 15},
+    "speed": 2,
+    "attackLow": {"base": 0, "scaling": 5},
+    "attackHigh": {"base": 0, "scaling": 5},
+    "energy": 0,
+    "summoned": true,
+    "items": [
+      {
+        "name": "Healing Pendant",
+        "tier": {"base": 0, "scaling": 1}
+      }
+    ]
+  },
+  "Trusty Steed": {
+    "character": "Trusty Steed",
+    "hp": {"base": 0, "scaling": 10},
+    "hpMax": {"base": 0, "scaling": 10},
+    "speed": 20,
+    "attackLow": 0,
+    "attackHigh": 0,
+    "energy": 40,
+    "summoned": true,
+    "items": [
+      {
+        "name": "Boosting Bugle",
+        "tier": {"base": 0, "scaling": 1}
+      }
+    ]
+  }
+}
