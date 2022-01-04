@@ -129,7 +129,17 @@
       "attackHigh": 35,
       "energy": 0,
       "summoned": false,
-      "items": []
+      "items": [
+        {
+          "name": "Fire Sword",
+          "tier": 9
+        }
+      ],
+      "_stats": {
+        "_maxFireSwordTriggers": 5,
+        "_triggeredFireSword": 27,
+        "_attacks": 8
+      }
     }
   ]
 ]
