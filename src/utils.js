@@ -11,17 +11,25 @@ export function format() {
 }
 
 export function log() {
+  logWithClassName(arguments, null);
+}
+
+export function logWithClassName(args, className) {
   if (!global.verbose && global.output === null) {
     return;
   }
-  const toLog = typeof arguments[0] === 'string'
-      ? format(...arguments)
-      : arguments[0];
+  const shouldOutput = typeof args[0] === 'string';
+  const toLog = shouldOutput
+      ? format(...args)
+      : args[0];
   if (global.verbose) {
     console.log(toLog);
   }
-  if (global.output !== null) {
-    global.output.push(toLog);
+  if (shouldOutput && global.output !== null) {
+    const currLength = global.output.length;
+    global.output.push(className === null ?
+                       <div key={currLength}>{toLog}</div> :
+                       <div key={currLength} className={className}>{toLog}</div>);
   }
 }
 

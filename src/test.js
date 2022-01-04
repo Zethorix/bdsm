@@ -11,7 +11,7 @@ export function outputManyRuns(players, selectedDungeon, numRuns) {
     if (player.username === '') {
       continue;
     }
-    output.push(utils.format('Player: {0}', player.username));
+    output.push(utils.format('Player: {0}\n', player.username));
 
     const toEquip = [];
     for (const item of player.items) {
@@ -21,24 +21,24 @@ export function outputManyRuns(players, selectedDungeon, numRuns) {
       toEquip.push(item);
     }
     if (toEquip.length === 0) {
-      output.push('No items found');
+      output.push('No items found\n');
     } else {
       const itemsToPrint = [];
       for (const item of toEquip) {
         itemsToPrint.push(utils.format('{0} {1}', item.name, item.tier));
       }
-      output.push(utils.format('Items: {0}', itemsToPrint.join(', ')));
+      output.push(utils.format('Items: {0}\n', itemsToPrint.join(', ')));
     }
     output.push(utils.format(
-      'Monuments: {0} Health, {1} Power, {2} Speed',
+      'Monuments: {0} Health, {1} Power, {2} Speed\n',
       player.monuments.Health,
       player.monuments.Power,
       player.monuments.Speed
     ));
     if (player.monuments.Angel) {
-      output.push('Angel invite active');
+      output.push('Angel invite active\n');
     }
-    output.push('');
+    output.push('\n');
 
     team.push({
       character: player.username,
@@ -61,24 +61,24 @@ export function outputManyRuns(players, selectedDungeon, numRuns) {
   global.output = null;
   const numWins = simulator.runMany(team, waves, numRuns * 1);
 
-  output.push(utils.format('Season {0} D{1}:', season, dungeon));
-  output.push(utils.format('Wins out of {0} runs: {1} ({2}%)',
+  output.push(utils.format('Season {0} D{1}:\n', season, dungeon));
+  output.push(utils.format('Wins out of {0} runs: {1} ({2}%)\n',
                            numRuns, numWins, numWins * 100 / numRuns));
 
-  output.push("\nConfidence intervals (using normal approximation):");
+  output.push("\nConfidence intervals (using normal approximation):\n");
   const a = numWins + 1;
   const b = numRuns - numWins + 1;
   const mean = a / (a + b);
   const stdDev = Math.sqrt(a * b / ((a + b) * (a + b) * (a + b + 1)));
-  output.push(utils.format('Estimated winrate: {0}%', Math.round(mean * 100)));
-  output.push(utils.format('95%: {0}% - {1}%',
+  output.push(utils.format('Estimated winrate: {0}%\n', Math.round(mean * 100)));
+  output.push(utils.format('95%: {0}% - {1}%\n',
                            Math.round((mean - stdDev - stdDev) * 100),
                            Math.round((mean + stdDev + stdDev) * 100)));
-  output.push(utils.format('99.7%: {0}% - {1}%',
+  output.push(utils.format('99.7%: {0}% - {1}%\n',
                            Math.round((mean - stdDev - stdDev - stdDev) * 100),
                            Math.round((mean + stdDev + stdDev + stdDev) * 100)));
 
-  return output.join('\n');
+  return output;
 }
 
 export function outputSingleRun(players, selectedDungeon) {
@@ -89,7 +89,7 @@ export function outputSingleRun(players, selectedDungeon) {
     if (player.username === '') {
       continue;
     }
-    output.push(utils.format('Player: {0}', player.username));
+    output.push(utils.format('Player: {0}\n', player.username));
 
     const toEquip = [];
     for (const item of player.items) {
@@ -99,24 +99,24 @@ export function outputSingleRun(players, selectedDungeon) {
       toEquip.push(item);
     }
     if (toEquip.length === 0) {
-      output.push('No items found');
+      output.push('No items found\n');
     } else {
       const itemsToPrint = [];
       for (const item of toEquip) {
         itemsToPrint.push(utils.format('{0} {1}', item.name, item.tier));
       }
-      output.push(utils.format('Items: {0}', itemsToPrint.join(', ')));
+      output.push(utils.format('Items: {0}\n', itemsToPrint.join(', ')));
     }
     output.push(utils.format(
-      'Monuments: {0} Health, {1} Power, {2} Speed',
+      'Monuments: {0} Health, {1} Power, {2} Speed\n',
       player.monuments.Health,
       player.monuments.Power,
       player.monuments.Speed
     ));
     if (player.monuments.Angel) {
-      output.push('Angel invite active');
+      output.push('Angel invite active\n');
     }
-    output.push('');
+    output.push('\n');
 
     team.push({
       character: player.username,
@@ -138,14 +138,14 @@ export function outputSingleRun(players, selectedDungeon) {
   global.verbose = false;
   global.output = null;
 
-  output.push('\nExample Run:');
+  output.push('\nExample Run:\n');
 
   global.output = [];
   global.verbose = true;
-  output.push('\nWinning team: ' + simulator.runDungeon(team, waves));
+  output.push('\nWinning team: \n' + simulator.runDungeon(team, waves));
   utils.extend(output, global.output);
   global.verbose = false;
   global.output = null;
 
-  return output.join('\n');
+  return output;
 }
