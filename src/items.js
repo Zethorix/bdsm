@@ -731,7 +731,7 @@ function punchingBag(params) {
           amount: amount,
           battle: params.battle
       });
-      if (!utils.withProbability(0.35 + 0.01 * tier)) {
+      if (!utils.withProbability(0.28 + 0.08 * tier)) {
         break;
       }
       utils.log('{0} stunned {1}', params.item.name, target.character);

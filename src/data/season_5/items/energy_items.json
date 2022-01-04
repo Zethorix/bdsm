@@ -65,7 +65,7 @@
   },
   "Punching Bag": {
     "obtainable": true,
-    "description": "Spend 40 Energy: Deal {5*t}-{10*t} damage to a random enemy. {35+t}% change to knock the enemy off their feet.",
+    "description": "Spend 40 Energy: Deal {5*t}-{10*t} damage to a random enemy. {28+8*t}% change to knock the enemy off their feet.",
     "cost": 40,
     "triggers": [
       "TurnStart"
