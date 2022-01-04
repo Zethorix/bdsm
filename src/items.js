@@ -28,6 +28,7 @@ const ABILITY_FOR_ITEM = {
   'Martyr Armor': martyrArmor,
   'Pet Imp': petImp,
   'Poison Dagger': poisonDagger,
+  'Punching Bag': punchingBag,
   'Quickening Death': quickeningDeath,
   'Quickening Death: Focused': quickeningDeathFocused,
   'Rock Companion': rockCompanion,
@@ -711,6 +712,30 @@ function poisonDagger(params) {
     case 'PostTarget': {
       utils.log('Activating {0}', params.item.name);
       params.currentTarget.poison += tier;
+      break;
+    }
+    default: {
+      _throwInvalidPhaseError(params);
+    }
+  }
+}
+
+function punchingBag(params) {
+  const tier = params.item.tier;
+  switch (params.phase) {
+    case 'TurnStart': {
+      const target = utils.pickRandom(params.enemyTeam);
+      const amount = utils.pickRandomWithinRange(5 * tier, 10 * tier);
+      target.takeDamage({
+          source: params.character,
+          amount: amount,
+          battle: params.battle
+      });
+      if (!utils.withProbability(0.35 + 0.01 * tier)) {
+        break;
+      }
+      utils.log('{0} stunned {1}', params.item.name, target.character);
+      target.punched = true;
       break;
     }
     default: {

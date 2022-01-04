@@ -48,6 +48,7 @@ export class Character {
     this.canBeSaved = _extractParam(params, 'canBeSaved', true);
     this.poison = _extractParam(params, 'poison', 0);
     this.usedCannon = _extractParam(params, 'usedCannon', false);
+    this.punched = _extractParam(params, 'punched', false);
     this._preprocessTriggers();
     this.processedInitCharacter =
         _extractParam(params, 'processedInitCharacter', true);
@@ -157,7 +158,13 @@ export class Character {
     }
   }
 
+  /** Returns whether the turns should be skipped. */
   triggerPhase(params) {
+    if (params.phase === 'SkipTurn' && this.punched) {
+      this.punched = false;
+      utils.log("{0} was punched. Skipping turn.", this.character);
+      return true;
+    }
     if (!(params.phase in this.triggers)) {
       return false;
     }

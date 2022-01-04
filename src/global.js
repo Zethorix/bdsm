@@ -1,5 +1,5 @@
 export const global = {
   verbose: false,
   output: null,
-  season: 4
+  season: 5
 }
