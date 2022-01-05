@@ -205,7 +205,7 @@
       "character": "Frontman",
       "hp": 225,
       "hpMax": 225,
-      "speed": 25,
+      "speed": 21,
       "attackLow": 75,
       "attackHigh": 125,
       "energy": 0,
@@ -214,6 +214,10 @@
         {
           "name": "Big Club",
           "tier": 6
+        },
+        {
+          "name": "BF Cannon",
+          "tier": 1
         }
       ],
       "_stats": {
