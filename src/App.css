@@ -23,3 +23,6 @@ input[type=number] {
     -moz-appearance:textfield; /* Firefox */
 }
 
+a {
+  color:hsl(197,100%,47.8%);
+}
