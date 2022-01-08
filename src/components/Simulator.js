@@ -11,6 +11,7 @@ import './Simulator.css';
 
 function Simulator() {
   const dungeonList = data.getDungeonList();
+  const [runsCompleted, setRunsCompleted] = useState(0);
   const [numRuns, setNumRuns] = localStorageUtils.useStateWithLocalStorage("numRuns", 100);
   const [selectedDungeon, setSelectedDungeon] = localStorageUtils.useStateWithLocalStorage(
     "selectedDungeon",
@@ -74,9 +75,9 @@ function Simulator() {
     }
   }
 
-  function onRunMany() {
+  async function onRunMany(progressCallback) {
     try {
-      const output = outputManyRuns(players, selectedDungeon, numRuns);
+      const output = await outputManyRuns(players, selectedDungeon, numRuns, progressCallback);
       setOutputText(output);
     } catch(err) {
       setOutputText(utils.format('An error has occurred: {0}', err.message));
@@ -131,8 +132,17 @@ function Simulator() {
       <input type="number" min={0} value={numRuns} onChange={(event) => {
         setNumRuns(parseInt(event.target.value));
       }} />
+      Run Progress: {`${runsCompleted}/${numRuns}`}
       <br />
-      <button onClick={onRunMany}>
+      <button onClick={
+          () => onRunMany(
+            (runsCompleted) => {
+              if (runsCompleted % 10 === 0 || runsCompleted === numRuns) {
+                setRunsCompleted(runsCompleted)
+              }
+            }
+          )
+        }>
         Run Simulations
       </button>
       <br />

@@ -1,9 +1,14 @@
+import * as Comlink from 'comlink';
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import Worker from 'worker-loader!./worker';
 import * as data from './data.js';
 import { global } from './global.js';
 import * as simulator from './simulator.js';
 import * as utils from './utils.js';
 
-export function outputManyRuns(players, selectedDungeon, numRuns) {
+const workerPool = [Comlink.wrap(new Worker()), Comlink.wrap(new Worker()), Comlink.wrap(new Worker()), Comlink.wrap(new Worker())]
+
+export async function outputManyRuns(players, selectedDungeon, numRuns, progressCallback = () => {}) {
   const output = [];
   const team = [];
 
@@ -59,8 +64,10 @@ export function outputManyRuns(players, selectedDungeon, numRuns) {
 
   global.verbose = false;
   global.output = null;
-  const numWins = simulator.runMany(team, waves, numRuns * 1);
 
+  const runPromiseResults = await doRunsInWorker(team, waves, numRuns, progressCallback);
+  const numWins = runPromiseResults.reduce((acc, cur) => acc + cur);
+  
   output.push(utils.format('Season {0} D{1}:\n', season, dungeon));
   output.push(utils.format('Wins out of {0} runs: {1} ({2}%)\n',
                            numRuns, numWins, numWins * 100 / numRuns));
@@ -79,6 +86,34 @@ export function outputManyRuns(players, selectedDungeon, numRuns) {
                            Math.round((mean + stdDev + stdDev + stdDev) * 100)));
 
   return output;
+}
+
+async function doRunsInWorker(team, waves, numRuns, progressCallback) {
+  let startedRuns = 0
+  let completedRuns = 0
+  let currentWorker = 0
+  let workerPromises = []
+
+  while (startedRuns < numRuns) {
+    startedRuns++;
+
+    if (currentWorker == 3) {
+      currentWorker = 0
+    } else {
+      currentWorker++
+    }
+
+    workerPromises.push(
+      workerPool[currentWorker].runDungeon(team, waves, 1)
+        .then(result => {
+          completedRuns++
+          progressCallback(completedRuns)
+          return result
+        })
+    )
+  }
+
+  return Promise.all(workerPromises);
 }
 
 export function outputSingleRun(players, selectedDungeon) {
