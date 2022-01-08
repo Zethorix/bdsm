@@ -192,7 +192,7 @@ export class Battle {
         battle: this,
         source: this.activeCharacter
     });
-    
+
     this.activeCharacter.triggerPhase({
         allyTeam: this.teams[this.activeTeamIndex],
         phase: 'PostDamage'
