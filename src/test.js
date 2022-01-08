@@ -67,7 +67,7 @@ export async function outputManyRuns(players, selectedDungeon, numRuns, progress
 
   const runPromiseResults = await doRunsInWorker(team, waves, numRuns, progressCallback);
   const numWins = runPromiseResults.reduce((acc, cur) => acc + cur);
-  
+
   output.push(utils.format('Season {0} D{1}:\n', season, dungeon));
   output.push(utils.format('Wins out of {0} runs: {1} ({2}%)\n',
                            numRuns, numWins, numWins * 100 / numRuns));
@@ -94,10 +94,16 @@ async function doRunsInWorker(team, waves, numRuns, progressCallback) {
   let currentWorker = 0
   let workerPromises = []
 
+  const handleRunResult = result => {
+    completedRuns++
+    progressCallback(completedRuns)
+    return result
+  }
+
   while (startedRuns < numRuns) {
     startedRuns++;
 
-    if (currentWorker == 3) {
+    if (currentWorker === workerPool.length - 1) {
       currentWorker = 0
     } else {
       currentWorker++
@@ -105,11 +111,7 @@ async function doRunsInWorker(team, waves, numRuns, progressCallback) {
 
     workerPromises.push(
       workerPool[currentWorker].runDungeon(team, waves, 1)
-        .then(result => {
-          completedRuns++
-          progressCallback(completedRuns)
-          return result
-        })
+        .then(handleRunResult)
     )
   }
 
