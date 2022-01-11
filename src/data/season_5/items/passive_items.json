@@ -138,6 +138,13 @@
       "PostTarget"
     ]
   },
+  "Poison Tipped Machete": {
+    "obtainable": true,
+    "description": "Your attacks deal {24+3*t}-{32+3*t} damage to an additional enemy and add {8+t} poison stacks to both enemies.",
+    "triggers": [
+      "PostTarget"
+    ]
+  },
   "Quickening Death": {
     "obtainable": false,
     "description": "When you die on an opponent's turn, your allies become enraged. They gain {t} Speed. This item cannot be obtained, so its exact description is unknown.",

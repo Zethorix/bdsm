@@ -30,6 +30,7 @@ const ABILITY_FOR_ITEM = {
   'Martyr Armor': martyrArmor,
   'Pet Imp': petImp,
   'Poison Dagger': poisonDagger,
+  'Poison Tipped Machete': poisonTippedMachete,
   'Punching Bag': punchingBag,
   'Quickening Death': quickeningDeath,
   'Quickening Death: Focused': quickeningDeathFocused,
@@ -742,6 +743,39 @@ function petImp(params) {
       }
       utils.log('Activating {0}', params.item.name);
       params.battle.addSummonToTeam(params.item, params.allyTeamIndex);
+      break;
+    }
+    default: {
+      _throwInvalidPhaseError(params);
+    }
+  }
+}
+
+function poisonTippedMachete(params) {
+  const tier = params.item.tier;
+  switch (params.phase) {
+    case 'PostTarget': {
+      utils.log('Activating {0}', params.item.name);
+      params.currentTarget.poison += tier + 8;
+      const enemyTeam = params.enemyTeam;
+      if (enemyTeam.length === 1) {
+        break;
+      }
+      const target = utils.pickRandom(
+          enemyTeam,
+          (c) => {
+            if (c.character === params.currentTarget.character) {
+              return 0;
+            }
+            return 1;
+          }
+      );
+      target.takeDamage({
+          source: params.character,
+          amount: utils.pickRandomWithinRange(24 + 3 * tier, 32 + 4 * tier),
+          battle: params.battle
+      });
+      target.poison += tier + 8;
       break;
     }
     default: {
