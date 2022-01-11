@@ -1,6 +1,7 @@
 {
   "Avalanche": {
     "obtainable": true,
+    "fusion": false,
     "description": "Spend 35 energy. Deal {3*t}-{5*t} damage to a random enemy twice. They lose 0-{t} speed.",
     "cost": 35,
     "triggers": [
@@ -9,6 +10,7 @@
   },
   "Boosting Bugle": {
     "obtainable": true,
+    "fusion": false,
     "description": "Spend 55 energy: heal an ally for {2*t}HP. They gain {t} attack. Repeat this once. This cannot target yourself or summons.",
     "cost": 55,
     "triggers": [
@@ -17,6 +19,7 @@
   },
   "Challenger Arrow": {
     "obtainable": true,
+    "fusion": false,
     "description": "Spend 55 energy: Deal {10*t} damage to a random enemy. Gain +{2*t} attack.",
     "cost": 55,
     "triggers": [
@@ -25,6 +28,7 @@
   },
   "Energetic Ally": {
     "obtainable": true,
+    "fusion": false,
     "description": "Spend 50 energy: The lowest non-summoned ally heals for {5*t}HP and gains 20 energy.",
     "cost": 50,
     "triggers": [
@@ -33,6 +37,7 @@
   },
   "Explosion Powder": {
     "obtainable": true,
+    "fusion": false,
     "description": "Spend 55 energy: Deal {5*t}-{10*t} damage to all enemies. If there is only one enemy, this deals double damage.",
     "cost": 55,
     "triggers": [
@@ -41,6 +46,7 @@
   },
   "Festive Feast": {
     "obtainable": true,
+    "fusion": false,
     "description": "Spend 80 energy: deal {3*t} damage to all opponents and heal {3*t} HP to all allies",
     "cost": 80,
     "triggers": [
@@ -49,6 +55,7 @@
   },
   "Imp Horn": {
     "obtainable": true,
+    "fusion": true,
     "description": "Spend 75 energy: Spend 75 Energy: Summon a level {t+8} pet imp.",
     "cost": 75,
     "triggers": [
@@ -57,6 +64,7 @@
   },
   "Imp Whistle": {
     "obtainable": true,
+    "fusion": false,
     "description": "Spend 45 energy: summon a small imp companion. {t}hp {3*t}-{4*t}atk 16 spd",
     "cost": 45,
     "triggers": [
@@ -65,6 +73,7 @@
   },
   "Knight's Lance": {
     "obtainable": true,
+    "fusion": false,
     "description": "Spend 45 energy. Deal {5*t}-{7*t} damage to a random enemy and heal the same amount. If you are at full health, this deals double damage.",
     "cost": 45,
     "triggers": [
@@ -73,6 +82,7 @@
   },
   "Punching Bag": {
     "obtainable": true,
+    "fusion": false,
     "description": "Spend 40 Energy: Deal {5*t}-{10*t} damage to a random enemy. {28+8*t}% change to knock the enemy off their feet.",
     "cost": 40,
     "triggers": [
@@ -81,6 +91,7 @@
   },
   "Seeking Explosions": {
     "obtainable": true,
+    "fusion": true,
     "description": "Spend 45 Energy: Deal {10*t+35}-{20*t+70} damage to the lowest health enemy. Repeat this 3 times. This item's exact description is unknown.",
     "cost": 45,
     "triggers": [

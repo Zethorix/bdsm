@@ -59,11 +59,15 @@ export function getItems() {
 export function getAllItemNamesAndBlank() {
   if (!(global.season in ITEM_NAMES_BY_SEASON)) {
     const items = getItems();
-    const itemNames = [''];
     const obtainableItems = [];
+    const fusionItems = [];
     const unobtainableItems = [];
     for (const type of ['energy', 'passive']) {
       for (const item in items[type]) {
+        if (items[type][item].fusion) {
+          fusionItems.push(item);
+          continue;
+        }
         if (items[type][item].obtainable) {
           obtainableItems.push(item);
           continue;
@@ -72,8 +76,13 @@ export function getAllItemNamesAndBlank() {
       }
     }
     obtainableItems.sort();
+    fusionItems.sort();
     unobtainableItems.sort();
+
+    const itemNames = [''];
     utils.extend(itemNames, obtainableItems);
+    itemNames.push('');
+    utils.extend(itemNames, fusionItems);
     itemNames.push('');
     utils.extend(itemNames, unobtainableItems);
     ITEM_NAMES_BY_SEASON[global.season] = itemNames;
