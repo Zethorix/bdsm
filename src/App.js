@@ -6,6 +6,7 @@ function App() {
     <div className="App">
       <h1>Boxbox Dungeon SiMulator (BDSM)</h1>
       <div><i>Created by Zethorix#1064 and Oof#4389 (qaisklyi)</i></div>
+      <div><i>Thanks to Piefayth#6645 for contributing as well!</i></div>
       <div><i><strong>(The pity system is currently not implemented)</strong></i></div>
       <br />
       <div>Boxbox Discord Feud is looking for 5 contestants to form a team and go against Seorin's team in the game show!</div>
