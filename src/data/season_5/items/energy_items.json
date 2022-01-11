@@ -56,7 +56,7 @@
   "Imp Horn": {
     "obtainable": true,
     "fusion": true,
-    "description": "Spend 75 energy: Spend 75 Energy: Summon a level {t+9} pet imp.",
+    "description": "Spend 75 Energy: Summon a level {t+9} pet imp.",
     "cost": 75,
     "triggers": [
       "TurnStart"
