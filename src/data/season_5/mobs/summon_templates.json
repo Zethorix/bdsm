@@ -16,6 +16,17 @@
       }
     ]
   },
+  "Imp Horn": {
+    "character": "Big Imp Companion",
+    "hp": {"base": 80, "scaling": 10},
+    "hpMax": {"base": 80, "scaling": 10},
+    "speed": 16,
+    "attackLow": {"base": 24, "scaling": 3},
+    "attackHigh": {"base": 24, "scaling": 4},
+    "energy": 0,
+    "summoned": true,
+    "items": []
+  },
   "Imp Whistle": {
     "character": "Small Imp Companion",
     "hp": {"base": 0, "scaling": 1},

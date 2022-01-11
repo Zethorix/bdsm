@@ -47,6 +47,14 @@
       "TurnStart"
     ]
   },
+  "Imp Horn": {
+    "obtainable": true,
+    "description": "Spend 75 energy: Spend 75 Energy: Summon a level {t+8} pet imp.",
+    "cost": 75,
+    "triggers": [
+      "TurnStart"
+    ]
+  },
   "Imp Whistle": {
     "obtainable": true,
     "description": "Spend 45 energy: summon a small imp companion. {t}hp {3*t}-{4*t}atk 16 spd",
@@ -68,7 +76,15 @@
     "description": "Spend 40 Energy: Deal {5*t}-{10*t} damage to a random enemy. {28+8*t}% change to knock the enemy off their feet.",
     "cost": 40,
     "triggers": [
-      "TurnStart"
+      "PostTarget"
+    ]
+  },
+  "Seeking Explosions": {
+    "obtainable": true,
+    "description": "Spend 45 Energy: Deal {10*t+35}-{20*t+70} damage to the lowest health enemy. Repeat this 3 times. This item's exact description is unknown.",
+    "cost": 45,
+    "triggers": [
+      "PostTarget"
     ]
   }
 }

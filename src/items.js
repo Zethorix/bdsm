@@ -12,6 +12,7 @@ const ABILITY_FOR_ITEM = {
   'Cleansed Tome': cleansedTome,
   'Cleansing Flames': cleansingFlames,
   'Draining Dagger': drainingDagger,
+  'Draining Machete': drainingMachete,
   'Energetic Ally': energeticAlly,
   'Explosion Powder': explosionPowder,
   'Festive Feast': festiveFeast,
@@ -19,6 +20,7 @@ const ABILITY_FOR_ITEM = {
   'Freezeman': freezeman,
   'Halberd': halberd,
   'Healing Pendant': healingPendant,
+  'Imp Horn': impHorn,
   'Imp Whistle': impWhistle,
   'Knight\'s Lance': knightsLance,
   'Last Resort': lastResort,
@@ -34,6 +36,7 @@ const ABILITY_FOR_ITEM = {
   'Rock Companion': rockCompanion,
   'Rough Skin': roughSkin,
   'Rousing Death': rousingDeath,
+  'Seeking Explosions': seekingExplosions,
   'Seeking Missiles': seekingMissiles,
   'Survival Kit': survivalKit,
   'Thorns': thorns,
@@ -309,6 +312,40 @@ function drainingDagger(params) {
   }
 }
 
+function drainingMachete(params) {
+  const tier = params.item.tier;
+  switch (params.phase) {
+    case 'PostTarget': {
+      utils.log('Activating {0}', params.item.name);
+      params.currentTarget.changeAttack({amount: -(7 + tier)});
+
+      const enemyTeam = params.enemyTeam;
+      if (enemyTeam.length === 1) {
+        break;
+      }
+      const target = utils.pickRandom(
+          enemyTeam,
+          (c) => {
+            if (c.character === params.currentTarget.character) {
+              return 0;
+            }
+            return 1;
+          }
+      );
+      target.takeDamage({
+          source: params.character,
+          amount: utils.pickRandomWithinRange(3 * tier + 22, 4 * tier + 31),
+          battle: params.battle
+      });
+      target.changeAttack({amount: -(7 + tier)});
+      break;
+    }
+    default: {
+      _throwInvalidPhaseError(params);
+    }
+  }
+}
+
 function energeticAlly(params) {
   const tier = params.item.tier;
   switch (params.phase) {
@@ -483,6 +520,19 @@ function healingPendant(params) {
     }
   }
 }
+
+function impHorn(params) {
+  switch (params.phase) {
+    case 'TurnStart': {
+      params.battle.addSummonToTeam(params.item, params.allyTeamIndex);
+      break;
+    }
+    default: {
+      _throwInvalidPhaseError(params);
+    }
+  }
+}
+
 
 function impWhistle(params) {
   switch (params.phase) {
@@ -723,8 +773,8 @@ function poisonDagger(params) {
 function punchingBag(params) {
   const tier = params.item.tier;
   switch (params.phase) {
-    case 'TurnStart': {
-      const target = utils.pickRandom(params.enemyTeam);
+    case 'PostTarget': {
+      const target = params.currentTarget;
       const amount = utils.pickRandomWithinRange(5 * tier, 10 * tier);
       target.takeDamage({
           source: params.character,
@@ -836,6 +886,37 @@ function rousingDeath(params) {
           continue;
         }
         ally.changeEnergy({amount: 10 * tier});
+      }
+      break;
+    }
+    default: {
+      _throwInvalidPhaseError(params);
+    }
+  }
+}
+
+function seekingExplosions(params) {
+  const tier = params.item.tier;
+  switch (params.phase) {
+    case 'PostTarget': {
+      for (var i = 0; i < 4; i++) {
+        var target = {hp: Infinity};
+        for (const enemy of params.enemyTeam) {
+          if (enemy.hp <= 0) {
+            continue;
+          }
+          if (enemy.hp < target.hp) {
+            target = enemy;
+          }
+        }
+        if (target.hp === Infinity) {
+          break;
+        }
+        target.takeDamage({
+            source: params.character,
+            amount: utils.pickRandomWithinRange(35 + 10 * tier, 70 + 20 * tier),
+            battle: params.battle
+        });
       }
       break;
     }
