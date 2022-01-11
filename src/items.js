@@ -777,7 +777,8 @@ function poisonTippedMachete(params) {
   switch (params.phase) {
     case 'PostTarget': {
       utils.log('Activating {0}', params.item.name);
-      params.currentTarget.poison += tier + 8;
+      const poisonAmount = tier * 3 + 9;
+      params.currentTarget.poison += poisonAmount;
       const enemyTeam = params.enemyTeam;
       if (enemyTeam.length === 1) {
         break;
@@ -796,7 +797,7 @@ function poisonTippedMachete(params) {
           amount: utils.pickRandomWithinRange(24 + 3 * tier, 32 + 4 * tier),
           battle: params.battle
       });
-      target.poison += tier + 8;
+      target.poison += poisonAmount;
       break;
     }
     default: {

@@ -147,7 +147,7 @@
   },
   "Poison Tipped Machete": {
     "obtainable": true,
-    "description": "Your attacks deal {24+3*t}-{32+3*t} damage to an additional enemy and add {8+t} poison stacks to both enemies.",
+    "description": "Your attacks deal {24+3*t}-{32+3*t} damage to an additional enemy and add {9+3*t} poison stacks to both enemies.",
     "triggers": [
       "PostTarget"
     ]
