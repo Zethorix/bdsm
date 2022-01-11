@@ -58,6 +58,13 @@
       "PostTarget"
     ]
   },
+  "Fire-Forged Friendship": {
+    "obtainable": true,
+    "description": "On attack, you have a 33% chance to heal all allies for {9+t}HP and give all allies {3+t} Attack.",
+    "triggers": [
+      "PostDamage"
+    ]
+  },
   "Fire Sword": {
     "obtainable": true,
     "description": "When you attack, you have a 30% chance to increase your attack by 1. Repeat this {t-1} additional times.",

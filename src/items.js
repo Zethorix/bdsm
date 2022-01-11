@@ -16,6 +16,7 @@ const ABILITY_FOR_ITEM = {
   'Energetic Ally': energeticAlly,
   'Explosion Powder': explosionPowder,
   'Festive Feast': festiveFeast,
+  'Fire-Forged Friendship': fireForgedFriendship,
   'Fire Sword': fireSword,
   'Freezeman': freezeman,
   'Halberd': halberd,
@@ -423,6 +424,26 @@ function festiveFeast(params) {
       }
       for (const ally of params.allyTeam) {
         ally.changeHp({amount: 3 * tier});
+      }
+      break;
+    }
+    default: {
+      _throwInvalidPhaseError(params);
+    }
+  }
+}
+
+function fireForgedFriendship(params) {
+  const tier = params.item.tier;
+  switch (params.phase) {
+    case 'PostDamage': {
+      if (!utils.withProbability(0.33)) {
+        break;
+      }
+      utils.log('Activating {0}', params.item.name);
+      for (const ally of params.allyTeam) {
+        ally.changeHp({amount: 9 + tier});
+        ally.changeAttack({amount: 3 + tier});
       }
       break;
     }
