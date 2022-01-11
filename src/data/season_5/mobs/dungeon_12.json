@@ -71,8 +71,10 @@
       "energy": 0,
       "summoned": false,
       "items": [
-        "name": "Big Club",
-        "tier": 4
+        {
+          "name": "Big Club",
+          "tier": 4
+        }
       ],
       "_stats": {
         "_triggeredBigClub": 11,
