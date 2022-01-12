@@ -3,6 +3,7 @@ import * as utils from './utils.js';
 
 const ABILITY_FOR_ITEM = {
   'Avalanche': avalanche,
+  'Barbarian Pendant': barbarianPendant,
   'BF Cannon': bfCannon,
   'Big Club': bigClub,
   'Boosting Bugle': boostingBugle,
@@ -84,6 +85,52 @@ function avalanche(params) {
         });
         target.changeSpeed({
           amount: -utils.pickRandomWithinRange(0, tier)
+        });
+      }
+      break;
+    }
+    default: {
+      _throwInvalidPhaseError(params);
+    }
+  }
+}
+
+function barbarianPendant(params) {
+  const tier = params.item.tier;
+  switch (params.phase) {
+    case 'Block': {
+      if (!utils.withProbability(0.36 + 0.04 * tier)) {
+        break;
+      }
+      if (params.currentTarget.character === params.character.character) {
+        break;
+      }
+      if (params.currentTarget.hp < params.character.hp) {
+        utils.log(
+            '{0} blocks for {1}',
+            params.character.character,
+            params.currentTarget.character
+        );
+        params.currentTarget = params.character;
+        break;
+      }
+      utils.log(
+          '{0} is a coward',
+          params.character.character,
+      );
+      break;
+    }
+    case 'PreDamage': {
+      utils.log('Activating {0}', params.item.name);
+      for (const enemy of params.enemyTeam) {
+        params.character.changeHp({amount: 9 + tier});
+        if (enemy.character === params.currentTarget.character) {
+          continue;
+        }
+        enemy.takeDamage({
+            source: params.character,
+            amount: params.damageBase,
+            battle: params.battle
         });
       }
       break;

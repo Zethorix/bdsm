@@ -1,4 +1,13 @@
 {
+  "Barbarian Pendant": {
+    "obtainable": true,
+    "fusion": true,
+    "description": "Your attacks hit every enemy. Each enemy heals you for {9+t}hp. {36+4*t}% Brave.",
+    "triggers": [
+      "Block",
+      "PreDamage"
+    ]
+  },
   "BF Cannon": {
     "obtainable": true,
     "fusion": false,
