@@ -1,4 +1,25 @@
 {
+  "Chicken Statue": {
+    "character": "Chicken Statue",
+    "hp": {"base": 45, "scaling": 5},
+    "hpMax": {"base": 45, "scaling": 5},
+    "speed": 2,
+    "attackLow": {"base": 45, "scaling": 5},
+    "attackHigh":{"base": 45, "scaling": 5},
+    "energy": 0,
+    "summoned": true,
+    "canBeSaved": false,
+    "items": [
+      {
+        "name": "Chicken Statue Dinner",
+        "tier": {"base": 0, "scaling": 1}
+      },
+      {
+        "name": "Healing Pendant",
+        "tier": {"base": 0, "scaling": 1}
+      }
+    ]
+  },
   "Chumby Chicken": {
     "character": "Chumby Chicken",
     "hp": {"base": 0, "scaling": 1},

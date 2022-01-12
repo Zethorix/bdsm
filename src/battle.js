@@ -17,6 +17,7 @@ function _findPositionWithinTeam(name, team) {
 export class Battle {
   constructor(team1, team2) {
     this.summonedChicken = {};
+    this.summonedChickenStatue = {};
     this.initTeams([team1, team2]);
   }
 

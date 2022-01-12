@@ -6,6 +6,7 @@ const ABILITY_FOR_ITEM = {
   'BF Cannon': bfCannon,
   'Big Club': bigClub,
   'Boosting Bugle': boostingBugle,
+  'Chicken Statue': chickenStatue,
   'Chumby Chicken': chumbyChicken,
   'Challenger Arrow': challengerArrow,
   'Chicken Dinner': chickenDinner,
@@ -165,6 +166,23 @@ function boostingBugle(params) {
         target.changeHp({amount: tier + tier});
         target.changeAttack({amount: tier});
       }
+      break;
+    }
+    default: {
+      _throwInvalidPhaseError(params);
+    }
+  }
+}
+
+function chickenStatue(params) {
+  switch (params.phase) {
+    case 'TurnStart': {
+      const allyTeamIndex = params.allyTeamIndex;
+      if (params.character.character in params.battle.summonedChicken) {
+        break;
+      }
+      params.battle.summonedChickenStatue[params.character.character] = 0;
+      params.battle.addSummonToTeam(params.item, allyTeamIndex);
       break;
     }
     default: {

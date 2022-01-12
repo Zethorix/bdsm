@@ -17,20 +17,36 @@
       "PreDamage"
     ]
   },
-  "Chumby Chicken": {
-    "obtainable": true,
-    "fusion": false,
-    "description": "The first time you attack each wave, summon a chumby chicken. {t}HP, Heals all allies for {1+2*t}HP when it dies.",
-    "triggers": [
-      "TurnStart"
-    ]
-  },
   "Chicken Dinner": {
     "obtainable": false,
     "fusion": false,
     "description": "When you die on an opponent's turn, your allies all eat you (FLUSH). They heal for {1+2*t} HP. This item cannot be obtained, so its exact description is unknown.",
     "triggers": [
       "Death"
+    ]
+  },
+  "Chicken Statue": {
+    "obtainable": false,
+    "fusion": true,
+    "description": "The first time you attack each wave, summon a fearless chicken statue. {45+5*t} HP. Heals for {18+2*t} HP when it dies.",
+    "triggers": [
+      "TurnStart"
+    ]
+  },
+  "Chicken Statue Dinner": {
+    "obtainable": false,
+    "fusion": false,
+    "description": "When you die on an opponent's turn, your allies all eat you (FLUSH). They heal for {18+2*t} HP. This item cannot be obtained, so its exact description is unknown.",
+    "triggers": [
+      "Death"
+    ]
+  },
+  "Chumby Chicken": {
+    "obtainable": true,
+    "fusion": false,
+    "description": "The first time you attack each wave, summon a chumby chicken. {t}HP, Heals all allies for {1+2*t}HP when it dies.",
+    "triggers": [
+      "TurnStart"
     ]
   },
   "Cleansed Tome": {
