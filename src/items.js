@@ -1075,7 +1075,7 @@ function seekingExplosions(params) {
         }
         target.takeDamage({
             source: params.character,
-            amount: utils.pickRandomWithinRange(35 + 10 * tier, 70 + 20 * tier),
+            amount: utils.pickRandomWithinRange(40 + 5 * tier, 80 + 10 * tier),
             battle: params.battle
         });
       }

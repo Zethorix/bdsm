@@ -16,7 +16,7 @@
       },
       {
         "name": "Healing Pendant",
-        "tier": {"base": 0, "scaling": 1}
+        "tier": {"base": 9, "scaling": 1}
       }
     ]
   },
