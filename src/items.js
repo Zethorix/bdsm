@@ -23,6 +23,7 @@ const ABILITY_FOR_ITEM = {
   'Freezeman': freezeman,
   'Halberd': halberd,
   'Healing Pendant': healingPendant,
+  'Hunter\'s Halberd': huntersHalberd,
   'Imp Horn': impHorn,
   'Imp Whistle': impWhistle,
   'Knight\'s Lance': knightsLance,
@@ -582,6 +583,45 @@ function healingPendant(params) {
     }
     case 'Block': {
       if (!utils.withProbability(0.07 + 0.03 * tier)) {
+        break;
+      }
+      if (params.currentTarget.character === params.character.character) {
+        break;
+      }
+      if (params.currentTarget.hp < params.character.hp) {
+        utils.log(
+            '{0} blocks for {1}',
+            params.character.character,
+            params.currentTarget.character
+        );
+        params.currentTarget = params.character;
+        break;
+      }
+      utils.log(
+          '{0} is a coward',
+          params.character.character,
+      );
+      break;
+    }
+    default: {
+      _throwInvalidPhaseError(params);
+    }
+  }
+}
+
+function huntersHalberd(params) {
+  const tier = params.item.tier;
+  switch (params.phase) {
+    case 'InitCharacter': {
+      utils.log('Activating {0}', params.item.name);
+      const amount = 180 + 20 * tier;
+      params.character.changeHpMax({amount: amount});
+      params.character.changeHp({amount: amount});
+      params.character.changeAttack({amount: Math.round(0.05 * params.character.hpMax)});
+      break;
+    }
+    case 'Block': {
+      if (!utils.withProbability(0.36 + 0.04 * tier)) {
         break;
       }
       if (params.currentTarget.character === params.character.character) {

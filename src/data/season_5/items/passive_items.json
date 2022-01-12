@@ -132,6 +132,15 @@
       "PostTarget"
     ]
   },
+  "Hunter's Halberd": {
+    "obtainable": true,
+    "fusion": true,
+    "description": "Gain {180+20*t} Health. You gain 5% of your max health as attack. {36+4*t}% Brave.",
+    "triggers": [
+      "InitCharacter",
+      "Block"
+    ]
+  },
   "Last Resort": {
     "obtainable": false,
     "fusion": false,
