@@ -384,13 +384,13 @@ function drainingMachete(params) {
   const tier = params.item.tier;
   switch (params.phase) {
     case 'PostTarget': {
+      if (enemyTeam.length === 1) {
+        break;
+      }
       utils.log('Activating {0}', params.item.name);
       params.currentTarget.changeAttack({amount: -(7 + tier)});
 
       const enemyTeam = params.enemyTeam;
-      if (enemyTeam.length === 1) {
-        break;
-      }
       const target = utils.pickRandom(
           enemyTeam,
           (c) => {
