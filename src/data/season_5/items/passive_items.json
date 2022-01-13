@@ -202,7 +202,7 @@
   "Poison Tipped Machete": {
     "obtainable": true,
     "fusion": true,
-    "description": "Your attacks deal {24+3*t}-{32+4*t} damage to an additional enemy and add {9+3*t} poison stacks to both enemies.",
+    "description": "Your attacks deal {21+6*t}-{24+12*t} damage to an additional enemy and add {9+3*t} poison stacks to both enemies.",
     "triggers": [
       "PostTarget"
     ]

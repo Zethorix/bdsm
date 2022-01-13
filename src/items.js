@@ -881,13 +881,13 @@ function poisonTippedMachete(params) {
   const tier = params.item.tier;
   switch (params.phase) {
     case 'PostTarget': {
+      if (enemyTeam.length === 1) {
+        break;
+      }
       utils.log('Activating {0}', params.item.name);
       const poisonAmount = tier * 3 + 9;
       params.currentTarget.poison += poisonAmount;
       const enemyTeam = params.enemyTeam;
-      if (enemyTeam.length === 1) {
-        break;
-      }
       const target = utils.pickRandom(
           enemyTeam,
           (c) => {
