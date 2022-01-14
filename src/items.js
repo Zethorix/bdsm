@@ -384,13 +384,13 @@ function drainingMachete(params) {
   const tier = params.item.tier;
   switch (params.phase) {
     case 'PostTarget': {
+      const enemyTeam = params.enemyTeam;
       if (enemyTeam.length === 1) {
         break;
       }
       utils.log('Activating {0}', params.item.name);
       params.currentTarget.changeAttack({amount: -(7 + tier)});
 
-      const enemyTeam = params.enemyTeam;
       const target = utils.pickRandom(
           enemyTeam,
           (c) => {
@@ -881,13 +881,13 @@ function poisonTippedMachete(params) {
   const tier = params.item.tier;
   switch (params.phase) {
     case 'PostTarget': {
+      const enemyTeam = params.enemyTeam;
       if (enemyTeam.length === 1) {
         break;
       }
       utils.log('Activating {0}', params.item.name);
       const poisonAmount = tier * 3 + 9;
       params.currentTarget.poison += poisonAmount;
-      const enemyTeam = params.enemyTeam;
       const target = utils.pickRandom(
           enemyTeam,
           (c) => {
