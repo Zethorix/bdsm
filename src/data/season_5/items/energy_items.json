@@ -92,7 +92,7 @@
   "Seeking Explosions": {
     "obtainable": true,
     "fusion": true,
-    "description": "Spend 45 Energy: Deal {5*t+40}-{10*t+80} damage to the lowest health enemy. Repeat this 3 times. This item's exact description is unknown.",
+    "description": "Spend 45 Energy: Deal {5*t+40}-{10*t+80} damage to the lowest health enemy. Repeat this 3 additional times.",
     "cost": 45,
     "triggers": [
       "PostTarget"
