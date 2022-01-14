@@ -11,6 +11,7 @@ const ABILITY_FOR_ITEM = {
   'Chumby Chicken': chumbyChicken,
   'Challenger Arrow': challengerArrow,
   'Chicken Dinner': chickenDinner,
+  'Chicken Statue Dinner': chickenStatueDinner,
   'Cleansed Tome': cleansedTome,
   'Cleansing Flames': cleansingFlames,
   'Draining Dagger': drainingDagger,
@@ -276,6 +277,27 @@ function challengerArrow(params) {
 }
 
 function chickenDinner(params) {
+  const tier = params.item.tier;
+  switch (params.phase) {
+    case 'Death': {
+      if (params.battle.activeTeamIndex === params.allyTeamIndex) {
+        break;
+      }
+      for (const ally of params.allyTeam) {
+        if (ally.character === params.character.character) {
+          continue;
+        }
+        ally.changeHp({amount: 18 + 2 * tier});
+      }
+      break;
+    }
+    default: {
+      _throwInvalidPhaseError(params);
+    }
+  }
+}
+
+function chickenStatueDinner(params) {
   const tier = params.item.tier;
   switch (params.phase) {
     case 'Death': {
