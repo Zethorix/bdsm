@@ -636,14 +636,14 @@ function huntersHalberd(params) {
   switch (params.phase) {
     case 'InitCharacter': {
       utils.log('Activating {0}', params.item.name);
-      const amount = 180 + 20 * tier;
+      const amount = 150 + 50 * tier;
       params.character.changeHpMax({amount: amount});
       params.character.changeHp({amount: amount});
       params.character.changeAttack({amount: Math.round(0.05 * params.character.hpMax)});
       break;
     }
     case 'Block': {
-      if (!utils.withProbability(0.36 + 0.04 * tier)) {
+      if (!utils.withProbability(0.4)) {
         break;
       }
       if (params.currentTarget.character === params.character.character) {
