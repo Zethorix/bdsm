@@ -9,11 +9,6 @@ function App() {
       <div><i>Thanks to Piefayth#6645 for contributing as well!</i></div>
       <div><i><strong>(The pity system is currently not implemented)</strong></i></div>
       <br />
-      <div>Boxbox Discord Feud is looking for 5 contestants to form a team and go against Seorin's team in the game show!</div>
-      <div>The show is completely similar to Family Feud and the questions are from the survey that you might have completed before!</div>
-      <div>Tag FQVBSina in Discord for more details, if you have questions, etc.</div>
-      <a target="_blank" href="https://docs.google.com/forms/d/1uAlkovIQo0IOmZO0Hc6zrpeFkfP5s7odUgriO2J8DfY">https://docs.google.com/forms/d/1uAlkovIQo0IOmZO0Hc6zrpeFkfP5s7odUgriO2J8DfY</a>
-      <p>Enter your party's items and monuments.</p>
       <Simulator />
     </div>
   );
