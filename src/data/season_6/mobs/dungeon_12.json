@@ -1,0 +1,203 @@
+[
+  [
+    {
+      "character": "Viktor",
+      "hp": 300,
+      "hpMax": 300,
+      "speed": 30,
+      "attackLow": 30,
+      "attackHigh": 60,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Draining Machete",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "character": "Jayce",
+      "hp": 250,
+      "hpMax": 250,
+      "speed": 40,
+      "attackLow": 40,
+      "attackHigh": 80,
+      "energy": 0,
+      "summoned": false,
+      "items": []
+    },
+    {
+      "character": "Mel",
+      "hp": 200,
+      "hpMax": 200,
+      "speed": 20,
+      "attackLow": 25,
+      "attackHigh": 75,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Quickening Death",
+          "tier": 8
+        }
+      ]
+    },
+    {
+      "character": "Heimerdinger",
+      "hp": 350,
+      "hpMax": 350,
+      "speed": 25,
+      "attackLow": 50,
+      "attackHigh": 100,
+      "energy": 225,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Imp Horn",
+          "tier": 1
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "character": "Vi",
+      "hp": 450,
+      "hpMax": 450,
+      "speed": 25,
+      "attackLow": 60,
+      "attackHigh": 90,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Big Club",
+          "tier": 4
+        }
+      ],
+      "_stats": {
+        "_triggeredBigClub": 14,
+        "_attacks": 29
+      }
+    },
+    {
+      "character": "Ekko",
+      "hp": 350,
+      "hpMax": 350,
+      "speed": 30,
+      "attackLow": 10,
+      "attackHigh": 20,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Punching Bag",
+          "tier": 9
+        },
+        {
+          "name": "Magic Parasol",
+          "tier": 9
+        }
+      ],
+      "_stats": {
+        "_triggeredBlock": 20,
+        "_availableBlocks": 56
+      }
+    },
+    {
+      "character": "Caitlyn",
+      "hp": 400,
+      "hpMax": 400,
+      "speed": 40,
+      "attackLow": 100,
+      "attackHigh": 200,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "BF Cannon",
+          "tier": 1
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "character": "Jinx",
+      "hp": 300,
+      "hpMax": 300,
+      "speed": 50,
+      "attackLow": 45,
+      "attackHigh": 90,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Seeking Missiles",
+          "tier": 9
+        },
+        {
+          "name": "Seeking Explosions",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "character": "Silco",
+      "hp": 200,
+      "hpMax": 200,
+      "speed": 10,
+      "attackLow": 20,
+      "attackHigh": 40,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Imp Horn",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "character": "Sevika",
+      "hp": 250,
+      "hpMax": 250,
+      "speed": 15,
+      "attackLow": 20,
+      "attackHigh": 40,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Draining Machete",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "character": "Doctor Singed",
+      "hp": 500,
+      "hpMax": 500,
+      "speed": 15,
+      "attackLow": 20,
+      "attackHigh": 40,
+      "energy": 0,
+      "summoned": false,
+      "items": [
+        {
+          "name": "Healing Pendant",
+          "tier": 5
+        },
+        {
+          "name": "Magic Parasol",
+          "tier": 5
+        }
+      ],
+      "_stats": {
+        "_triggeredBlock": 20,
+        "_availableBlocks": 39
+      }
+    }
+  ]
+]

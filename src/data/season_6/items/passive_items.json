@@ -1,0 +1,294 @@
+{
+  "Barbarian Pendant": {
+    "obtainable": true,
+    "fusion": true,
+    "description": "Your attacks hit every enemy. Each enemy heals you for {9+t}hp. {36+4*t}% Brave.",
+    "triggers": [
+      "Block",
+      "PreDamage"
+    ]
+  },
+  "BF Cannon": {
+    "obtainable": true,
+    "fusion": false,
+    "description": "Increases your attack by {6+6*t} and health by {7*t}. The recoil knocks you off your feet.",
+    "triggers": [
+      "InitCharacter",
+      "SkipTurn",
+      "PostDamage"
+    ]
+  },
+  "Big Club": {
+    "obtainable": true,
+    "fusion": false,
+    "description": "Your attacks have a {11*t}% chance to deal 150% bonus damage.",
+    "triggers": [
+      "PreDamage"
+    ]
+  },
+  "Chicken Dinner": {
+    "obtainable": false,
+    "fusion": false,
+    "description": "When you die on an opponent's turn, your allies all eat you (FLUSH). They heal for {1+2*t} HP. This item cannot be obtained, so its exact description is unknown.",
+    "triggers": [
+      "Death"
+    ]
+  },
+  "Chicken Statue": {
+    "obtainable": false,
+    "fusion": true,
+    "description": "The first time you attack each wave, summon a fearless chicken statue. {45+5*t} HP. Heals for {18+2*t} HP when it dies.",
+    "triggers": [
+      "TurnStart"
+    ]
+  },
+  "Chicken Statue Dinner": {
+    "obtainable": false,
+    "fusion": false,
+    "description": "When you die on an opponent's turn, your allies all eat you (FLUSH). They heal for {18+2*t} HP. This item cannot be obtained, so its exact description is unknown.",
+    "triggers": [
+      "Death"
+    ]
+  },
+  "Chumby Chicken": {
+    "obtainable": true,
+    "fusion": false,
+    "description": "The first time you attack each wave, summon a chumby chicken. {t}HP, Heals all allies for {1+2*t}HP when it dies.",
+    "triggers": [
+      "TurnStart"
+    ]
+  },
+  "Cleansed Tome": {
+    "obtainable": true,
+    "fusion": false,
+    "description": "When you attack take {t} damage, then heal the lowest HP ally for {3*t} HP. This cannot target yourself or summons. You have +{5*t} health.",
+    "triggers": [
+      "InitCharacter",
+      "PostTarget"
+    ]
+  },
+  "Cleansing Flames": {
+    "obtainable": true,
+    "fusion": false,
+    "description": "After you attack, you have a 50% chance to heal all allies for {t} HP.",
+    "triggers": [
+      "PostDamage"
+    ]
+  },
+  "Draining Dagger": {
+    "obtainable": true,
+    "fusion": false,
+    "description": "Your attacks decrease the target's attack by {t}. 20% chance to decrease target's energy by {t}.",
+    "triggers": [
+      "PostTarget"
+    ]
+  },
+  "Draining Machete": {
+    "obtainable": true,
+    "fusion": true,
+    "description": "Your attacks deal {3*t+22}-{4*t+31} damage to an additional enemy. Your attacks decrease both targets' attack by {t+7}. This item's exact description is unknown.",
+    "triggers": [
+      "PostTarget"
+    ]
+  },
+  "Fire-Forged Friendship": {
+    "obtainable": true,
+    "fusion": true,
+    "description": "On attack, you have a 50% chance to heal all allies for {7+3*t}HP and give all allies {2+t} Attack.",
+    "triggers": [
+      "PostDamage"
+    ]
+  },
+  "Fire Sword": {
+    "obtainable": true,
+    "fusion": false,
+    "description": "When you attack, you have a 30% chance to increase your attack by 1. Repeat this {t-1} additional times.",
+    "triggers": [
+      "PostDamage"
+    ]
+  },
+  "Freezeman": {
+    "obtainable": true,
+    "fusion": false,
+    "description": "Gain {t} speed.",
+    "triggers": [
+      "InitCharacter"
+    ]
+  },
+  "Halberd": {
+    "obtainable": true,
+    "fusion": false,
+    "description": "You have +{3*t} attack.",
+    "triggers": [
+      "InitCharacter"
+    ]
+  },
+  "Healing Pendant": {
+    "obtainable": true,
+    "fusion": false,
+    "description": "Your attacks have a 50% chance to heal yourself for {5*t} HP. {7+3*t}% Chance to take the hit when your teammate is attacked, if you're feeling brave.",
+    "triggers": [
+      "Block",
+      "PostTarget"
+    ]
+  },
+  "Hunter's Halberd": {
+    "obtainable": true,
+    "fusion": true,
+    "description": "Gain {150+50*t} Health. You gain 5% of your max health as attack. 40% Brave.",
+    "triggers": [
+      "InitCharacter",
+      "Block"
+    ]
+  },
+  "Last Resort": {
+    "obtainable": false,
+    "fusion": false,
+    "description": "When an oponent kills you, you shoot them in the face for {10*t} damage. This item cannot be obtained, so its exact description is unknown.",
+    "triggers": [
+      "Death"
+    ]
+  },
+  "Love Letter": {
+    "obtainable": true,
+    "fusion": false,
+    "description": "After you attack, you heal an ally for {2*t} and they gain {t} energy. This cannot target yourself or summons.",
+    "triggers": [
+      "PostDamage"
+    ]
+  },
+  "Machete": {
+    "obtainable": true,
+    "fusion": false,
+    "description": "Your attacks deal {3*t}-{4*t} damage to an additional enemy. You have +{4*t} health.",
+    "triggers": [
+      "InitCharacter",
+      "PostTarget"
+    ]
+  },
+  "Magic Parasol": {
+    "obtainable": true,
+    "fusion": false,
+    "description": "When you are attacked, you have a {17+3*t}% chance to block up to {2+3*t} damage. {7+3*t}% Chance to take the hit when your teammate is attacked, if you're feeling brave.",
+    "triggers": [
+      "Block",
+      "EnemyDamage"
+    ]
+  },
+  "Martyr Armor": {
+    "obtainable": false,
+    "fusion": false,
+    "description": "When you take damage on an opponent’s turn, you have a 66% chance to heal a random ally {2*t}HP and give them {t} Energy. This cannot target yourself or summons.",
+    "triggers": [
+      "EnemyDamage"
+    ]
+  },
+  "Pet Imp": {
+    "obtainable": true,
+    "fusion": false,
+    "description": "At the start of the dungeon, summon a big imp companion. {10*t}hp {3*t}-{4*t}atk. Spd: 16",
+    "triggers": [
+      "InitCharacter"
+    ]
+  },
+  "Poison Dagger": {
+    "obtainable": true,
+    "fusion": false,
+    "description": "Your attacks add {t} poison stack to the target. A poisoned enemy takes 1 damage after they attack for each poison stack they have. You have +{3*t} health.",
+    "triggers": [
+      "InitCharacter",
+      "PostTarget"
+    ]
+  },
+  "Poison Tipped Machete": {
+    "obtainable": true,
+    "fusion": true,
+    "description": "Your attacks deal {21+6*t}-{24+12*t} damage to an additional enemy and add {9+3*t} poison stacks to both enemies.",
+    "triggers": [
+      "PostTarget"
+    ]
+  },
+  "Quickening Death": {
+    "obtainable": false,
+    "fusion": false,
+    "description": "When you die on an opponent's turn, your allies become enraged. They gain {t} Speed. This item cannot be obtained, so its exact description is unknown.",
+    "triggers": [
+      "Death"
+    ]
+  },
+  "Quickening Death: Focused": {
+    "obtainable": false,
+    "fusion": false,
+    "description": "When you die on an opponent's turn, a random ally becomes enraged. They gain {5*t} Speed. This item cannot be obtained, so its exact description is unknown.",
+    "triggers": [
+      "Death"
+    ]
+  },
+  "Rock Companion": {
+    "obtainable": true,
+    "fusion": false,
+    "description": "At the start of the dungeon, summon a brave Rock Companion. {15*t}hp {5*t}atk 2spd",
+    "triggers": [
+      "InitCharacter"
+    ]
+  },
+  "Rough Skin": {
+    "obtainable": false,
+    "fusion": false,
+    "description": "50% chance to reduce an attack by {2*t} and deal {2*t} damage to the attacker.",
+    "triggers": [
+      "EnemyDamage"
+    ]
+  },
+  "Rousing Death": {
+    "obtainable": false,
+    "fusion": false,
+    "description": "When you die on an opponent's turn, your allies become enraged. They gain {10*t} Energy. This item cannot be obtained, so its exact description is unknown.",
+    "triggers": [
+      "Death"
+    ]
+  },
+  "Seeking Missiles": {
+    "obtainable": true,
+    "fusion": false,
+    "description": "Your attacks always target the weakest enemy. Deal {t} bonus damage per 20% HP they are missing. When you kill an enemy, heal {4*t}hp",
+    "triggers": [
+      "Target",
+      "PreDamage",
+      "Kill"
+    ]
+  },
+  "Survival Kit": {
+    "obtainable": true,
+    "fusion": false,
+    "description": "Increase Max HP by {18*t}. {7+3*t}% Chance to take a hit when your teammate is attacked if you're feeling brave.",
+    "triggers": [
+      "InitCharacter",
+      "Block"
+    ]
+  },
+  "Thorns": {
+    "obtainable": true,
+    "fusion": false,
+    "description": "When you attack, unleash a thorn at each enemy. Each thorn deals {t} damage and gives you a 25% chance to gain {t} energy. You can only gain energy from this effect once per turn.",
+    "triggers": [
+      "TurnStart"
+    ]
+  },
+  "Trusty Steed": {
+    "obtainable": true,
+    "fusion": false,
+    "description": "At the start of the dungeon, summon a loyal steed... {10*t} HP, 20 speed. Will boost teammates.",
+    "triggers": [
+      "InitCharacter"
+    ]
+  },
+  "Whirlwind Axe": {
+    "obtainable": true,
+    "fusion": false,
+    "description": "When you attack, you have a {11*t}% chance of making your attack deal splash damage to all other enemies.",
+    "triggers": [
+      "PreDamage"
+    ]
+  }
+}

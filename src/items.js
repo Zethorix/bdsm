@@ -342,6 +342,9 @@ function cleansedTome(params) {
         if (ally.summoned) {
           continue;
         }
+        if (ally.character === params.character.character) {
+          continue;
+        }
         const allyIsMaxHp = ally.hp === ally.hpMax;
         if (allyIsMaxHp && !targetIsMaxHp) {
           continue;
@@ -407,11 +410,11 @@ function drainingMachete(params) {
   switch (params.phase) {
     case 'PostTarget': {
       const enemyTeam = params.enemyTeam;
+      utils.log('Activating {0}', params.item.name);
+      params.currentTarget.changeAttack({amount: -(7 + tier)});
       if (enemyTeam.length === 1) {
         break;
       }
-      utils.log('Activating {0}', params.item.name);
-      params.currentTarget.changeAttack({amount: -(7 + tier)});
 
       const target = utils.pickRandom(
           enemyTeam,
@@ -482,6 +485,7 @@ function explosionPowder(params) {
             amount: utils.pickRandomWithinRange(10 * tier, 20 * tier),
             battle: params.battle
         });
+        params.character.changeEnergy(20);
         break;
       }
       for (const enemy of enemyTeam) {
@@ -525,13 +529,13 @@ function fireForgedFriendship(params) {
   const tier = params.item.tier;
   switch (params.phase) {
     case 'PostDamage': {
-      if (!utils.withProbability(0.33)) {
+      if (!utils.withProbability(0.5)) {
         break;
       }
       utils.log('Activating {0}', params.item.name);
       for (const ally of params.allyTeam) {
-        ally.changeHp({amount: 9 + tier});
-        ally.changeAttack({amount: 3 + tier});
+        ally.changeHp({amount: 7 + 2 * tier});
+        ally.changeAttack({amount: 2 + tier});
       }
       break;
     }
@@ -581,9 +585,7 @@ function halberd(params) {
   switch (params.phase) {
     case 'InitCharacter': {
       utils.log('Activating {0}', params.item.name);
-      params.character.changeAttack({amount: tier + tier});
-      params.character.changeHpMax({amount: 4 * tier});
-      params.character.changeHp({amount: 4 * tier});
+      params.character.changeAttack({amount: tier + tier + tier});
       break;
     }
     default: {
@@ -781,6 +783,13 @@ function loveLetter(params) {
 function machete(params) {
   const tier = params.item.tier;
   switch (params.phase) {
+    case 'InitCharacter': {
+      utils.log('Activating {0}', params.item.name);
+      const amount = 4 * tier;
+      params.character.changeHpMax({amount: amount});
+      params.character.changeHp({amount: amount});
+      break;
+    }
     case 'PostTarget': {
       utils.log('Activating {0}', params.item.name);
       const enemyTeam = params.enemyTeam;
@@ -904,12 +913,13 @@ function poisonTippedMachete(params) {
   switch (params.phase) {
     case 'PostTarget': {
       const enemyTeam = params.enemyTeam;
-      if (enemyTeam.length === 1) {
-        break;
-      }
       utils.log('Activating {0}', params.item.name);
       const poisonAmount = tier * 3 + 9;
       params.currentTarget.poison += poisonAmount;
+      if (enemyTeam.length === 1) {
+        break;
+      }
+
       const target = utils.pickRandom(
           enemyTeam,
           (c) => {
@@ -1135,7 +1145,7 @@ function seekingMissiles(params) {
     }
     case 'Kill': {
       utils.log('Activating {0}', params.item.name);
-      params.character.changeHp({amount: 6 * tier});
+      params.character.changeHp({amount: 4 * tier});
       break;
     }
     default: {
@@ -1149,7 +1159,7 @@ function survivalKit(params) {
   switch (params.phase) {
     case 'InitCharacter': {
       utils.log('Activating {0}', params.item.name);
-      const amount = 20 * tier;
+      const amount = 18 * tier;
       params.character.changeHpMax({amount: amount});
       params.character.changeHp({amount: amount});
       break;
