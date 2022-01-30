@@ -48,7 +48,7 @@ export function parseInventory(input) {
   for (const line of input.split('\n')) {
     const matchUsername = line.match(/([^*]*)'s Inventory/);
     const matchItem = line.match(
-        /\d-\s(_{0,2}<?[\w\d:]+>?)?\s([\w'\s]+)\s(\d+)_{0,2}:/);
+        /\d-\s(_{0,2}<?[\w\d:\s]+?>?)?\s([\w'\s]+)\s(\d+)_{0,2}:/);
     if (matchUsername !== null) {
       empty = false;
       player.username = matchUsername[1];
