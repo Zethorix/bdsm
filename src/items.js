@@ -227,7 +227,7 @@ function chickenStatue(params) {
   switch (params.phase) {
     case 'TurnStart': {
       const allyTeamIndex = params.allyTeamIndex;
-      if (params.character.character in params.battle.summonedChicken) {
+      if (params.character.character in params.battle.summonedChickenStatue) {
         break;
       }
       params.battle.summonedChickenStatue[params.character.character] = 0;
