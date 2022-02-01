@@ -35,7 +35,7 @@
     ]
   },
   "Chicken Statue": {
-    "obtainable": false,
+    "obtainable": true,
     "fusion": true,
     "description": "The first time you attack each wave, summon a fearless chicken statue. {45+5*t} HP. Heals for {18+2*t} HP when it dies.",
     "triggers": [
