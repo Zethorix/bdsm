@@ -308,7 +308,7 @@ function chickenStatueDinner(params) {
         if (ally.character === params.character.character) {
           continue;
         }
-        ally.changeHp({amount: 1 + 2 * tier});
+        ally.changeHp({amount: 18 + 2 * tier});
       }
       break;
     }
